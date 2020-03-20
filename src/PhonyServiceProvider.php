@@ -9,7 +9,7 @@ class PhonyServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot(): void
     {
         /*
          * Optional methods to load your package assets
@@ -21,7 +21,7 @@ class PhonyServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('phony.php'),
+                __DIR__.'/../config/phony.php' => config_path('phony.php'),
             ], 'config');
 
             // Publishing the views.
@@ -50,7 +50,7 @@ class PhonyServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'phony');
+        $this->mergeConfigFrom(__DIR__.'/../config/phony.php', 'phony');
 
         // Register the main class to use with the facade
         $this->app->singleton('phony', function () {
