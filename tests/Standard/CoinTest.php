@@ -13,4 +13,12 @@ class CoinTest extends BaseTest
             $this->phony->coin()->flip()
         );
     }
+
+    public function test_name(): void
+    {
+        $this->assertRegExp(
+            '/\w+/',
+            $this->phony->coin()->name()
+        );
+    }
 }

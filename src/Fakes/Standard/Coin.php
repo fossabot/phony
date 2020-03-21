@@ -17,4 +17,16 @@ class Coin extends Phony
     {
         return $this->fetchOne('coin.flip');
     }
+
+    /**
+     * Retrieves a random coin from any country.
+     *
+     * @return string
+     *
+     * @example Phony::coin()->name() #=> "Brazilian Real"
+     */
+    public function name(): string
+    {
+        return $this->fetchOne('currency.name');
+    }
 }
