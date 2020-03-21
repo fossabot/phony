@@ -2,7 +2,27 @@
 
 namespace Deligoez\Phony;
 
+use Illuminate\Support\Arr;
+use Deligoez\Phony\Fakes\Standard\Coin;
+
 class Phony
 {
-    // Build your next great package.
+    protected string $defaultLocale;
+
+    public function __construct(string $defaultLocale = 'en')
+    {
+        $this->defaultLocale = $defaultLocale;
+    }
+
+    public function coin(): Coin
+    {
+        return new Coin($this->defaultLocale);
+    }
+
+    public function fetchOne(string $path, array $replace = []): string
+    {
+        return Arr::random(
+            trans("phony::{$path}", $replace, $this->defaultLocale)
+        );
+    }
 }
