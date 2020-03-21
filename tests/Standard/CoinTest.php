@@ -8,11 +8,9 @@ class CoinTest extends BaseTest
 {
     public function test_flip(): void
     {
-        $a = $this->phony->coin()->flip();
-        dd($a);
         $this->assertRegExp(
             '/\w+/',
-            $a
+            $this->phony->coin()->flip()
         );
     }
 }
