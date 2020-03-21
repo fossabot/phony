@@ -10,6 +10,11 @@ class Phony
 {
     protected string $defaultLocale;
 
+    /**
+     * Phony constructor.
+     *
+     * @param  string  $defaultLocale
+     */
     public function __construct(string $defaultLocale)
     {
         $this->defaultLocale = $defaultLocale;
