@@ -8,16 +8,14 @@ class CoinTest extends BaseTest
 {
     public function test_flip(): void
     {
-        $this->assertRegExp(
-            '/\w+/',
+        $this->assertIsString(
             $this->phony->coin()->flip()
         );
     }
 
     public function test_name(): void
     {
-        $this->assertRegExp(
-            '/\w+/',
+        $this->assertIsString(
             $this->phony->coin()->name()
         );
     }

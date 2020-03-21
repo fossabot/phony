@@ -8,8 +8,7 @@ class CurrencyTest extends BaseTest
 {
     public function test_name(): void
     {
-        $this->assertRegExp(
-            '/\w+/',
+        $this->assertIsString(
             $this->phony->currency()->name()
         );
     }
