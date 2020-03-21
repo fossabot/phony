@@ -37,9 +37,7 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit --colors=always",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
+        "test": "vendor/bin/phpunit --configuration phpunit.xml.dist --testdox --colors=always"
     },
     "config": {
         "sort-packages": true
