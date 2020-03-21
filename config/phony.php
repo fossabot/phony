@@ -1,8 +1,5 @@
 <?php
 
-/*
- * You can place your custom package configuration in here.
- */
 return [
-    'test' => 'deneme'
+    'default_locale' => env('PHONY_DEFAULT_LOCALE', 'en'),
 ];
