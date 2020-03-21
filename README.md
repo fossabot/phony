@@ -5,7 +5,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/deligoez/phony.svg?style=flat-square)](https://scrutinizer-ci.com/g/deligoez/phony)
 [![Total Downloads](https://img.shields.io/packagist/dt/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This Laravel package is port of the Ruby's Faker gem that generates fake data.
 
 ## Installation
 
@@ -17,9 +17,19 @@ composer require deligoez/phony
 
 ## Usage
 
-``` php
-// Usage description here
+```php
+$phony = new \Deligoez\Phony\Phony('en');
+
+$phony->coin()->flip(); // => "Heads"
+$phony->currency()->symbol(); // => "$"
 ```
+
+## Generators
+
+### Default
+
+- [Phony::coin()](doc/default/coin.md)
+- [Phony::currency()](doc/default/currency.md)
 
 ### Testing
 
