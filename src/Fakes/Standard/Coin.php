@@ -2,9 +2,9 @@
 
 namespace Deligoez\Phony\Fakes\Standard;
 
-use Deligoez\Phony\Phony;
+use Deligoez\Phony\Fakes\Fake;
 
-class Coin extends Phony
+class Coin extends Fake
 {
     /**
      * Retrieves a face to a flipped coin.

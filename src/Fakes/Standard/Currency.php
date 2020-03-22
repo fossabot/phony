@@ -2,9 +2,9 @@
 
 namespace Deligoez\Phony\Fakes\Standard;
 
-use Deligoez\Phony\Phony;
+use Deligoez\Phony\Fakes\Fake;
 
-class Currency extends Phony
+class Currency extends Fake
 {
     /**
      * Produces the name of a currency.
