@@ -28,6 +28,7 @@ $phony->currency()->symbol(); // => "$"
 
 ### Default
 
+- [Phony::ancient()](doc/default/ancient.md)
 - [Phony::coin()](doc/default/coin.md)
 - [Phony::currency()](doc/default/currency.md)
 

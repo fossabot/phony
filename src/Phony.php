@@ -3,6 +3,7 @@
 namespace Deligoez\Phony;
 
 use Deligoez\Phony\Fakes\Standard\Coin;
+use Deligoez\Phony\Fakes\Standard\Ancient;
 use Deligoez\Phony\Fakes\Standard\Currency;
 
 class Phony
@@ -17,6 +18,11 @@ class Phony
     public function __construct(string $defaultLocale)
     {
         $this->defaultLocale = $defaultLocale;
+    }
+
+    public function ancient(): Ancient
+    {
+        return new Ancient($this);
     }
 
     public function coin(): Coin
