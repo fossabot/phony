@@ -5,7 +5,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/deligoez/phony.svg?style=flat-square)](https://scrutinizer-ci.com/g/deligoez/phony)
 [![Total Downloads](https://img.shields.io/packagist/dt/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
 
-This Laravel package is port of the Ruby's Faker gem that generates fake data.
+This [Laravel](http://laravel.com) package is port of the [Ruby](https://www.ruby-lang.org)'s [Faker](https://github.com/faker-ruby/faker) gem that generates fake data.
 
 ## Installation
 
@@ -20,8 +20,8 @@ composer require deligoez/phony
 ```php
 $phony = new \Deligoez\Phony\Phony('en');
 
-$phony->coin()->flip(); // => "Heads"
-$phony->currency()->symbol(); // => "$"
+$phony->coin()->flip();         // => "Heads"
+$phony->currency()->symbol();   // => "$"
 ```
 
 ## Generators
@@ -58,7 +58,3 @@ If you discover any security related issues, please email ye@deligoz.me instead 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
