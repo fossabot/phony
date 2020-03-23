@@ -3,8 +3,8 @@
 namespace Deligoez\Phony\Tests;
 
 use Deligoez\Phony\Phony;
-use Orchestra\Testbench\TestCase;
 use Deligoez\Phony\PhonyServiceProvider;
+use Orchestra\Testbench\TestCase;
 
 abstract class BaseTest extends TestCase
 {
