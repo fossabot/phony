@@ -26,14 +26,12 @@ class Fake
     {
         $template = trans("phony::{$key}", $replace, $this->phony->defaultLocale);
 
-        if (is_array($template))
-        {
+        if (is_array($template)) {
             $template = $template[array_rand($template, 1)];
         }
 
         // Check if it's an actual fake data or a template
-        if (strpos($template, ':') !== false)
-        {
+        if (strpos($template, ':') !== false) {
             // It's a fake data, so return it immediately.
             return $template;
         }
