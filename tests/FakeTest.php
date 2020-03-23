@@ -17,7 +17,7 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_fetch_a_value(): void
     {
-          $this->assertNotNull(
+        $this->assertNotNull(
               $this->🙃->alphabet()->uppercaseLetter()
           );
     }
