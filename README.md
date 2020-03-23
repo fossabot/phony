@@ -8,6 +8,8 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/deligoez/phony/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/deligoez/phony/badges/build.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/build-status/master)
 [![Total Downloads](https://img.shields.io/packagist/dt/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
+![Packagist](https://img.shields.io/packagist/l/deligoez/phony)
+[![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) 
 
 This [Laravel](http://laravel.com) package is port of the [Ruby](https://www.ruby-lang.org)'s [Faker](https://github.com/faker-ruby/faker) gem that generates fake data.
 
