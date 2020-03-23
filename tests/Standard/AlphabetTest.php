@@ -6,7 +6,7 @@ use Deligoez\Phony\Tests\BaseTest;
 
 class AlphabetTest extends BaseTest
 {
-        /** @test */
+    /** @test */
     public function uppercase_letter(): void
     {
         $this->assertEquals(
@@ -15,7 +15,7 @@ class AlphabetTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function lowercase_letter(): void
     {
         $this->assertEquals(
@@ -24,7 +24,7 @@ class AlphabetTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function letter(): void
     {
         $this->assertEquals(

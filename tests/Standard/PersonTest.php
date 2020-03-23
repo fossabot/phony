@@ -6,7 +6,7 @@ use Deligoez\Phony\Tests\BaseTest;
 
 class PersonTest extends BaseTest
 {
-        /** @test */
+    /** @test */
     public function name(): void
     {
         $this->assertIsString(
@@ -14,7 +14,7 @@ class PersonTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function name_with_middle(): void
     {
         $this->assertIsString(
@@ -22,7 +22,7 @@ class PersonTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function first_name(): void
     {
         $this->assertIsString(
@@ -30,7 +30,7 @@ class PersonTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function middle_name(): void
     {
         $this->assertIsString(
@@ -38,7 +38,7 @@ class PersonTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function male_first_name(): void
     {
         $this->assertIsString(
@@ -46,7 +46,7 @@ class PersonTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function female_first_name(): void
     {
         $this->assertIsString(
@@ -54,7 +54,7 @@ class PersonTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function last_name(): void
     {
         $this->assertIsString(
@@ -62,7 +62,7 @@ class PersonTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function suffix(): void
     {
         $this->assertIsString(
@@ -70,7 +70,7 @@ class PersonTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function prefix(): void
     {
         $this->assertIsString(

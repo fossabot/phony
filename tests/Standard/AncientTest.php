@@ -6,7 +6,7 @@ use Deligoez\Phony\Tests\BaseTest;
 
 class AncientTest extends BaseTest
 {
-        /** @test */
+    /** @test */
     public function god(): void
     {
         $this->assertIsString(
@@ -14,7 +14,7 @@ class AncientTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function primordial(): void
     {
         $this->assertIsString(
@@ -22,7 +22,7 @@ class AncientTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function titan(): void
     {
         $this->assertIsString(
@@ -30,7 +30,7 @@ class AncientTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function hero(): void
     {
         $this->assertIsString(
