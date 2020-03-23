@@ -10,7 +10,7 @@ abstract class BaseTest extends TestCase
 {
     protected Phony $phony;
 
-    protected function getPackageProviders($app): array
+    protected function getPackageProviders(/** @scrutinizer ignore-unused */ $app): array
     {
         return [PhonyServiceProvider::class];
     }
