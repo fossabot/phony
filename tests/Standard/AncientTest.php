@@ -6,28 +6,32 @@ use Deligoez\Phony\Tests\BaseTest;
 
 class AncientTest extends BaseTest
 {
-    public function test_god(): void
+        /** @test */
+    public function god(): void
     {
         $this->assertIsString(
             $this->🙃->ancient()->god()
         );
     }
 
-    public function test_primordial(): void
+        /** @test */
+    public function primordial(): void
     {
         $this->assertIsString(
             $this->🙃->ancient()->primordial()
         );
     }
 
-    public function test_titan(): void
+        /** @test */
+    public function titan(): void
     {
         $this->assertIsString(
             $this->🙃->ancient()->titan()
         );
     }
 
-    public function test_hero(): void
+        /** @test */
+    public function hero(): void
     {
         $this->assertIsString(
             $this->🙃->ancient()->hero()

@@ -6,14 +6,16 @@ use Deligoez\Phony\Tests\BaseTest;
 
 class CoinTest extends BaseTest
 {
-    public function test_flip(): void
+        /** @test */
+    public function flip(): void
     {
         $this->assertIsString(
             $this->🙃->coin()->flip()
         );
     }
 
-    public function test_name(): void
+        /** @test */
+    public function name(): void
     {
         $this->assertIsString(
             $this->🙃->coin()->name()
