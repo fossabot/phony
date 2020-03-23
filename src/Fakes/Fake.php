@@ -82,7 +82,7 @@ class Fake
     {
         $values = [];
 
-        foreach(range(1, $times) as $i) {
+        foreach (range(1, $times) as $i) {
             $values[] = $this->fetchOne($key);
         }
 
