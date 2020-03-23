@@ -10,7 +10,7 @@ class FakeTest extends BaseTest
     public function can_call_through_laravel_facade(): void
     {
         $this->assertIsString(
-            PhonyFacade::alphabet()->letter()
+        /** @scrutinizer ignore-call */ PhonyFacade::alphabet()->letter()
         );
     }
 
@@ -29,7 +29,7 @@ class FakeTest extends BaseTest
 
         $this->assertCount(
             $times,
-            $this->🙃->alphabet()->uppercaseLetter($times, false)
+            /** @scrutinizer ignore-type */ $this->🙃->alphabet()->uppercaseLetter($times, false)
         );
     }
 
