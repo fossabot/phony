@@ -31,7 +31,7 @@ class Fake
         }
 
         // Check if it's an actual fake data or a template
-        if (strpos($template, ':') !== false) {
+        if (strpos($template, ':') === false) {
             // It's a fake data, so return it immediately.
             return $template;
         }
