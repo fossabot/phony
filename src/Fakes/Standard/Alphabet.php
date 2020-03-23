@@ -9,36 +9,48 @@ class Alphabet extends Fake
     /**
      * Retrieves an uppercase letter.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::alphabet()->uppercaseLetter() #=> "P"
      */
-    public function uppercaseLetter(): string
+    public function uppercaseLetter(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('alphabet.uppercase_letter');
+        return $this->fetch('alphabet.uppercase_letter', $times, $asString, $glue);
     }
 
     /**
      * Retrieves a lowercase letter.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::alphabet()->lowercaseLetter() #=> "P"
      */
-    public function lowercaseLetter(): string
+    public function lowercaseLetter(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('alphabet.lowercase_letter');
+        return $this->fetch('alphabet.lowercase_letter', $times, $asString, $glue);
     }
 
     /**
      * Retrieves a letter.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::alphabet()->letter() #=> "P"
      */
-    public function letter(): string
+    public function letter(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('alphabet.letter');
+        return $this->fetch('alphabet.letter', $times, $asString, $glue);
     }
 }

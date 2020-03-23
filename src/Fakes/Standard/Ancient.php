@@ -9,48 +9,64 @@ class Ancient extends Fake
     /**
      * Produces a god from ancient mythology.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::ancient()->god() #=> "Zeus"
      */
-    public function god(): string
+    public function god(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('ancient.god');
+        return $this->fetch('ancient.god', $times, $asString, $glue);
     }
 
     /**
      * Produces a primordial from ancient mythology.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::ancient()->primordial() #=> "Gaia"
      */
-    public function primordial(): string
+    public function primordial(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('ancient.primordial');
+        return $this->fetch('ancient.primordial', $times, $asString, $glue);
     }
 
     /**
      * Produces a titan from ancient mythology.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::ancient()->titan() #=> "Atlas"
      */
-    public function titan(): string
+    public function titan(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('ancient.titan');
+        return $this->fetch('ancient.titan', $times, $asString, $glue);
     }
 
     /**
      * Produces a hero from ancient mythology.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::ancient()->hero() #=> "Achilles"
      */
-    public function hero(): string
+    public function hero(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('ancient.hero');
+        return $this->fetch('ancient.hero', $times, $asString, $glue);
     }
 }

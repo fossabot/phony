@@ -9,36 +9,48 @@ class Currency extends Fake
     /**
      * Produces the name of a currency.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::currency()->name() #=> "Swedish Krona"
      */
-    public function name(): string
+    public function name(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('currency.name');
+        return $this->fetch('currency.name', $times, $asString, $glue);
     }
 
     /**
      * Produces a currency code.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::currency()->code() #=> "USD"
      */
-    public function code(): string
+    public function code(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('currency.code');
+        return $this->fetch('currency.code', $times, $asString, $glue);
     }
 
     /**
      * Produces a currency symbol.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::currency()->symbol() #=> "$"
      */
-    public function symbol(): string
+    public function symbol(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('currency.symbol');
+        return $this->fetch('currency.symbol', $times, $asString, $glue);
     }
 }

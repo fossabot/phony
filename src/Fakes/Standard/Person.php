@@ -9,108 +9,144 @@ class Person extends Fake
     /**
      * Produces a person name.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::person()->name() #=> "Tyshawn Johns Sr."
      */
-    public function name(): string
+    public function name(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('person.name');
+        return $this->fetch('person.name', $times, $asString, $glue);
     }
 
     /**
      * Produces a person name with middle name.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::person()->nameWithMiddle() #=> "Aditya Elton Douglas"
      */
-    public function nameWithMiddle(): string
+    public function nameWithMiddle(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('person.name_with_middle');
+        return $this->fetch('person.name_with_middle', $times, $asString, $glue);
     }
 
     /**
      * Produces a person first name.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::person()->firstName() #=> "Kaci"
      */
-    public function firstName(): string
+    public function firstName(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('person.first_name');
+        return $this->fetch('person.first_name', $times, $asString, $glue);
     }
 
     /**
      * Produces a person middle name.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::person()->middleName() #=> "Abraham"
      */
-    public function middleName(): string
+    public function middleName(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('person.last_name');
+        return $this->fetch('person.last_name', $times, $asString, $glue);
     }
 
     /**
      * Produces a male person first name.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::person()->maleFirstName() #=> "Edward"
      */
-    public function maleFirstName(): string
+    public function maleFirstName(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('person.male_first_name');
+        return $this->fetch('person.male_first_name', $times, $asString, $glue);
     }
 
     /**
      * Produces a female person first name.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::person()->femaleFirstName() #=> "Natasha"
      */
-    public function femaleFirstName(): string
+    public function femaleFirstName(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('person.female_first_name');
+        return $this->fetch('person.female_first_name', $times, $asString, $glue);
     }
 
     /**
      * Produces a person last name.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::person()->lastName() #=> "Ernser"
      */
-    public function lastName(): string
+    public function lastName(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('person.last_name');
+        return $this->fetch('person.last_name', $times, $asString, $glue);
     }
 
     /**
      * Produces a person name prefix.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::person()->prefix() #=> "Mr."
      */
-    public function prefix(): string
+    public function prefix(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('person.prefix');
+        return $this->fetch('person.prefix', $times, $asString, $glue);
     }
 
     /**
      * Produces a person name suffix.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::person()->suffix() #=> "Mr."
      */
-    public function suffix(): string
+    public function suffix(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('person.suffix');
+        return $this->fetch('person.suffix', $times, $asString, $glue);
     }
 }

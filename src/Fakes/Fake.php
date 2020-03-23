@@ -8,9 +8,21 @@ class Fake
 {
     protected Phony $phony;
 
+    /**
+     * Fake constructor.
+     *
+     * @param  \Deligoez\Phony\Phony  $phony
+     */
     public function __construct(Phony $phony)
     {
         $this->phony = $phony;
+    }
+
+    protected function fetch(string $key, int $times, bool $asString, string $glue)
+    {
+        return $times === 1
+            ? $this->fetchOne($key)
+            : $this->fetchMany($key, $times, $asString, $glue);
     }
 
     /**
@@ -21,7 +33,7 @@ class Fake
      *
      * @return string
      */
-    protected function fetch(string $key): string
+    protected function fetchOne(string $key): string
     {
         $template = trans("phony::{$key}", [], $this->phony->defaultLocale);
 
@@ -45,7 +57,7 @@ class Fake
 
         // Fetch placeholder values recursively
         foreach ($placeholders as $placeholder) {
-            $values[$placeholder] = $this->fetch($placeholder);
+            $values[$placeholder] = $this->fetchOne($placeholder);
         }
 
         // Replace placeholders by their values
@@ -54,5 +66,28 @@ class Fake
         }
 
         return $template;
+    }
+
+    /**
+     * Fetches multiple values given number of times.
+     *
+     * @param  string  $key
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
+     */
+    public function fetchMany(string $key, int $times, bool $asString, string $glue)
+    {
+        $values = [];
+
+        foreach(range(1, $times) as $i) {
+            $values[] = $this->fetchOne($key);
+        }
+
+        return $asString
+            ? implode($glue, $values)
+            : $values;
     }
 }
