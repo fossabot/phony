@@ -15,7 +15,7 @@ class Coin extends Fake
      */
     public function flip(): string
     {
-        return $this->fetchOne('coin.flip');
+        return $this->fetch('coin.flip');
     }
 
     /**
@@ -27,6 +27,6 @@ class Coin extends Fake
      */
     public function name(): string
     {
-        return $this->fetchOne('currency.name');
+        return $this->fetch('currency.name');
     }
 }

@@ -21,7 +21,7 @@ class Fake
      *
      * @return string
      */
-    protected function fetchOne(string $key): string
+    protected function fetch(string $key): string
     {
         $template = trans("phony::{$key}", [], $this->phony->defaultLocale);
 
@@ -45,7 +45,7 @@ class Fake
 
         // Fetch placeholder values recursively
         foreach ($placeholders as $placeholder) {
-            $values[$placeholder] = $this->fetchOne($placeholder);
+            $values[$placeholder] = $this->fetch($placeholder);
         }
 
         // Replace placeholders by their values

@@ -15,7 +15,7 @@ class Currency extends Fake
      */
     public function name(): string
     {
-        return $this->fetchOne('currency.name');
+        return $this->fetch('currency.name');
     }
 
     /**
@@ -27,7 +27,7 @@ class Currency extends Fake
      */
     public function code(): string
     {
-        return $this->fetchOne('currency.code');
+        return $this->fetch('currency.code');
     }
 
     /**
@@ -39,6 +39,6 @@ class Currency extends Fake
      */
     public function symbol(): string
     {
-        return $this->fetchOne('currency.symbol');
+        return $this->fetch('currency.symbol');
     }
 }

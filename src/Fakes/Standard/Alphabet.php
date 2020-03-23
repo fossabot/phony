@@ -15,7 +15,7 @@ class Alphabet extends Fake
      */
     public function uppercaseLetter(): string
     {
-        return $this->fetchOne('alphabet.uppercase_letter');
+        return $this->fetch('alphabet.uppercase_letter');
     }
 
     /**
@@ -27,7 +27,7 @@ class Alphabet extends Fake
      */
     public function lowercaseLetter(): string
     {
-        return $this->fetchOne('alphabet.lowercase_letter');
+        return $this->fetch('alphabet.lowercase_letter');
     }
 
     /**
@@ -39,6 +39,6 @@ class Alphabet extends Fake
      */
     public function letter(): string
     {
-        return $this->fetchOne('alphabet.letter');
+        return $this->fetch('alphabet.letter');
     }
 }

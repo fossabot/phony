@@ -15,7 +15,7 @@ class Ancient extends Fake
      */
     public function god(): string
     {
-        return $this->fetchOne('ancient.god');
+        return $this->fetch('ancient.god');
     }
 
     /**
@@ -27,7 +27,7 @@ class Ancient extends Fake
      */
     public function primordial(): string
     {
-        return $this->fetchOne('ancient.primordial');
+        return $this->fetch('ancient.primordial');
     }
 
     /**
@@ -39,7 +39,7 @@ class Ancient extends Fake
      */
     public function titan(): string
     {
-        return $this->fetchOne('ancient.titan');
+        return $this->fetch('ancient.titan');
     }
 
     /**
@@ -51,6 +51,6 @@ class Ancient extends Fake
      */
     public function hero(): string
     {
-        return $this->fetchOne('ancient.hero');
+        return $this->fetch('ancient.hero');
     }
 }

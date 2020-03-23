@@ -15,7 +15,7 @@ class Person extends Fake
      */
     public function name(): string
     {
-        return $this->fetchOne('person.name');
+        return $this->fetch('person.name');
     }
 
     /**
@@ -27,7 +27,7 @@ class Person extends Fake
      */
     public function nameWithMiddle(): string
     {
-        return $this->fetchOne('person.name_with_middle');
+        return $this->fetch('person.name_with_middle');
     }
 
     /**
@@ -39,7 +39,7 @@ class Person extends Fake
      */
     public function firstName(): string
     {
-        return $this->fetchOne('person.first_name');
+        return $this->fetch('person.first_name');
     }
 
     /**
@@ -51,7 +51,7 @@ class Person extends Fake
      */
     public function middleName(): string
     {
-        return $this->fetchOne('person.last_name');
+        return $this->fetch('person.last_name');
     }
 
     /**
@@ -63,7 +63,7 @@ class Person extends Fake
      */
     public function maleFirstName(): string
     {
-        return $this->fetchOne('person.male_first_name');
+        return $this->fetch('person.male_first_name');
     }
 
     /**
@@ -75,7 +75,7 @@ class Person extends Fake
      */
     public function femaleFirstName(): string
     {
-        return $this->fetchOne('person.female_first_name');
+        return $this->fetch('person.female_first_name');
     }
 
     /**
@@ -87,7 +87,7 @@ class Person extends Fake
      */
     public function lastName(): string
     {
-        return $this->fetchOne('person.last_name');
+        return $this->fetch('person.last_name');
     }
 
     /**
@@ -99,7 +99,7 @@ class Person extends Fake
      */
     public function prefix(): string
     {
-        return $this->fetchOne('person.prefix');
+        return $this->fetch('person.prefix');
     }
 
     /**
@@ -111,6 +111,6 @@ class Person extends Fake
      */
     public function suffix(): string
     {
-        return $this->fetchOne('person.suffix');
+        return $this->fetch('person.suffix');
     }
 }
