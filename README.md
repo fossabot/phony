@@ -3,7 +3,6 @@
 ### This package is in active development and not production ready.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
-[![Build Status](https://img.shields.io/travis/deligoez/phony/master.svg?style=flat-square)](https://travis-ci.org/deligoez/phony)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/deligoez/phony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/deligoez/phony/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/deligoez/phony/badges/build.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/build-status/master)
