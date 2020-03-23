@@ -6,7 +6,7 @@ use Deligoez\Phony\Tests\BaseTest;
 
 class CurrencyTest extends BaseTest
 {
-        /** @test */
+    /** @test */
     public function name(): void
     {
         $this->assertIsString(
@@ -14,7 +14,7 @@ class CurrencyTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function code(): void
     {
         $this->assertRegExp(
@@ -23,7 +23,7 @@ class CurrencyTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function symbol(): void
     {
         $this->assertIsString(

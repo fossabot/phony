@@ -6,7 +6,7 @@ use Deligoez\Phony\Tests\BaseTest;
 
 class CoinTest extends BaseTest
 {
-        /** @test */
+    /** @test */
     public function flip(): void
     {
         $this->assertIsString(
@@ -14,7 +14,7 @@ class CoinTest extends BaseTest
         );
     }
 
-        /** @test */
+    /** @test */
     public function name(): void
     {
         $this->assertIsString(
