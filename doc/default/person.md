@@ -21,5 +21,6 @@ Phony::person()->suffix(); // => "IV"
 
 # Keyword arguments: number
 Phony::person()->initials(); // => "NJM"
+
 Phony::person()->initials(2); // => "NM"
 ```
