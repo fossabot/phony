@@ -9,28 +9,28 @@ class AncientTest extends BaseTest
     public function test_god(): void
     {
         $this->assertIsString(
-            $this->phony->ancient()->god()
+            $this->🙃->ancient()->god()
         );
     }
 
     public function test_primordial(): void
     {
         $this->assertIsString(
-            $this->phony->ancient()->primordial()
+            $this->🙃->ancient()->primordial()
         );
     }
 
     public function test_titan(): void
     {
         $this->assertIsString(
-            $this->phony->ancient()->titan()
+            $this->🙃->ancient()->titan()
         );
     }
 
     public function test_hero(): void
     {
         $this->assertIsString(
-            $this->phony->ancient()->hero()
+            $this->🙃->ancient()->hero()
         );
     }
 }

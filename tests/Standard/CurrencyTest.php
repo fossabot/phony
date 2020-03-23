@@ -9,7 +9,7 @@ class CurrencyTest extends BaseTest
     public function test_name(): void
     {
         $this->assertIsString(
-            $this->phony->currency()->name()
+            $this->🙃->currency()->name()
         );
     }
 
@@ -17,14 +17,14 @@ class CurrencyTest extends BaseTest
     {
         $this->assertRegExp(
             '/[A-Z]{3}/',
-            $this->phony->currency()->code()
+            $this->🙃->currency()->code()
         );
     }
 
     public function test_symbol(): void
     {
         $this->assertIsString(
-            $this->phony->currency()->symbol()
+            $this->🙃->currency()->symbol()
         );
     }
 }

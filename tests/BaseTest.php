@@ -8,7 +8,7 @@ use Orchestra\Testbench\TestCase;
 
 abstract class BaseTest extends TestCase
 {
-    protected Phony $phony;
+    protected Phony $🙃;
 
     protected function getPackageProviders(/** @scrutinizer ignore-unused */ $app): array
     {
@@ -19,6 +19,6 @@ abstract class BaseTest extends TestCase
     {
         parent::setUp();
 
-        $this->phony = app('phony');
+        $this->🙃 = app('phony');
     }
 }

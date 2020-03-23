@@ -9,63 +9,63 @@ class PersonTest extends BaseTest
     public function test_name(): void
     {
         $this->assertIsString(
-            $this->phony->person()->name()
+            $this->🙃->person()->name()
         );
     }
 
     public function test_name_with_middle(): void
     {
         $this->assertIsString(
-            $this->phony->person()->nameWithMiddle()
+            $this->🙃->person()->nameWithMiddle()
         );
     }
 
     public function test_first_name(): void
     {
         $this->assertIsString(
-            $this->phony->person()->firstName()
+            $this->🙃->person()->firstName()
         );
     }
 
     public function test_middle_name(): void
     {
         $this->assertIsString(
-            $this->phony->person()->middleName()
+            $this->🙃->person()->middleName()
         );
     }
 
     public function test_male_first_name(): void
     {
         $this->assertIsString(
-            $this->phony->person()->maleFirstName()
+            $this->🙃->person()->maleFirstName()
         );
     }
 
     public function test_female_first_name(): void
     {
         $this->assertIsString(
-            $this->phony->person()->femaleFirstName()
+            $this->🙃->person()->femaleFirstName()
         );
     }
 
     public function test_last_name(): void
     {
         $this->assertIsString(
-            $this->phony->person()->lastName()
+            $this->🙃->person()->lastName()
         );
     }
 
     public function test_suffix(): void
     {
         $this->assertIsString(
-            $this->phony->person()->suffix()
+            $this->🙃->person()->suffix()
         );
     }
 
     public function test_prefix(): void
     {
         $this->assertIsString(
-            $this->phony->person()->prefix()
+            $this->🙃->person()->prefix()
         );
     }
 }
