@@ -3,8 +3,6 @@
 namespace Deligoez\Phony\Fakes;
 
 use Deligoez\Phony\Phony;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
 
 class Fake
 {
@@ -26,13 +24,16 @@ class Fake
      */
     public function fetchOne(string $key, array $replace = []): string
     {
-        // Retrieve element by the given $key
-        $template = Arr::random(
-            trans("phony::{$key}", $replace, $this->phony->defaultLocale)
-        );
+        $template = trans("phony::{$key}", $replace, $this->phony->defaultLocale);
+
+        if (is_array($template))
+        {
+            $template = $template[array_rand($template, 1)];
+        }
 
         // Check if it's an actual fake data or a template
-        if (! Str::contains($template, ':')) {
+        if (strpos($template, ':') !== false)
+        {
             // It's a fake data, so return it immediately.
             return $template;
         }
@@ -52,7 +53,7 @@ class Fake
 
         // Replace placeholders by their values
         foreach ($values as $name => $value) {
-            $template = Str::of($template)->replaceFirst(':'.$name, $value);
+            $template = str_replace(":{$name}", $value, $template);
         }
 
         return $template;
