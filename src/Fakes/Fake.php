@@ -18,13 +18,12 @@ class Fake
      * with an array of values and selecting one of them.
      *
      * @param  string  $key
-     * @param  array   $replace
      *
      * @return string
      */
-    protected function fetchOne(string $key, array $replace = []): string
+    protected function fetchOne(string $key): string
     {
-        $template = trans("phony::{$key}", $replace, $this->phony->defaultLocale);
+        $template = trans("phony::{$key}", [], $this->phony->defaultLocale);
 
         if (is_array($template)) {
             $template = $template[array_rand($template, 1)];
@@ -46,7 +45,7 @@ class Fake
 
         // Fetch placeholder values recursively
         foreach ($placeholders as $placeholder) {
-            $values[$placeholder] = $this->fetchOne($placeholder, $replace);
+            $values[$placeholder] = $this->fetchOne($placeholder);
         }
 
         // Replace placeholders by their values
