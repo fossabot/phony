@@ -22,7 +22,7 @@ class Fake
      *
      * @return string
      */
-    public function fetchOne(string $key, array $replace = []): string
+    protected function fetchOne(string $key, array $replace = []): string
     {
         $template = trans("phony::{$key}", $replace, $this->phony->defaultLocale);
 
