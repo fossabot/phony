@@ -1,10 +1,12 @@
-# Phony
+# 🙃 Phony
 
 ### This package is in active development and not production ready.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
 [![Build Status](https://img.shields.io/travis/deligoez/phony/master.svg?style=flat-square)](https://travis-ci.org/deligoez/phony)
-[![Quality Score](https://img.shields.io/scrutinizer/g/deligoez/phony.svg?style=flat-square)](https://scrutinizer-ci.com/g/deligoez/phony)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/deligoez/phony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/deligoez/phony/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/deligoez/phony/badges/build.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/build-status/master)
 [![Total Downloads](https://img.shields.io/packagist/dt/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
 
 This [Laravel](http://laravel.com) package is port of the [Ruby](https://www.ruby-lang.org)'s [Faker](https://github.com/faker-ruby/faker) gem that generates fake data.
