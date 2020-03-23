@@ -1,5 +1,7 @@
 # Phony
 
+### This package is in active development and not production ready.
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
 [![Build Status](https://img.shields.io/travis/deligoez/phony/master.svg?style=flat-square)](https://travis-ci.org/deligoez/phony)
 [![Quality Score](https://img.shields.io/scrutinizer/g/deligoez/phony.svg?style=flat-square)](https://scrutinizer-ci.com/g/deligoez/phony)
@@ -31,6 +33,7 @@ $phony->currency()->symbol();   // => "$"
 - [Phony::ancient()](doc/default/ancient.md)
 - [Phony::coin()](doc/default/coin.md)
 - [Phony::currency()](doc/default/currency.md)
+- [Phony::person()](doc/default/person.md)
 
 ### Testing
 
