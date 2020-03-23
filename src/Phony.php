@@ -3,6 +3,7 @@
 namespace Deligoez\Phony;
 
 use Deligoez\Phony\Fakes\Standard\Coin;
+use Deligoez\Phony\Fakes\Standard\Person;
 use Deligoez\Phony\Fakes\Standard\Ancient;
 use Deligoez\Phony\Fakes\Standard\Currency;
 
@@ -23,6 +24,11 @@ class Phony
     public function ancient(): Ancient
     {
         return new Ancient($this);
+    }
+
+    public function person(): Person
+    {
+        return new Person($this);
     }
 
     public function coin(): Coin
