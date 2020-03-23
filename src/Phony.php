@@ -6,6 +6,7 @@ use Deligoez\Phony\Fakes\Standard\Ancient;
 use Deligoez\Phony\Fakes\Standard\Coin;
 use Deligoez\Phony\Fakes\Standard\Currency;
 use Deligoez\Phony\Fakes\Standard\Person;
+use Deligoez\Phony\Fakes\Standard\Alphabet;
 
 class Phony
 {
@@ -19,6 +20,11 @@ class Phony
     public function __construct(string $defaultLocale)
     {
         $this->defaultLocale = $defaultLocale;
+    }
+
+    public function alphabet(): Alphabet
+    {
+        return new Alphabet($this);
     }
 
     public function ancient(): Ancient

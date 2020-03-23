@@ -1,0 +1,44 @@
+<?php
+
+namespace Deligoez\Phony\Fakes\Standard;
+
+use Deligoez\Phony\Fakes\Fake;
+
+class Alphabet extends Fake
+{
+    /**
+     * Retrieves an uppercase letter.
+     *
+     * @return string
+     *
+     * @example Phony::alphabet()->uppercaseLetter() #=> "P"
+     */
+    public function uppercaseLetter(): string
+    {
+        return $this->fetchOne('alphabet.uppercase_letter');
+    }
+
+    /**
+     * Retrieves a lowercase letter.
+     *
+     * @return string
+     *
+     * @example Phony::alphabet()->lowercaseLetter() #=> "P"
+     */
+    public function lowercaseLetter(): string
+    {
+        return $this->fetchOne('alphabet.lowercase_letter');
+    }
+
+    /**
+     * Retrieves a letter.
+     *
+     * @return string
+     *
+     * @example Phony::alphabet()->letter() #=> "P"
+     */
+    public function letter(): string
+    {
+        return $this->fetchOne('alphabet.letter');
+    }
+}
