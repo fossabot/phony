@@ -2,10 +2,22 @@
 
 namespace Deligoez\Phony\Tests;
 
+use ReflectionMethod;
+use Deligoez\Phony\Fakes\Fake;
 use Deligoez\Phony\PhonyFacade;
 
 class FakeTest extends BaseTest
 {
+    protected $numerify;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->numerify = new ReflectionMethod(Fake::class, 'numerify');
+        $this->numerify->setAccessible(true);
+    }
+
     /** @test */
     public function can_call_through_laravel_facade(): void
     {
@@ -54,6 +66,22 @@ class FakeTest extends BaseTest
         $this->assertEquals(
             $times - 1,
             substr_count($value, '🙃')
+        );
+    }
+
+    /** @test */
+    public function can_numerify_with_hash_sign(): void
+    {
+        $this->assertIsInt(
+            (int) $this->numerify->invoke(new Fake($this->🙃), '###')
+        );
+    }
+
+    /** @test */
+    public function can_numerify_with_percentage_sign(): void
+    {
+        $this->assertIsInt(
+            (int) $this->numerify->invoke(new Fake($this->🙃), '%%%')
         );
     }
 }

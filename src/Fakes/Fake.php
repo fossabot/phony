@@ -106,4 +106,32 @@ class Fake
             ? implode($glue, $values)
             : $values;
     }
+
+    /**
+     * Replaces all hash sign ('#') occurrences with a random number and
+     * all percentage sign ('%') occurrences with a not null number.
+     *
+     * @param  string  $numberString
+     *
+     * @return string
+     * @throws \Exception
+     */
+    protected function numerify(string $numberString = '%%%###'): string
+    {
+        $characters = str_split($numberString);
+
+        for ($i = 0; isset($characters[$i]); $i++) {
+            if ($characters[$i] === '#') {
+                $characters[$i] = random_int(0, 9);
+                continue;
+            }
+
+            if ($characters[$i] === '%') {
+                $characters[$i] = random_int(1, 9);
+                continue;
+            }
+        }
+
+        return implode('', $characters);
+    }
 }
