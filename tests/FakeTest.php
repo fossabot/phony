@@ -9,6 +9,7 @@ use Deligoez\Phony\PhonyFacade;
 class FakeTest extends BaseTest
 {
     protected $numerify;
+    protected $fetch;
 
     protected function setUp(): void
     {
@@ -16,6 +17,9 @@ class FakeTest extends BaseTest
 
         $this->numerify = new ReflectionMethod(Fake::class, 'numerify');
         $this->numerify->setAccessible(true);
+
+        $this->fetch = new ReflectionMethod(Fake::class, 'fetch');
+        $this->fetch->setAccessible(true);
     }
 
     /** @test */
@@ -30,7 +34,7 @@ class FakeTest extends BaseTest
     public function can_fetch_a_value(): void
     {
         $this->assertNotNull(
-              $this->🙃->alphabet()->uppercaseLetter()
+            $this->fetch->invoke(new Fake($this->🙃), 'alphabet.uppercase_letter', 1, true, '')
           );
     }
 
@@ -41,7 +45,7 @@ class FakeTest extends BaseTest
 
         $this->assertCount(
             $times,
-/** @scrutinizer ignore-type */ $this->🙃->alphabet()->uppercaseLetter($times, false)
+            $this->fetch->invoke(new Fake($this->🙃), 'alphabet.uppercase_letter', $times, false, '')
         );
     }
 
@@ -49,7 +53,7 @@ class FakeTest extends BaseTest
     public function can_fetch_many_values_as_a_string(): void
     {
         $times = random_int(2, 10);
-        $value = $this->🙃->alphabet()->uppercaseLetter($times, true);
+        $value = $this->fetch->invoke(new Fake($this->🙃), 'alphabet.uppercase_letter', $times, true, ' ');
 
         $this->assertEquals(
             $times - 1,
@@ -61,7 +65,7 @@ class FakeTest extends BaseTest
     public function can_fetch_many_values_as_glued_string(): void
     {
         $times = random_int(2, 10);
-        $value = $this->🙃->alphabet()->uppercaseLetter($times, true, '🙃');
+        $value = $this->fetch->invoke(new Fake($this->🙃), 'alphabet.uppercase_letter', $times, true, '🙃');
 
         $this->assertEquals(
             $times - 1,
