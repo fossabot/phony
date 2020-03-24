@@ -33,7 +33,7 @@ class Fake
      *
      * @return string
      */
-    protected function fetchOne(string $key): string
+    private function fetchOne(string $key): string
     {
         $template = trans("phony::{$key}", [], $this->phony->defaultLocale);
 
@@ -78,7 +78,7 @@ class Fake
      *
      * @return array|string
      */
-    protected function fetchMany(string $key, int $times, bool $asString, string $glue)
+    private function fetchMany(string $key, int $times, bool $asString, string $glue)
     {
         $values = [];
 
