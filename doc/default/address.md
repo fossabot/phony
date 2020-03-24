@@ -2,6 +2,7 @@
 
 ```php
 🙃::address()->city();                              // => "Imogeneborough"
+🙃::address()->city(true);                          // => "Northfort, California"
 
 🙃::address()->streetName();                        // => "Larkin Fork"
 
