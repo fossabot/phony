@@ -8,8 +8,8 @@ use Deligoez\Phony\PhonyFacade;
 
 class FakeTest extends BaseTest
 {
-    protected $numerify;
-    protected $fetch;
+    protected ReflectionMethod $numerify;
+    protected ReflectionMethod $fetch;
 
     protected function setUp(): void
     {
