@@ -5,4 +5,7 @@ return [
         'Heads',
         'Tails',
     ],
+    'name' => [
+        ':currency.name'
+    ]
 ];

@@ -35,6 +35,6 @@ class Coin extends Fake
      */
     public function name(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetch('currency.name', $times, $asString, $glue);
+        return $this->fetch('coin.name', $times, $asString, $glue);
     }
 }
