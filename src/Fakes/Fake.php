@@ -36,32 +36,18 @@ class Fake
             : $this->fetchMany($key, $times, $asString, $glue);
     }
 
-    private function chooseOneFromArray($template)
-    {
-        if (is_array($template)) {
-            $template = $template[array_rand($template, 1)];
-        }
-
-        return $template;
-    }
-
+    /**
+     * Extracts placeholders from the given template
+     *
+     * @param  string  $template
+     *
+     * @return array
+     */
     private function extractPlaceholders(string $template): array
     {
-        $placeholders = array_map(
-            'trim',
-            array_filter(explode(':', $template))
-        );
+        preg_match_all ('/🙃(.*?)🙃/u', $template, $placeholders);
 
         return $placeholders;
-    }
-
-    private function fillPlaceholders(array $values, string $template): string
-    {
-        foreach ($values as $name => $value) {
-            $template = str_replace(":{$name}", $value, $template);
-        }
-
-        return $template;
     }
 
     /**
@@ -75,10 +61,12 @@ class Fake
     {
         $template = trans("phony::{$key}", [], $this->phony->defaultLocale);
 
-        $template = $this->chooseOneFromArray($template);
+        if (is_array($template)) {
+            $template = $template[array_rand($template, 1)];
+        }
 
         // Check if it's an actual fake data or a template
-        if (strpos($template, ':') === false) {
+        if (strpos($template, '🙃') === false) {
             // It's a fake data, so return it immediately.
             return $template;
         }
@@ -89,11 +77,11 @@ class Fake
         $values = [];
 
         // Fetch placeholder values recursively
-        foreach ($placeholders as $placeholder) {
-            $values[$placeholder] = $this->fetchOne($placeholder);
+        foreach ($placeholders[1] as $index => $placeholder) {
+            $values[$placeholders[0][$index]] = $this->fetchOne($placeholder);
         }
 
-        return $this->fillPlaceholders($values, $template);
+        return strtr($template, $values);
     }
 
     /**
