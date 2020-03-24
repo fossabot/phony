@@ -2,13 +2,14 @@
 
 ```php
 🙃::address()->city();                              // => "Imogeneborough"
+
 🙃::address()->city(true);                          // => "Northfort, California"
 
 🙃::address()->streetName();                        // => "Larkin Fork"
 
-🙃::address()->streetAddress();                     // => "282 Kevin Brook"
-
 🙃::address()->secondaryAddress();                  // => "Apt. 672"
+
+🙃::address()->streetAddress();                     // => "282 Kevin Brook"
 
 🙃::address()->buildingNumber();                    // => "7304"
 
