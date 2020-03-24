@@ -1,11 +1,11 @@
-# Phony::ancient()
+# 🙃::ancient()
 
 ```php
-Phony::ancient()->god();        // => "Zeus"
+🙃::ancient()->god();        // => "Zeus"
 
-Phony::ancient()->primordial(); // => "Gaia"
+🙃::ancient()->primordial(); // => "Gaia"
 
-Phony::ancient()->tital();      // => "Atlas"
+🙃::ancient()->tital();      // => "Atlas"
 
-Phony::ancient()->hero();       // => "Achilles"
+🙃::ancient()->hero();       // => "Achilles"
 ```

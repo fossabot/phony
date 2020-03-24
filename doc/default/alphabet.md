@@ -1,9 +1,9 @@
-# Phony::alphabet()
+# 🙃::alphabet()
 
 ```php
-Phony::alphabet()->uppercaseLetter();   // => "P"
+🙃::alphabet()->uppercaseLetter();   // => "P"
 
-Phony::alphabet()->lowercaseLetter();   // => "p"
+🙃::alphabet()->lowercaseLetter();   // => "p"
 
-Phony::alphabet()->letter();            // => "P"
+🙃::alphabet()->letter();            // => "P"
 ```

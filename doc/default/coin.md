@@ -1,9 +1,9 @@
-# Phony::coin()
+# 🙃::coin()
 
 ```php
 # Flip a coin
-Phony::coin()->flip(); // => "Heads"
+🙃::coin()->flip(); // => "Heads"
 
 # The currency of the coin
-Phony::coin()->name(); // => "Philippine Peso"
+🙃::coin()->name(); // => "Philippine Peso"
 ```

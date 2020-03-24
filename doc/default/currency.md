@@ -1,9 +1,9 @@
-# Phony::currency()
+# 🙃::currency()
 
 ```php
-Phony::currency()->name();      // => "Swedish Krona"
+🙃::currency()->name();      // => "Swedish Krona"
 
-Phony::currency()->code();      // => "USD"
+🙃::currency()->code();      // => "USD"
 
-Phony::currency()->symbol();    // => "$"
+🙃::currency()->symbol();    // => "$"
 ```
