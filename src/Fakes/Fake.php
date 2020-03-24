@@ -37,7 +37,7 @@ class Fake
     }
 
     /**
-     * Extracts placeholders from the given template
+     * Extracts placeholders from the given template.
      *
      * @param  string  $template
      *
@@ -45,7 +45,7 @@ class Fake
      */
     private function extractPlaceholders(string $template): array
     {
-        preg_match_all ('/🙃(.*?)🙃/u', $template, $placeholders);
+        preg_match_all('/🙃(.*?)🙃/u', $template, $placeholders);
 
         return $placeholders;
     }
