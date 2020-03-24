@@ -149,4 +149,18 @@ class Person extends Fake
     {
         return $this->fetch('person.suffix', $times, $asString, $glue);
     }
+
+    /**
+     * Produces a name initials.
+     *
+     * @param  int     $times
+     *
+     * @return array|string
+     *
+     * @example Phony::person()->initials() #=> "NJM."
+     */
+    public function initials(int $times = 3)
+    {
+        return $this->fetch('person.initials', $times, true, '');
+    }
 }

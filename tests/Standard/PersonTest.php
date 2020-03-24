@@ -77,4 +77,18 @@ class PersonTest extends BaseTest
             $this->🙃->person()->prefix()
         );
     }
+
+    /** @test */
+    public function initials(): void
+    {
+        $this->assertEquals(
+            3,
+            mb_strlen($this->🙃->person()->initials(), 'utf8')
+        );
+
+        $this->assertEquals(
+            $times = random_int(2, 10),
+            mb_strlen($this->🙃->person()->initials($times), 'utf8')
+        );
+    }
 }
