@@ -10,7 +10,7 @@ return [
         'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
     ],
     'letter'           => [
-        ':alphabet.uppercase_letter',
-        ':alphabet.lowercase_letter',
+        '🙃alphabet.uppercase_letter🙃',
+        '🙃alphabet.lowercase_letter🙃',
     ],
 ];

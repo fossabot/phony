@@ -6,6 +6,6 @@ return [
         'Tails',
     ],
     'name' => [
-        ':currency.name'
+        '🙃currency.name🙃'
     ]
 ];

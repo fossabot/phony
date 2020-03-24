@@ -2,6 +2,6 @@
 
 return [
     'initials' => [
-        ':alphabet.uppercase_letter.'
+        '🙃alphabet.uppercase_letter🙃.'
     ]
 ];

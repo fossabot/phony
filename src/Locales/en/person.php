@@ -512,8 +512,8 @@ return [
         'Zina', 'Zita', 'Zoe', 'Zofia', 'Zoila', 'Zola', 'Zona', 'Zonia', 'Zora', 'Zoraida', 'Zula', 'Zulema', 'Zulma',
     ],
     'first_name'        => [
-        ':person.female_first_name',
-        ':person.male_first_name',
+        '🙃person.female_first_name🙃',
+        '🙃person.male_first_name🙃',
     ],
     'last_name'         => [
         'Abbott', 'Abernathy', 'Abshire', 'Adams', 'Altenwerth', 'Anderson', 'Ankunding', 'Armstrong', 'Auer',
@@ -571,22 +571,22 @@ return [
         'Jr.', 'Sr.', 'I', 'II', 'III', 'IV', 'V', 'MD', 'DDS', 'PhD', 'DVM',
     ],
     'name'              => [
-        ':person.prefix :person.first_name :person.last_name',
-        ':person.first_name :person.last_name :person.suffix',
-        ':person.first_name :person.last_name',
-        ':person.first_name :person.last_name',
-        ':person.first_name :person.last_name',
-        ':person.first_name :person.last_name',
+        '🙃person.prefix🙃 🙃person.first_name🙃 🙃person.last_name🙃',
+        '🙃person.first_name🙃 🙃person.last_name🙃 🙃person.suffix🙃',
+        '🙃person.first_name🙃 🙃person.last_name🙃',
+        '🙃person.first_name🙃 🙃person.last_name🙃',
+        '🙃person.first_name🙃 🙃person.last_name🙃',
+        '🙃person.first_name🙃 🙃person.last_name🙃',
     ],
     'name_with_middle'  => [
-        ':person.prefix :person.first_name :person.last_name :person.last_name',
-        ':person.first_name :person.last_name :person.last_name :person.suffix',
-        ':person.first_name :person.last_name :person.last_name',
-        ':person.first_name :person.last_name :person.last_name',
-        ':person.first_name :person.last_name :person.last_name',
-        ':person.first_name :person.last_name :person.last_name',
+        '🙃person.prefix🙃 🙃person.first_name🙃 🙃person.last_name🙃 🙃person.last_name🙃',
+        '🙃person.first_name🙃 🙃person.last_name🙃 🙃person.last_name🙃 🙃person.suffix🙃',
+        '🙃person.first_name🙃 🙃person.last_name🙃 🙃person.last_name🙃',
+        '🙃person.first_name🙃 🙃person.last_name🙃 🙃person.last_name🙃',
+        '🙃person.first_name🙃 🙃person.last_name🙃 🙃person.last_name🙃',
+        '🙃person.first_name🙃 🙃person.last_name🙃 🙃person.last_name🙃',
     ],
     'initials' => [
-        ':alphabet.uppercase_letter'
+        '🙃alphabet.uppercase_letter🙃'
     ]
 ];
