@@ -678,6 +678,9 @@ return [
         '🙃Name.first_name🙃🙃city_suffix🙃',
         '🙃Name.last_name🙃🙃city_suffix🙃',
     ],
+    'city_with_state'   => [
+        '🙃city🙃, 🙃state🙃',
+    ],
     'street_name'       => [
         '🙃Name.first_name🙃 🙃street_suffix🙃',
         '🙃Name.last_name🙃 🙃street_suffix🙃',
