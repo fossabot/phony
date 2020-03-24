@@ -78,7 +78,7 @@ class Fake
      *
      * @return array|string
      */
-    public function fetchMany(string $key, int $times, bool $asString, string $glue)
+    protected function fetchMany(string $key, int $times, bool $asString, string $glue)
     {
         $values = [];
 
