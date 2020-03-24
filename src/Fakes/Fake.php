@@ -36,6 +36,34 @@ class Fake
             : $this->fetchMany($key, $times, $asString, $glue);
     }
 
+    private function chooseOneFromArray($template)
+    {
+        if (is_array($template)) {
+            $template = $template[array_rand($template, 1)];
+        }
+
+        return $template;
+    }
+
+    private function extractPlaceholders(string $template): array
+    {
+        $placeholders = array_map(
+            'trim',
+            array_filter(explode(':', $template))
+        );
+
+        return $placeholders;
+    }
+
+    private function fillPlaceholders(array $values, string $template): string
+    {
+        foreach ($values as $name => $value) {
+            $template = str_replace(":{$name}", $value, $template);
+        }
+
+        return $template;
+    }
+
     /**
      * Fetches a value.
      *
@@ -47,9 +75,7 @@ class Fake
     {
         $template = trans("phony::{$key}", [], $this->phony->defaultLocale);
 
-        if (is_array($template)) {
-            $template = $template[array_rand($template, 1)];
-        }
+        $template = $this->chooseOneFromArray($template);
 
         // Check if it's an actual fake data or a template
         if (strpos($template, ':') === false) {
@@ -58,10 +84,7 @@ class Fake
         }
 
         // Extract placeholders in the template
-        $placeholders = array_map(
-            'trim',
-            array_filter(explode(':', $template))
-        );
+        $placeholders = $this->extractPlaceholders($template);
 
         $values = [];
 
@@ -70,12 +93,7 @@ class Fake
             $values[$placeholder] = $this->fetchOne($placeholder);
         }
 
-        // Replace placeholders by their values
-        foreach ($values as $name => $value) {
-            $template = str_replace(":{$name}", $value, $template);
-        }
-
-        return $template;
+        return $this->fillPlaceholders($values, $template);
     }
 
     /**
