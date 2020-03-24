@@ -2,9 +2,9 @@
 
 namespace Deligoez\Phony\Tests;
 
-use ReflectionMethod;
 use Deligoez\Phony\Fakes\Fake;
 use Deligoez\Phony\PhonyFacade;
+use ReflectionMethod;
 
 class FakeTest extends BaseTest
 {
