@@ -32,8 +32,11 @@ $🙃->coin()->flip();                             // => "Heads"
 
 $🙃->currency()->symbol();                       // => "$"
 
+
 $🙃->alphabet()->uppercaseLetter(2);             // => ['A', 'B']
+
 $🙃->alphabet()->uppercaseLetter(2, true);       // => "A B"
+
 $🙃->alphabet()->uppercaseLetter(2, true, ', '); // => "A, B"
 ```
 
