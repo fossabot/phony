@@ -589,7 +589,7 @@ return [
         'Heights',
     ],
     'community'         => [
-        '🙃community_prefix🙃 🙃community_suffix🙃',
+        '🙃address.community_prefix🙃 🙃address.community_suffix🙃',
     ],
     'street_suffix'     => [
         'Alley', 'Avenue', 'Branch', 'Bridge', 'Brook', 'Brooks', 'Burg', 'Burgs', 'Bypass', 'Camp', 'Canyon', 'Cape',
@@ -673,24 +673,24 @@ return [
         'Pacific/Tongatapu', 'Pacific/Fakaofo', 'Pacific/Apia',
     ],
     'city'              => [
-        '🙃city_prefix🙃 🙃Name.first_name🙃🙃city_suffix🙃',
-        '🙃city_prefix🙃 🙃Name.first_name🙃',
-        '🙃Name.first_name🙃🙃city_suffix🙃',
-        '🙃Name.last_name🙃🙃city_suffix🙃',
+        '🙃address.city_prefix🙃 🙃person.first_name🙃🙃address.city_suffix🙃',
+        '🙃address.city_prefix🙃 🙃person.first_name🙃',
+        '🙃person.first_name🙃🙃address.city_suffix🙃',
+        '🙃person.last_name🙃🙃address.city_suffix🙃',
     ],
     'city_with_state'   => [
-        '🙃city🙃, 🙃state🙃',
+        '🙃address.city🙃, 🙃address.state🙃',
     ],
     'street_name'       => [
-        '🙃Name.first_name🙃 🙃street_suffix🙃',
-        '🙃Name.last_name🙃 🙃street_suffix🙃',
+        '🙃person.first_name🙃 🙃address.street_suffix🙃',
+        '🙃person.last_name🙃 🙃address.street_suffix🙃',
     ],
     'street_address'    => [
-        '🙃building_number🙃 🙃street_name🙃',
+        '🙃address.building_number🙃 🙃address.street_name🙃',
     ],
     'full_address'      => [
-        '🙃street_address🙃, 🙃city🙃, 🙃state_abbr🙃 🙃zip_code🙃',
-        '🙃secondary_address🙃 🙃street_address🙃, 🙃city🙃, 🙃state_abbr🙃 🙃zip_code🙃',
+        '🙃address.street_address🙃, 🙃address.city🙃, 🙃address.state_abbr🙃 🙃address.zip_code🙃',
+        '🙃address.secondary_address🙃 🙃address.street_address🙃, 🙃address.city🙃, 🙃address.state_abbr🙃 🙃address.zip_code🙃',
     ],
     'mail_box'          => [
         'PO Box ##',
