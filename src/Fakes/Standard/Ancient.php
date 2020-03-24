@@ -15,7 +15,7 @@ class Ancient extends Fake
      *
      * @return array|string
      *
-     * @example Phony::ancient()->god() #=> "Zeus"
+     * @example 🙃::ancient()->god() #=> "Zeus"
      */
     public function god(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -31,7 +31,7 @@ class Ancient extends Fake
      *
      * @return array|string
      *
-     * @example Phony::ancient()->primordial() #=> "Gaia"
+     * @example 🙃::ancient()->primordial() #=> "Gaia"
      */
     public function primordial(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -47,7 +47,7 @@ class Ancient extends Fake
      *
      * @return array|string
      *
-     * @example Phony::ancient()->titan() #=> "Atlas"
+     * @example 🙃::ancient()->titan() #=> "Atlas"
      */
     public function titan(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -63,7 +63,7 @@ class Ancient extends Fake
      *
      * @return array|string
      *
-     * @example Phony::ancient()->hero() #=> "Achilles"
+     * @example 🙃::ancient()->hero() #=> "Achilles"
      */
     public function hero(int $times = 1, bool $asString = false, string $glue = ' ')
     {

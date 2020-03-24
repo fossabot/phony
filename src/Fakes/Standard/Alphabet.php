@@ -15,7 +15,7 @@ class Alphabet extends Fake
      *
      * @return array|string
      *
-     * @example Phony::alphabet()->uppercaseLetter() #=> "P"
+     * @example 🙃::alphabet()->uppercaseLetter() #=> "P"
      */
     public function uppercaseLetter(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -31,7 +31,7 @@ class Alphabet extends Fake
      *
      * @return array|string
      *
-     * @example Phony::alphabet()->lowercaseLetter() #=> "P"
+     * @example 🙃::alphabet()->lowercaseLetter() #=> "P"
      */
     public function lowercaseLetter(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -47,7 +47,7 @@ class Alphabet extends Fake
      *
      * @return array|string
      *
-     * @example Phony::alphabet()->letter() #=> "P"
+     * @example 🙃::alphabet()->letter() #=> "P"
      */
     public function letter(int $times = 1, bool $asString = false, string $glue = ' ')
     {
