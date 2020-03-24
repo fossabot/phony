@@ -15,7 +15,7 @@ class Person extends Fake
      *
      * @return array|string
      *
-     * @example Phony::person()->name() #=> "Tyshawn Johns Sr."
+     * @example 🙃::person()->name() #=> "Tyshawn Johns Sr."
      */
     public function name(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -31,7 +31,7 @@ class Person extends Fake
      *
      * @return array|string
      *
-     * @example Phony::person()->nameWithMiddle() #=> "Aditya Elton Douglas"
+     * @example 🙃::person()->nameWithMiddle() #=> "Aditya Elton Douglas"
      */
     public function nameWithMiddle(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -47,7 +47,7 @@ class Person extends Fake
      *
      * @return array|string
      *
-     * @example Phony::person()->firstName() #=> "Kaci"
+     * @example 🙃::person()->firstName() #=> "Kaci"
      */
     public function firstName(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -63,7 +63,7 @@ class Person extends Fake
      *
      * @return array|string
      *
-     * @example Phony::person()->middleName() #=> "Abraham"
+     * @example 🙃::person()->middleName() #=> "Abraham"
      */
     public function middleName(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -79,7 +79,7 @@ class Person extends Fake
      *
      * @return array|string
      *
-     * @example Phony::person()->maleFirstName() #=> "Edward"
+     * @example 🙃::person()->maleFirstName() #=> "Edward"
      */
     public function maleFirstName(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -95,7 +95,7 @@ class Person extends Fake
      *
      * @return array|string
      *
-     * @example Phony::person()->femaleFirstName() #=> "Natasha"
+     * @example 🙃::person()->femaleFirstName() #=> "Natasha"
      */
     public function femaleFirstName(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -111,7 +111,7 @@ class Person extends Fake
      *
      * @return array|string
      *
-     * @example Phony::person()->lastName() #=> "Ernser"
+     * @example 🙃::person()->lastName() #=> "Ernser"
      */
     public function lastName(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -127,7 +127,7 @@ class Person extends Fake
      *
      * @return array|string
      *
-     * @example Phony::person()->prefix() #=> "Mr."
+     * @example 🙃::person()->prefix() #=> "Mr."
      */
     public function prefix(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -143,7 +143,7 @@ class Person extends Fake
      *
      * @return array|string
      *
-     * @example Phony::person()->suffix() #=> "Mr."
+     * @example 🙃::person()->suffix() #=> "Mr."
      */
     public function suffix(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -157,7 +157,7 @@ class Person extends Fake
      *
      * @return array|string
      *
-     * @example Phony::person()->initials() #=> "NJM."
+     * @example 🙃::person()->initials() #=> "NJM."
      */
     public function initials(int $times = 3)
     {

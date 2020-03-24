@@ -2,6 +2,7 @@
 
 namespace Deligoez\Phony;
 
+use Deligoez\Phony\Fakes\Standard\Address;
 use Deligoez\Phony\Fakes\Standard\Alphabet;
 use Deligoez\Phony\Fakes\Standard\Ancient;
 use Deligoez\Phony\Fakes\Standard\Coin;
@@ -20,6 +21,11 @@ class Phony
     public function __construct(string $defaultLocale)
     {
         $this->defaultLocale = $defaultLocale;
+    }
+
+    public function address(): Address
+    {
+        return new Address($this);
     }
 
     public function alphabet(): Alphabet

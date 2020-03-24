@@ -15,7 +15,7 @@ class Coin extends Fake
      *
      * @return array|string
      *
-     * @example Phony::coin()->flip() #=> "Heads"
+     * @example 🙃::coin()->flip() #=> "Heads"
      */
     public function flip(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -31,7 +31,7 @@ class Coin extends Fake
      *
      * @return array|string
      *
-     * @example Phony::coin()->name() #=> "Brazilian Real"
+     * @example 🙃::coin()->name() #=> "Brazilian Real"
      */
     public function name(int $times = 1, bool $asString = false, string $glue = ' ')
     {
