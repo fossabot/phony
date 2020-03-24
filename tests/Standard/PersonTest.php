@@ -79,13 +79,17 @@ class PersonTest extends BaseTest
     }
 
     /** @test */
-    public function initials(): void
+    public function initials_with_default_lenght(): void
     {
         $this->assertEquals(
             3,
             mb_strlen($this->🙃->person()->initials(), 'utf8')
         );
+    }
 
+    /** @test */
+    public function initials_with_given_lenght(): void
+    {
         $this->assertEquals(
             $times = random_int(2, 10),
             mb_strlen($this->🙃->person()->initials($times), 'utf8')
