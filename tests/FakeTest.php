@@ -10,16 +10,20 @@ class FakeTest extends BaseTest
 {
     protected ReflectionMethod $numerify;
     protected ReflectionMethod $fetch;
+    protected ReflectionMethod $letterify;
 
     protected function setUp(): void
     {
         parent::setUp();
 
+        $this->fetch = new ReflectionMethod(Fake::class, 'fetch');
+        $this->fetch->setAccessible(true);
+
         $this->numerify = new ReflectionMethod(Fake::class, 'numerify');
         $this->numerify->setAccessible(true);
 
-        $this->fetch = new ReflectionMethod(Fake::class, 'fetch');
-        $this->fetch->setAccessible(true);
+        $this->letterify = new ReflectionMethod(Fake::class, 'letterify');
+        $this->letterify->setAccessible(true);
     }
 
     /** @test */
@@ -86,6 +90,15 @@ class FakeTest extends BaseTest
     {
         $this->assertIsInt(
             (int) $this->numerify->invoke(new Fake($this->🙃), '%%%')
+        );
+    }
+
+    /** @test */
+    public function can_letterify(): void
+    {
+        // TODO: Check by regex
+        $this->assertIsString(
+            $this->letterify->invoke(new Fake($this->🙃), '???')
         );
     }
 }

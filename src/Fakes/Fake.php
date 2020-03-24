@@ -134,4 +134,26 @@ class Fake
 
         return implode('', $characters);
     }
+
+    /**
+     * Replaces all question mark ('?') occurrences with a random letter
+     *
+     * @param  string  $numberString
+     *
+     * @return string
+     * @throws \Exception
+     */
+    protected function letterify(string $numberString = '????'): string
+    {
+        $characters = str_split($numberString);
+
+        for ($i = 0; isset($characters[$i]); $i++) {
+            if ($characters[$i] === '?') {
+                $characters[$i] = $this->fetch('alphabet.letter', 1, true, '');
+                continue;
+            }
+        }
+
+        return implode('', $characters);
+    }
 }
