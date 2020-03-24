@@ -16,17 +16,25 @@ This [Laravel](http://laravel.com) package is port of the [Ruby](https://www.rub
 
 You can install the package via composer:
 
-```bash
+``` bash
 composer require deligoez/phony
 ```
 
 ## Usage
 
-```php
-$phony = new \Deligoez\Phony\Phony('en');
+``` php
+use Deligoez\Phony\Phony;
 
-$phony->coin()->flip();         // => "Heads"
-$phony->currency()->symbol();   // => "$"
+
+$🙃 = new Phony('en');
+
+$🙃->coin()->flip();                             // => "Heads"
+
+$🙃->currency()->symbol();                       // => "$"
+
+$🙃->alphabet()->uppercaseLetter(2);             // => ['A', 'B']
+$🙃->alphabet()->uppercaseLetter(2, true);       // => "A B"
+$🙃->alphabet()->uppercaseLetter(2, true, ', '); // => "A, B"
 ```
 
 ## Generators
