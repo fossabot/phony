@@ -15,7 +15,7 @@ class Currency extends Fake
      *
      * @return array|string
      *
-     * @example Phony::currency()->name() #=> "Swedish Krona"
+     * @example 🙃::currency()->name() #=> "Swedish Krona"
      */
     public function name(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -31,7 +31,7 @@ class Currency extends Fake
      *
      * @return array|string
      *
-     * @example Phony::currency()->code() #=> "USD"
+     * @example 🙃::currency()->code() #=> "USD"
      */
     public function code(int $times = 1, bool $asString = false, string $glue = ' ')
     {
@@ -47,7 +47,7 @@ class Currency extends Fake
      *
      * @return array|string
      *
-     * @example Phony::currency()->symbol() #=> "$"
+     * @example 🙃::currency()->symbol() #=> "$"
      */
     public function symbol(int $times = 1, bool $asString = false, string $glue = ' ')
     {
