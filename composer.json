@@ -23,6 +23,7 @@
         "illuminate/support": "^6.0|^7.0"
     },
     "require-dev": {
+        "brianium/paratest": "^4.0",
         "orchestra/testbench": "^4.0|^5.0",
         "phpunit/phpunit": "^8.5"
     },
@@ -37,7 +38,8 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit --configuration phpunit.xml.dist --testdox --colors=always"
+        "test": "vendor/bin/phpunit --configuration phpunit.xml.dist --colors=always",
+        "para": "vendor/bin/paratest --configuration phpunit.xml.dist --colors"
     },
     "config": {
         "sort-packages": true
