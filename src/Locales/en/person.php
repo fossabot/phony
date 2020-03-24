@@ -587,6 +587,6 @@ return [
         '🙃person.first_name🙃 🙃person.last_name🙃 🙃person.last_name🙃',
     ],
     'initials' => [
-        '🙃alphabet.uppercase_letter🙃'
-    ]
+        '🙃alphabet.uppercase_letter🙃',
+    ],
 ];
