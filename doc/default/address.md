@@ -1,53 +1,53 @@
-# Phony::address()
+# 🙃::address()
 
 ```php
-Phony::address()->city(); // => "Imogeneborough"
+🙃::address()->city();                              // => "Imogeneborough"
 
-Phony::address()->streetName(); // => "Larkin Fork"
+🙃::address()->streetName();                        // => "Larkin Fork"
 
-Phony::address()->streetAddress(); // => "282 Kevin Brook"
+🙃::address()->streetAddress();                     // => "282 Kevin Brook"
 
-Phony::address()->secondaryAddress(); // => "Apt. 672"
+🙃::address()->secondaryAddress();                  // => "Apt. 672"
 
-Phony::address()->buildingNumber(); // => "7304"
+🙃::address()->buildingNumber();                    // => "7304"
 
-Phony::address()->mailBox(); // => "PO Box 123"
+🙃::address()->mailBox();                           // => "PO Box 123"
 
-Phony::address()->community(); // => "University Crossing"
+🙃::address()->community();                         // => "University Crossing"
 
-Phony::address()->zipCode(); // => "58517" or "23285-4905"
+🙃::address()->zipCode();                           // => "58517" or "23285-4905"
 
-Phony::address()->zip(); // => "58517" or "66259-8212"
+🙃::address()->zip();                               // => "58517" or "66259-8212"
 
-Phony::address()->postcode(); // => "76032-4907" or "58517"
+🙃::address()->postcode();                          // => "76032-4907" or "58517"
 
-Phony::address()->timeZone(); // => "Asia/Yakutsk"
+🙃::address()->timeZone();                          // => "Asia/Yakutsk"
 
-Phony::address()->streetSuffix(); // => "Street"
+🙃::address()->streetSuffix();                      // => "Street"
 
-Phony::address()->citySuffix(); // => "fort"
+🙃::address()->citySuffix();                        // => "fort"
 
-Phony::address()->cityPrefix(); // => "Lake"
+🙃::address()->cityPrefix();                        // => "Lake"
 
-Phony::address()->state(); // => "California"
+🙃::address()->state();                             // => "California"
 
-Phony::address()->stateAbbr(); // => "AP"
+🙃::address()->stateAbbr();                         // => "AP"
 
-Phony::address()->country(); // => "French Guiana"
+🙃::address()->country();                           // => "French Guiana"
 
 // Keyword arguments: code
-Phony::address()->countryByCode('NL'); // => "Netherlands"
+🙃::address()->countryByCode('NL');                 // => "Netherlands"
 
 // Keyword arguments: name
-Phony::address()->countryNameToCode('united_states'); // => "US"
+🙃::address()->countryNameToCode('united_states');  // => "US"
 
-Phony::address()->countryCode(); // => "IT"
+🙃::address()->countryCode();                       // => "IT"
 
-Phony::address()->countryCodeLong(); // => "ITA"
+🙃::address()->countryCodeLong();                   // => "ITA"
 
-Phony::address()->latitude(); // => "-58.17256227443719"
+🙃::address()->latitude();                          // => "-58.17256227443719"
 
-Phony::address()->longitude(); // => "-156.65548382095133"
+🙃::address()->longitude();                         // => "-156.65548382095133"
 
-Phony::address()->fullAddress(); // => "282 Kevin Brook, Imogeneborough, CA 58517"
+🙃::address()->fullAddress();                       // => "282 Kevin Brook, Imogeneborough, CA 58517"
 ```
