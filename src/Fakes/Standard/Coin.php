@@ -9,24 +9,32 @@ class Coin extends Fake
     /**
      * Retrieves a face to a flipped coin.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::coin()->flip() #=> "Heads"
      */
-    public function flip(): string
+    public function flip(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetchOne('coin.flip');
+        return $this->fetch('coin.flip', $times, $asString, $glue);
     }
 
     /**
      * Retrieves a random coin from any country.
      *
-     * @return string
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
      *
      * @example Phony::coin()->name() #=> "Brazilian Real"
      */
-    public function name(): string
+    public function name(int $times = 1, bool $asString = false, string $glue = ' ')
     {
-        return $this->fetchOne('currency.name');
+        return $this->fetch('coin.name', $times, $asString, $glue);
     }
 }

@@ -2,10 +2,12 @@
 
 namespace Deligoez\Phony;
 
-use Deligoez\Phony\Fakes\Standard\Coin;
+use Deligoez\Phony\Fakes\Standard\Alphabet;
 use Deligoez\Phony\Fakes\Standard\Ancient;
+use Deligoez\Phony\Fakes\Standard\Coin;
 use Deligoez\Phony\Fakes\Standard\Address;
 use Deligoez\Phony\Fakes\Standard\Currency;
+use Deligoez\Phony\Fakes\Standard\Person;
 
 class Phony
 {
@@ -21,6 +23,11 @@ class Phony
         $this->defaultLocale = $defaultLocale;
     }
 
+    public function alphabet(): Alphabet
+    {
+        return new Alphabet($this);
+    }
+
     public function address(): Address
     {
         return new Address($this);
@@ -29,6 +36,11 @@ class Phony
     public function ancient(): Ancient
     {
         return new Ancient($this);
+    }
+
+    public function person(): Person
+    {
+        return new Person($this);
     }
 
     public function coin(): Coin

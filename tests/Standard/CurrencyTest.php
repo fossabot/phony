@@ -6,25 +6,28 @@ use Deligoez\Phony\Tests\BaseTest;
 
 class CurrencyTest extends BaseTest
 {
-    public function test_name(): void
+    /** @test */
+    public function name(): void
     {
         $this->assertIsString(
-            $this->phony->currency()->name()
+            $this->🙃->currency()->name()
         );
     }
 
-    public function test_code(): void
+    /** @test */
+    public function code(): void
     {
         $this->assertRegExp(
             '/[A-Z]{3}/',
-            $this->phony->currency()->code()
+            $this->🙃->currency()->code()
         );
     }
 
-    public function test_symbol(): void
+    /** @test */
+    public function symbol(): void
     {
         $this->assertIsString(
-            $this->phony->currency()->symbol()
+            $this->🙃->currency()->symbol()
         );
     }
 }

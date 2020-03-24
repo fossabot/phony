@@ -36,7 +36,7 @@ class PhonyServiceProvider extends ServiceProvider
         // Register the main class to use with the facade
         $this->app->singleton(
             Phony::class,
-            fn() => new Phony(config('phony.default_locale'))
+            fn () => new Phony(config('phony.default_locale'))
         );
 
         $this->app->alias(Phony::class, 'phony');

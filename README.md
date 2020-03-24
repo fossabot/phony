@@ -1,9 +1,14 @@
-# Phony
+# 🙃 Phony
+
+### This package is in active development and not production ready.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
-[![Build Status](https://img.shields.io/travis/deligoez/phony/master.svg?style=flat-square)](https://travis-ci.org/deligoez/phony)
-[![Quality Score](https://img.shields.io/scrutinizer/g/deligoez/phony.svg?style=flat-square)](https://scrutinizer-ci.com/g/deligoez/phony)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/deligoez/phony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/deligoez/phony/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/deligoez/phony/badges/build.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/build-status/master)
 [![Total Downloads](https://img.shields.io/packagist/dt/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
+![Packagist](https://img.shields.io/packagist/l/deligoez/phony)
+[![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) 
 
 This [Laravel](http://laravel.com) package is port of the [Ruby](https://www.ruby-lang.org)'s [Faker](https://github.com/faker-ruby/faker) gem that generates fake data.
 
@@ -11,26 +16,36 @@ This [Laravel](http://laravel.com) package is port of the [Ruby](https://www.rub
 
 You can install the package via composer:
 
-```bash
+``` bash
 composer require deligoez/phony
 ```
 
 ## Usage
 
-```php
-$phony = new \Deligoez\Phony\Phony('en');
+``` php
+use Deligoez\Phony\Phony;
 
-$phony->coin()->flip();         // => "Heads"
-$phony->currency()->symbol();   // => "$"
+
+$🙃 = new Phony('en');
+
+$🙃->coin()->flip();                             // => "Heads"
+
+$🙃->currency()->symbol();                       // => "$"
+
+$🙃->alphabet()->uppercaseLetter(2);             // => ['A', 'B']
+$🙃->alphabet()->uppercaseLetter(2, true);       // => "A B"
+$🙃->alphabet()->uppercaseLetter(2, true, ', '); // => "A, B"
 ```
 
 ## Generators
 
 ### Default
 
+- [Phony::alphabet()](doc/default/alphabet.md)
 - [Phony::ancient()](doc/default/ancient.md)
 - [Phony::coin()](doc/default/coin.md)
 - [Phony::currency()](doc/default/currency.md)
+- [Phony::person()](doc/default/person.md)
 
 ### Testing
 

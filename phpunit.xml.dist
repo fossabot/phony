@@ -10,8 +10,12 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Test Suite">
+        <testsuite name="Main Test Suite">
             <directory>tests</directory>
+            <exclude>tests/Locales</exclude>
+        </testsuite>
+        <testsuite name="Locales Test Suite">
+            <directory>tests/Locales</directory>
         </testsuite>
     </testsuites>
     <filter>

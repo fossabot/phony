@@ -3,14 +3,14 @@
 namespace Deligoez\Phony\Tests;
 
 use Deligoez\Phony\Phony;
-use Orchestra\Testbench\TestCase;
 use Deligoez\Phony\PhonyServiceProvider;
+use Orchestra\Testbench\TestCase;
 
 abstract class BaseTest extends TestCase
 {
-    protected Phony $phony;
+    protected Phony $🙃;
 
-    protected function getPackageProviders($app): array
+    protected function getPackageProviders(/** @scrutinizer ignore-unused */ $app): array
     {
         return [PhonyServiceProvider::class];
     }
@@ -19,6 +19,6 @@ abstract class BaseTest extends TestCase
     {
         parent::setUp();
 
-        $this->phony = app('phony');
+        $this->🙃 = app('phony');
     }
 }
