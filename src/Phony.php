@@ -23,14 +23,14 @@ class Phony
         $this->defaultLocale = $defaultLocale;
     }
 
-    public function alphabet(): Alphabet
-    {
-        return new Alphabet($this);
-    }
-
     public function address(): Address
     {
         return new Address($this);
+    }
+
+    public function alphabet(): Alphabet
+    {
+        return new Alphabet($this);
     }
 
     public function ancient(): Ancient
