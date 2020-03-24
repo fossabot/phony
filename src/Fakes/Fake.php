@@ -18,6 +18,17 @@ class Fake
         $this->phony = $phony;
     }
 
+    /**
+     * Helper for the common approach of grabbing a translation
+     * with an array of values and selecting one of them.
+     *
+     * @param  string  $key
+     * @param  int     $times
+     * @param  bool    $asString
+     * @param  string  $glue
+     *
+     * @return array|string
+     */
     protected function fetch(string $key, int $times, bool $asString, string $glue)
     {
         return $times === 1
@@ -26,8 +37,7 @@ class Fake
     }
 
     /**
-     * Helper for the common approach of grabbing a translation
-     * with an array of values and selecting one of them.
+     * Fetches a value.
      *
      * @param  string  $key
      *
