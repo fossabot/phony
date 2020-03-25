@@ -38,6 +38,9 @@ $🙃->alphabet()->uppercaseLetter(2);             // => ['A', 'B']
 $🙃->alphabet()->uppercaseLetter(2, true);       // => "A B"
 
 $🙃->alphabet()->uppercaseLetter(2, true, ', '); // => "A, B"
+
+
+$🙃->📫()->city();                                // => "Imogeneborough"
 ```
 
 ## Generators
