@@ -40,7 +40,7 @@ $🙃->alphabet()->uppercaseLetter(2, true);       // => "A B"
 $🙃->alphabet()->uppercaseLetter(2, true, ', '); // => "A, B"
 
 
-$🙃->📫()->city();                                // => "Imogeneborough"
+$🙃->📫()->city();                               // => "Imogeneborough"
 ```
 
 ## Generators
