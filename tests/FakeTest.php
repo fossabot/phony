@@ -65,7 +65,7 @@ class FakeTest extends BaseTest
     public function can_fetch_many_values_as_a_string(): void
     {
         $times = random_int(2, 10);
-        $value = $this->fetchMany->invoke(new Fake($this->🙃), $times, true, ' ', function() {
+        $value = $this->fetchMany->invoke(new Fake($this->🙃), $times, true, ' ', static function() {
             return 'value';
         });
 
@@ -79,7 +79,7 @@ class FakeTest extends BaseTest
     public function can_fetch_many_values_as_glued_string(): void
     {
         $times = random_int(2, 10);
-        $value = $this->fetchMany->invoke(new Fake($this->🙃), $times, true, '🙃', function() {
+        $value = $this->fetchMany->invoke(new Fake($this->🙃), $times, true, '🙃', static function() {
             return 'value';
         });
 
