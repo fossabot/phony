@@ -8,8 +8,9 @@ use ReflectionMethod;
 
 class FakeTest extends BaseTest
 {
-    protected ReflectionMethod $numerify;
     protected ReflectionMethod $fetch;
+    protected ReflectionMethod $fetchMany;
+    protected ReflectionMethod $numerify;
     protected ReflectionMethod $letterify;
     protected ReflectionMethod $bothify;
 
@@ -19,6 +20,9 @@ class FakeTest extends BaseTest
 
         $this->fetch = new ReflectionMethod(Fake::class, 'fetch');
         $this->fetch->setAccessible(true);
+
+        $this->fetchMany = new ReflectionMethod(Fake::class, 'fetchMany');
+        $this->fetchMany->setAccessible(true);
 
         $this->numerify = new ReflectionMethod(Fake::class, 'numerify');
         $this->numerify->setAccessible(true);
@@ -42,18 +46,18 @@ class FakeTest extends BaseTest
     public function can_fetch_a_value(): void
     {
         $this->assertNotNull(
-            $this->fetch->invoke(new Fake($this->🙃), 'alphabet.uppercase_letter', 1, true, '')
+            $this->fetch->invoke(new Fake($this->🙃), 'alphabet.uppercase_letter')
           );
     }
 
     /** @test */
     public function can_fetch_many_values(): void
     {
-        $times = random_int(2, 10);
-
         $this->assertCount(
-            $times,
-            $this->fetch->invoke(new Fake($this->🙃), 'alphabet.uppercase_letter', $times, false, '')
+            $times = random_int(2, 10),
+            $this->fetchMany->invoke(new Fake($this->🙃), $times, false, '', static function() {
+                return 'value';
+            })
         );
     }
 
@@ -61,7 +65,9 @@ class FakeTest extends BaseTest
     public function can_fetch_many_values_as_a_string(): void
     {
         $times = random_int(2, 10);
-        $value = $this->fetch->invoke(new Fake($this->🙃), 'alphabet.uppercase_letter', $times, true, ' ');
+        $value = $this->fetchMany->invoke(new Fake($this->🙃), $times, true, ' ', function() {
+            return 'value';
+        });
 
         $this->assertEquals(
             $times - 1,
@@ -73,7 +79,9 @@ class FakeTest extends BaseTest
     public function can_fetch_many_values_as_glued_string(): void
     {
         $times = random_int(2, 10);
-        $value = $this->fetch->invoke(new Fake($this->🙃), 'alphabet.uppercase_letter', $times, true, '🙃');
+        $value = $this->fetchMany->invoke(new Fake($this->🙃), $times, true, '🙃', function() {
+            return 'value';
+        });
 
         $this->assertEquals(
             $times - 1,

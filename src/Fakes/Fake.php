@@ -19,31 +19,13 @@ class Fake
     }
 
     /**
-     * Helper for the common approach of grabbing a translation
-     * with an array of values and selecting one of them.
-     *
-     * @param  string  $key
-     * @param  int     $times
-     * @param  bool    $asString
-     * @param  string  $glue
-     *
-     * @return array|string
-     */
-    protected function fetch(string $key, int $times, bool $asString, string $glue)
-    {
-        return $times === 1
-            ? $this->fetchOne($key)
-            : $this->fetchMany($key, $times, $asString, $glue);
-    }
-
-    /**
      * Fetches a value.
      *
      * @param  string  $key
      *
      * @return string
      */
-    private function fetchOne(string $key): string
+    protected function fetch(string $key): string
     {
         $template = trans("phony::{$key}", [], $this->phony->defaultLocale);
 
@@ -65,7 +47,7 @@ class Fake
         // Fetch placeholder values recursively
         $values = [];
         foreach ($placeholders[1] as $index => $placeholder) {
-            $values[$placeholders[0][$index]] = $this->fetchOne($placeholder);
+            $values[$placeholders[0][$index]] = $this->fetch($placeholder);
         }
 
         return strtr($template, $values);
@@ -74,19 +56,19 @@ class Fake
     /**
      * Fetches multiple values given number of times.
      *
-     * @param  string  $key
      * @param  int     $times
      * @param  bool    $asString
      * @param  string  $glue
+     * @param          $callback
      *
      * @return array|string
      */
-    private function fetchMany(string $key, int $times, bool $asString, string $glue)
+    protected function fetchMany(int $times, bool $asString, string $glue, $callback)
     {
         $values = [];
 
         foreach (range(1, $times) as $i) {
-            $values[] = $this->fetchOne($key);
+            $values[] = $callback();
         }
 
         return $asString
@@ -137,7 +119,7 @@ class Fake
 
         return preg_replace_callback(
             '/\?/',
-            fn() => $this->fetch('alphabet.letter', 1, true, ''),
+            fn() => $this->fetch('alphabet.letter'),
             $letterString
         );
     }

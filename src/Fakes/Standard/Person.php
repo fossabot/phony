@@ -9,158 +9,130 @@ class Person extends Fake
     /**
      * Produces a person name.
      *
-     * @param  int     $times
-     * @param  bool    $asString
-     * @param  string  $glue
-     *
-     * @return array|string
+     * @return string
      *
      * @example 🙃::person()->name() #=> "Tyshawn Johns Sr."
      */
-    public function name(int $times = 1, bool $asString = false, string $glue = ' ')
+    public function name(): string
     {
-        return $this->fetch('person.name', $times, $asString, $glue);
+        return $this->fetch('person.name');
     }
 
     /**
      * Produces a person name with middle name.
      *
-     * @param  int     $times
-     * @param  bool    $asString
-     * @param  string  $glue
-     *
-     * @return array|string
+     * @return string
      *
      * @example 🙃::person()->nameWithMiddle() #=> "Aditya Elton Douglas"
      */
-    public function nameWithMiddle(int $times = 1, bool $asString = false, string $glue = ' ')
+    public function nameWithMiddle(): string
     {
-        return $this->fetch('person.name_with_middle', $times, $asString, $glue);
+        return $this->fetch('person.name_with_middle');
     }
 
     /**
      * Produces a person first name.
      *
-     * @param  int     $times
-     * @param  bool    $asString
-     * @param  string  $glue
-     *
-     * @return array|string
+     * @return string
      *
      * @example 🙃::person()->firstName() #=> "Kaci"
      */
-    public function firstName(int $times = 1, bool $asString = false, string $glue = ' ')
+    public function firstName(): string
     {
-        return $this->fetch('person.first_name', $times, $asString, $glue);
+        return $this->fetch('person.first_name');
     }
 
     /**
      * Produces a person middle name.
      *
-     * @param  int     $times
-     * @param  bool    $asString
-     * @param  string  $glue
-     *
-     * @return array|string
+     * @return string
      *
      * @example 🙃::person()->middleName() #=> "Abraham"
      */
-    public function middleName(int $times = 1, bool $asString = false, string $glue = ' ')
+    public function middleName(): string
     {
-        return $this->fetch('person.last_name', $times, $asString, $glue);
+        return $this->fetch('person.last_name');
     }
 
     /**
      * Produces a male person first name.
      *
-     * @param  int     $times
-     * @param  bool    $asString
-     * @param  string  $glue
-     *
-     * @return array|string
+     * @return string
      *
      * @example 🙃::person()->maleFirstName() #=> "Edward"
      */
-    public function maleFirstName(int $times = 1, bool $asString = false, string $glue = ' ')
+    public function maleFirstName(): string
     {
-        return $this->fetch('person.male_first_name', $times, $asString, $glue);
+        return $this->fetch('person.male_first_name');
     }
 
     /**
      * Produces a female person first name.
      *
-     * @param  int     $times
-     * @param  bool    $asString
-     * @param  string  $glue
-     *
-     * @return array|string
+     * @return string
      *
      * @example 🙃::person()->femaleFirstName() #=> "Natasha"
      */
-    public function femaleFirstName(int $times = 1, bool $asString = false, string $glue = ' ')
+    public function femaleFirstName(): string
     {
-        return $this->fetch('person.female_first_name', $times, $asString, $glue);
+        return $this->fetch('person.female_first_name');
     }
 
     /**
      * Produces a person last name.
      *
-     * @param  int     $times
-     * @param  bool    $asString
-     * @param  string  $glue
-     *
-     * @return array|string
+     * @return string
      *
      * @example 🙃::person()->lastName() #=> "Ernser"
      */
-    public function lastName(int $times = 1, bool $asString = false, string $glue = ' ')
+    public function lastName(): string
     {
-        return $this->fetch('person.last_name', $times, $asString, $glue);
+        return $this->fetch('person.last_name');
     }
 
     /**
      * Produces a person name prefix.
      *
-     * @param  int     $times
-     * @param  bool    $asString
-     * @param  string  $glue
-     *
-     * @return array|string
+     * @return string
      *
      * @example 🙃::person()->prefix() #=> "Mr."
      */
-    public function prefix(int $times = 1, bool $asString = false, string $glue = ' ')
+    public function prefix(): string
     {
-        return $this->fetch('person.prefix', $times, $asString, $glue);
+        return $this->fetch('person.prefix');
     }
 
     /**
      * Produces a person name suffix.
      *
-     * @param  int     $times
-     * @param  bool    $asString
-     * @param  string  $glue
-     *
-     * @return array|string
+     * @return string
      *
      * @example 🙃::person()->suffix() #=> "Mr."
      */
-    public function suffix(int $times = 1, bool $asString = false, string $glue = ' ')
+    public function suffix(): string
     {
-        return $this->fetch('person.suffix', $times, $asString, $glue);
+        return $this->fetch('person.suffix');
     }
 
     /**
      * Produces a name initials.
      *
-     * @param  int     $times
+     * @param  int  $count
      *
-     * @return array|string
+     * @return string
      *
      * @example 🙃::person()->initials() #=> "NJM."
+     * @example 🙃::person()->initials(4) #=> "NJMA."
      */
-    public function initials(int $times = 3)
+    public function initials(int $count = 3): string
     {
-        return $this->fetch('person.initials', $times, true, '');
+        return $this->fetchMany(
+            $count,
+            true,
+            '',
+            function() {
+                return $this->fetch('person.initials');
+            }
+        );
     }
 }
