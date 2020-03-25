@@ -3,6 +3,7 @@
 ```php
 🙃::address()->city();                              // => "Imogeneborough"
 
+// $withState
 🙃::address()->city(true);                          // => "Northfort, California"
 
 🙃::address()->streetName();                        // => "Larkin Fork"
@@ -11,11 +12,14 @@
 
 🙃::address()->streetAddress();                     // => "282 Kevin Brook"
 
+// $includeSecondary
+🙃::address()->streetAddress(true);                 // => "282 Kevin Brook Apt. 672"
+
 🙃::address()->buildingNumber();                    // => "7304"
 
-🙃::address()->mailBox();                           // => "PO Box 123"
-
 🙃::address()->community();                         // => "University Crossing"
+
+🙃::address()->mailBox();                           // => "PO Box 123"
 
 🙃::address()->zipCode();                           // => "58517" or "23285-4905"
 
@@ -23,13 +27,13 @@
 
 🙃::address()->postcode();                          // => "76032-4907" or "58517"
 
-🙃::address()->timeZone();                          // => "Asia/Yakutsk"
-
 🙃::address()->streetSuffix();                      // => "Street"
 
 🙃::address()->citySuffix();                        // => "fort"
 
 🙃::address()->cityPrefix();                        // => "Lake"
+
+🙃::address()->timeZone();                          // => "Asia/Yakutsk"
 
 🙃::address()->state();                             // => "California"
 
