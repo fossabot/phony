@@ -11,6 +11,7 @@ class FakeTest extends BaseTest
     protected ReflectionMethod $numerify;
     protected ReflectionMethod $fetch;
     protected ReflectionMethod $letterify;
+    protected ReflectionMethod $bothify;
 
     protected function setUp(): void
     {
@@ -24,6 +25,9 @@ class FakeTest extends BaseTest
 
         $this->letterify = new ReflectionMethod(Fake::class, 'letterify');
         $this->letterify->setAccessible(true);
+
+        $this->bothify = new ReflectionMethod(Fake::class, 'bothify');
+        $this->bothify->setAccessible(true);
     }
 
     /** @test */
@@ -96,9 +100,27 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_letterify(): void
     {
-        // TODO: Check by regex
+        // TODO: Check with regex
         $this->assertIsString(
             $this->letterify->invoke(new Fake($this->🙃), '???')
+        );
+    }
+
+    /** @test */
+    public function can_bothify(): void
+    {
+        // TODO: Check with regex
+        $this->assertIsString(
+            $this->bothify->invoke(new Fake($this->🙃), '?#%')
+        );
+    }
+
+    /** @test */
+    public function can_bothify_with_asterix(): void
+    {
+        // TODO: Check with regex
+        $this->assertIsString(
+            $this->bothify->invoke(new Fake($this->🙃), '***')
         );
     }
 }

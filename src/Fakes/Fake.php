@@ -61,6 +61,7 @@ class Fake
     {
         $template = trans("phony::{$key}", [], $this->phony->defaultLocale);
 
+        // Pick one if it's an array
         if (is_array($template)) {
             $template = $template[array_rand($template, 1)];
         }
@@ -72,11 +73,11 @@ class Fake
         }
 
         // Extract placeholders in the template
-        $placeholders = $this->extractPlaceholders($template);
-
-        $values = [];
+        $placeholders = [];
+        preg_match_all('/🙃(.*?)🙃/u', $template, $placeholders);
 
         // Fetch placeholder values recursively
+        $values = [];
         foreach ($placeholders[1] as $index => $placeholder) {
             $values[$placeholders[0][$index]] = $this->fetchOne($placeholder);
         }
@@ -118,21 +119,10 @@ class Fake
      */
     protected function numerify(string $numberString = '%%%###'): string
     {
-        $characters = str_split($numberString);
+        $numberString = preg_replace_callback('/%/', fn() => random_int(1, 9), $numberString);
+        $numberString = preg_replace_callback('/#/', fn() => random_int(0, 9), $numberString);
 
-        for ($i = 0; isset($characters[$i]); $i++) {
-            if ($characters[$i] === '#') {
-                $characters[$i] = random_int(0, 9);
-                continue;
-            }
-
-            if ($characters[$i] === '%') {
-                $characters[$i] = random_int(1, 9);
-                continue;
-            }
-        }
-
-        return implode('', $characters);
+        return $numberString;
     }
 
     /**
@@ -145,16 +135,11 @@ class Fake
      */
     protected function letterify(string $numberString = '????'): string
     {
-        $characters = str_split($numberString);
-
-        for ($i = 0; isset($characters[$i]); $i++) {
-            if ($characters[$i] === '?') {
-                $characters[$i] = $this->fetch('alphabet.letter', 1, true, '');
-                continue;
-            }
-        }
-
-        return implode('', $characters);
+        return preg_replace_callback(
+            '/\?/',
+            fn() => $this->fetch('alphabet.letter', 1, true, ''),
+            $numberString
+        );
     }
 
     /**
@@ -168,7 +153,16 @@ class Fake
      */
     protected function bothify(string $numberString = '##??**'): string
     {
-        // TODO: Adjust for *
-        return $this->letterify($this->numerify($numberString));
+        $numberString = $this->letterify($this->numerify($numberString));
+
+        $numberString = preg_replace_callback(
+            '/\*/',
+            fn() => random_int(0, 1)
+                ? $this->numerify('#')
+                : $this->letterify('?'),
+            $numberString
+        );
+
+        return $numberString;
     }
 }
