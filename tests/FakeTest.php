@@ -84,6 +84,7 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_numerify_with_hash_sign(): void
     {
+        // TODO: Check with regex
         $this->assertIsInt(
             (int) $this->numerify->invoke(new Fake($this->🙃), '###')
         );
@@ -92,9 +93,29 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_numerify_with_percentage_sign(): void
     {
+        // TODO: Check with regex
         $this->assertIsInt(
             (int) $this->numerify->invoke(new Fake($this->🙃), '%%%')
         );
+    }
+
+    /** @test */
+    public function can_numerify_arrays(): void
+    {
+        // TODO: Check with regex
+        $testArray = [
+            '#',
+            '%',
+            '##',
+            '%%',
+            '##%%',
+        ];
+
+        $result = $this->numerify->invoke(new Fake($this->🙃), $testArray);
+
+        foreach ($result as $item) {
+            $this->assertIsInt((int)$item);
+        }
     }
 
     /** @test */
@@ -104,6 +125,23 @@ class FakeTest extends BaseTest
         $this->assertIsString(
             $this->letterify->invoke(new Fake($this->🙃), '???')
         );
+    }
+
+    /** @test */
+    public function can_letterify_arrays(): void
+    {
+        // TODO: Check with regex
+        $testArray = [
+            '?',
+            '??',
+            '???',
+        ];
+
+        $result = $this->letterify->invoke(new Fake($this->🙃), $testArray);
+
+        foreach ($result as $item) {
+            $this->assertIsString($item);
+        }
     }
 
     /** @test */
@@ -122,5 +160,23 @@ class FakeTest extends BaseTest
         $this->assertIsString(
             $this->bothify->invoke(new Fake($this->🙃), '***')
         );
+    }
+
+    /** @test */
+    public function can_bothify_arrays(): void
+    {
+        // TODO: Check with regex
+        $testArray = [
+            '#',
+            '?',
+            '*',
+            '#?*'
+        ];
+
+        $result = $this->bothify->invoke(new Fake($this->🙃), $testArray);
+
+        foreach ($result as $item) {
+            $this->assertIsString($item);
+        }
     }
 }

@@ -98,13 +98,20 @@ class Fake
      * Replaces all hash sign ('#') occurrences with a random number and
      * all percentage sign ('%') occurrences with a not null number.
      *
-     * @param  string  $numberString
+     * @param  array|string  $numberString
      *
-     * @return string
+     * @return array|string
      * @throws \Exception
      */
-    protected function numerify(string $numberString = '%%%###'): string
+    protected function numerify($numberString = '%%%###')
     {
+        if (is_array($numberString))
+        {
+            foreach ($numberString as $index => $item) {
+                $numberString[$index] = $this->numerify($item);
+            }
+        }
+
         $numberString = preg_replace_callback('/%/', fn() => random_int(1, 9), $numberString);
         $numberString = preg_replace_callback('/#/', fn() => random_int(0, 9), $numberString);
 
@@ -114,17 +121,24 @@ class Fake
     /**
      * Replaces all question mark ('?') occurrences with a random letter.
      *
-     * @param  string  $numberString
+     * @param  array|string  $letterString
      *
-     * @return string
+     * @return array|string
      * @throws \Exception
      */
-    protected function letterify(string $numberString = '????'): string
+    protected function letterify($letterString = '????')
     {
+        if (is_array($letterString))
+        {
+            foreach ($letterString as $index => $item) {
+                $letterString[$index] = $this->letterify($item);
+            }
+        }
+
         return preg_replace_callback(
             '/\?/',
             fn() => $this->fetch('alphabet.letter', 1, true, ''),
-            $numberString
+            $letterString
         );
     }
 
@@ -132,23 +146,30 @@ class Fake
      * Replaces hash signs ('#') and question marks ('?') with random numbers and letters.
      * An asterisk ('*') is replaced with either a random number or a random letter.
      *
-     * @param  string  $numberString
+     * @param  array|string  $string
      *
-     * @return string
+     * @return array|string
      * @throws \Exception
      */
-    protected function bothify(string $numberString = '##??**'): string
+    protected function bothify($string = '##??**')
     {
-        $numberString = $this->letterify($this->numerify($numberString));
+        if (is_array($string))
+        {
+            foreach ($string as $index => $item) {
+                $string[$index] = $this->bothify($item);
+            }
+        }
 
-        $numberString = preg_replace_callback(
+        $string = $this->letterify($this->numerify($string));
+
+        $string = preg_replace_callback(
             '/\*/',
             fn() => random_int(0, 1)
                 ? $this->numerify('#')
                 : $this->letterify('?'),
-            $numberString
+            $string
         );
 
-        return $numberString;
+        return $string;
     }
 }
