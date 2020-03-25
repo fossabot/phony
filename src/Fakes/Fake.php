@@ -87,15 +87,14 @@ class Fake
      */
     protected function numerify($numberString = '%%%###')
     {
-        if (is_array($numberString))
-        {
+        if (is_array($numberString)) {
             foreach ($numberString as $index => $item) {
                 $numberString[$index] = $this->numerify($item);
             }
         }
 
-        $numberString = preg_replace_callback('/%/', fn() => random_int(1, 9), $numberString);
-        $numberString = preg_replace_callback('/#/', fn() => random_int(0, 9), $numberString);
+        $numberString = preg_replace_callback('/%/', fn () => random_int(1, 9), $numberString);
+        $numberString = preg_replace_callback('/#/', fn () => random_int(0, 9), $numberString);
 
         return $numberString;
     }
@@ -110,8 +109,7 @@ class Fake
      */
     protected function letterify($letterString = '????')
     {
-        if (is_array($letterString))
-        {
+        if (is_array($letterString)) {
             foreach ($letterString as $index => $item) {
                 $letterString[$index] = $this->letterify($item);
             }
@@ -119,7 +117,7 @@ class Fake
 
         return preg_replace_callback(
             '/\?/',
-            fn() => $this->fetch('alphabet.letter'),
+            fn () => $this->fetch('alphabet.letter'),
             $letterString
         );
     }
@@ -135,8 +133,7 @@ class Fake
      */
     protected function bothify($string = '##??**')
     {
-        if (is_array($string))
-        {
+        if (is_array($string)) {
             foreach ($string as $index => $item) {
                 $string[$index] = $this->bothify($item);
             }
@@ -146,7 +143,7 @@ class Fake
 
         $string = preg_replace_callback(
             '/\*/',
-            fn() => random_int(0, 1)
+            fn () => random_int(0, 1)
                 ? $this->numerify('#')
                 : $this->letterify('?'),
             $string

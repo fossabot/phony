@@ -18,7 +18,7 @@ class Address extends Fake
      */
     public function city(bool $withState = false): string
     {
-        return !$withState
+        return ! $withState
             ? $this->fetch('address.city_with_state')
             : $this->fetch('address.city');
     }
@@ -64,7 +64,7 @@ class Address extends Fake
      */
     public function streetAddress(bool $includeSecondary = false): string
     {
-        return !$includeSecondary
+        return ! $includeSecondary
             ? $this->fetch('address.street_address')
             : $this->fetch('address.street_address').' '.$this->secondaryAddress();
     }

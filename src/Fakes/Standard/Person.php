@@ -130,7 +130,7 @@ class Person extends Fake
             $count,
             true,
             '',
-            function() {
+            function () {
                 return $this->fetch('person.initials');
             }
         );
