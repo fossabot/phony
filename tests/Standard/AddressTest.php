@@ -7,6 +7,14 @@ use Deligoez\Phony\Tests\BaseTest;
 class AddressTest extends BaseTest
 {
     /** @test */
+    public function can_call_by_emoji(): void
+    {
+        $this->assertIsString(
+            $this->🙃->📫()->city()
+        );
+    }
+
+    /** @test */
     public function city(): void
     {
         $this->assertIsString(
