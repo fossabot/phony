@@ -2,15 +2,17 @@
 
 namespace Deligoez\Phony\Tests\Standard;
 
+use Deligoez\Phony\Fakes\Fake;
 use Deligoez\Phony\Tests\BaseTest;
 
 class AddressTest extends BaseTest
 {
     /** @test */
-    public function can_call_by_emoji(): void
+    public function can_call_by_emoji_alias(): void
     {
-        $this->assertIsString(
-            $this->🙃->📫()->city()
+        $this->assertInstanceOf(
+            Fake::class,
+            $this->🙃->📫()
         );
     }
 
