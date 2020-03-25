@@ -136,7 +136,7 @@ class Fake
     }
 
     /**
-     * Replaces all question mark ('?') occurrences with a random letter
+     * Replaces all question mark ('?') occurrences with a random letter.
      *
      * @param  string  $numberString
      *
@@ -155,5 +155,20 @@ class Fake
         }
 
         return implode('', $characters);
+    }
+
+    /**
+     * Replaces hash signs ('#') and question marks ('?') with random numbers and letters.
+     * An asterisk ('*') is replaced with either a random number or a random letter.
+     *
+     * @param  string  $numberString
+     *
+     * @return string
+     * @throws \Exception
+     */
+    protected function bothify(string $numberString = '##??**'): string
+    {
+        // TODO: Adjust for *
+        return $this->letterify($this->numerify($numberString));
     }
 }
