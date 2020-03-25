@@ -28,6 +28,11 @@ class Phony
         return new Address($this);
     }
 
+    public function 📫(): Address
+    {
+        return new Address($this);
+    }
+
     public function alphabet(): Alphabet
     {
         return new Alphabet($this);
