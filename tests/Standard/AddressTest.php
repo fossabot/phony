@@ -107,6 +107,30 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
+    public function zipAttribute(): void
+    {
+        $this->assertIsString(
+            $this->🧪->zip
+        );
+    }
+
+    /** @test */
+    public function postcodeAttribute(): void
+    {
+        $this->assertIsString(
+            $this->🧪->postcode
+        );
+    }
+
+    /** @test */
+    public function timeZoneAttribute(): void
+    {
+        $this->assertIsString(
+            $this->🧪->timeZone
+        );
+    }
+
+    /** @test */
     public function streetSuffixAttribute(): void
     {
         $this->assertIsString(
@@ -127,6 +151,54 @@ class AddressTest extends BaseTest
     {
         $this->assertIsString(
             $this->🧪->cityPrefix
+        );
+    }
+
+    /** @test */
+    public function stateAbbrAttribute(): void
+    {
+        $this->assertIsString(
+            $this->🧪->stateAbbr
+        );
+    }
+
+    /** @test */
+    public function stateAttribute(): void
+    {
+        $this->assertIsString(
+            $this->🧪->state
+        );
+    }
+
+    /** @test */
+    public function countryAttribute(): void
+    {
+        $this->assertIsString(
+            $this->🧪->country
+        );
+    }
+
+    /** @test */
+    public function countryCodeAttribute(): void
+    {
+        $this->assertIsString(
+            $this->🧪->countryCode
+        );
+    }
+
+    /** @test */
+    public function countryCodeLongAttribute(): void
+    {
+        $this->assertIsString(
+            $this->🧪->countryCodeLong
+        );
+    }
+
+    /** @test */
+    public function fullAddressAttribute(): void
+    {
+        $this->assertIsString(
+            $this->🧪->fullAddress
         );
     }
 
@@ -175,6 +247,28 @@ class AddressTest extends BaseTest
     {
         $this->assertIsString(
             $this->🧪->postcode()
+        );
+    }
+
+    /** @test *
+     *
+     * @throws \Exception
+     */
+    public function countryByCodeMethod(): void
+    {
+        $this->assertIsString(
+            $this->🧪->countryByCode('NL')
+        );
+    }
+
+    /** @test *
+     *
+     * @throws \Exception
+     */
+    public function countryNameToCodeMethod(): void
+    {
+        $this->assertIsString(
+            $this->🧪->countryNameToCode('united_states')
         );
     }
 

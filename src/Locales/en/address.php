@@ -689,8 +689,8 @@ return [
         '🙃address.building_number🙃 🙃address.street_name🙃',
     ],
     'full_address'      => [
-        '🙃address.street_address🙃, 🙃address.city🙃, 🙃address.state_abbr🙃 🙃address.zip_code🙃',
-        '🙃address.secondary_address🙃 🙃address.street_address🙃, 🙃address.city🙃, 🙃address.state_abbr🙃 🙃address.zip_code🙃',
+        '🙃address.street_address🙃, 🙃address.city🙃, 🙃address.state_abbr🙃 🙃address.postcode🙃',
+        '🙃address.secondary_address🙃 🙃address.street_address🙃, 🙃address.city🙃, 🙃address.state_abbr🙃 🙃address.postcode🙃',
     ],
     'mail_box'          => [
         'PO Box ##',

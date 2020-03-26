@@ -30,17 +30,17 @@
 
 🙃::address()->postcode;                            // => "76032-4907" or "58517"
 
+🙃::address()->timeZone;                            // => "Asia/Yakutsk"
+
 🙃::address()->streetSuffix;                        // => "Street"
 
 🙃::address()->citySuffix;                          // => "fort"
 
 🙃::address()->cityPrefix;                          // => "Lake"
 
-🙃::address()->timeZone;                            // => "Asia/Yakutsk"
+🙃::address()->stateAbbr;                           // => "AP"
 
 🙃::address()->state;                               // => "California"
-
-🙃::address()->stateAbbr;                           // => "AP"
 
 🙃::address()->country;                             // => "French Guiana"
 
@@ -54,11 +54,12 @@
 
 🙃::address()->countryCodeLong;                     // => "ITA"
 
+🙃::address()->fullAddress;                         // => "282 Kevin Brook, Imogeneborough, CA 58517"
+
 🙃::address()->latitude;                            // => "-58.17256227443719"
 
 🙃::address()->longitude;                           // => "-156.65548382095133"
 
-🙃::address()->fullAddress;                         // => "282 Kevin Brook, Imogeneborough, CA 58517"
 
 // Aliases
 🙃::address()->city;                              // => "Imogeneborough"
