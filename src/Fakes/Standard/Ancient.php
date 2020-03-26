@@ -21,7 +21,7 @@ class Ancient extends Fake
      *
      * @return string
      *
-     * @example 🙃::ancient()->god() #=> "Zeus"
+     * @example 🙃::ancient()->god() // => "Zeus"
      */
     public function god(): string
     {
@@ -33,7 +33,7 @@ class Ancient extends Fake
      *
      * @return string
      *
-     * @example 🙃::ancient()->primordial() #=> "Gaia"
+     * @example 🙃::ancient()->primordial() // => "Gaia"
      */
     public function primordial(): string
     {
@@ -45,7 +45,7 @@ class Ancient extends Fake
      *
      * @return string
      *
-     * @example 🙃::ancient()->titan() #=> "Atlas"
+     * @example 🙃::ancient()->titan() // => "Atlas"
      */
     public function titan(): string
     {
@@ -57,7 +57,7 @@ class Ancient extends Fake
      *
      * @return string
      *
-     * @example 🙃::ancient()->hero() #=> "Achilles"
+     * @example 🙃::ancient()->hero() // => "Achilles"
      */
     public function hero(): string
     {

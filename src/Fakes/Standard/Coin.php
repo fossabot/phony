@@ -19,7 +19,7 @@ class Coin extends Fake
      *
      * @return string
      *
-     * @example 🙃::coin()->flip() #=> "Heads"
+     * @example 🙃::coin()->flip() // => "Heads"
      */
     public function flip(): string
     {
@@ -31,7 +31,7 @@ class Coin extends Fake
      *
      * @return string
      *
-     * @example 🙃::coin()->name() #=> "Brazilian Real"
+     * @example 🙃::coin()->name() // => "Brazilian Real"
      */
     public function name(): string
     {

@@ -27,7 +27,7 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->name() #=> "Tyshawn Johns Sr."
+     * @example 🙃::person()->name() // => "Tyshawn Johns Sr."
      */
     public function name(): string
     {
@@ -39,7 +39,7 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->nameWithMiddle() #=> "Aditya Elton Douglas"
+     * @example 🙃::person()->nameWithMiddle() // => "Aditya Elton Douglas"
      */
     public function nameWithMiddle(): string
     {
@@ -51,7 +51,7 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->firstName() #=> "Kaci"
+     * @example 🙃::person()->firstName() // => "Kaci"
      */
     public function firstName(): string
     {
@@ -63,7 +63,7 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->middleName() #=> "Abraham"
+     * @example 🙃::person()->middleName() // => "Abraham"
      */
     public function middleName(): string
     {
@@ -75,7 +75,7 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->maleFirstName() #=> "Edward"
+     * @example 🙃::person()->maleFirstName() // => "Edward"
      */
     public function maleFirstName(): string
     {
@@ -87,7 +87,7 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->femaleFirstName() #=> "Natasha"
+     * @example 🙃::person()->femaleFirstName() // => "Natasha"
      */
     public function femaleFirstName(): string
     {
@@ -99,7 +99,7 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->lastName() #=> "Ernser"
+     * @example 🙃::person()->lastName() // => "Ernser"
      */
     public function lastName(): string
     {
@@ -111,7 +111,7 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->prefix() #=> "Mr."
+     * @example 🙃::person()->prefix() // => "Mr."
      */
     public function prefix(): string
     {
@@ -123,7 +123,7 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->suffix() #=> "Mr."
+     * @example 🙃::person()->suffix() // => "Mr."
      */
     public function suffix(): string
     {
@@ -137,8 +137,8 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->initials() #=> "NJM."
-     * @example 🙃::person()->initials(4) #=> "NJMA."
+     * @example 🙃::person()->initials() // => "NJM."
+     * @example 🙃::person()->initials(4) // => "NJMA."
      */
     public function initials(int $count = 3): string
     {

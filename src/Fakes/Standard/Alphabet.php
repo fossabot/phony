@@ -20,7 +20,7 @@ class Alphabet extends Fake
      *
      * @return string
      *
-     * @example 🙃::alphabet()->uppercaseLetter() #=> "P"
+     * @example 🙃::alphabet()->uppercaseLetter() // => "P"
      */
     public function uppercaseLetter(): string
     {
@@ -32,7 +32,7 @@ class Alphabet extends Fake
      *
      * @return string
      *
-     * @example 🙃::alphabet()->lowercaseLetter() #=> "P"
+     * @example 🙃::alphabet()->lowercaseLetter() // => "P"
      */
     public function lowercaseLetter(): string
     {
@@ -44,7 +44,7 @@ class Alphabet extends Fake
      *
      * @return string
      *
-     * @example 🙃::alphabet()->letter() #=> "P"
+     * @example 🙃::alphabet()->letter() // => "P"
      */
     public function letter(): string
     {

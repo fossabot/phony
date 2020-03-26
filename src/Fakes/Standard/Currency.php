@@ -20,7 +20,7 @@ class Currency extends Fake
      *
      * @return string
      *
-     * @example 🙃::currency()->name() #=> "Swedish Krona"
+     * @example 🙃::currency()->name() // => "Swedish Krona"
      */
     public function name(): string
     {
@@ -32,7 +32,7 @@ class Currency extends Fake
      *
      * @return string
      *
-     * @example 🙃::currency()->code() #=> "USD"
+     * @example 🙃::currency()->code() // => "USD"
      */
     public function code(): string
     {
@@ -44,7 +44,7 @@ class Currency extends Fake
      *
      * @return string
      *
-     * @example 🙃::currency()->symbol() #=> "$"
+     * @example 🙃::currency()->symbol() // => "$"
      */
     public function symbol(): string
     {
