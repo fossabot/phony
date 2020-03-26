@@ -2,13 +2,12 @@
 
 namespace Deligoez\Phony\Fakes\Standard;
 
-use Deligoez\Phony\Phony;
 use Deligoez\Phony\Fakes\Fake;
+use Deligoez\Phony\Phony;
 
 /**
  * Class Address.
  *
- * @package Deligoez\Phony\Fakes\Standard
  *
  * @property string city
  * @property string cityWithState
@@ -343,5 +342,4 @@ class Address extends Fake
     {
         return $this->bothify($this->fetch('address.full_address'));
     }
-
 }

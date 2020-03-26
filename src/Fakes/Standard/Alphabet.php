@@ -7,7 +7,6 @@ use Deligoez\Phony\Fakes\Fake;
 /**
  * Class Alphabet.
  *
- * @package Deligoez\Phony\Fakes\Standard
  *
  * @property string uppercaseLetter
  * @property string lowercaseLetter

@@ -7,7 +7,6 @@ use Deligoez\Phony\Fakes\Fake;
 /**
  * Class Person.
  *
- * @package Deligoez\Phony\Fakes\Standard
  *
  * @property string name
  * @property string nameWithMiddle

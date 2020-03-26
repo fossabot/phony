@@ -7,7 +7,6 @@ use Deligoez\Phony\Fakes\Fake;
 /**
  * Class Ancient.
  *
- * @package Deligoez\Phony\Fakes\Standard
  *
  * @property string god
  * @property string primordial

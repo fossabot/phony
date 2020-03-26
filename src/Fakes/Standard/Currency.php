@@ -7,7 +7,6 @@ use Deligoez\Phony\Fakes\Fake;
 /**
  * Class Currency.
  *
- * @package Deligoez\Phony\Fakes\Standard
  *
  * @property string name
  * @property string code
