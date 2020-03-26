@@ -28,11 +28,6 @@ class Phony
         return new Address($this);
     }
 
-    public function 📫(): Address
-    {
-        return new Address($this);
-    }
-
     public function alphabet(): Alphabet
     {
         return new Alphabet($this);
@@ -57,4 +52,12 @@ class Phony
     {
         return new Currency($this);
     }
+
+    // region Aliases
+
+    public function 📫(): Address { return $this->address(); }
+    public function 🔤(): Alphabet { return $this->alphabet(); }
+    public function 📜(): Ancient { return $this->ancient(); }
+
+    // endregion
 }
