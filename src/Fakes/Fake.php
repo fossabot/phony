@@ -8,6 +8,8 @@ use Deligoez\Phony\Phony;
 class Fake
 {
     protected Phony $phony;
+    protected array $attributeAliases;
+    protected array $functionAliases;
 
     /**
      * Fake constructor.
@@ -20,12 +22,21 @@ class Fake
     }
 
     /**
+     * Get attributes by magic.
+     *
      * @param $attribute
      *
      * @return mixed
      * @throws \Exception
      */
     public function __get($attribute){
+        if (isset($this->attributeAliases[$attribute]))
+        {
+            $functionName = $this->attributeAliases[$attribute];
+
+            return $this->$functionName();
+        }
+
         if (!method_exists($this, $attribute))
         {
             throw new RuntimeException("The {$attribute} attribute is not defined!");
@@ -34,11 +45,24 @@ class Fake
         return $this->$attribute();
     }
 
+    /**
+     * Don't allow setting magic attributes.
+     *
+     * @param $attribute
+     * @param $value
+     */
     public function __set($attribute, $value)
     {
         throw new RuntimeException("Setting {$attribute} attribute is not allowed!");
     }
 
+    /**
+     * Check if a magic attribute exists.
+     *
+     * @param $attribute
+     *
+     * @return bool
+     */
     public function __isset($attribute)
     {
         return method_exists($this, $attribute);
