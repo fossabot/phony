@@ -95,4 +95,19 @@ class PersonTest extends BaseTest
             mb_strlen($this->🙃->person()->initials($times), 'utf8')
         );
     }
+
+    /** @test */
+    public function can_access_by_magic_attributes(): void
+    {
+        $this->assertNotNull($this->🙃->person()->name);
+        $this->assertNotNull($this->🙃->person()->nameWithMiddle);
+        $this->assertNotNull($this->🙃->person()->firstName);
+        $this->assertNotNull($this->🙃->person()->middleName);
+        $this->assertNotNull($this->🙃->person()->maleFirstName);
+        $this->assertNotNull($this->🙃->person()->femaleFirstName);
+        $this->assertNotNull($this->🙃->person()->lastName);
+        $this->assertNotNull($this->🙃->person()->prefix);
+        $this->assertNotNull($this->🙃->person()->suffix);
+        $this->assertNotNull($this->🙃->person()->initials);
+    }
 }

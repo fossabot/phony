@@ -4,6 +4,22 @@ namespace Deligoez\Phony\Fakes\Standard;
 
 use Deligoez\Phony\Fakes\Fake;
 
+/**
+ * Class Person
+ *
+ * @package Deligoez\Phony\Fakes\Standard
+ *
+ * @property string name
+ * @property string nameWithMiddle
+ * @property string firstName
+ * @property string middleName
+ * @property string maleFirstName
+ * @property string femaleFirstName
+ * @property string lastName
+ * @property string prefix
+ * @property string suffix
+ * @property string initials
+ */
 class Person extends Fake
 {
     /**
