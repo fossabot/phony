@@ -6,12 +6,19 @@ use Deligoez\Phony\Tests\BaseTest;
 
 class AlphabetTest extends BaseTest
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->🧪 = $this->🙃->alphabet();
+    }
+
     /** @test */
     public function uppercase_letter(): void
     {
         $this->assertEquals(
             1,
-            mb_strlen($this->🙃->alphabet()->uppercaseLetter(), 'utf8')
+            mb_strlen($this->🧪->uppercaseLetter(), 'utf8')
         );
     }
 
@@ -20,7 +27,7 @@ class AlphabetTest extends BaseTest
     {
         $this->assertEquals(
             1,
-            mb_strlen($this->🙃->alphabet()->lowercaseLetter(), 'utf8')
+            mb_strlen($this->🧪->lowercaseLetter(), 'utf8')
         );
     }
 
@@ -29,15 +36,15 @@ class AlphabetTest extends BaseTest
     {
         $this->assertEquals(
             1,
-            mb_strlen($this->🙃->alphabet()->letter(), 'utf8')
+            mb_strlen($this->🧪->letter(), 'utf8')
         );
     }
 
     /** @test */
     public function can_access_by_magic_attributes(): void
     {
-        $this->assertNotNull($this->🙃->alphabet()->uppercaseLetter);
-        $this->assertNotNull($this->🙃->alphabet()->lowercaseLetter);
-        $this->assertNotNull($this->🙃->alphabet()->letter);
+        $this->assertNotNull($this->🧪->uppercaseLetter);
+        $this->assertNotNull($this->🧪->lowercaseLetter);
+        $this->assertNotNull($this->🧪->letter);
     }
 }

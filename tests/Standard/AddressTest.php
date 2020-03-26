@@ -7,6 +7,13 @@ use Deligoez\Phony\Tests\BaseTest;
 
 class AddressTest extends BaseTest
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->🧪 = $this->🙃->address();
+    }
+
     /** @test */
     public function can_call_by_emoji_alias(): void
     {
@@ -20,7 +27,7 @@ class AddressTest extends BaseTest
     public function city(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->city()
+            $this->🧪->city()
         );
     }
 
@@ -28,7 +35,7 @@ class AddressTest extends BaseTest
     public function city_with_state(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->city(true)
+            $this->🧪->city(true)
         );
     }
 
@@ -36,7 +43,7 @@ class AddressTest extends BaseTest
     public function street_name(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->streetName()
+            $this->🧪->streetName()
         );
     }
 
@@ -46,7 +53,7 @@ class AddressTest extends BaseTest
     public function secondary_address(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->secondaryAddress()
+            $this->🧪->secondaryAddress()
         );
     }
 
@@ -56,7 +63,7 @@ class AddressTest extends BaseTest
     public function street_address(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->streetAddress()
+            $this->🧪->streetAddress()
         );
     }
 
@@ -66,7 +73,7 @@ class AddressTest extends BaseTest
     public function street_address_secondary_address_included(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->streetAddress(true)
+            $this->🧪->streetAddress(true)
         );
     }
 
@@ -76,7 +83,7 @@ class AddressTest extends BaseTest
     public function building_number(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->buildingNumber()
+            $this->🧪->buildingNumber()
         );
     }
 
@@ -84,7 +91,7 @@ class AddressTest extends BaseTest
     public function community(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->community()
+            $this->🧪->community()
         );
     }
 
@@ -94,7 +101,7 @@ class AddressTest extends BaseTest
     public function mailBox(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->mailBox()
+            $this->🧪->mailBox()
         );
     }
 
@@ -104,15 +111,15 @@ class AddressTest extends BaseTest
     public function zip_code(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->zipCode()
+            $this->🧪->zipCode()
         );
 
         $this->assertIsString(
-            $this->🙃->address()->zip()
+            $this->🧪->zip()
         );
 
         $this->assertIsString(
-            $this->🙃->address()->postcode()
+            $this->🧪->postcode()
         );
     }
 
@@ -122,15 +129,15 @@ class AddressTest extends BaseTest
     public function zip_code_for_state_abbreviation(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->zipCode('CO')
+            $this->🧪->zipCode('CO')
         );
 
         $this->assertIsString(
-            $this->🙃->address()->zip('CO')
+            $this->🧪->zip('CO')
         );
 
         $this->assertIsString(
-            $this->🙃->address()->postcode('CO')
+            $this->🧪->postcode('CO')
         );
     }
 
@@ -138,7 +145,7 @@ class AddressTest extends BaseTest
     public function street_suffix(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->streetSuffix()
+            $this->🧪->streetSuffix()
         );
     }
 
@@ -146,7 +153,7 @@ class AddressTest extends BaseTest
     public function city_suffix(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->citySuffix()
+            $this->🧪->citySuffix()
         );
     }
 
@@ -154,25 +161,25 @@ class AddressTest extends BaseTest
     public function city_prefix(): void
     {
         $this->assertIsString(
-            $this->🙃->address()->cityPrefix()
+            $this->🧪->cityPrefix()
         );
     }
 
     /** @test */
     public function can_access_by_magic_attributes(): void
     {
-        $this->assertNotNull($this->🙃->address()->city);
-        $this->assertNotNull($this->🙃->address()->streetName);
-        $this->assertNotNull($this->🙃->address()->secondaryAddress);
-        $this->assertNotNull($this->🙃->address()->streetAddress);
-        $this->assertNotNull($this->🙃->address()->buildingNumber);
-        $this->assertNotNull($this->🙃->address()->community);
-        $this->assertNotNull($this->🙃->address()->mailBox);
-        $this->assertNotNull($this->🙃->address()->zipCode);
-        $this->assertNotNull($this->🙃->address()->zip);
-        $this->assertNotNull($this->🙃->address()->postcode);
-        $this->assertNotNull($this->🙃->address()->streetSuffix);
-        $this->assertNotNull($this->🙃->address()->citySuffix);
-        $this->assertNotNull($this->🙃->address()->cityPrefix);
+        $this->assertNotNull($this->🧪->city);
+        $this->assertNotNull($this->🧪->streetName);
+        $this->assertNotNull($this->🧪->secondaryAddress);
+        $this->assertNotNull($this->🧪->streetAddress);
+        $this->assertNotNull($this->🧪->buildingNumber);
+        $this->assertNotNull($this->🧪->community);
+        $this->assertNotNull($this->🧪->mailBox);
+        $this->assertNotNull($this->🧪->zipCode);
+        $this->assertNotNull($this->🧪->zip);
+        $this->assertNotNull($this->🧪->postcode);
+        $this->assertNotNull($this->🧪->streetSuffix);
+        $this->assertNotNull($this->🧪->citySuffix);
+        $this->assertNotNull($this->🧪->cityPrefix);
     }
 }

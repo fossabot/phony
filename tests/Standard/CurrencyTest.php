@@ -6,11 +6,18 @@ use Deligoez\Phony\Tests\BaseTest;
 
 class CurrencyTest extends BaseTest
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->🧪 = $this->🙃->currency();
+    }
+
     /** @test */
     public function name(): void
     {
         $this->assertIsString(
-            $this->🙃->currency()->name()
+            $this->🧪->name()
         );
     }
 
@@ -19,7 +26,7 @@ class CurrencyTest extends BaseTest
     {
         $this->assertRegExp(
             '/[A-Z]{3}/',
-            $this->🙃->currency()->code()
+            $this->🧪->code()
         );
     }
 
@@ -27,15 +34,15 @@ class CurrencyTest extends BaseTest
     public function symbol(): void
     {
         $this->assertIsString(
-            $this->🙃->currency()->symbol()
+            $this->🧪->symbol()
         );
     }
 
     /** @test */
     public function can_access_by_magic_attributes(): void
     {
-        $this->assertNotNull($this->🙃->currency()->name);
-        $this->assertNotNull($this->🙃->currency()->code);
-        $this->assertNotNull($this->🙃->currency()->symbol);
+        $this->assertNotNull($this->🧪->name);
+        $this->assertNotNull($this->🧪->code);
+        $this->assertNotNull($this->🧪->symbol);
     }
 }

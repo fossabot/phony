@@ -6,11 +6,18 @@ use Deligoez\Phony\Tests\BaseTest;
 
 class CoinTest extends BaseTest
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->🧪 = $this->🙃->coin();
+    }
+
     /** @test */
     public function flip(): void
     {
         $this->assertIsString(
-            $this->🙃->coin()->flip()
+            $this->🧪->flip()
         );
     }
 
@@ -18,14 +25,14 @@ class CoinTest extends BaseTest
     public function name(): void
     {
         $this->assertIsString(
-            $this->🙃->coin()->name()
+            $this->🧪->name()
         );
     }
 
     /** @test */
     public function can_access_by_magic_attributes(): void
     {
-        $this->assertNotNull($this->🙃->coin()->flip);
-        $this->assertNotNull($this->🙃->coin()->name);
+        $this->assertNotNull($this->🧪->flip);
+        $this->assertNotNull($this->🧪->name);
     }
 }
