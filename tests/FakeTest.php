@@ -2,6 +2,7 @@
 
 namespace Deligoez\Phony\Tests;
 
+use RuntimeException;
 use Deligoez\Phony\Fakes\Fake;
 use Deligoez\Phony\PhonyFacade;
 use ReflectionMethod;
@@ -39,6 +40,34 @@ class FakeTest extends BaseTest
     {
         $this->assertIsString(
 /** @scrutinizer ignore-call */ PhonyFacade::alphabet()->letter()
+        );
+    }
+
+    /** @test */
+    public function can_not_access_undefined_magic_attribute(): void
+    {
+        $this->expectException(RuntimeException::class);
+
+        $this->🙃->alphabet()->notExist;
+    }
+
+    /** @test */
+    public function can_not_set_a_magic_attribute(): void
+    {
+        $this->expectException(RuntimeException::class);
+
+        $this->🙃->alphabet()->uppercaseLetter = 'can-not';
+    }
+
+    /** @test */
+    public function can_check_existence_with_magic_isset(): void
+    {
+        $this->assertTrue(
+            isset($this->🙃->alphabet()->uppercaseLetter)
+        );
+
+        $this->assertFalse(
+            isset($this->🙃->alphabet()->notExist)
         );
     }
 
