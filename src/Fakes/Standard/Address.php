@@ -25,6 +25,8 @@ use Deligoez\Phony\Fakes\Fake;
  * @property string streetSuffix
  * @property string citySuffix
  * @property string cityPrefix
+ * @method zip(?string $stateAbbreviation = null): string
+ * @method postcode(?string $stateAbbreviation = null): string
  */
 class Address extends Fake
 {
