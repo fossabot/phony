@@ -2,11 +2,14 @@
 
 namespace Deligoez\Phony\Fakes;
 
+use Exception;
+use RuntimeException;
 use Deligoez\Phony\Phony;
 
 class Fake
 {
     protected Phony $phony;
+    protected array $methods;
 
     /**
      * Fake constructor.
@@ -16,6 +19,21 @@ class Fake
     public function __construct(Phony $phony)
     {
         $this->phony = $phony;
+    }
+
+    /**
+     * @param $attribute
+     *
+     * @return mixed
+     * @throws \Exception
+     */
+    public function __get($attribute){
+
+        if (!in_array($attribute, $this->methods, true)){
+            throw new RuntimeException("The {$attribute} attribute is not defined!");
+        }
+
+        return $this->$attribute();
     }
 
     /**

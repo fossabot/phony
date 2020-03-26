@@ -32,4 +32,12 @@ class AlphabetTest extends BaseTest
             mb_strlen($this->🙃->alphabet()->letter(), 'utf8')
         );
     }
+
+    /** @test */
+    public function can_access_by_magic_attributes(): void
+    {
+        $this->assertNotNull($this->🙃->alphabet()->uppercaseLetter);
+        $this->assertNotNull($this->🙃->alphabet()->lowercaseLetter);
+        $this->assertNotNull($this->🙃->alphabet()->letter);
+    }
 }
