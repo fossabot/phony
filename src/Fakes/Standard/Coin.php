@@ -4,6 +4,14 @@ namespace Deligoez\Phony\Fakes\Standard;
 
 use Deligoez\Phony\Fakes\Fake;
 
+/**
+ * Class Coin
+ *
+ * @package Deligoez\Phony\Fakes\Standard
+ *
+ * @property string flip
+ * @property string name
+ */
 class Coin extends Fake
 {
     /**

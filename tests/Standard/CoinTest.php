@@ -21,4 +21,11 @@ class CoinTest extends BaseTest
             $this->🙃->coin()->name()
         );
     }
+
+    /** @test */
+    public function can_access_by_magic_attributes(): void
+    {
+        $this->assertNotNull($this->🙃->coin()->flip);
+        $this->assertNotNull($this->🙃->coin()->name);
+    }
 }
