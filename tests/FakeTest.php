@@ -2,10 +2,10 @@
 
 namespace Deligoez\Phony\Tests;
 
-use RuntimeException;
 use Deligoez\Phony\Fakes\Fake;
 use Deligoez\Phony\PhonyFacade;
 use ReflectionMethod;
+use RuntimeException;
 
 class FakeTest extends BaseTest
 {
