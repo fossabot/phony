@@ -138,7 +138,7 @@ class AddressTest extends BaseTest
      *
      * @throws \Exception
      */
-    public function zipCode(): void
+    public function zipCodeMethod(): void
     {
         $this->assertIsString(
             $this->🧪->zipCode()
@@ -149,10 +149,32 @@ class AddressTest extends BaseTest
      *
      * @throws \Exception
      */
-    public function zipCodeWithStateAbbreviation(): void
+    public function zipCodeWithStateAbbreviationMethod(): void
     {
         $this->assertIsString(
             $this->🧪->zipCode('CO')
+        );
+    }
+
+    /** @test *
+     *
+     * @throws \Exception
+     */
+    public function zipMethod(): void
+    {
+        $this->assertIsString(
+            $this->🧪->zip()
+        );
+    }
+
+    /** @test *
+     *
+     * @throws \Exception
+     */
+    public function postcodeMethod(): void
+    {
+        $this->assertIsString(
+            $this->🧪->postcode()
         );
     }
 
