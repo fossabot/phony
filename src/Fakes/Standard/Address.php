@@ -4,6 +4,25 @@ namespace Deligoez\Phony\Fakes\Standard;
 
 use Deligoez\Phony\Fakes\Fake;
 
+/**
+ * Class Address
+ *
+ * @package Deligoez\Phony\Fakes\Standard
+ *
+ * @property string city
+ * @property string streetName
+ * @property string secondaryAddress
+ * @property string streetAddress
+ * @property string buildingNumber
+ * @property string community
+ * @property string mailBox
+ * @property string zipCode
+ * @property string zip
+ * @property string postcode
+ * @property string streetSuffix
+ * @property string citySuffix
+ * @property string cityPrefix
+ */
 class Address extends Fake
 {
     /**

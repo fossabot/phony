@@ -157,4 +157,22 @@ class AddressTest extends BaseTest
             $this->🙃->address()->cityPrefix()
         );
     }
+
+    /** @test */
+    public function can_access_by_magic_attributes(): void
+    {
+        $this->assertNotNull($this->🙃->address()->city);
+        $this->assertNotNull($this->🙃->address()->streetName);
+        $this->assertNotNull($this->🙃->address()->secondaryAddress);
+        $this->assertNotNull($this->🙃->address()->streetAddress);
+        $this->assertNotNull($this->🙃->address()->buildingNumber);
+        $this->assertNotNull($this->🙃->address()->community);
+        $this->assertNotNull($this->🙃->address()->mailBox);
+        $this->assertNotNull($this->🙃->address()->zipCode);
+        $this->assertNotNull($this->🙃->address()->zip);
+        $this->assertNotNull($this->🙃->address()->postcode);
+        $this->assertNotNull($this->🙃->address()->streetSuffix);
+        $this->assertNotNull($this->🙃->address()->citySuffix);
+        $this->assertNotNull($this->🙃->address()->cityPrefix);
+    }
 }
