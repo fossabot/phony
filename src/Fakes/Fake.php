@@ -68,6 +68,18 @@ class Fake
         return method_exists($this, $attribute);
     }
 
+    public function __call($name, $arguments)
+    {
+        if (isset($this->functionAliases[$name]))
+        {
+            $functionName = $this->functionAliases[$name];
+
+            return $this->$functionName(true);
+        }
+
+        throw new RuntimeException("The {$name} function is not defined!");
+    }
+
     /**
      * Fetches a value.
      *
