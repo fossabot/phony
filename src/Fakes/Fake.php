@@ -2,9 +2,8 @@
 
 namespace Deligoez\Phony\Fakes;
 
-use Exception;
-use RuntimeException;
 use Deligoez\Phony\Phony;
+use RuntimeException;
 
 class Fake
 {
@@ -27,9 +26,9 @@ class Fake
      * @return mixed
      * @throws \Exception
      */
-    public function __get($attribute){
-
-        if (!in_array($attribute, $this->methods, true)){
+    public function __get($attribute)
+    {
+        if (! in_array($attribute, $this->methods, true)) {
             throw new RuntimeException("The {$attribute} attribute is not defined!");
         }
 

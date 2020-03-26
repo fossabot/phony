@@ -5,9 +5,8 @@ namespace Deligoez\Phony\Fakes\Standard;
 use Deligoez\Phony\Fakes\Fake;
 
 /**
- * Class Alphabet
+ * Class Alphabet.
  *
- * @package Deligoez\Phony\Fakes\Standard
  *
  * @property string uppercaseLetter
  * @property string lowercaseLetter
@@ -18,7 +17,7 @@ class Alphabet extends Fake
     protected array $methods = [
         'uppercaseLetter',
         'lowercaseLetter',
-        'letter'
+        'letter',
     ];
 
     /**
