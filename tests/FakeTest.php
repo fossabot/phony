@@ -72,6 +72,14 @@ class FakeTest extends BaseTest
     }
 
     /** @test */
+    public function can_not_access_undefined_magic_method(): void
+    {
+        $this->expectException(RuntimeException::class);
+
+        $this->🙃->alphabet()->notExist();
+    }
+
+    /** @test */
     public function can_fetch_a_value(): void
     {
         $this->assertNotNull(
