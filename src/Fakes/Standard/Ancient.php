@@ -4,6 +4,16 @@ namespace Deligoez\Phony\Fakes\Standard;
 
 use Deligoez\Phony\Fakes\Fake;
 
+/**
+ * Class Ancient
+ *
+ * @package Deligoez\Phony\Fakes\Standard
+ *
+ * @property string god
+ * @property string primordial
+ * @property string titan
+ * @property string hero
+ */
 class Ancient extends Fake
 {
     /**

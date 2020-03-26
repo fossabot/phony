@@ -37,4 +37,13 @@ class AncientTest extends BaseTest
             $this->🙃->ancient()->hero()
         );
     }
+
+    /** @test */
+    public function can_access_by_magic_attributes(): void
+    {
+        $this->assertNotNull($this->🙃->ancient()->god);
+        $this->assertNotNull($this->🙃->ancient()->primordial);
+        $this->assertNotNull($this->🙃->ancient()->titan);
+        $this->assertNotNull($this->🙃->ancient()->hero);
+    }
 }
