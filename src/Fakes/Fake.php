@@ -68,6 +68,14 @@ class Fake
         return method_exists($this, $attribute);
     }
 
+    /**
+     * Get function by magic.
+     *
+     * @param $name
+     * @param $arguments
+     *
+     * @return mixed
+     */
     public function __call($name, $arguments)
     {
         if (isset($this->functionAliases[$name]))
