@@ -55,9 +55,20 @@ class Phony
 
     // region Aliases
 
-    public function 📫(): Address { return $this->address(); }
-    public function 🔤(): Alphabet { return $this->alphabet(); }
-    public function 📜(): Ancient { return $this->ancient(); }
+    public function 📫(): Address
+    {
+        return $this->address();
+    }
+
+    public function 🔤(): Alphabet
+    {
+        return $this->alphabet();
+    }
+
+    public function 📜(): Ancient
+    {
+        return $this->ancient();
+    }
 
     // endregion
 }
