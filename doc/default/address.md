@@ -19,7 +19,11 @@
 
 🙃::address()->mailBox;                             // => "PO Box 123"
 
-🙃::address()->zipCode();                           // => "58517" or "23285-4905"
+// $stateAbbreviation
+🙃::address()->zipCode('CO');                       // => "80011"
+🙃::address()->zip('CO');                           // => "80011"
+🙃::address()->zipCode('CO');                       // => "80011"
+
 🙃::address()->zipCode;                             // => "58517" or "23285-4905"
 
 🙃::address()->zip;                                 // => "58517" or "66259-8212"
@@ -46,19 +50,14 @@
 // Keyword arguments: name
 🙃::address()->countryNameToCode('united_states');  // => "US"
 
-🙃::address()->countryCode();                       // => "IT"
 🙃::address()->countryCode;                         // => "IT"
 
-🙃::address()->countryCodeLong();                   // => "ITA"
 🙃::address()->countryCodeLong;                     // => "ITA"
 
-🙃::address()->latitude();                          // => "-58.17256227443719"
 🙃::address()->latitude;                            // => "-58.17256227443719"
 
-🙃::address()->longitude();                         // => "-156.65548382095133"
 🙃::address()->longitude;                           // => "-156.65548382095133"
 
-🙃::address()->fullAddress();                       // => "282 Kevin Brook, Imogeneborough, CA 58517"
 🙃::address()->fullAddress;                         // => "282 Kevin Brook, Imogeneborough, CA 58517"
 
 // Aliases
