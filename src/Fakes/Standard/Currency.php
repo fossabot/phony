@@ -4,6 +4,15 @@ namespace Deligoez\Phony\Fakes\Standard;
 
 use Deligoez\Phony\Fakes\Fake;
 
+/**
+ * Class Currency
+ *
+ * @package Deligoez\Phony\Fakes\Standard
+ *
+ * @property string name
+ * @property string code
+ * @property string symbol
+ */
 class Currency extends Fake
 {
     /**
