@@ -5,7 +5,7 @@ namespace Deligoez\Phony\Fakes\Standard;
 use Deligoez\Phony\Fakes\Fake;
 
 /**
- * Class Address
+ * Class Address.
  *
  * @package Deligoez\Phony\Fakes\Standard
  *

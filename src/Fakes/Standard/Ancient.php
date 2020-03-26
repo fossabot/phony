@@ -5,7 +5,7 @@ namespace Deligoez\Phony\Fakes\Standard;
 use Deligoez\Phony\Fakes\Fake;
 
 /**
- * Class Ancient
+ * Class Ancient.
  *
  * @package Deligoez\Phony\Fakes\Standard
  *

@@ -5,7 +5,7 @@ namespace Deligoez\Phony\Fakes\Standard;
 use Deligoez\Phony\Fakes\Fake;
 
 /**
- * Class Currency
+ * Class Currency.
  *
  * @package Deligoez\Phony\Fakes\Standard
  *
