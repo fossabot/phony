@@ -15,12 +15,6 @@ use Deligoez\Phony\Fakes\Fake;
  */
 class Alphabet extends Fake
 {
-    protected array $methods = [
-        'uppercaseLetter',
-        'lowercaseLetter',
-        'letter'
-    ];
-
     /**
      * Retrieves an uppercase letter.
      *
