@@ -2,7 +2,6 @@
 
 namespace Deligoez\Phony\Tests;
 
-use Deligoez\Phony\Fakes\Fake;
 use Deligoez\Phony\Phony;
 use Deligoez\Phony\PhonyServiceProvider;
 use Orchestra\Testbench\TestCase;
