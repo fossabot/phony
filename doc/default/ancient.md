@@ -1,11 +1,16 @@
 # 🙃::ancient()
 
 ```php
-🙃::ancient()->god();        // => "Zeus"
+use Deligoez\Phony\Phony;
 
-🙃::ancient()->primordial(); // => "Gaia"
+$🙃 = new Phony('en');
 
-🙃::ancient()->tital();      // => "Atlas"
 
-🙃::ancient()->hero();       // => "Achilles"
+$🙃->ancient->god;   // => "Zeus"
+
+$🙃->ancient->primordial;    // => "Gaia"
+
+$🙃->ancient->titan; // => "Atlas"
+
+$🙃->ancient->hero;  // => "Achilles"
 ```

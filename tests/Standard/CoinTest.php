@@ -10,14 +10,14 @@ class CoinTest extends BaseTest
     {
         parent::setUp();
 
-        $this->🧪 = $this->🙃->coin();
+        $this->🧪 = $this->🙃->coin;
     }
 
     /** @test */
     public function flip(): void
     {
         $this->assertIsString(
-            $this->🧪->flip()
+            $this->🧪->flip
         );
     }
 
@@ -25,14 +25,7 @@ class CoinTest extends BaseTest
     public function name(): void
     {
         $this->assertIsString(
-            $this->🧪->name()
+            $this->🧪->name
         );
-    }
-
-    /** @test */
-    public function can_access_by_magic_attributes(): void
-    {
-        $this->assertNotNull($this->🧪->flip);
-        $this->assertNotNull($this->🧪->name);
     }
 }

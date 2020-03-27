@@ -10,14 +10,14 @@ class CurrencyTest extends BaseTest
     {
         parent::setUp();
 
-        $this->🧪 = $this->🙃->currency();
+        $this->🧪 = $this->🙃->currency;
     }
 
     /** @test */
     public function name(): void
     {
         $this->assertIsString(
-            $this->🧪->name()
+            $this->🧪->name
         );
     }
 
@@ -26,7 +26,7 @@ class CurrencyTest extends BaseTest
     {
         $this->assertRegExp(
             '/[A-Z]{3}/',
-            $this->🧪->code()
+            $this->🧪->code
         );
     }
 
@@ -34,15 +34,7 @@ class CurrencyTest extends BaseTest
     public function symbol(): void
     {
         $this->assertIsString(
-            $this->🧪->symbol()
+            $this->🧪->symbol
         );
-    }
-
-    /** @test */
-    public function can_access_by_magic_attributes(): void
-    {
-        $this->assertNotNull($this->🧪->name);
-        $this->assertNotNull($this->🧪->code);
-        $this->assertNotNull($this->🧪->symbol);
     }
 }

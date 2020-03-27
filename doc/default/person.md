@@ -1,23 +1,28 @@
-# 🙃::person()
+# $🙃->person
 
 ```php
-🙃::person()->name();            // => "Tyshawn Johns Sr."
+use Deligoez\Phony\Phony;
 
-🙃::person()->nameWithMiddle();  // => "Aditya Elton Douglas"
 
-🙃::person()->firstName();       // => "Kaci"
+$🙃 = new Phony('en');
 
-🙃::person()->middleName();      // => "Abraham"
+$🙃->person->name;   // => "Tyshawn Johns Sr."
 
-🙃::person()->maleFirstName();   // => "Edward"
+$🙃->person->name_with_middle;   // => "Aditya Elton Douglas"
 
-🙃::person()->femaleFirstName(); // => "Natasha"
+$🙃->person->first_name; // => "Kaci"
 
-🙃::person()->lastName();        // => "Ernser"
+$🙃->person->middle_name;    // => "Abraham"
 
-🙃::person()->prefix();          // => "Mr."
+$🙃->person->male_first_name;    // => "Edward"
 
-🙃::person()->suffix();          // => "IV"
+$🙃->person->female_first_name;  // => "Natasha"
 
-🙃::person()->initials();        // => "NJM"
+$🙃->person->last_name;  // => "Ernser"
+
+$🙃->person->prefix; // => "Mr."
+
+$🙃->person->suffix; // => "IV"
+
+$🙃->person->initials;   // => "NJM"
 ```

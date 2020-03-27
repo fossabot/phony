@@ -1,9 +1,12 @@
 # 🙃::coin()
 
 ```php
-# Flip a coin
-🙃::coin()->flip(); // => "Heads"
+use Deligoez\Phony\Phony;
 
-# The currency of the coin
-🙃::coin()->name(); // => "Philippine Peso"
+$🙃 = new Phony('en');
+
+
+$🙃->coin->flip; // => "Heads"
+
+$🙃->coin->name; // => "Philippine Peso"
 ```

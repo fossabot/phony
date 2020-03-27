@@ -9,12 +9,12 @@ use Deligoez\Phony\Fakes\Fake;
  *
  *
  * @property string name
- * @property string nameWithMiddle
- * @property string firstName
- * @property string middleName
- * @property string maleFirstName
- * @property string femaleFirstName
- * @property string lastName
+ * @property string name_with_middle
+ * @property string first_name
+ * @property string middle_name
+ * @property string male_first_name
+ * @property string female_first_name
+ * @property string last_name
  * @property string prefix
  * @property string suffix
  * @property string initials
@@ -28,7 +28,7 @@ class Person extends Fake
      *
      * @example 🙃::person()->name() // => "Tyshawn Johns Sr."
      */
-    public function name(): string
+    protected function name(): string
     {
         return $this->fetch('person.name');
     }
@@ -38,9 +38,9 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->nameWithMiddle() // => "Aditya Elton Douglas"
+     * @example 🙃::person()->name_with_middle() // => "Aditya Elton Douglas"
      */
-    public function nameWithMiddle(): string
+    protected function name_with_middle(): string
     {
         return $this->fetch('person.name_with_middle');
     }
@@ -50,9 +50,9 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->firstName() // => "Kaci"
+     * @example 🙃::person()->first_name() // => "Kaci"
      */
-    public function firstName(): string
+    protected function first_name(): string
     {
         return $this->fetch('person.first_name');
     }
@@ -62,10 +62,11 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->middleName() // => "Abraham"
+     * @example 🙃::person()->middle_name() // => "Abraham"
      */
-    public function middleName(): string
+    protected function middle_name(): string
     {
+        // TODO: Match with middle_name in person.php
         return $this->fetch('person.last_name');
     }
 
@@ -74,9 +75,9 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->maleFirstName() // => "Edward"
+     * @example 🙃::person()->male_first_name() // => "Edward"
      */
-    public function maleFirstName(): string
+    protected function male_first_name(): string
     {
         return $this->fetch('person.male_first_name');
     }
@@ -86,9 +87,9 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->femaleFirstName() // => "Natasha"
+     * @example 🙃::person()->female_first_name() // => "Natasha"
      */
-    public function femaleFirstName(): string
+    protected function female_first_name(): string
     {
         return $this->fetch('person.female_first_name');
     }
@@ -98,9 +99,9 @@ class Person extends Fake
      *
      * @return string
      *
-     * @example 🙃::person()->lastName() // => "Ernser"
+     * @example 🙃::person()->last_name() // => "Ernser"
      */
-    public function lastName(): string
+    protected function last_name(): string
     {
         return $this->fetch('person.last_name');
     }
@@ -112,7 +113,7 @@ class Person extends Fake
      *
      * @example 🙃::person()->prefix() // => "Mr."
      */
-    public function prefix(): string
+    protected function prefix(): string
     {
         return $this->fetch('person.prefix');
     }
@@ -124,7 +125,7 @@ class Person extends Fake
      *
      * @example 🙃::person()->suffix() // => "Mr."
      */
-    public function suffix(): string
+    protected function suffix(): string
     {
         return $this->fetch('person.suffix');
     }

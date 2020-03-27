@@ -1,67 +1,72 @@
-# 🙃::address()
+$# >🙃->address()
 
 ```php
-🙃::address()->city;                                // => "Imogeneborough"
+use Deligoez\Phony\Phony;
 
-🙃::address()->cithWithState;                       // => "Northfort, California"
+$🙃 = new Phony('en');
 
-🙃::address()->streetName;                          // => "Larkin Fork"
 
-🙃::address()->secondaryAddress;                    // => "Apt. 672"
+$🙃->address->city; // => "Imogeneborough"
 
-🙃::address()->streetAddress;                       // => "282 Kevin Brook"
+$🙃->address->cityWithState;    // => "Northfort, California"
 
-🙃::address()->streetAddressWithSecondaryAddress;   // => "282 Kevin Brook Apt. 672"
+$🙃->address->streetName;   // => "Larkin Fork"
 
-🙃::address()->buildingNumber;                      // => "7304"
+$🙃->address->secondaryAddress; // => "Apt. 672"
 
-🙃::address()->community;                           // => "University Crossing"
+$🙃->address->streetAddress;    // => "282 Kevin Brook"
 
-🙃::address()->mailBox;                             // => "PO Box 123"
+$🙃->address->streetAddressWithSecondaryAddress;    // => "282 Kevin Brook Apt. 672"
+
+$🙃->address->buildingNumber;   // => "7304"
+
+$🙃->address->community;    // => "University Crossing"
+
+$🙃->address->mailBox;  // => "PO Box 123"
 
 // $stateAbbreviation
-🙃::address()->zipCode('CO');                       // => "80011"
-🙃::address()->zip('CO');                           // => "80011"
-🙃::address()->zipCode('CO');                       // => "80011"
+$🙃->address->zipCode('CO');    // => "80011"
+$🙃->address->zip('CO');    // => "80011"
+$🙃->address->zipCode('CO');    // => "80011"
 
-🙃::address()->zipCode;                             // => "58517" or "23285-4905"
+$🙃->address->zipCode;  // => "58517" or "23285-4905"
 
-🙃::address()->zip;                                 // => "58517" or "66259-8212"
+$🙃->address->zip;  // => "58517" or "66259-8212"
 
-🙃::address()->postcode;                            // => "76032-4907" or "58517"
+$🙃->address->postcode; // => "76032-4907" or "58517"
 
-🙃::address()->timeZone;                            // => "Asia/Yakutsk"
+$🙃->address->timeZone; // => "Asia/Yakutsk"
 
-🙃::address()->streetSuffix;                        // => "Street"
+$🙃->address->streetSuffix; // => "Street"
 
-🙃::address()->citySuffix;                          // => "fort"
+$🙃->address->citySuffix;   // => "fort"
 
-🙃::address()->cityPrefix;                          // => "Lake"
+$🙃->address->cityPrefix;   // => "Lake"
 
-🙃::address()->stateAbbr;                           // => "AP"
+$🙃->address->stateAbbr;    // => "AP"
 
-🙃::address()->state;                               // => "California"
+$🙃->address->state;    // => "California"
 
-🙃::address()->country;                             // => "French Guiana"
+$🙃->address->country;  // => "French Guiana"
 
 // Keyword arguments: code
-🙃::address()->countryByCode('NL');                 // => "Netherlands"
+$🙃->address->country_by_code('NL');    // => "Netherlands"
 
 // Keyword arguments: name
-🙃::address()->countryNameToCode('united_states');  // => "US"
+$🙃->address->country_name_to_code('united_states');    // => "US"
 
-🙃::address()->countryCode;                         // => "IT"
+$🙃->address->countryCode;  // => "IT"
 
-🙃::address()->countryCodeLong;                     // => "ITA"
+$🙃->address->countryCodeLong;  // => "ITA"
 
-🙃::address()->fullAddress;                         // => "282 Kevin Brook, Imogeneborough, CA 58517"
+$🙃->address->fullAddress;  // => "282 Kevin Brook, Imogeneborough, CA 58517"
 
-🙃::address()->latitude;                            // => "-58.17256227443719"
+$🙃->address->latitude; // => "-58.17256227443719"
 
-🙃::address()->longitude;                           // => "-156.65548382095133"
+$🙃->address->longitude;    // => "-156.65548382095133"
 
 
 // Aliases
-🙃::address()->city;                              // => "Imogeneborough"
-🙃::📫()->city;                                   // => "Imogeneborough"
+$🙃->address->city; // => "Imogeneborough"
+$🙃->📫->city;  // => "Imogeneborough"
 ```

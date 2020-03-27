@@ -16,14 +16,18 @@ use RuntimeException;
  *
  * @property Address address
  * @property Address 📫
+ * @property Alphabet alphabet
  * @property Alphabet 🔤
+ * @property Ancient ancient
  * @property Ancient 📜
+ * @property Person person
+ * @property Coin coin
+ * @property Currency currency
  */
 class Phony
 {
     public string $defaultLocale;
     protected array $attributeAliases;
-    protected array $functionAliases;
 
     /**
      * Phony constructor.

@@ -27,7 +27,7 @@ class AddressTest extends BaseTest
     // region Magic Attributes
 
     /** @test */
-    public function cityAttribute(): void
+    public function city(): void
     {
         $this->assertIsString(
             $this->🧪->city
@@ -35,55 +35,55 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function cityWithStateAttribute(): void
+    public function city_with_state(): void
     {
         $this->assertIsString(
-            $this->🧪->cityWithState
+            $this->🧪->city_with_state
         );
     }
 
     /** @test */
-    public function streetNameAttribute(): void
+    public function street_name(): void
     {
         $this->assertIsString(
-            $this->🧪->streetName
+            $this->🧪->street_name
         );
     }
 
     /** @test */
-    public function secondaryAddressAttribute(): void
+    public function secondary_address(): void
     {
         $this->assertIsString(
-            $this->🧪->secondaryAddress
+            $this->🧪->secondary_address
         );
     }
 
     /** @test */
-    public function streetAddressAttribute(): void
+    public function street_address(): void
     {
         $this->assertIsString(
-            $this->🧪->streetAddress
+            $this->🧪->street_address
         );
     }
 
     /** @test */
-    public function streetAddressWithSecondaryAddressAttribute(): void
+    public function street_address_with_secondary_address(): void
     {
         $this->assertIsString(
-            $this->🧪->streetAddressWithSecondaryAddress
+            $this->🧪->street_address_with_secondary_address
         );
     }
 
     /** @test */
-    public function buildingNumberAttribute(): void
+    public function building_number(): void
     {
         $this->assertIsString(
-            $this->🧪->buildingNumber
+            $this->🧪->building_number
         );
     }
 
     /** @test */
-    public function communityAttribute(): void
+    public function community(): void
     {
         $this->assertIsString(
             $this->🧪->community
@@ -91,23 +91,23 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function mailBoxAttribute(): void
+    public function mail_box(): void
     {
         $this->assertIsString(
-            $this->🧪->mailBox
+            $this->🧪->mail_box
         );
     }
 
     /** @test */
-    public function zipCodeAttribute(): void
+    public function zip_code(): void
     {
         $this->assertIsString(
-            $this->🧪->zipCode
+            $this->🧪->zip_code
         );
     }
 
     /** @test */
-    public function zipAttribute(): void
+    public function zip(): void
     {
         $this->assertIsString(
             $this->🧪->zip
@@ -115,7 +115,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function postcodeAttribute(): void
+    public function postcode(): void
     {
         $this->assertIsString(
             $this->🧪->postcode
@@ -123,47 +123,47 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function timeZoneAttribute(): void
+    public function time_zone(): void
     {
         $this->assertIsString(
-            $this->🧪->timeZone
+            $this->🧪->time_zone
         );
     }
 
     /** @test */
-    public function streetSuffixAttribute(): void
+    public function street_suffix(): void
     {
         $this->assertIsString(
-            $this->🧪->streetSuffix
+            $this->🧪->street_suffix
         );
     }
 
     /** @test */
-    public function citySuffixAttribute(): void
+    public function city_suffix(): void
     {
         $this->assertIsString(
-            $this->🧪->citySuffix
+            $this->🧪->city_suffix
         );
     }
 
     /** @test */
-    public function cityPrefixAttribute(): void
+    public function city_prefix(): void
     {
         $this->assertIsString(
-            $this->🧪->cityPrefix
+            $this->🧪->city_prefix
         );
     }
 
     /** @test */
-    public function stateAbbrAttribute(): void
+    public function state_abbreviation(): void
     {
         $this->assertIsString(
-            $this->🧪->stateAbbr
+            $this->🧪->state_abbreviation
         );
     }
 
     /** @test */
-    public function stateAttribute(): void
+    public function state(): void
     {
         $this->assertIsString(
             $this->🧪->state
@@ -171,7 +171,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function countryAttribute(): void
+    public function country(): void
     {
         $this->assertIsString(
             $this->🧪->country
@@ -179,26 +179,26 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function countryCodeAttribute(): void
+    public function country_code(): void
     {
         $this->assertIsString(
-            $this->🧪->countryCode
+            $this->🧪->country_code
         );
     }
 
     /** @test */
-    public function countryCodeLongAttribute(): void
+    public function country_code_long(): void
     {
         $this->assertIsString(
-            $this->🧪->countryCodeLong
+            $this->🧪->country_code_long
         );
     }
 
     /** @test */
-    public function fullAddressAttribute(): void
+    public function full_address(): void
     {
         $this->assertIsString(
-            $this->🧪->fullAddress
+            $this->🧪->full_address
         );
     }
 
@@ -210,10 +210,10 @@ class AddressTest extends BaseTest
      *
      * @throws \Exception
      */
-    public function zipCodeMethod(): void
+    public function zip_code_method(): void
     {
         $this->assertIsString(
-            $this->🧪->zipCode()
+            $this->🧪->zip_code()
         );
     }
 
@@ -221,10 +221,10 @@ class AddressTest extends BaseTest
      *
      * @throws \Exception
      */
-    public function zipCodeWithStateAbbreviationMethod(): void
+    public function zip_code_with_state_abbreviation(): void
     {
         $this->assertIsString(
-            $this->🧪->zipCode('CO')
+            $this->🧪->zip_code('CO')
         );
     }
 
@@ -232,7 +232,7 @@ class AddressTest extends BaseTest
      *
      * @throws \Exception
      */
-    public function zipMethod(): void
+    public function zip_method(): void
     {
         $this->assertIsString(
             $this->🧪->zip()
@@ -243,7 +243,7 @@ class AddressTest extends BaseTest
      *
      * @throws \Exception
      */
-    public function postcodeMethod(): void
+    public function postcode_method(): void
     {
         $this->assertIsString(
             $this->🧪->postcode()
@@ -254,10 +254,10 @@ class AddressTest extends BaseTest
      *
      * @throws \Exception
      */
-    public function countryByCodeMethod(): void
+    public function country_by_code(): void
     {
         $this->assertIsString(
-            $this->🧪->countryByCode('NL')
+            $this->🧪->country_by_code('NL')
         );
     }
 
@@ -268,7 +268,7 @@ class AddressTest extends BaseTest
     public function countryNameToCodeMethod(): void
     {
         $this->assertIsString(
-            $this->🧪->countryNameToCode('united_states')
+            $this->🧪->country_name_to_code('united_states')
         );
     }
 

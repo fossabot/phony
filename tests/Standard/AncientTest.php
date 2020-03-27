@@ -10,14 +10,14 @@ class AncientTest extends BaseTest
     {
         parent::setUp();
 
-        $this->🧪 = $this->🙃->ancient();
+        $this->🧪 = $this->🙃->ancient;
     }
 
     /** @test */
     public function god(): void
     {
         $this->assertIsString(
-            $this->🧪->god()
+            $this->🧪->god
         );
     }
 
@@ -25,7 +25,7 @@ class AncientTest extends BaseTest
     public function primordial(): void
     {
         $this->assertIsString(
-            $this->🧪->primordial()
+            $this->🧪->primordial
         );
     }
 
@@ -33,7 +33,7 @@ class AncientTest extends BaseTest
     public function titan(): void
     {
         $this->assertIsString(
-            $this->🧪->titan()
+            $this->🧪->titan
         );
     }
 
@@ -41,16 +41,7 @@ class AncientTest extends BaseTest
     public function hero(): void
     {
         $this->assertIsString(
-            $this->🧪->hero()
+            $this->🧪->hero
         );
-    }
-
-    /** @test */
-    public function can_access_by_magic_attributes(): void
-    {
-        $this->assertNotNull($this->🧪->god);
-        $this->assertNotNull($this->🧪->primordial);
-        $this->assertNotNull($this->🧪->titan);
-        $this->assertNotNull($this->🧪->hero);
     }
 }

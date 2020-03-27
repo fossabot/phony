@@ -10,27 +10,27 @@ use Deligoez\Phony\Phony;
  *
  *
  * @property string city
- * @property string cityWithState
- * @property string streetName
- * @property string secondaryAddress
- * @property string streetAddress
- * @property string streetAddressWithSecondaryAddress
- * @property string buildingNumber
+ * @property string city_with_state
+ * @property string street_name
+ * @property string secondary_address
+ * @property string street_address
+ * @property string street_address_with_secondary_address
+ * @property string building_number
  * @property string community
- * @property string mailBox
- * @property string zipCode
+ * @property string mail_box
+ * @property string zip_code
  * @property string zip
  * @property string postcode
- * @property string timeZone
- * @property string streetSuffix
- * @property string citySuffix
- * @property string cityPrefix
- * @property string stateAbbr
+ * @property string time_zone
+ * @property string street_suffix
+ * @property string city_suffix
+ * @property string city_prefix
+ * @property string state_abbreviation
  * @property string state
  * @property string country
- * @property string countryCode
- * @property string countryCodeLong
- * @property string fullAddress
+ * @property string country_code
+ * @property string country_code_long
+ * @property string full_address
  * @method zip(?string $stateAbbreviation = null): string
  * @method postcode(?string $stateAbbreviation = null): string
  */
@@ -46,33 +46,38 @@ class Address extends Fake
         parent::__construct($phony);
 
         $this->attributeAliases = [
-            'cityWithState'                     => 'city',
-            'streetAddressWithSecondaryAddress' => 'streetAddress',
-            'zip'                               => 'zipCode',
-            'postcode'                          => 'zipCode',
+            'zip'      => 'zip_code',
+            'postcode' => 'zip_code',
         ];
 
         $this->functionAliases = [
-            'zip'      => 'zipCode',
-            'postcode' => 'zipCode',
+            'zip'      => 'zip_code',
+            'postcode' => 'zip_code',
         ];
     }
 
     /**
      * Produces the name of a city.
      *
-     * @param  bool  $withState
-     *
      * @return string
      *
      * @example 🙃::address()->city() // => "Imogeneborough"
-     * @example 🙃::address()->city(true) // => "Northfort, California"
      */
-    protected function city(bool $withState = false): string
+    protected function city(): string
     {
-        return ! $withState
-            ? $this->fetch('address.city_with_state')
-            : $this->fetch('address.city');
+        return $this->fetch('address.city');
+    }
+
+    /**
+     * Produces the name of a city with state.
+     *
+     * @return string
+     *
+     * @example 🙃::address()->city_with_state() // => "Northfort, California"
+     */
+    protected function city_with_state(): string
+    {
+        return $this->fetch('address.city_with_state');
     }
 
     /**
@@ -80,9 +85,9 @@ class Address extends Fake
      *
      * @return string
      *
-     * @example 🙃::address()->streetName() // => "Larkin Fork"
+     * @example 🙃::address()->street_name() // => "Larkin Fork"
      */
-    protected function streetName(): string
+    protected function street_name(): string
     {
         return $this->fetch('address.street_name');
     }
@@ -94,9 +99,9 @@ class Address extends Fake
      *
      * @throws \Exception
      *
-     * @example 🙃::address()->secondaryAddress() // => "Apt. 672"
+     * @example 🙃::address()->secondary_address() // => "Apt. 672"
      */
-    protected function secondaryAddress(): string
+    protected function secondary_address(): string
     {
         return $this->bothify(
             $this->fetch('address.secondary_address')
@@ -106,19 +111,26 @@ class Address extends Fake
     /**
      * Produces a street address.
      *
-     * @param  bool  $withSecondaryAddress
+     * @return string
+     *
+     * @example 🙃::address()->street_address() // => "282 Kevin Brook"
+     */
+    protected function street_address(): string
+    {
+        return $this->fetch('address.street_address');
+    }
+
+    /**
+     * Produces a street address with secondary address.
      *
      * @return string
      *
      * @throws \Exception
-     *
-     * @example 🙃::address()->streetAddress() // => "282 Kevin Brook"
+     * @example 🙃::address()->street_address_with_secondary_address() // => "282 Kevin Brook Apt. 672"
      */
-    protected function streetAddress(bool $withSecondaryAddress = false): string
+    protected function street_address_with_secondary_address(): string
     {
-        return ! $withSecondaryAddress
-            ? $this->fetch('address.street_address')
-            : $this->fetch('address.street_address').' '.$this->secondaryAddress();
+        return $this->fetch('address.street_address').' '.$this->secondary_address();
     }
 
     /**
@@ -128,9 +140,9 @@ class Address extends Fake
      *
      * @throws \Exception
      *
-     * @example 🙃::address()->buildingNumber() // => "7304"
+     * @example 🙃::address()->building_number() // => "7304"
      */
-    protected function buildingNumber(): string
+    protected function building_number(): string
     {
         return $this->bothify(
             $this->fetch('address.building_number')
@@ -156,9 +168,9 @@ class Address extends Fake
      *
      * @throws \Exception
      *
-     * @example 🙃::address()->mailBox() // => "PO Box 123"
+     * @example 🙃::address()->mail_box() // => "PO Box 123"
      */
-    protected function mailBox(): string
+    protected function mail_box(): string
     {
         return $this->bothify(
             $this->fetch('address.mail_box')
@@ -174,11 +186,11 @@ class Address extends Fake
      *
      * @throws \Exception
      *
-     * @example 🙃::address()->zipCode() // => "58517"
-     * @example 🙃::address()->zipCode() // => "23285-4905"
-     * @example 🙃::address()->zipCode('CO') // => "80011"
+     * @example 🙃::address()->zip_code() // => "58517"
+     * @example 🙃::address()->zip_code() // => "23285-4905"
+     * @example 🙃::address()->zip_code('CO') // => "80011"
      */
-    public function zipCode(?string $stateAbbreviation = null): string
+    public function zip_code(?string $stateAbbreviation = null): string
     {
         if (empty($stateAbbreviation)) {
             return $this->bothify(
@@ -196,9 +208,9 @@ class Address extends Fake
      *
      * @return string
      *
-     * @example 🙃::address()->timeZone() // => "Asia/Yakutsk"
+     * @example 🙃::address()->time_zone() // => "Asia/Yakutsk"
      */
-    protected function timeZone(): string
+    protected function time_zone(): string
     {
         return $this->fetch('address.time_zone');
     }
@@ -208,9 +220,9 @@ class Address extends Fake
      *
      * @return string
      *
-     * @example 🙃::address()->streetSuffix() // => "Street"
+     * @example 🙃::address()->street_suffix() // => "Street"
      */
-    protected function streetSuffix(): string
+    protected function street_suffix(): string
     {
         return $this->fetch('address.street_suffix');
     }
@@ -220,9 +232,9 @@ class Address extends Fake
      *
      * @return string
      *
-     * @example 🙃::address()->citySuffix() // => "fort"
+     * @example 🙃::address()->city_suffix() // => "fort"
      */
-    protected function citySuffix(): string
+    protected function city_suffix(): string
     {
         return $this->fetch('address.city_suffix');
     }
@@ -232,9 +244,9 @@ class Address extends Fake
      *
      * @return string
      *
-     * @example 🙃::address()->cityPrefix() // => "Lake"
+     * @example 🙃::address()->city_prefix() // => "Lake"
      */
-    protected function cityPrefix(): string
+    protected function city_prefix(): string
     {
         return $this->fetch('address.city_prefix');
     }
@@ -244,9 +256,9 @@ class Address extends Fake
      *
      * @return string
      *
-     * @example 🙃::address()->stateAbbr() // => "AP"
+     * @example 🙃::address()->state_abbreviation() // => "AP"
      */
-    protected function stateAbbr(): string
+    protected function state_abbreviation(): string
     {
         return $this->fetch('address.state_abbr');
     }
@@ -286,7 +298,7 @@ class Address extends Fake
      *
      * @example 🙃::address()->countryByCode('NL') // => "Netherlands"
      */
-    public function countryByCode(string $code): string
+    public function country_by_code(string $code): string
     {
         return $this->fetch("address.country_by_code.{$code}");
     }
@@ -300,7 +312,7 @@ class Address extends Fake
      *
      * @example 🙃::address()->countryNameToCode('united_states') // => "US"
      */
-    public function countryNameToCode(string $name): string
+    public function country_name_to_code(string $name): string
     {
         return $this->fetch("address.country_by_name.{$name}");
     }
@@ -310,9 +322,9 @@ class Address extends Fake
      *
      * @return string
      *
-     * @example 🙃::address()->countryCode() // => "IT"
+     * @example 🙃::address()->country_code() // => "IT"
      */
-    protected function countryCode(): string
+    protected function country_code(): string
     {
         return $this->fetch('address.country_code');
     }
@@ -322,9 +334,9 @@ class Address extends Fake
      *
      * @return string
      *
-     * @example 🙃::address()->countryCodeLong() // => "ITA"
+     * @example 🙃::address()->country_code_long() // => "ITA"
      */
-    protected function countryCodeLong(): string
+    protected function country_code_long(): string
     {
         return $this->fetch('address.country_code_long');
     }
@@ -338,7 +350,7 @@ class Address extends Fake
      *
      * @example 🙃::address()->fullAddress() // => "282 Kevin Brook, Imogeneborough, CA 58517"
      */
-    protected function fullAddress(): string
+    protected function full_address(): string
     {
         return $this->bothify($this->fetch('address.full_address'));
     }

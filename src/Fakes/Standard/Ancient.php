@@ -22,7 +22,7 @@ class Ancient extends Fake
      *
      * @example 🙃::ancient()->god() // => "Zeus"
      */
-    public function god(): string
+    protected function god(): string
     {
         return $this->fetch('ancient.god');
     }
@@ -34,7 +34,7 @@ class Ancient extends Fake
      *
      * @example 🙃::ancient()->primordial() // => "Gaia"
      */
-    public function primordial(): string
+    protected function primordial(): string
     {
         return $this->fetch('ancient.primordial');
     }
@@ -46,7 +46,7 @@ class Ancient extends Fake
      *
      * @example 🙃::ancient()->titan() // => "Atlas"
      */
-    public function titan(): string
+    protected function titan(): string
     {
         return $this->fetch('ancient.titan');
     }
@@ -58,7 +58,7 @@ class Ancient extends Fake
      *
      * @example 🙃::ancient()->hero() // => "Achilles"
      */
-    public function hero(): string
+    protected function hero(): string
     {
         return $this->fetch('ancient.hero');
     }

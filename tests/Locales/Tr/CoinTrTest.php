@@ -8,7 +8,7 @@ class CoinTrTest extends BaseTrTest
     public function flip(): void
     {
         $this->assertIsString(
-            $this->🙃->coin()->flip()
+            $this->🙃->coin()->flip
         );
     }
 }

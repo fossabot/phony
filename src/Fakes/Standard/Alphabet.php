@@ -21,7 +21,7 @@ class Alphabet extends Fake
      *
      * @example 🙃::alphabet()->uppercaseLetter() // => "P"
      */
-    public function uppercaseLetter(): string
+    protected function uppercaseLetter(): string
     {
         return $this->fetch('alphabet.uppercase_letter');
     }
@@ -33,7 +33,7 @@ class Alphabet extends Fake
      *
      * @example 🙃::alphabet()->lowercaseLetter() // => "P"
      */
-    public function lowercaseLetter(): string
+    protected function lowercaseLetter(): string
     {
         return $this->fetch('alphabet.lowercase_letter');
     }
@@ -45,7 +45,7 @@ class Alphabet extends Fake
      *
      * @example 🙃::alphabet()->letter() // => "P"
      */
-    public function letter(): string
+    protected function letter(): string
     {
         return $this->fetch('alphabet.letter');
     }

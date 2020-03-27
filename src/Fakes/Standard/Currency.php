@@ -21,7 +21,7 @@ class Currency extends Fake
      *
      * @example 🙃::currency()->name() // => "Swedish Krona"
      */
-    public function name(): string
+    protected function name(): string
     {
         return $this->fetch('currency.name');
     }
@@ -33,7 +33,7 @@ class Currency extends Fake
      *
      * @example 🙃::currency()->code() // => "USD"
      */
-    public function code(): string
+    protected function code(): string
     {
         return $this->fetch('currency.code');
     }
@@ -45,7 +45,7 @@ class Currency extends Fake
      *
      * @example 🙃::currency()->symbol() // => "$"
      */
-    public function symbol(): string
+    protected function symbol(): string
     {
         return $this->fetch('currency.symbol');
     }

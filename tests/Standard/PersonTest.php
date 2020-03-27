@@ -10,14 +10,14 @@ class PersonTest extends BaseTest
     {
         parent::setUp();
 
-        $this->🧪 = $this->🙃->person();
+        $this->🧪 = $this->🙃->person;
     }
 
     /** @test */
     public function name(): void
     {
         $this->assertIsString(
-            $this->🧪->name()
+            $this->🧪->name
         );
     }
 
@@ -25,7 +25,7 @@ class PersonTest extends BaseTest
     public function name_with_middle(): void
     {
         $this->assertIsString(
-            $this->🧪->nameWithMiddle()
+            $this->🧪->name_with_middle
         );
     }
 
@@ -33,7 +33,7 @@ class PersonTest extends BaseTest
     public function first_name(): void
     {
         $this->assertIsString(
-            $this->🧪->firstName()
+            $this->🧪->first_name
         );
     }
 
@@ -41,7 +41,7 @@ class PersonTest extends BaseTest
     public function middle_name(): void
     {
         $this->assertIsString(
-            $this->🧪->middleName()
+            $this->🧪->middle_name
         );
     }
 
@@ -49,7 +49,7 @@ class PersonTest extends BaseTest
     public function male_first_name(): void
     {
         $this->assertIsString(
-            $this->🧪->maleFirstName()
+            $this->🧪->male_first_name
         );
     }
 
@@ -57,7 +57,7 @@ class PersonTest extends BaseTest
     public function female_first_name(): void
     {
         $this->assertIsString(
-            $this->🧪->femaleFirstName()
+            $this->🧪->female_first_name
         );
     }
 
@@ -65,15 +65,7 @@ class PersonTest extends BaseTest
     public function last_name(): void
     {
         $this->assertIsString(
-            $this->🧪->lastName()
-        );
-    }
-
-    /** @test */
-    public function suffix(): void
-    {
-        $this->assertIsString(
-            $this->🧪->suffix()
+            $this->🧪->last_name
         );
     }
 
@@ -81,7 +73,15 @@ class PersonTest extends BaseTest
     public function prefix(): void
     {
         $this->assertIsString(
-            $this->🧪->prefix()
+            $this->🧪->prefix
+        );
+    }
+
+    /** @test */
+    public function suffix(): void
+    {
+        $this->assertIsString(
+            $this->🧪->suffix
         );
     }
 
@@ -101,20 +101,5 @@ class PersonTest extends BaseTest
             $times = random_int(2, 10),
             mb_strlen($this->🧪->initials($times), 'utf8')
         );
-    }
-
-    /** @test */
-    public function can_access_by_magic_attributes(): void
-    {
-        $this->assertNotNull($this->🧪->name);
-        $this->assertNotNull($this->🧪->nameWithMiddle);
-        $this->assertNotNull($this->🧪->firstName);
-        $this->assertNotNull($this->🧪->middleName);
-        $this->assertNotNull($this->🧪->maleFirstName);
-        $this->assertNotNull($this->🧪->femaleFirstName);
-        $this->assertNotNull($this->🧪->lastName);
-        $this->assertNotNull($this->🧪->prefix);
-        $this->assertNotNull($this->🧪->suffix);
-        $this->assertNotNull($this->🧪->initials);
     }
 }

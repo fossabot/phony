@@ -20,7 +20,7 @@ class Coin extends Fake
      *
      * @example 🙃::coin()->flip() // => "Heads"
      */
-    public function flip(): string
+    protected function flip(): string
     {
         return $this->fetch('coin.flip');
     }
@@ -32,7 +32,7 @@ class Coin extends Fake
      *
      * @example 🙃::coin()->name() // => "Brazilian Real"
      */
-    public function name(): string
+    protected function name(): string
     {
         return $this->fetch('coin.name');
     }
