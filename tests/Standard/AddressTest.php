@@ -14,16 +14,6 @@ class AddressTest extends BaseTest
         $this->🧪 = $this->🙃->address;
     }
 
-    /** @test */
-    public function can_call_by_emoji_alias(): void
-    {
-        // TODO: Move this test to Phony class
-        $this->assertInstanceOf(
-            Fake::class,
-            $this->🙃->📫
-        );
-    }
-
     // region Magic Attributes
 
     /** @test */
@@ -265,7 +255,7 @@ class AddressTest extends BaseTest
      *
      * @throws \Exception
      */
-    public function countryNameToCodeMethod(): void
+    public function country_name_to_code(): void
     {
         $this->assertIsString(
             $this->🧪->country_name_to_code('united_states')
