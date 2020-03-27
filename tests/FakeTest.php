@@ -120,8 +120,8 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_numerify_with_hash_sign(): void
     {
-        // TODO: Check with regex
-        $this->assertIsInt(
+        $this->assertRegExp(
+            '/^[\d]{3}$/',
             (int) $this->numerify->invoke(new Fake($this->🙃), '###')
         );
     }
@@ -129,8 +129,8 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_numerify_with_percentage_sign(): void
     {
-        // TODO: Check with regex
-        $this->assertIsInt(
+        $this->assertRegExp(
+            '/^[\d]{3}$/',
             (int) $this->numerify->invoke(new Fake($this->🙃), '%%%')
         );
     }
@@ -140,25 +140,26 @@ class FakeTest extends BaseTest
     {
         // TODO: Check with regex
         $testArray = [
-            '#',
-            '%',
             '##',
             '%%',
-            '##%%',
+            '#%',
         ];
 
         $result = $this->numerify->invoke(new Fake($this->🙃), $testArray);
 
         foreach ($result as $item) {
-            $this->assertIsInt((int) $item);
+            $this->assertRegExp(
+                '/^[\d]{1,2}$/',
+                (int) $item
+            );
         }
     }
 
     /** @test */
     public function can_letterify(): void
     {
-        // TODO: Check with regex
-        $this->assertIsString(
+        $this->assertRegExp(
+            '/^[\w]{3}$/',
             $this->letterify->invoke(new Fake($this->🙃), '???')
         );
     }
@@ -166,7 +167,6 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_letterify_arrays(): void
     {
-        // TODO: Check with regex
         $testArray = [
             '?',
             '??',
@@ -176,15 +176,18 @@ class FakeTest extends BaseTest
         $result = $this->letterify->invoke(new Fake($this->🙃), $testArray);
 
         foreach ($result as $item) {
-            $this->assertIsString($item);
+            $this->assertRegExp(
+                '/^[A-Za-z]{1,3}$/',
+                $item
+            );
         }
     }
 
     /** @test */
     public function can_bothify(): void
     {
-        // TODO: Check with regex
-        $this->assertIsString(
+        $this->assertRegExp(
+            '/^[\w]{3}$/',
             $this->bothify->invoke(new Fake($this->🙃), '?#%')
         );
     }
@@ -192,8 +195,8 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_bothify_with_asterix(): void
     {
-        // TODO: Check with regex
-        $this->assertIsString(
+        $this->assertRegExp(
+            '/^[\w]{3}$/',
             $this->bothify->invoke(new Fake($this->🙃), '***')
         );
     }
@@ -201,18 +204,21 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_bothify_arrays(): void
     {
-        // TODO: Check with regex
         $testArray = [
             '#',
             '?',
             '*',
+            '**',
             '#?*',
         ];
 
         $result = $this->bothify->invoke(new Fake($this->🙃), $testArray);
 
         foreach ($result as $item) {
-            $this->assertIsString($item);
+            $this->assertRegExp(
+                '/^[\w]{1,3}$/',
+                $item
+            );
         }
     }
 }
