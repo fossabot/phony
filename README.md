@@ -27,16 +27,23 @@ use Deligoez\Phony\Phony;
 
 $🙃 = new Phony('en');
 
+$🙃->address->city; // => "Imogeneborough"
+$🙃->📫->city; // => "Imogeneborough"
+
+$🙃->alphabet->uppercaseLetter; // => "P"
+$🙃->🔤->uppercaseLetter; // => "P"
+
+$🙃->ancient->god; // => "Zeus"
+$🙃->📜->god; // => "Zeus"
+
 $🙃->coin->flip; // => "Heads"
 
-$🙃->currency->symbol;   // => "$"
+$🙃->currency->name; // => "Swedish Krona"
 
-$🙃->alphabet->uppercaseLetter;  // => "A"
-
-$🙃->📫->city;    // => "Imogeneborough"
+$🙃->person->name; // => "Tyshawn Johns Sr."
 ```
 
-## Generators
+## Fakes
 
 ### Default
 

@@ -1,4 +1,4 @@
-# 🙃::currency()
+# $🙃->currency
 
 ```php
 use Deligoez\Phony\Phony;
@@ -10,5 +10,5 @@ $🙃->currency->name; // => "Swedish Krona"
 
 $🙃->currency->code; // => "USD"
 
-$🙃->currency->symbol;   // => "$"
+$🙃->currency->symbol; // => "$"
 ```

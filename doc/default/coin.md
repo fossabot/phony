@@ -1,4 +1,4 @@
-# 🙃::coin()
+# $🙃->coin
 
 ```php
 use Deligoez\Phony\Phony;

@@ -1,4 +1,5 @@
-$# >🙃->address()
+# $🙃->address
+# $🙃->📫
 
 ```php
 use Deligoez\Phony\Phony;
@@ -8,65 +9,60 @@ $🙃 = new Phony('en');
 
 $🙃->address->city; // => "Imogeneborough"
 
-$🙃->address->cityWithState;    // => "Northfort, California"
+$🙃->address->city_with_state; // => "Northfort, California"
 
-$🙃->address->streetName;   // => "Larkin Fork"
+$🙃->address->street_name; // => "Larkin Fork"
 
-$🙃->address->secondaryAddress; // => "Apt. 672"
+$🙃->address->secondary_address; // => "Apt. 672"
 
-$🙃->address->streetAddress;    // => "282 Kevin Brook"
+$🙃->address->street_address; // => "282 Kevin Brook"
 
-$🙃->address->streetAddressWithSecondaryAddress;    // => "282 Kevin Brook Apt. 672"
+$🙃->address->street_address_with_secondary_address; // => "282 Kevin Brook Apt. 672"
 
-$🙃->address->buildingNumber;   // => "7304"
+$🙃->address->building_number; // => "7304"
 
-$🙃->address->community;    // => "University Crossing"
+$🙃->address->community; // => "University Crossing"
 
-$🙃->address->mailBox;  // => "PO Box 123"
+$🙃->address->mail_box; // => "PO Box 123"
 
 // $stateAbbreviation
-$🙃->address->zipCode('CO');    // => "80011"
-$🙃->address->zip('CO');    // => "80011"
-$🙃->address->zipCode('CO');    // => "80011"
+$🙃->address->zip_code('CO'); // => "80011"
+$🙃->address->zip('CO'); // => "80011"
+$🙃->address->zip_code('CO'); // => "80011"
 
-$🙃->address->zipCode;  // => "58517" or "23285-4905"
+$🙃->address->zip_code; // => "58517" or "23285-4905"
 
-$🙃->address->zip;  // => "58517" or "66259-8212"
+$🙃->address->zip; // => "58517" or "66259-8212"
 
 $🙃->address->postcode; // => "76032-4907" or "58517"
 
-$🙃->address->timeZone; // => "Asia/Yakutsk"
+$🙃->address->time_zone; // => "Asia/Yakutsk"
 
-$🙃->address->streetSuffix; // => "Street"
+$🙃->address->street_suffix; // => "Street"
 
-$🙃->address->citySuffix;   // => "fort"
+$🙃->address->city_suffix; // => "fort"
 
-$🙃->address->cityPrefix;   // => "Lake"
+$🙃->address->city_prefix; // => "Lake"
 
-$🙃->address->stateAbbr;    // => "AP"
+$🙃->address->state_abbreviation; // => "AP"
 
-$🙃->address->state;    // => "California"
+$🙃->address->state; // => "California"
 
-$🙃->address->country;  // => "French Guiana"
+$🙃->address->country; // => "French Guiana"
 
 // Keyword arguments: code
-$🙃->address->country_by_code('NL');    // => "Netherlands"
+$🙃->address->country_by_code('NL'); // => "Netherlands"
 
 // Keyword arguments: name
-$🙃->address->country_name_to_code('united_states');    // => "US"
+$🙃->address->country_name_to_code('united_states'); // => "US"
 
-$🙃->address->countryCode;  // => "IT"
+$🙃->address->country_code; // => "IT"
 
-$🙃->address->countryCodeLong;  // => "ITA"
+$🙃->address->country_code_long; // => "ITA"
 
-$🙃->address->fullAddress;  // => "282 Kevin Brook, Imogeneborough, CA 58517"
+$🙃->address->full_address; // => "282 Kevin Brook, Imogeneborough, CA 58517"
 
 $🙃->address->latitude; // => "-58.17256227443719"
 
-$🙃->address->longitude;    // => "-156.65548382095133"
-
-
-// Aliases
-$🙃->address->city; // => "Imogeneborough"
-$🙃->📫->city;  // => "Imogeneborough"
+$🙃->address->longitude; // => "-156.65548382095133"
 ```
