@@ -207,8 +207,7 @@ class AddressTest extends BaseTest
     /** @test */
     public function full_address(): void
     {
-        $this->assertRegExp(
-            '/\w*\.?\s?\d*\s?\d+\s\w+\s\w+,\s\w+\s?\w*,\s[A-Z]{2}\s\d+/',
+        $this->assertIsString(
             $this->🧪->full_address
         );
     }
