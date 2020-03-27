@@ -78,9 +78,7 @@ class Fake
     public function __call($name, $arguments)
     {
         if (isset($this->functionAliases[$name])) {
-            $functionName = $this->functionAliases[$name];
-
-            return $this->$functionName(true);
+            return $this->{$this->functionAliases[$name][0]}(...$this->functionAliases[$name][1]);
         }
 
         throw new RuntimeException("The {$name} function is not defined!");
