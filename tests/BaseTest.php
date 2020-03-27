@@ -10,7 +10,7 @@ use Orchestra\Testbench\TestCase;
 abstract class BaseTest extends TestCase
 {
     protected Phony $🙃;
-    protected Fake $🧪;
+    protected $🧪;
 
     protected function getPackageProviders(/** @scrutinizer ignore-unused */ $app): array
     {
