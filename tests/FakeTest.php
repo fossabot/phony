@@ -3,7 +3,6 @@
 namespace Deligoez\Phony\Tests;
 
 use Deligoez\Phony\Fakes\Fake;
-use Deligoez\Phony\PhonyFacade;
 use ReflectionMethod;
 use RuntimeException;
 
@@ -36,19 +35,11 @@ class FakeTest extends BaseTest
     }
 
     /** @test */
-    public function can_call_through_laravel_facade(): void
-    {
-        $this->assertIsString(
-/** @scrutinizer ignore-call */ PhonyFacade::alphabet()->letter
-        );
-    }
-
-    /** @test */
     public function can_not_access_undefined_magic_attribute(): void
     {
         $this->expectException(RuntimeException::class);
 
-        $this->🙃->alphabet->/** @scrutinizer ignore-call */notExist;
+        $this->🙃->alphabet->/** @scrutinizer ignore-call */not_exist;
     }
 
     /** @test */
@@ -56,18 +47,18 @@ class FakeTest extends BaseTest
     {
         $this->expectException(RuntimeException::class);
 
-        $this->🙃->alphabet()->uppercaseLetter = 'can-not';
+        $this->🙃->alphabet()->uppercase_letter = 'can-not';
     }
 
     /** @test */
     public function can_check_existence_with_magic_isset(): void
     {
         $this->assertTrue(
-            isset($this->🙃->alphabet()->uppercaseLetter)
+            isset($this->🙃->alphabet()->uppercase_letter)
         );
 
         $this->assertFalse(
-            isset($this->🙃->alphabet->/** @scrutinizer ignore-call */notExist)
+            isset($this->🙃->alphabet->/** @scrutinizer ignore-call */not_exist)
         );
     }
 
@@ -76,7 +67,7 @@ class FakeTest extends BaseTest
     {
         $this->expectException(RuntimeException::class);
 
-        $this->🙃->alphabet->/** @scrutinizer ignore-call */notExist();
+        $this->🙃->alphabet->/** @scrutinizer ignore-call */not_exist();
     }
 
     /** @test */
