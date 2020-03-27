@@ -8,8 +8,8 @@ use Deligoez\Phony\Fakes\Fake;
  * Class Alphabet.
  *
  *
- * @property string uppercaseLetter
- * @property string lowercaseLetter
+ * @property string uppercase_letter
+ * @property string lowercase_letter
  * @property string letter
  */
 class Alphabet extends Fake
@@ -19,9 +19,9 @@ class Alphabet extends Fake
      *
      * @return string
      *
-     * @example 🙃::alphabet()->uppercaseLetter() // => "P"
+     * @example 🙃::alphabet()->uppercase_letter() // => "P"
      */
-    protected function uppercaseLetter(): string
+    protected function uppercase_letter(): string
     {
         return $this->fetch('alphabet.uppercase_letter');
     }
@@ -31,9 +31,9 @@ class Alphabet extends Fake
      *
      * @return string
      *
-     * @example 🙃::alphabet()->lowercaseLetter() // => "P"
+     * @example 🙃::alphabet()->lowercase_letter() // => "P"
      */
-    protected function lowercaseLetter(): string
+    protected function lowercase_letter(): string
     {
         return $this->fetch('alphabet.lowercase_letter');
     }
