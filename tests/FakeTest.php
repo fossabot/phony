@@ -82,7 +82,7 @@ class FakeTest extends BaseTest
         $this->expectException(RuntimeException::class);
 
         $this->🙃->alphabet()
-                /** @scrutinizer ignore-call */
+                 /** @scrutinizer ignore-call */
                  ->notExist();
     }
 
