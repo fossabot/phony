@@ -6,7 +6,8 @@ use Deligoez\Phony\Phony;
 $🙃 = new Phony('en');
 
 
-$🙃->coin->flip; // => "Heads"
+$🙃->coin->flip;     // => "Heads"
 
-$🙃->coin->name; // => "Philippine Peso"
+$🙃->coin->name;     // => "Philippine Peso"
+
 ```

@@ -1,5 +1,6 @@
 # $🙃->alphabet
-# $🙃->🔤
+
+### $🙃->🔤
 
 ```php
 use Deligoez\Phony\Phony;
@@ -7,9 +8,10 @@ use Deligoez\Phony\Phony;
 $🙃 = new Phony('en');
 
 
-$🙃->alphabet->uppercaseLetter; // => "P"
+$🙃->alphabet->uppercase_letter; // => "P"
 
-$🙃->alphabet->lowercaseLetter; // => "p"
+$🙃->alphabet->lowercase_letter; // => "p"
 
-$🙃->alphabet->letter; // => "P"
+$🙃->alphabet->letter;           // => "P"
+
 ```
