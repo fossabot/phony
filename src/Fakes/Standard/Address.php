@@ -31,6 +31,8 @@ use Deligoez\Phony\Phony;
  * @property string country_code
  * @property string country_code_long
  * @property string full_address
+ * @property float latitude
+ * @property float longitude
  * @method zip(?string $stateAbbreviation = null): string
  * @method postcode(?string $stateAbbreviation = null): string
  */
@@ -46,13 +48,13 @@ class Address extends Fake
         parent::__construct($phony);
 
         $this->attributeAliases = [
-            'zip'      => 'zip_code',
-            'postcode' => 'zip_code',
+            'zip'      => 'zip',
+            'postcode' => 'zip',
         ];
 
         $this->functionAliases = [
-            'zip'      => 'zip_code',
-            'postcode' => 'zip_code',
+            'zip'      => ['zip_code', [null]],
+            'postcode' => ['zip_code', [null]],
         ];
     }
 
@@ -113,11 +115,12 @@ class Address extends Fake
      *
      * @return string
      *
+     * @throws \Exception
      * @example 🙃::address()->street_address() // => "282 Kevin Brook"
      */
     protected function street_address(): string
     {
-        return $this->fetch('address.street_address');
+        return $this->numerify($this->fetch('address.street_address'));
     }
 
     /**
@@ -130,7 +133,7 @@ class Address extends Fake
      */
     protected function street_address_with_secondary_address(): string
     {
-        return $this->fetch('address.street_address').' '.$this->secondary_address();
+        return $this->bothify($this->fetch('address.street_address').' '.$this->secondary_address());
     }
 
     /**
