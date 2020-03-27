@@ -16,7 +16,8 @@ class CoinTest extends BaseTest
     /** @test */
     public function flip(): void
     {
-        $this->assertIsString(
+        $this->assertRegExp(
+            '/\w+/',
             $this->🧪->flip
         );
     }
@@ -24,7 +25,8 @@ class CoinTest extends BaseTest
     /** @test */
     public function name(): void
     {
-        $this->assertIsString(
+        $this->assertRegExp(
+            '/\w+/',
             $this->🧪->name
         );
     }
