@@ -47,11 +47,11 @@ $🙃->person->name; // => "Tyshawn Johns Sr."
 
 ### Default
 
-- [Phony::alphabet()](doc/default/alphabet.md)
-- [Phony::ancient()](doc/default/ancient.md)
-- [Phony::coin()](doc/default/coin.md)
-- [Phony::currency()](doc/default/currency.md)
-- [Phony::person()](doc/default/person.md)
+- [$🙃->alphabet](doc/default/alphabet.md)
+- [$🙃->ancient](doc/default/ancient.md)
+- [$🙃->coin](doc/default/coin.md)
+- [$🙃->currency](doc/default/currency.md)
+- [$🙃->person](doc/default/person.md)
 
 ### Testing
 
