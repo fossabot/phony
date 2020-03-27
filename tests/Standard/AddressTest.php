@@ -11,7 +11,7 @@ class AddressTest extends BaseTest
     {
         parent::setUp();
 
-        $this->🧪 = $this->🙃->address();
+        $this->🧪 = $this->🙃->address;
     }
 
     /** @test */
@@ -20,7 +20,7 @@ class AddressTest extends BaseTest
         // TODO: Move this test to Phony class
         $this->assertInstanceOf(
             Fake::class,
-            $this->🙃->📫()
+            $this->🙃->📫
         );
     }
 

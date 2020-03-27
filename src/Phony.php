@@ -2,6 +2,7 @@
 
 namespace Deligoez\Phony;
 
+use RuntimeException;
 use Deligoez\Phony\Fakes\Standard\Address;
 use Deligoez\Phony\Fakes\Standard\Alphabet;
 use Deligoez\Phony\Fakes\Standard\Ancient;
@@ -9,9 +10,21 @@ use Deligoez\Phony\Fakes\Standard\Coin;
 use Deligoez\Phony\Fakes\Standard\Currency;
 use Deligoez\Phony\Fakes\Standard\Person;
 
+/**
+ * Class Phony
+ *
+ * @package Deligoez\Phony
+ *
+ * @property Address address
+ * @property Address 📫
+ * @property Alphabet 🔤
+ * @property Ancient 📜
+ */
 class Phony
 {
     public string $defaultLocale;
+    protected array $attributeAliases;
+    protected array $functionAliases;
 
     /**
      * Phony constructor.
@@ -21,9 +34,59 @@ class Phony
     public function __construct(string $defaultLocale)
     {
         $this->defaultLocale = $defaultLocale;
+
+        $this->attributeAliases = [
+            '📫' => 'address',
+        ];
     }
 
-    public function address(): Address
+    /**
+     * Get attributes by magic.
+     *
+     * @param $attribute
+     *
+     * @return mixed
+     * @throws \Exception
+     */
+    public function __get($attribute)
+    {
+        if (isset($this->attributeAliases[$attribute])) {
+            $functionName = $this->attributeAliases[$attribute];
+
+            return $this->$functionName();
+        }
+
+        if (! method_exists($this, $attribute)) {
+            throw new RuntimeException("The {$attribute} attribute is not defined!");
+        }
+
+        return $this->$attribute();
+    }
+
+    /**
+     * Don't allow setting magic attributes.
+     *
+     * @param $attribute
+     * @param $value
+     */
+    public function __set($attribute, $value)
+    {
+        throw new RuntimeException("Setting {$attribute} attribute is not allowed!");
+    }
+
+    /**
+     * Check if a magic attribute exists.
+     *
+     * @param $attribute
+     *
+     * @return bool
+     */
+    public function __isset($attribute)
+    {
+        return method_exists($this, $attribute);
+    }
+
+    protected function address(): Address
     {
         return new Address($this);
     }
@@ -52,23 +115,4 @@ class Phony
     {
         return new Currency($this);
     }
-
-    // region Aliases
-
-    public function 📫(): Address
-    {
-        return $this->address();
-    }
-
-    public function 🔤(): Alphabet
-    {
-        return $this->alphabet();
-    }
-
-    public function 📜(): Ancient
-    {
-        return $this->ancient();
-    }
-
-    // endregion
 }
