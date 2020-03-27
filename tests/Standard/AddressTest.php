@@ -3,7 +3,6 @@
 namespace Deligoez\Phony\Tests\Standard;
 
 use Deligoez\Phony\Tests\BaseTest;
-use Deligoez\Phony\Fakes\Standard\Address;
 
 class AddressTest extends BaseTest
 {
