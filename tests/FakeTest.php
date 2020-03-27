@@ -39,7 +39,8 @@ class FakeTest extends BaseTest
     public function can_call_through_laravel_facade(): void
     {
         $this->assertIsString(
-/** @scrutinizer ignore-call */ PhonyFacade::alphabet()->letter()
+            /** @scrutinizer ignore-call */
+            PhonyFacade::alphabet()->letter()
         );
     }
 
@@ -48,7 +49,9 @@ class FakeTest extends BaseTest
     {
         $this->expectException(RuntimeException::class);
 
-        $this->🙃->alphabet()->notExist;
+        $this->🙃->alphabet()
+            /** @scrutinizer ignore-call */
+            ->notExist;
     }
 
     /** @test */
@@ -67,7 +70,9 @@ class FakeTest extends BaseTest
         );
 
         $this->assertFalse(
-            isset($this->🙃->alphabet()->notExist)
+            isset($this->🙃->alphabet()
+                    /** @scrutinizer ignore-call */
+                    ->notExist)
         );
     }
 
@@ -76,7 +81,9 @@ class FakeTest extends BaseTest
     {
         $this->expectException(RuntimeException::class);
 
-        $this->🙃->alphabet()->notExist();
+        $this->🙃->alphabet()
+                /** @scrutinizer ignore-call */
+                 ->notExist();
     }
 
     /** @test */
