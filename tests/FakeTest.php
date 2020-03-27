@@ -78,7 +78,9 @@ class FakeTest extends BaseTest
           );
     }
 
-    /** @test */
+    /** @test
+     * @throws \Exception
+     */
     public function can_fetch_many_values(): void
     {
         $this->assertCount(
@@ -89,7 +91,9 @@ class FakeTest extends BaseTest
         );
     }
 
-    /** @test */
+    /** @test
+     * @throws \Exception
+     */
     public function can_fetch_many_values_as_a_string(): void
     {
         $times = random_int(2, 10);
@@ -103,7 +107,9 @@ class FakeTest extends BaseTest
         );
     }
 
-    /** @test */
+    /** @test
+     * @throws \Exception
+     */
     public function can_fetch_many_values_as_glued_string(): void
     {
         $times = random_int(2, 10);
@@ -138,7 +144,6 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_numerify_arrays(): void
     {
-        // TODO: Check with regex
         $testArray = [
             '##',
             '%%',

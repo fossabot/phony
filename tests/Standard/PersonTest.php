@@ -101,7 +101,9 @@ class PersonTest extends BaseTest
         );
     }
 
-    /** @test */
+    /** @test
+     * @throws \Exception
+     */
     public function initials_with_given_lenght(): void
     {
         $this->assertEquals(

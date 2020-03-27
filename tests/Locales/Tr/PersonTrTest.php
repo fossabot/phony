@@ -13,7 +13,9 @@ class PersonTrTest extends BaseTrTest
         );
     }
 
-    /** @test */
+    /** @test
+     * @throws \Exception
+     */
     public function initials_with_given_lenght(): void
     {
         $times = random_int(2, 10);
