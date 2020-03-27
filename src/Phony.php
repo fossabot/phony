@@ -40,6 +40,8 @@ class Phony
 
         $this->attributeAliases = [
             '📫' => 'address',
+            '🔤' => 'alphabet',
+            '📜' => 'ancient',
         ];
     }
 
