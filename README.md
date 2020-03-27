@@ -25,17 +25,15 @@ composer require deligoez/phony
 ``` php
 use Deligoez\Phony\Phony;
 
-
 $🙃 = new Phony('en');
 
-$🙃->coin()->flip;                           // => "Heads"
+$🙃->coin->flip; // => "Heads"
 
-$🙃->currency()->symbol;                     // => "$"
+$🙃->currency->symbol;   // => "$"
 
+$🙃->alphabet->uppercaseLetter;  // => "A"
 
-$🙃->alphabet()->uppercaseLetter;            // => "A"
-
-$🙃->📫()->city();                            // => "Imogeneborough"
+$🙃->📫->city;    // => "Imogeneborough"
 ```
 
 ## Generators
