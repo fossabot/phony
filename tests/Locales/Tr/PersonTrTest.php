@@ -9,7 +9,7 @@ class PersonTrTest extends BaseTrTest
     {
         $this->assertEquals(
             6,
-            mb_strlen($this->🙃->person()->initials(), 'utf8')
+            mb_strlen($this->🙃->person->initials(), 'utf8')
         );
     }
 
@@ -20,7 +20,7 @@ class PersonTrTest extends BaseTrTest
 
         $this->assertEquals(
             $times * 2,
-            mb_strlen($this->🙃->person()->initials($times), 'utf8')
+            mb_strlen($this->🙃->person->initials($times), 'utf8')
         );
     }
 }
