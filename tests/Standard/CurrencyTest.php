@@ -16,7 +16,8 @@ class CurrencyTest extends BaseTest
     /** @test */
     public function name(): void
     {
-        $this->assertIsString(
+        $this->assertRegExp(
+            '/\w+/',
             $this->🧪->name
         );
     }
