@@ -28,19 +28,14 @@ use Deligoez\Phony\Phony;
 
 $🙃 = new Phony('en');
 
-$🙃->coin()->flip();                             // => "Heads"
+$🙃->coin()->flip;                           // => "Heads"
 
-$🙃->currency()->symbol();                       // => "$"
-
-
-$🙃->alphabet()->uppercaseLetter(2);             // => ['A', 'B']
-
-$🙃->alphabet()->uppercaseLetter(2, true);       // => "A B"
-
-$🙃->alphabet()->uppercaseLetter(2, true, ', '); // => "A, B"
+$🙃->currency()->symbol;                     // => "$"
 
 
-$🙃->📫()->city();                               // => "Imogeneborough"
+$🙃->alphabet()->uppercaseLetter;            // => "A"
+
+$🙃->📫()->city();                            // => "Imogeneborough"
 ```
 
 ## Generators
