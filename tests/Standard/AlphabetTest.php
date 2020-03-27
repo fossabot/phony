@@ -14,20 +14,20 @@ class AlphabetTest extends BaseTest
     }
 
     /** @test */
-    public function uppercaseLetter(): void
+    public function uppercase_letter(): void
     {
         $this->assertEquals(
             1,
-            mb_strlen($this->🧪->uppercaseLetter, 'utf8')
+            mb_strlen($this->🧪->uppercase_letter, 'utf8')
         );
     }
 
     /** @test */
-    public function lowercaseLetter(): void
+    public function lowercase_letter(): void
     {
         $this->assertEquals(
             1,
-            mb_strlen($this->🧪->lowercaseLetter, 'utf8')
+            mb_strlen($this->🧪->lowercase_letter, 'utf8')
         );
     }
 
