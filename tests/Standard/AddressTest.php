@@ -2,7 +2,6 @@
 
 namespace Deligoez\Phony\Tests\Standard;
 
-use Deligoez\Phony\Fakes\Fake;
 use Deligoez\Phony\Tests\BaseTest;
 
 class AddressTest extends BaseTest
