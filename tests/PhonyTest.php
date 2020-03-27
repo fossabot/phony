@@ -12,7 +12,7 @@ class PhonyTest extends BaseTest
     public function can_call_through_laravel_facade(): void
     {
         $this->assertIsString(
- PhonyFacade::alphabet()->letter
+            PhonyFacade::alphabet()->letter
         );
     }
 
