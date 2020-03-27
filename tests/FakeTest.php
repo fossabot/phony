@@ -48,7 +48,7 @@ class FakeTest extends BaseTest
     {
         $this->expectException(RuntimeException::class);
 
-        $this->🙃->alphabet/** @scrutinizer ignore-call */->notExist;
+        $this->🙃->alphabet->/** @scrutinizer ignore-call */notExist;
     }
 
     /** @test */
@@ -67,7 +67,7 @@ class FakeTest extends BaseTest
         );
 
         $this->assertFalse(
-            isset($this->🙃->alphabet/** @scrutinizer ignore-call */->notExist)
+            isset($this->🙃->alphabet->/** @scrutinizer ignore-call */notExist)
         );
     }
 
@@ -76,7 +76,7 @@ class FakeTest extends BaseTest
     {
         $this->expectException(RuntimeException::class);
 
-        $this->🙃->alphabet/** @scrutinizer ignore-call */->notExist();
+        $this->🙃->alphabet->/** @scrutinizer ignore-call */notExist();
     }
 
     /** @test */
