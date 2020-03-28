@@ -5,6 +5,11 @@ namespace Deligoez\Phony\Fakes;
 use Deligoez\Phony\Phony;
 use RuntimeException;
 
+/**
+ * Class Fake
+ *
+ * @package Deligoez\Phony\Fakes
+ */
 class Fake
 {
     protected Phony $phony;
