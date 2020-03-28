@@ -138,7 +138,6 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_numerify_arrays(): void
     {
-        // TODO: Check with regex
         $testArray = [
             '##',
             '%%',
