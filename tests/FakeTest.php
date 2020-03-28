@@ -121,7 +121,7 @@ class FakeTest extends BaseTest
     public function can_numerify_with_hash_sign(): void
     {
         $this->assertRegExp(
-            '/^[\d]{3}$/',
+            '/^[\d]{0,3}$/',
             (int) $this->numerify->invoke(new Fake($this->🙃), '###')
         );
     }
