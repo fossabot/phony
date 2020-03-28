@@ -6,9 +6,7 @@ use Deligoez\Phony\Phony;
 use RuntimeException;
 
 /**
- * Class Fake
- *
- * @package Deligoez\Phony\Fakes
+ * Class Fake.
  */
 class Fake
 {
