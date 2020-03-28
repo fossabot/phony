@@ -66,8 +66,7 @@ class Person extends Fake
      */
     protected function middle_name(): string
     {
-        // TODO: Match with middle_name in person.php
-        return $this->fetch('person.last_name');
+        return $this->fetch('person.middle_name');
     }
 
     /**

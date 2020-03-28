@@ -578,6 +578,9 @@ return [
         '🙃person.first_name🙃 🙃person.last_name🙃',
         '🙃person.first_name🙃 🙃person.last_name🙃',
     ],
+    'middle_name' => [
+        '🙃person.last_name🙃',
+    ],
     'name_with_middle'  => [
         '🙃person.prefix🙃 🙃person.first_name🙃 🙃person.last_name🙃 🙃person.last_name🙃',
         '🙃person.first_name🙃 🙃person.last_name🙃 🙃person.last_name🙃 🙃person.suffix🙃',
