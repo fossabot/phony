@@ -640,7 +640,7 @@ return [
         'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas',
         'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming',
     ],
-    'state_abbr'        => [
+    'state_abbreviation'        => [
         'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA',
         'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
         'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY',
@@ -688,9 +688,12 @@ return [
     'street_address'    => [
         '🙃address.building_number🙃 🙃address.street_name🙃',
     ],
+    'street_address_with_secondary_address' => [
+        '🙃address.street_address🙃 🙃address.secondary_address🙃',
+    ],
     'full_address'      => [
-        '🙃address.street_address🙃, 🙃address.city🙃, 🙃address.state_abbr🙃 🙃address.postcode🙃',
-        '🙃address.secondary_address🙃 🙃address.street_address🙃, 🙃address.city🙃, 🙃address.state_abbr🙃 🙃address.postcode🙃',
+        '🙃address.street_address🙃, 🙃address.city🙃, 🙃address.state_abbreviation🙃 🙃address.postcode🙃',
+        '🙃address.secondary_address🙃 🙃address.street_address🙃, 🙃address.city🙃, 🙃address.state_abbreviation🙃 🙃address.postcode🙃',
     ],
     'mail_box'          => [
         'PO Box ##',

@@ -5,6 +5,9 @@ namespace Deligoez\Phony\Fakes;
 use Deligoez\Phony\Phony;
 use RuntimeException;
 
+/**
+ * Class Fake.
+ */
 class Fake
 {
     protected Phony $phony;
@@ -32,9 +35,7 @@ class Fake
     public function __get($attribute)
     {
         if (isset($this->attributeAliases[$attribute])) {
-            $functionName = $this->attributeAliases[$attribute];
-
-            return $this->$functionName();
+            return $this->{$this->attributeAliases[$attribute]}();
         }
 
         if (! method_exists($this, $attribute)) {

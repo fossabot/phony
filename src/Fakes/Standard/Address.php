@@ -133,7 +133,7 @@ class Address extends Fake
      */
     protected function street_address_with_secondary_address(): string
     {
-        return $this->bothify($this->fetch('address.street_address').' '.$this->secondary_address());
+        return $this->bothify($this->fetch('address.street_address_with_secondary_address'));
     }
 
     /**
@@ -263,7 +263,7 @@ class Address extends Fake
      */
     protected function state_abbreviation(): string
     {
-        return $this->fetch('address.state_abbr');
+        return $this->fetch('address.state_abbreviation');
     }
 
     /**
@@ -299,7 +299,7 @@ class Address extends Fake
      *
      * @return string
      *
-     * @example 🙃::address()->countryByCode('NL') // => "Netherlands"
+     * @example 🙃::address()->country_by_code('NL') // => "Netherlands"
      */
     public function country_by_code(string $code): string
     {
@@ -313,9 +313,9 @@ class Address extends Fake
      *
      * @return string
      *
-     * @example 🙃::address()->countryNameToCode('united_states') // => "US"
+     * @example 🙃::address()->country_by_name('united_states') // => "US"
      */
-    public function country_name_to_code(string $name): string
+    public function country_by_name(string $name): string
     {
         return $this->fetch("address.country_by_name.{$name}");
     }
@@ -351,7 +351,7 @@ class Address extends Fake
      *
      * @throws \Exception
      *
-     * @example 🙃::address()->fullAddress() // => "282 Kevin Brook, Imogeneborough, CA 58517"
+     * @example 🙃::address()->full_address() // => "282 Kevin Brook, Imogeneborough, CA 58517"
      */
     protected function full_address(): string
     {

@@ -280,11 +280,11 @@ class AddressTest extends BaseTest
      *
      * @throws \Exception
      */
-    public function country_name_to_code(): void
+    public function country_by_name(): void
     {
         $this->assertEquals(
             'US',
-            $this->🧪->country_name_to_code('united_states')
+            $this->🧪->country_by_name('united_states')
         );
     }
 

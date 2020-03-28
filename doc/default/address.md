@@ -57,7 +57,7 @@ $🙃->address->country;                               // => "French Guiana"
 $🙃->address->country_by_code('NL');                 // => "Netherlands"
 
 // Keyword arguments: name
-$🙃->address->country_name_to_code('united_states'); // => "US"
+$🙃->address->country_by_name('united_states'); // => "US"
 
 $🙃->address->country_code;                          // => "IT"
 
