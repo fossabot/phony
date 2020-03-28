@@ -47,6 +47,7 @@ $🙃->person->name; // => "Tyshawn Johns Sr."
 
 ### Default
 
+- [$🙃->address](doc/default/address.md)
 - [$🙃->alphabet](doc/default/alphabet.md)
 - [$🙃->ancient](doc/default/ancient.md)
 - [$🙃->coin](doc/default/coin.md)
