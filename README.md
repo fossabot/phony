@@ -1,4 +1,4 @@
-![Phony Logo](.github/assets/phony-social-preview.png)
+![Phony Logo](.github/assets/phony-logo.png)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/deligoez/phony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/?branch=master)
