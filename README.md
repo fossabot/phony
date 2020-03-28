@@ -1,6 +1,4 @@
-# 🙃 Phony
-
-### This package is in active development and not production ready.
+![Phony Logo](https://repository-images.githubusercontent.com/248813762/45adc980-7124-11ea-9ce4-2d92ec30f39c)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/deligoez/phony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/?branch=master)
@@ -9,6 +7,8 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
 ![Packagist](https://img.shields.io/packagist/l/deligoez/phony)
 [![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) 
+
+### This package is in active development and not production ready.
 
 This [Laravel](http://laravel.com) package is port of the [Ruby](https://www.ruby-lang.org)'s [Faker](https://github.com/faker-ruby/faker) gem that generates fake data.
 
