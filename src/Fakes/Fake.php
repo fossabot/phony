@@ -88,13 +88,15 @@ class Fake
     /**
      * Fetches a value.
      *
-     * @param  string  $key
+     * @param  string       $key
+     *
+     * @param  string|null  $path
      *
      * @return string
      */
-    protected function fetch(string $key): string
+    protected function fetch(string $key, string $path = null): string
     {
-        $template = trans("phony::{$key}", [], $this->phony->defaultLocale);
+        $template = $this->phony->loader->get($key, $path, $this->phony->defaultLocale);
 
         // Pick one if it's an array
         if (is_array($template)) {

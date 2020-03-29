@@ -202,7 +202,7 @@ class Address extends Fake
         }
 
         return $this->bothify(
-            $this->fetch("address.postcode_by_state.{$stateAbbreviation}")
+            $this->fetch('address.postcode_by_state', $stateAbbreviation)
         );
     }
 
@@ -303,7 +303,7 @@ class Address extends Fake
      */
     public function country_by_code(string $code): string
     {
-        return $this->fetch("address.country_by_code.{$code}");
+        return $this->fetch('address.country_by_code', $code);
     }
 
     /**
@@ -317,7 +317,7 @@ class Address extends Fake
      */
     public function country_by_name(string $name): string
     {
-        return $this->fetch("address.country_by_name.{$name}");
+        return $this->fetch('address.country_by_name', $name);
     }
 
     /**

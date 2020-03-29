@@ -26,16 +26,19 @@ use RuntimeException;
  */
 class Phony
 {
+    public Loader $loader;
     public string $defaultLocale;
     protected array $attributeAliases;
 
     /**
      * Phony constructor.
      *
-     * @param  string  $defaultLocale
+     * @param  string                       $defaultLocale
+     * @param  \Deligoez\Phony\Loader|null  $loader
      */
-    public function __construct(string $defaultLocale)
+    public function __construct(string $defaultLocale, Loader $loader = null)
     {
+        $this->loader = $loader ?? new Loader($defaultLocale);
         $this->defaultLocale = $defaultLocale;
 
         $this->attributeAliases = [
