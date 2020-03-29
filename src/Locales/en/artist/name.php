@@ -42,5 +42,5 @@ return [
     'Diego Rivera',
     'Vincent',
     'Joan Miro',
-    'Ansel Adams'
+    'Ansel Adams',
 ];

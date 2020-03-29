@@ -2,10 +2,10 @@
 
 namespace Deligoez\Phony;
 
-use Deligoez\Phony\Fakes\Standard\Artist;
 use Deligoez\Phony\Fakes\Standard\Address;
 use Deligoez\Phony\Fakes\Standard\Alphabet;
 use Deligoez\Phony\Fakes\Standard\Ancient;
+use Deligoez\Phony\Fakes\Standard\Artist;
 use Deligoez\Phony\Fakes\Standard\Coin;
 use Deligoez\Phony\Fakes\Standard\Currency;
 use Deligoez\Phony\Fakes\Standard\Person;
