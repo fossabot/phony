@@ -99,7 +99,7 @@ class PersonTest extends BaseTest
     // region Functions
 
     /** @test */
-    public function initials_with_default_lenght(): void
+    public function initials_with_default_length(): void
     {
         $this->assertEquals(
             3,
@@ -110,7 +110,7 @@ class PersonTest extends BaseTest
     /** @test
      * @throws \Exception
      */
-    public function initials_with_given_lenght(): void
+    public function initials_with_given_length(): void
     {
         $this->assertEquals(
             $times = random_int(2, 10),
