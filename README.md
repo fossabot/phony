@@ -27,20 +27,20 @@ use Deligoez\Phony\Phony;
 
 $🙃 = new Phony('en');
 
-$🙃->address->city; // => "Imogeneborough"
-$🙃->📫->city; // => "Imogeneborough"
+$🙃->address->city;             // => "Imogeneborough"
+$🙃->📫->city;                  // => "Imogeneborough"
 
 $🙃->alphabet->uppercaseLetter; // => "P"
-$🙃->🔤->uppercaseLetter; // => "P"
+$🙃->🔤->uppercaseLetter;       // => "P"
 
-$🙃->ancient->god; // => "Zeus"
-$🙃->📜->god; // => "Zeus"
+$🙃->ancient->god;              // => "Zeus"
+$🙃->📜->god;                   // => "Zeus"
 
-$🙃->coin->flip; // => "Heads"
+$🙃->coin->flip;                // => "Heads"
 
-$🙃->currency->name; // => "Swedish Krona"
+$🙃->currency->name;            // => "Swedish Krona"
 
-$🙃->person->name; // => "Tyshawn Johns Sr."
+$🙃->person->name;              // => "Tyshawn Johns Sr."
 ```
 
 ## Fakes
