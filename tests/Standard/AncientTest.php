@@ -13,6 +13,8 @@ class AncientTest extends BaseTest
         $this->🧪 = $this->🙃->ancient;
     }
 
+    // region Attributes
+
     /** @test */
     public function god(): void
     {
@@ -48,4 +50,6 @@ class AncientTest extends BaseTest
             $this->🧪->hero
         );
     }
+
+    // endregion
 }

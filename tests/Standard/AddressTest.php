@@ -13,7 +13,7 @@ class AddressTest extends BaseTest
         $this->🧪 = $this->🙃->address;
     }
 
-    // region Magic Attributes
+    // region Attributes
 
     /** @test */
     public function city(): void

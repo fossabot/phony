@@ -13,6 +13,8 @@ class PersonTest extends BaseTest
         $this->🧪 = $this->🙃->person;
     }
 
+    // region Attributes
+
     /** @test */
     public function name(): void
     {
@@ -92,6 +94,10 @@ class PersonTest extends BaseTest
         );
     }
 
+    // endregion
+
+    // region Functions
+
     /** @test */
     public function initials_with_default_lenght(): void
     {
@@ -111,4 +117,6 @@ class PersonTest extends BaseTest
             mb_strlen($this->🧪->initials($times), 'utf8')
         );
     }
+
+    // endregion
 }

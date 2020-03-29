@@ -13,6 +13,8 @@ class AlphabetTest extends BaseTest
         $this->🧪 = $this->🙃->alphabet;
     }
 
+    // region Attributes
+
     /** @test */
     public function uppercase_letter(): void
     {
@@ -39,4 +41,6 @@ class AlphabetTest extends BaseTest
             mb_strlen($this->🧪->letter, 'utf8')
         );
     }
+
+    // endregion
 }
