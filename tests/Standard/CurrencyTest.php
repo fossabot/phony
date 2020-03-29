@@ -13,6 +13,8 @@ class CurrencyTest extends BaseTest
         $this->🧪 = $this->🙃->currency;
     }
 
+    // region Attributes
+
     /** @test */
     public function name(): void
     {
@@ -38,4 +40,6 @@ class CurrencyTest extends BaseTest
             $this->🧪->symbol
         );
     }
+
+    // endregion
 }

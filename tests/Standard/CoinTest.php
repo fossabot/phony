@@ -13,6 +13,8 @@ class CoinTest extends BaseTest
         $this->🧪 = $this->🙃->coin;
     }
 
+    // region Attributes
+
     /** @test */
     public function flip(): void
     {
@@ -30,4 +32,6 @@ class CoinTest extends BaseTest
             $this->🧪->name
         );
     }
+
+    // endregion
 }
