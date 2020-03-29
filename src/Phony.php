@@ -2,6 +2,7 @@
 
 namespace Deligoez\Phony;
 
+use Deligoez\Phony\Fakes\Standard\Artist;
 use Deligoez\Phony\Fakes\Standard\Address;
 use Deligoez\Phony\Fakes\Standard\Alphabet;
 use Deligoez\Phony\Fakes\Standard\Ancient;
@@ -20,6 +21,7 @@ use RuntimeException;
  * @property Alphabet 🔤
  * @property Ancient ancient
  * @property Ancient 📜
+ * @property Artist artist
  * @property Person person
  * @property Coin coin
  * @property Currency currency
@@ -105,6 +107,11 @@ class Phony
     public function ancient(): Ancient
     {
         return new Ancient($this);
+    }
+
+    public function artist(): Artist
+    {
+        return new Artist($this);
     }
 
     public function person(): Person
