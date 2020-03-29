@@ -3,19 +3,10 @@
 namespace Deligoez\Phony\Tests;
 
 use Deligoez\Phony\Fakes\Fake;
-use Deligoez\Phony\PhonyFacade;
 use RuntimeException;
 
 class PhonyTest extends BaseTest
 {
-    /** @test */
-    public function can_call_through_laravel_facade(): void
-    {
-        $this->assertIsString(
-            PhonyFacade::alphabet()->letter
-        );
-    }
-
     /** @test */
     public function can_not_access_undefined_magic_attribute(): void
     {

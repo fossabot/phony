@@ -1,8 +1,7 @@
 {
     "name": "deligoez/phony",
-    "description": "A Laravel Package that generates phony data",
+    "description": "A PHP Package that generates phony data",
     "keywords": [
-        "laravel",
         "package",
         "faker",
         "phony"
@@ -22,13 +21,9 @@
         }
     ],
     "require": {
-        "php": "^7.4",
-        "illuminate/support": "^6.0|^7.0"
+        "php": "^7.4"
     },
     "require-dev": {
-        "brianium/paratest": "^4.0",
-        "nunomaduro/collision": "^4.1",
-        "orchestra/testbench": "^4.0|^5.0",
         "phpunit/phpunit": "^8.5"
     },
     "autoload": {
@@ -42,20 +37,9 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit --configuration phpunit.xml.dist --colors=always",
-        "para": "vendor/bin/paratest --configuration phpunit.xml.dist --colors"
+        "test": "vendor/bin/phpunit --configuration phpunit.xml.dist --colors=always"
     },
     "config": {
         "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Deligoez\\Phony\\PhonyServiceProvider"
-            ],
-            "aliases": {
-                "Phony": "Deligoez\\Phony\\PhonyFacade"
-            }
-        }
     }
 }
