@@ -18,6 +18,7 @@ class Loader
     {
         // TODO: Rename variable names
         // TODO: Implement fallback mechanism
+        // TODO: Arrange locale files alphabetically
         $locale = $locale ?? $this->locale;
 
         [$group, $item] = explode('.', $key);
