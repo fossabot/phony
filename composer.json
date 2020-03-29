@@ -5,12 +5,15 @@
         "laravel",
         "package",
         "faker",
-        "dummy",
         "phony"
     ],
     "homepage": "https://github.com/deligoez/phony",
     "license": "MIT",
     "type": "library",
+    "support": {
+        "issues": "https://github.com/deligoez/phony/issues",
+        "source": "https://github.com/deligoez/phony"
+    },
     "authors": [
         {
             "name": "Yunus Emre Deligöz",
