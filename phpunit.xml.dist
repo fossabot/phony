@@ -2,6 +2,7 @@
 <phpunit bootstrap="vendor/autoload.php"
          backupGlobals="false"
          backupStaticAttributes="false"
+         printerClass="NunoMaduro\Collision\Adapters\Phpunit\Printer"
          colors="true"
          verbose="true"
          convertErrorsToExceptions="true"
@@ -9,7 +10,8 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
-         testdox="true">
+         testdox="true"
+    >
     <testsuites>
         <testsuite name="Main Test Suite">
             <directory>tests</directory>
