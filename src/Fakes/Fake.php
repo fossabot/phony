@@ -169,6 +169,33 @@ class Fake
     }
 
     /**
+     * Replaces all question mark ('?') occurrences with a random hex character.
+     *
+     * @param  array|string  $letterString
+     *
+     * @return array|string
+     * @throws \Exception
+     */
+    protected function hexify($letterString = '####')
+    {
+        $hexCharacters = [
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
+        ];
+
+        if (is_array($letterString)) {
+            foreach ($letterString as $index => $item) {
+                $letterString[$index] = $this->hexify($item);
+            }
+        }
+
+        return preg_replace_callback(
+            '/\#/',
+            fn () => $hexCharacters[random_int(0, 15)],
+            $letterString
+        );
+    }
+
+    /**
      * Replaces all question mark ('?') occurrences with a random letter.
      *
      * @param  array|string  $letterString

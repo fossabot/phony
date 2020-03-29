@@ -13,6 +13,7 @@ class FakeTest extends BaseTest
     protected ReflectionMethod $numerify;
     protected ReflectionMethod $letterify;
     protected ReflectionMethod $bothify;
+    protected ReflectionMethod $hexify;
 
     protected function setUp(): void
     {
@@ -32,6 +33,9 @@ class FakeTest extends BaseTest
 
         $this->bothify = new ReflectionMethod(Fake::class, 'bothify');
         $this->bothify->setAccessible(true);
+
+        $this->hexify = new ReflectionMethod(Fake::class, 'hexify');
+        $this->hexify->setAccessible(true);
     }
 
     /** @test */
@@ -130,6 +134,34 @@ class FakeTest extends BaseTest
             '/^[\d]{0,3}$/',
             (int) $this->numerify->invoke(new Fake($this->🙃), '###')
         );
+    }
+
+    /** @test */
+    public function can_hexify_with_hash_sign(): void
+    {
+        $this->assertRegExp(
+            '/^[A-Z0-9]{3}$/',
+             $this->hexify->invoke(new Fake($this->🙃), '###')
+        );
+    }
+
+    /** @test */
+    public function can_hexify_arrays(): void
+    {
+        $testArray = [
+            '#',
+            '##',
+            '###',
+        ];
+
+        $result = $this->hexify->invoke(new Fake($this->🙃), $testArray);
+
+        foreach ($result as $item) {
+            $this->assertRegExp(
+                '/^[A-Z0-9]{1,3}$/',
+                 $item
+            );
+        }
     }
 
     /** @test */
