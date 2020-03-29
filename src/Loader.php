@@ -24,8 +24,7 @@ class Loader
 
         $line = $this->getLine($group, $item, $locale);
 
-        if (isset($path))
-        {
+        if (isset($path)) {
             $line = $this->getPath($line, $path);
         }
 
