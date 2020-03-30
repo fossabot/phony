@@ -3,8 +3,8 @@
 ```php
 use Deligoez\Phony\Phony;
 
-$🙃 = new Phony('en');
 
+$🙃 = new Phony('en');
 
 $🙃->artist->name;        // => "Michelangelo"
 
