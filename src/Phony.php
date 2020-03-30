@@ -11,6 +11,7 @@ use Deligoez\Phony\Fakes\Standard\Coin;
 use Deligoez\Phony\Fakes\Standard\Cosmere;
 use Deligoez\Phony\Fakes\Standard\Currency;
 use Deligoez\Phony\Fakes\Standard\Person;
+use Deligoez\Phony\Fakes\Standard\SlackEmoji;
 use RuntimeException;
 
 /**
@@ -28,6 +29,7 @@ use RuntimeException;
  * @property Cosmere cosmere
  * @property Currency currency
  * @property Person person
+ * @property SlackEmoji slack_emoji
  */
 class Phony
 {
