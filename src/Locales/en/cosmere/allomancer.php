@@ -18,5 +18,5 @@ return [
     'Oracle',
     'Pulser',
     'Slider',
-    'Seer'
+    'Seer',
 ];

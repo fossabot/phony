@@ -54,8 +54,7 @@ class Fake
             return $value;
         }
 
-        if (isset($this->functionAliases[$attribute]))
-        {
+        if (isset($this->functionAliases[$attribute])) {
             return $this->{$this->functionAliases[$attribute]}();
         }
 
@@ -82,13 +81,11 @@ class Fake
      */
     public function __isset($attribute)
     {
-        if (isset($this->attributes[$attribute]))
-        {
+        if (isset($this->attributes[$attribute])) {
             return true;
         }
 
-        if (isset($this->functionAliases[$attribute]))
-        {
+        if (isset($this->functionAliases[$attribute])) {
             return true;
         }
 

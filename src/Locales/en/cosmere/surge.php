@@ -10,5 +10,5 @@ return [
     'Progression',
     'Transformation',
     'Transportation',
-    'Tension'
+    'Tension',
 ];

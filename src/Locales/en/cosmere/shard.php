@@ -11,5 +11,5 @@ return [
     'Endowment',
     'Autonomy',
     'Ambition',
-    'Harmony'
+    'Harmony',
 ];

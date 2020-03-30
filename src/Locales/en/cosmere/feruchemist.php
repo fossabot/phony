@@ -17,5 +17,5 @@ return [
     'Gasper',
     'Subsumer',
     'Bloodmaker',
-    'Pinnacle'
+    'Pinnacle',
 ];

@@ -10,5 +10,5 @@ return [
     'Battar',
     'Kalak',
     'Talanel',
-    'Ishar'
+    'Ishar',
 ];

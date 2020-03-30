@@ -2,9 +2,8 @@
 
 namespace Deligoez\Phony\Fakes\Standard;
 
-use Deligoez\Phony\Fakes\Fake;
-use Deligoez\Phony\Phony;
 use Deligoez\Phony\Enums\Functions;
+use Deligoez\Phony\Fakes\Fake;
 
 /**
  * Class Address.

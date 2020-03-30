@@ -12,5 +12,5 @@ return [
     'Taldain',
     'Threnody',
     'Vax',
-    'Yolen'
+    'Yolen',
 ];

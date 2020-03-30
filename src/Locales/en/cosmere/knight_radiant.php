@@ -10,5 +10,5 @@ return [
     'Stoneward',
     'Truthwatcher',
     'Willshaper',
-    'Windrunner'
+    'Windrunner',
 ];
