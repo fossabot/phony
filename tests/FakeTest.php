@@ -51,14 +51,14 @@ class FakeTest extends BaseTest
     {
         $this->expectException(RuntimeException::class);
 
-        $this->🙃->alphabet()->uppercase_letter = 'can-not';
+        $this->🙃->alphabet->uppercase_letter = 'can-not';
     }
 
     /** @test */
     public function can_check_existence_with_magic_isset(): void
     {
         $this->assertTrue(
-            isset($this->🙃->alphabet()->uppercase_letter)
+            isset($this->🙃->alphabet->uppercase_letter)
         );
 
         $this->assertFalse(
