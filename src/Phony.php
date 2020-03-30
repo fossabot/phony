@@ -2,7 +2,9 @@
 
 namespace Deligoez\Phony;
 
+use Deligoez\Phony\Fakes\Fakes;
 use Deligoez\Phony\Fakes\Standard\Address;
+use Deligoez\Phony\Fakes\Standard\Cosmere;
 use Deligoez\Phony\Fakes\Standard\Alphabet;
 use Deligoez\Phony\Fakes\Standard\Ancient;
 use Deligoez\Phony\Fakes\Standard\Artist;
@@ -22,15 +24,15 @@ use RuntimeException;
  * @property Ancient ancient
  * @property Ancient 📜
  * @property Artist artist
- * @property Person person
  * @property Coin coin
+ * @property Cosmere cosmere
  * @property Currency currency
+ * @property Person person
  */
 class Phony
 {
     public Loader $loader;
     public string $defaultLocale;
-    protected array $attributeAliases;
 
     /**
      * Phony constructor.
@@ -42,13 +44,9 @@ class Phony
     {
         $this->loader = $loader ?? new Loader($defaultLocale);
         $this->defaultLocale = $defaultLocale;
-
-        $this->attributeAliases = [
-            '📫' => 'address',
-            '🔤' => 'alphabet',
-            '📜' => 'ancient',
-        ];
     }
+
+    // region Magic Setup
 
     /**
      * Get attributes by magic.
@@ -60,15 +58,13 @@ class Phony
      */
     public function __get($attribute)
     {
-        if (isset($this->attributeAliases[$attribute])) {
-            return $this->{$this->attributeAliases[$attribute]}();
+        if (isset(Fakes::default[$attribute]))
+        {
+            $fake = Fakes::default[$attribute];
+            return new $fake($this);
         }
 
-        if (! method_exists($this, $attribute)) {
-            throw new RuntimeException("The {$attribute} attribute is not defined!");
-        }
-
-        return $this->$attribute();
+        throw new RuntimeException("The {$attribute} attribute is not defined!");
     }
 
     /**
@@ -91,41 +87,8 @@ class Phony
      */
     public function __isset($attribute)
     {
-        return method_exists($this, $attribute);
+        return isset(Fakes::default[$attribute]);
     }
 
-    protected function address(): Address
-    {
-        return new Address($this);
-    }
-
-    public function alphabet(): Alphabet
-    {
-        return new Alphabet($this);
-    }
-
-    public function ancient(): Ancient
-    {
-        return new Ancient($this);
-    }
-
-    public function artist(): Artist
-    {
-        return new Artist($this);
-    }
-
-    public function person(): Person
-    {
-        return new Person($this);
-    }
-
-    public function coin(): Coin
-    {
-        return new Coin($this);
-    }
-
-    public function currency(): Currency
-    {
-        return new Currency($this);
-    }
+    // endregion
 }
