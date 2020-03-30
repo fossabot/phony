@@ -52,8 +52,10 @@ $🙃->person->name;              // => "Tyshawn Johns Sr."
 - [$🙃->ancient](doc/default/ancient.md)
 - [$🙃->artist](doc/default/artist.md)
 - [$🙃->coin](doc/default/coin.md)
+- [$🙃->cosmere](doc/default/cosmere.md)
 - [$🙃->currency](doc/default/currency.md)
 - [$🙃->person](doc/default/person.md)
+- [$🙃->slack_emoji](doc/default/slack_emoji.md)
 
 ### Testing
 
