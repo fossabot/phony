@@ -14,39 +14,9 @@ use Deligoez\Phony\Fakes\Fake;
  */
 class Alphabet extends Fake
 {
-    /**
-     * Retrieves an uppercase letter.
-     *
-     * @return string
-     *
-     * @example 🙃::alphabet()->uppercase_letter() // => "P"
-     */
-    protected function uppercase_letter(): string
-    {
-        return $this->fetch('alphabet.uppercase_letter');
-    }
-
-    /**
-     * Retrieves a lowercase letter.
-     *
-     * @return string
-     *
-     * @example 🙃::alphabet()->lowercase_letter() // => "P"
-     */
-    protected function lowercase_letter(): string
-    {
-        return $this->fetch('alphabet.lowercase_letter');
-    }
-
-    /**
-     * Retrieves a letter.
-     *
-     * @return string
-     *
-     * @example 🙃::alphabet()->letter() // => "P"
-     */
-    protected function letter(): string
-    {
-        return $this->fetch('alphabet.letter');
-    }
+    protected array $attributes = [
+        'uppercase_letter' => ['alphabet.uppercase_letter'],
+        'lowercase_letter' => ['alphabet.lowercase_letter'],
+        'letter'           => ['alphabet.letter'],
+    ];
 }

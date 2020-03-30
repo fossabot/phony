@@ -21,113 +21,17 @@ use Deligoez\Phony\Fakes\Fake;
  */
 class Person extends Fake
 {
-    /**
-     * Produces a person name.
-     *
-     * @return string
-     *
-     * @example 🙃::person()->name() // => "Tyshawn Johns Sr."
-     */
-    protected function name(): string
-    {
-        return $this->fetch('person.name');
-    }
-
-    /**
-     * Produces a person name with middle name.
-     *
-     * @return string
-     *
-     * @example 🙃::person()->name_with_middle() // => "Aditya Elton Douglas"
-     */
-    protected function name_with_middle(): string
-    {
-        return $this->fetch('person.name_with_middle');
-    }
-
-    /**
-     * Produces a person first name.
-     *
-     * @return string
-     *
-     * @example 🙃::person()->first_name() // => "Kaci"
-     */
-    protected function first_name(): string
-    {
-        return $this->fetch('person.first_name');
-    }
-
-    /**
-     * Produces a person middle name.
-     *
-     * @return string
-     *
-     * @example 🙃::person()->middle_name() // => "Abraham"
-     */
-    protected function middle_name(): string
-    {
-        return $this->fetch('person.middle_name');
-    }
-
-    /**
-     * Produces a male person first name.
-     *
-     * @return string
-     *
-     * @example 🙃::person()->male_first_name() // => "Edward"
-     */
-    protected function male_first_name(): string
-    {
-        return $this->fetch('person.male_first_name');
-    }
-
-    /**
-     * Produces a female person first name.
-     *
-     * @return string
-     *
-     * @example 🙃::person()->female_first_name() // => "Natasha"
-     */
-    protected function female_first_name(): string
-    {
-        return $this->fetch('person.female_first_name');
-    }
-
-    /**
-     * Produces a person last name.
-     *
-     * @return string
-     *
-     * @example 🙃::person()->last_name() // => "Ernser"
-     */
-    protected function last_name(): string
-    {
-        return $this->fetch('person.last_name');
-    }
-
-    /**
-     * Produces a person name prefix.
-     *
-     * @return string
-     *
-     * @example 🙃::person()->prefix() // => "Mr."
-     */
-    protected function prefix(): string
-    {
-        return $this->fetch('person.prefix');
-    }
-
-    /**
-     * Produces a person name suffix.
-     *
-     * @return string
-     *
-     * @example 🙃::person()->suffix() // => "Mr."
-     */
-    protected function suffix(): string
-    {
-        return $this->fetch('person.suffix');
-    }
+    protected array $attributes = [
+        'name' => ['person.name'],
+        'name_with_middle' => ['person.name_with_middle'],
+        'first_name' => ['person.first_name'],
+        'middle_name' => ['person.middle_name'],
+        'male_first_name' => ['person.male_first_name'],
+        'female_first_name' => ['person.female_first_name'],
+        'last_name' => ['person.last_name'],
+        'prefix' => ['person.prefix'],
+        'suffix' => ['person.suffix'],
+    ];
 
     /**
      * Produces a name initials.

@@ -13,27 +13,8 @@ use Deligoez\Phony\Fakes\Fake;
  */
 class Coin extends Fake
 {
-    /**
-     * Retrieves a face to a flipped coin.
-     *
-     * @return string
-     *
-     * @example 🙃::coin()->flip() // => "Heads"
-     */
-    protected function flip(): string
-    {
-        return $this->fetch('coin.flip');
-    }
-
-    /**
-     * Retrieves a random coin from any country.
-     *
-     * @return string
-     *
-     * @example 🙃::coin()->name() // => "Brazilian Real"
-     */
-    protected function name(): string
-    {
-        return $this->fetch('coin.name');
-    }
+    protected array $attributes = [
+        'flip'  => ['coin.flip'],
+        'name' => ['coin.name'],
+    ];
 }

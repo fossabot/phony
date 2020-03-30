@@ -4,6 +4,7 @@ namespace Deligoez\Phony\Fakes\Standard;
 
 use Deligoez\Phony\Fakes\Fake;
 use Deligoez\Phony\Phony;
+use Deligoez\Phony\Enums\Functions;
 
 /**
  * Class Address.
@@ -38,147 +39,39 @@ use Deligoez\Phony\Phony;
  */
 class Address extends Fake
 {
-    /**
-     * Address constructor.
-     *
-     * @param  \Deligoez\Phony\Phony  $phony
-     */
-    public function __construct(Phony $phony)
-    {
-        parent::__construct($phony);
+    protected array $attributes = [
+        'city'                                  => ['address.city'],
+        'city_with_state'                       => ['address.city_with_state'],
+        'street_name'                           => ['address.street_name'],
+        'secondary_address'                     => ['address.secondary_address', Functions::numerify],
+        'street_address'                        => ['address.street_address', Functions::numerify],
+        'street_address_with_secondary_address' => ['address.street_address_with_secondary_address', Functions::bothify],
+        'building_number'                       => ['address.building_number', Functions::bothify],
+        'community'                             => ['address.community'],
+        'mail_box'                              => ['address.mail_box', Functions::bothify],
+        'time_zone'                             => ['address.time_zone'],
+        'street_suffix'                          => ['address.street_suffix'],
+        'city_suffix'                            => ['address.city_suffix'],
+        'city_prefix'                            => ['address.city_prefix'],
+        'state_abbreviation'                    => ['address.state_abbreviation'],
+        'state'                                 => ['address.state'],
+        'country'                               => ['address.country'],
+        'country_code'                          => ['address.country_code'],
+        'country_code_long'                     => ['address.country_code_long'],
+        'full_address'                          => ['address.full_address'],
+    ];
 
-        $this->attributeAliases = [
-            'zip'      => 'zip',
-            'postcode' => 'zip',
-        ];
+    protected array $functionAttributes = [
+        'zip_code' => ['zip_code', [null]],
+        'zip'      => ['zip_code', [null]],
+        'postcode' => ['zip_code', [null]],
+    ];
 
-        $this->functionAliases = [
-            'zip'      => ['zip_code', [null]],
-            'postcode' => ['zip_code', [null]],
-        ];
-    }
-
-    /**
-     * Produces the name of a city.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->city() // => "Imogeneborough"
-     */
-    protected function city(): string
-    {
-        return $this->fetch('address.city');
-    }
-
-    /**
-     * Produces the name of a city with state.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->city_with_state() // => "Northfort, California"
-     */
-    protected function city_with_state(): string
-    {
-        return $this->fetch('address.city_with_state');
-    }
-
-    /**
-     * Produces a street name.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->street_name() // => "Larkin Fork"
-     */
-    protected function street_name(): string
-    {
-        return $this->fetch('address.street_name');
-    }
-
-    /**
-     * Produces a secondary address.
-     *
-     * @return string
-     *
-     * @throws \Exception
-     *
-     * @example 🙃::address()->secondary_address() // => "Apt. 672"
-     */
-    protected function secondary_address(): string
-    {
-        return $this->bothify(
-            $this->fetch('address.secondary_address')
-        );
-    }
-
-    /**
-     * Produces a street address.
-     *
-     * @return string
-     *
-     * @throws \Exception
-     * @example 🙃::address()->street_address() // => "282 Kevin Brook"
-     */
-    protected function street_address(): string
-    {
-        return $this->numerify($this->fetch('address.street_address'));
-    }
-
-    /**
-     * Produces a street address with secondary address.
-     *
-     * @return string
-     *
-     * @throws \Exception
-     * @example 🙃::address()->street_address_with_secondary_address() // => "282 Kevin Brook Apt. 672"
-     */
-    protected function street_address_with_secondary_address(): string
-    {
-        return $this->bothify($this->fetch('address.street_address_with_secondary_address'));
-    }
-
-    /**
-     * Produces a building number.
-     *
-     * @return string
-     *
-     * @throws \Exception
-     *
-     * @example 🙃::address()->building_number() // => "7304"
-     */
-    protected function building_number(): string
-    {
-        return $this->bothify(
-            $this->fetch('address.building_number')
-        );
-    }
-
-    /**
-     * Produces the name of a community.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->community() // => "University Crossing"
-     */
-    protected function community(): string
-    {
-        return $this->fetch('address.community');
-    }
-
-    /**
-     * Produces a mail box number.
-     *
-     * @return string
-     *
-     * @throws \Exception
-     *
-     * @example 🙃::address()->mail_box() // => "PO Box 123"
-     */
-    protected function mail_box(): string
-    {
-        return $this->bothify(
-            $this->fetch('address.mail_box')
-        );
-    }
+    protected array $functionAliases = [
+        'zip_code' => 'zip_code',
+        'zip'      => 'zip_code',
+        'postcode' => 'zip_code',
+    ];
 
     /**
      * Produces a Zip Code.
@@ -204,90 +97,6 @@ class Address extends Fake
         return $this->bothify(
             $this->fetch('address.postcode_by_state', $stateAbbreviation)
         );
-    }
-
-    /**
-     * Produces the name of a time zone.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->time_zone() // => "Asia/Yakutsk"
-     */
-    protected function time_zone(): string
-    {
-        return $this->fetch('address.time_zone');
-    }
-
-    /**
-     * Produces a street suffix.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->street_suffix() // => "Street"
-     */
-    protected function street_suffix(): string
-    {
-        return $this->fetch('address.street_suffix');
-    }
-
-    /**
-     * Produces a city suffix.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->city_suffix() // => "fort"
-     */
-    protected function city_suffix(): string
-    {
-        return $this->fetch('address.city_suffix');
-    }
-
-    /**
-     * Produces a city prefix.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->city_prefix() // => "Lake"
-     */
-    protected function city_prefix(): string
-    {
-        return $this->fetch('address.city_prefix');
-    }
-
-    /**
-     * Produces a state abbreviation.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->state_abbreviation() // => "AP"
-     */
-    protected function state_abbreviation(): string
-    {
-        return $this->fetch('address.state_abbreviation');
-    }
-
-    /**
-     * Produces the name of a state.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->state() // => "California"
-     */
-    protected function state(): string
-    {
-        return $this->fetch('address.state');
-    }
-
-    /**
-     * Produces the name of a country.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->country() // => "French Guiana"
-     */
-    protected function country(): string
-    {
-        return $this->fetch('address.country');
     }
 
     /**
@@ -318,43 +127,5 @@ class Address extends Fake
     public function country_by_name(string $name): string
     {
         return $this->fetch('address.country_by_name', $name);
-    }
-
-    /**
-     * Produces an ISO 3166 country code.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->country_code() // => "IT"
-     */
-    protected function country_code(): string
-    {
-        return $this->fetch('address.country_code');
-    }
-
-    /**
-     * Produces a long (alpha-3) ISO 3166 country code.
-     *
-     * @return string
-     *
-     * @example 🙃::address()->country_code_long() // => "ITA"
-     */
-    protected function country_code_long(): string
-    {
-        return $this->fetch('address.country_code_long');
-    }
-
-    /**
-     * Produces a full address.
-     *
-     * @return string
-     *
-     * @throws \Exception
-     *
-     * @example 🙃::address()->full_address() // => "282 Kevin Brook, Imogeneborough, CA 58517"
-     */
-    protected function full_address(): string
-    {
-        return $this->bothify($this->fetch('address.full_address'));
     }
 }

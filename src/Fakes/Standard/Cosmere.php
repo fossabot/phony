@@ -21,53 +21,16 @@ use Deligoez\Phony\Fakes\Fake;
  */
 class Cosmere extends Fake
 {
-    protected function aon(): string
-    {
-        return $this->fetch('cosmere.aon');
-    }
-
-    protected function shard_world(): string
-    {
-        return $this->fetch('cosmere.shard_world');
-    }
-
-    protected function shard(): string
-    {
-        return $this->fetch('cosmere.shard');
-    }
-
-    protected function surge(): string
-    {
-        return $this->fetch('cosmere.surge');
-    }
-
-    protected function knight_radiant(): string
-    {
-        return $this->fetch('cosmere.knight_radiant');
-    }
-
-    protected function metal(): string
-    {
-        return $this->fetch('cosmere.metal');
-    }
-
-    protected function allomancer(): string
-    {
-        return $this->fetch('cosmere.allomancer');
-    }
-
-    protected function feruchemist(): string
-    {
-        return $this->fetch('cosmere.feruchemist');
-    }
-
-    protected function herald(): string
-    {
-        return $this->fetch('cosmere.herald');
-    }
-
-    protected function spren(): string
-    {
-        return $this->fetch('cosmere.spren');
-    }
+    protected array $attributes = [
+        'aon'            => ['cosmere.aon'],
+        'shard_world'    => ['cosmere.shard_world'],
+        'shard'          => ['cosmere.shard'],
+        'surge'          => ['cosmere.surge'],
+        'knight_radiant' => ['cosmere.knight_radiant'],
+        'metal'          => ['cosmere.metal'],
+        'allomancer'     => ['cosmere.allomancer'],
+        'feruchemist'    => ['cosmere.feruchemist'],
+        'herald'         => ['cosmere.herald'],
+        'spren'          => ['cosmere.spren'],
+    ];
 }

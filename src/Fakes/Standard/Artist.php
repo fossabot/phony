@@ -12,15 +12,7 @@ use Deligoez\Phony\Fakes\Fake;
  */
 class Artist extends Fake
 {
-    /**
-     * Produces the name of an artist.
-     *
-     * @return string
-     *
-     * @example 🙃::artist()->name() // => "Michelangelo"
-     */
-    protected function name(): string
-    {
-        return $this->fetch('artist.name');
-    }
+    protected array $attributes = [
+        'name' => ['artist.name'],
+    ];
 }

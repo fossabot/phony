@@ -11,7 +11,9 @@ use RuntimeException;
 class Fake
 {
     protected Phony $phony;
-    protected array $attributeAliases;
+    protected array $attributes;
+    protected array $functionAttributes;
+    protected array $functions;
     protected array $functionAliases;
 
     /**
@@ -24,6 +26,8 @@ class Fake
         $this->phony = $phony;
     }
 
+    // region Magic Setup
+
     /**
      * Get attributes by magic.
      *
@@ -34,15 +38,28 @@ class Fake
      */
     public function __get($attribute)
     {
-        if (isset($this->attributeAliases[$attribute])) {
-            return $this->{$this->attributeAliases[$attribute]}();
+        if (isset($this->attributes[$attribute])) {
+            $value = $this->fetch($this->attributes[$attribute][0]);
+
+            if (isset($this->attributes[$attribute][1])) {
+                $functions = is_array($this->attributes[$attribute][1])
+                    ? $this->attributes[$attribute][1]
+                    : explode('|', $this->attributes[$attribute][1]);
+
+                foreach ($functions as $fn) {
+                    $value = $this->$fn($value);
+                }
+            }
+
+            return $value;
         }
 
-        if (! method_exists($this, $attribute)) {
-            throw new RuntimeException("The {$attribute} attribute is not defined!");
+        if (isset($this->functionAliases[$attribute]))
+        {
+            return $this->{$this->functionAliases[$attribute]}();
         }
 
-        return $this->$attribute();
+        throw new RuntimeException("The {$attribute} attribute is not defined!");
     }
 
     /**
@@ -65,7 +82,17 @@ class Fake
      */
     public function __isset($attribute)
     {
-        return method_exists($this, $attribute);
+        if (isset($this->attributes[$attribute]))
+        {
+            return true;
+        }
+
+        if (isset($this->functionAliases[$attribute]))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -78,12 +105,14 @@ class Fake
      */
     public function __call($name, $arguments)
     {
-        if (isset($this->functionAliases[$name])) {
-            return $this->{$this->functionAliases[$name][0]}(...$this->functionAliases[$name][1]);
+        if (isset($this->functionAttributes[$name])) {
+            return $this->{$this->functionAttributes[$name][0]}(...$this->functionAttributes[$name][1]);
         }
 
         throw new RuntimeException("The {$name} function is not defined!");
     }
+
+    // endregion
 
     /**
      * Fetches a value.
@@ -189,7 +218,7 @@ class Fake
         }
 
         return preg_replace_callback(
-            '/\#/',
+            '/#/',
             fn () => $hexCharacters[random_int(0, 15)],
             $letterString
         );
