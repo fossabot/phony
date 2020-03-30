@@ -4,11 +4,11 @@ namespace Deligoez\Phony;
 
 use Deligoez\Phony\Fakes\Fakes;
 use Deligoez\Phony\Fakes\Standard\Address;
-use Deligoez\Phony\Fakes\Standard\Cosmere;
 use Deligoez\Phony\Fakes\Standard\Alphabet;
 use Deligoez\Phony\Fakes\Standard\Ancient;
 use Deligoez\Phony\Fakes\Standard\Artist;
 use Deligoez\Phony\Fakes\Standard\Coin;
+use Deligoez\Phony\Fakes\Standard\Cosmere;
 use Deligoez\Phony\Fakes\Standard\Currency;
 use Deligoez\Phony\Fakes\Standard\Person;
 use RuntimeException;
@@ -58,9 +58,9 @@ class Phony
      */
     public function __get($attribute)
     {
-        if (isset(Fakes::default[$attribute]))
-        {
+        if (isset(Fakes::default[$attribute])) {
             $fake = Fakes::default[$attribute];
+
             return new $fake($this);
         }
 

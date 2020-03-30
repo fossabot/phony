@@ -59,5 +59,5 @@ return [
     'Tae',
     'Tia',
     'Tii',
-    'Toa'
+    'Toa',
 ];
