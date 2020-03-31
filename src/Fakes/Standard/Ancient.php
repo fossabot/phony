@@ -17,7 +17,7 @@ class Ancient extends Fake
 {
     protected array $attributes = [
         'god'        => ['ancient.god'],
-        'primordial' => ['ancient.god'],
+        'primordial' => ['ancient.primordial'],
         'titan'      => ['ancient.titan'],
         'hero'       => ['ancient.hero'],
     ];
