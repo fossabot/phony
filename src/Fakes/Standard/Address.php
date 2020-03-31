@@ -31,6 +31,7 @@ use Deligoez\Phony\Fakes\Fake;
  * @property string country_code
  * @property string country_code_long
  * @property string full_address
+ * @property string default_country
  * @property float latitude
  * @property float longitude
  * @method zip(?string $stateAbbreviation = null): string
@@ -58,6 +59,7 @@ class Address extends Fake
         'country_code'                          => ['address.country_code'],
         'country_code_long'                     => ['address.country_code_long'],
         'full_address'                          => ['address.full_address'],
+        'default_country'                       => ['address.default_country'],
     ];
 
     protected array $functionAttributes = [

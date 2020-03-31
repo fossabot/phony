@@ -66,6 +66,8 @@ $🙃->address->country_code_long;                     // => "ITA"
 
 $🙃->address->full_address;                          // => "282 Kevin Brook, Imogeneborough, CA 58517"
 
+$🙃->address->default_country;                       // => "United States of America"
+
 $🙃->address->latitude;                              // => "-58.17256227443719"
 
 $🙃->address->longitude;                             // => "-156.65548382095133"

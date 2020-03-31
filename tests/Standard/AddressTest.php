@@ -212,6 +212,14 @@ class AddressTest extends BaseTest
         );
     }
 
+    /** @test */
+    public function default_country(): void
+    {
+        $this->assertIsString(
+            $this->🧪->default_country
+        );
+    }
+
     // endregion
 
     // region Functions
