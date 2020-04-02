@@ -35,6 +35,7 @@ class Phony
 {
     public Loader $loader;
     public string $defaultLocale;
+    private array $fakes = [];
 
     /**
      * Phony constructor.
@@ -61,9 +62,15 @@ class Phony
     public function __get($attribute)
     {
         if (isset(Fakes::default[$attribute])) {
-            $fake = Fakes::default[$attribute];
+            if (isset($this->fakes[$attribute]))
+            {
+                return $this->fakes[$attribute];
+            }
 
-            return new $fake($this);
+            $fake = Fakes::default[$attribute];
+            $instance = new $fake($this);
+            $this->fakes[$attribute] = $instance;
+            return $instance;
         }
 
         throw new RuntimeException("The {$attribute} attribute is not defined!");

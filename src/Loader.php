@@ -8,6 +8,7 @@ class Loader
 {
     protected string $locale;
     protected string $fallback;
+    protected array $cache = [];
 
     public function __construct(string $locale)
     {
@@ -18,7 +19,8 @@ class Loader
     {
         // TODO: Rename variable names
         // TODO: Implement fallback mechanism
-        // TODO: Arrange locale files alphabetically
+        // TODO: Implement caching mechanism
+        //       - Introduce maximum cached items. Exp. 1 million -> After that clean the cache -> should be configurable
         $locale = $locale ?? $this->locale;
 
         [$group, $item] = explode('.', $key);
@@ -30,6 +32,11 @@ class Loader
         }
 
         return $line ?? $key;
+    }
+
+    protected function isCached(string $group, string $item): bool
+    {
+        return isset($this->cache[$group][$item]);
     }
 
     protected function getPath($line, string $path)
@@ -45,12 +52,16 @@ class Loader
 
     public function load(string $group, string $item, string $locale)
     {
-        // TODO: Check if already loaded
+        if ($this->isCached($group, $item))
+        {
+            return $this->cache[$group][$item];
+        }
 
         $path = __DIR__."/Locales/{$locale}/{$group}/{$item}.php";
 
         if (file_exists($path)) {
-            return require $path;
+            $this->cache[$group][$item] = require $path;
+            return $this->cache[$group][$item];
         }
 
         throw new RuntimeException("File does not exist at path {$path}");
