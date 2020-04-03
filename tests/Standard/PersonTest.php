@@ -18,7 +18,7 @@ class PersonTest extends BaseTest
     /** @test */
     public function name(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){2,3}/',
             $this->🧪->name
         );
@@ -27,7 +27,7 @@ class PersonTest extends BaseTest
     /** @test */
     public function name_with_middle(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){3,4}/',
             $this->🧪->name_with_middle
         );
@@ -36,7 +36,7 @@ class PersonTest extends BaseTest
     /** @test */
     public function first_name(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){3,4}/',
             $this->🧪->first_name
         );
@@ -45,7 +45,7 @@ class PersonTest extends BaseTest
     /** @test */
     public function middle_name(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){3,4}/',
             $this->🧪->middle_name
         );
@@ -70,7 +70,7 @@ class PersonTest extends BaseTest
     /** @test */
     public function last_name(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){3,4}/',
             $this->🧪->last_name
         );
@@ -79,7 +79,7 @@ class PersonTest extends BaseTest
     /** @test */
     public function prefix(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/[A-Z][a-z]+\.?/',
             $this->🧪->prefix
         );
@@ -88,7 +88,7 @@ class PersonTest extends BaseTest
     /** @test */
     public function suffix(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/[A-Z][a-z]*\.?/',
             $this->🧪->suffix
         );

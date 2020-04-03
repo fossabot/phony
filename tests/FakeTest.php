@@ -130,7 +130,7 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_numerify_with_hash_sign(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/^[\d]{0,3}$/',
             (int) $this->numerify->invoke(new Fake($this->🙃), '###')
         );
@@ -139,7 +139,7 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_hexify_with_hash_sign(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/^[A-Z0-9]{3}$/',
              $this->hexify->invoke(new Fake($this->🙃), '###')
         );
@@ -157,7 +157,7 @@ class FakeTest extends BaseTest
         $result = $this->hexify->invoke(new Fake($this->🙃), $testArray);
 
         foreach ($result as $item) {
-            $this->assertRegExp(
+            $this->assertMatchesRegularExpression(
                 '/^[A-Z0-9]{1,3}$/',
                  $item
             );
@@ -167,7 +167,7 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_numerify_with_percentage_sign(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/^[\d]{3}$/',
             (int) $this->numerify->invoke(new Fake($this->🙃), '%%%')
         );
@@ -185,7 +185,7 @@ class FakeTest extends BaseTest
         $result = $this->numerify->invoke(new Fake($this->🙃), $testArray);
 
         foreach ($result as $item) {
-            $this->assertRegExp(
+            $this->assertMatchesRegularExpression(
                 '/^[\d]{1,2}$/',
                 (int) $item
             );
@@ -195,7 +195,7 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_letterify(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/^[\w]{3}$/',
             $this->letterify->invoke(new Fake($this->🙃), '???')
         );
@@ -213,7 +213,7 @@ class FakeTest extends BaseTest
         $result = $this->letterify->invoke(new Fake($this->🙃), $testArray);
 
         foreach ($result as $item) {
-            $this->assertRegExp(
+            $this->assertMatchesRegularExpression(
                 '/^[A-Za-z]{1,3}$/',
                 $item
             );
@@ -223,7 +223,7 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_bothify(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/^[\w]{3}$/',
             $this->bothify->invoke(new Fake($this->🙃), '?#%')
         );
@@ -232,7 +232,7 @@ class FakeTest extends BaseTest
     /** @test */
     public function can_bothify_with_asterix(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/^[\w]{3}$/',
             $this->bothify->invoke(new Fake($this->🙃), '***')
         );
@@ -252,7 +252,7 @@ class FakeTest extends BaseTest
         $result = $this->bothify->invoke(new Fake($this->🙃), $testArray);
 
         foreach ($result as $item) {
-            $this->assertRegExp(
+            $this->assertMatchesRegularExpression(
                 '/^[\w]{1,3}$/',
                 $item
             );

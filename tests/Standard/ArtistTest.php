@@ -18,7 +18,7 @@ class ArtistTest extends BaseTest
     /** @test */
     public function name(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->name
         );

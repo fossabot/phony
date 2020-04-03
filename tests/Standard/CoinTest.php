@@ -18,7 +18,7 @@ class CoinTest extends BaseTest
     /** @test */
     public function flip(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->flip
         );
@@ -27,7 +27,7 @@ class CoinTest extends BaseTest
     /** @test */
     public function name(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->name
         );

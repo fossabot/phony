@@ -18,7 +18,7 @@ class CosmereTest extends BaseTest
     /** @test */
     public function aon(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->aon
         );
@@ -27,7 +27,7 @@ class CosmereTest extends BaseTest
     /** @test */
     public function shard_world(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->shard_world
         );
@@ -36,7 +36,7 @@ class CosmereTest extends BaseTest
     /** @test */
     public function shard(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->shard
         );
@@ -45,7 +45,7 @@ class CosmereTest extends BaseTest
     /** @test */
     public function surge(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->surge
         );
@@ -54,7 +54,7 @@ class CosmereTest extends BaseTest
     /** @test */
     public function knight_radiant(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->knight_radiant
         );
@@ -63,7 +63,7 @@ class CosmereTest extends BaseTest
     /** @test */
     public function metal(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->metal
         );
@@ -72,7 +72,7 @@ class CosmereTest extends BaseTest
     /** @test */
     public function allomancer(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->allomancer
         );
@@ -81,7 +81,7 @@ class CosmereTest extends BaseTest
     /** @test */
     public function feruchemist(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->feruchemist
         );
@@ -90,7 +90,7 @@ class CosmereTest extends BaseTest
     /** @test */
     public function herald(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->herald
         );
@@ -99,7 +99,7 @@ class CosmereTest extends BaseTest
     /** @test */
     public function spren(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->spren
         );

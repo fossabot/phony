@@ -18,7 +18,7 @@ class CurrencyTest extends BaseTest
     /** @test */
     public function name(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->name
         );
@@ -27,7 +27,7 @@ class CurrencyTest extends BaseTest
     /** @test */
     public function code(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/[A-Z]{3}/',
             $this->🧪->code
         );

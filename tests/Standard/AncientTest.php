@@ -18,7 +18,7 @@ class AncientTest extends BaseTest
     /** @test */
     public function god(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->god
         );
@@ -27,7 +27,7 @@ class AncientTest extends BaseTest
     /** @test */
     public function primordial(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->primordial
         );
@@ -36,7 +36,7 @@ class AncientTest extends BaseTest
     /** @test */
     public function titan(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->titan
         );
@@ -45,7 +45,7 @@ class AncientTest extends BaseTest
     /** @test */
     public function hero(): void
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/\w+/',
             $this->🧪->hero
         );
