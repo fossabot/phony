@@ -2,8 +2,8 @@
 
 namespace Deligoez\Phony\Fake\Standard;
 
-use Deligoez\Phony\Operation;
 use Deligoez\Phony\Fake\Fake;
+use Deligoez\Phony\Operation;
 
 /**
  * Class Address.
