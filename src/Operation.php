@@ -4,8 +4,8 @@ namespace Deligoez\Phony;
 
 class Operation
 {
-    public const numerify  = 'numerify';
-    public const hexify    = 'hexify';
+    public const numerify = 'numerify';
+    public const hexify = 'hexify';
     public const letterify = 'letterify';
-    public const bothify   = 'bothify';
+    public const bothify = 'bothify';
 }
