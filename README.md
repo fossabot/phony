@@ -45,7 +45,7 @@ $🙃->person->name;              // => "Tyshawn Johns Sr."
 
 ## Fakes
 
-### Default
+### Standard
 
 - [$🙃->address](doc/default/address.md)
 - [$🙃->alphabet](doc/default/alphabet.md)
