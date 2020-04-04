@@ -2,15 +2,15 @@
 
 namespace Deligoez\Phony;
 
-use Deligoez\Phony\Fakes\Standard\Address;
-use Deligoez\Phony\Fakes\Standard\Alphabet;
-use Deligoez\Phony\Fakes\Standard\Ancient;
-use Deligoez\Phony\Fakes\Standard\Artist;
-use Deligoez\Phony\Fakes\Standard\Coin;
-use Deligoez\Phony\Fakes\Standard\Cosmere;
-use Deligoez\Phony\Fakes\Standard\Currency;
-use Deligoez\Phony\Fakes\Standard\Person;
-use Deligoez\Phony\Fakes\Standard\SlackEmoji;
+use Deligoez\Phony\Fake\Standard\Address;
+use Deligoez\Phony\Fake\Standard\Alphabet;
+use Deligoez\Phony\Fake\Standard\Ancient;
+use Deligoez\Phony\Fake\Standard\Artist;
+use Deligoez\Phony\Fake\Standard\Coin;
+use Deligoez\Phony\Fake\Standard\Cosmere;
+use Deligoez\Phony\Fake\Standard\Currency;
+use Deligoez\Phony\Fake\Standard\Person;
+use Deligoez\Phony\Fake\Standard\SlackEmoji;
 use RuntimeException;
 
 /**

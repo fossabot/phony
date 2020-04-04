@@ -13,11 +13,11 @@
     >
     <testsuites>
         <testsuite name="Main Test Suite">
-            <directory>tests</directory>
-            <exclude>tests/Locales</exclude>
+            <directory>test</directory>
+            <exclude>test/Locales</exclude>
         </testsuite>
         <testsuite name="Locales Test Suite">
-            <directory>tests/Locales</directory>
+            <directory>test/Locales</directory>
         </testsuite>
     </testsuites>
     <filter>

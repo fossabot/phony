@@ -33,7 +33,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Deligoez\\Phony\\Tests\\": "tests"
+            "Deligoez\\Phony\\Test\\": "test"
         }
     },
     "scripts": {

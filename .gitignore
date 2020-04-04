@@ -5,4 +5,4 @@ vendor
 coverage
 .idea
 .phpunit.result.cache
-tests/PlaygroundTest.php
+test/PlaygroundTest.php

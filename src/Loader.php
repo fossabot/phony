@@ -55,7 +55,7 @@ class Loader
             return $this->cache[$group][$item];
         }
 
-        $path = __DIR__."/Locales/{$locale}/{$group}/{$item}.php";
+        $path = __DIR__."/Locale/{$locale}/{$group}/{$item}.php";
 
         if (file_exists($path)) {
             $data = require $path;
