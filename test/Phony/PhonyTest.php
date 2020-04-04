@@ -1,9 +1,10 @@
 <?php
 
-namespace Deligoez\Phony\test;
+namespace Deligoez\Phony\Test\Phony;
 
 use Deligoez\Phony\Fake\Fake;
 use RuntimeException;
+use Deligoez\Phony\Test\BaseTest;
 
 class PhonyTest extends BaseTest
 {

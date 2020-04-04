@@ -1,6 +1,6 @@
 <?php
 
-namespace Deligoez\Phony\Test\Standard;
+namespace Deligoez\Phony\Test\Group\Standard;
 
 use Deligoez\Phony\Test\BaseTest;
 

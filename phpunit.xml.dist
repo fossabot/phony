@@ -12,12 +12,14 @@
          testdox="true"
     >
     <testsuites>
-        <testsuite name="Main Test Suite">
-            <directory>test</directory>
-            <exclude>test/Locales</exclude>
+        <testsuite name="Phony Internals Test Suite">
+            <directory>test/Phony</directory>
         </testsuite>
-        <testsuite name="Locales Test Suite">
-            <directory>test/Locales</directory>
+        <testsuite name="Default Locale Test Suite">
+            <directory>test/Group</directory>
+        </testsuite>
+        <testsuite name="Other Locale Test Suite">
+            <directory>test/Locale</directory>
         </testsuite>
     </testsuites>
     <filter>
