@@ -3,9 +3,9 @@
 namespace Deligoez\Phony\Test\Phony;
 
 use Deligoez\Phony\Fake\Fake;
+use Deligoez\Phony\Test\BaseTest;
 use ReflectionMethod;
 use RuntimeException;
-use Deligoez\Phony\Test\BaseTest;
 
 class FakeTest extends BaseTest
 {

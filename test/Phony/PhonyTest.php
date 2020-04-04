@@ -3,8 +3,8 @@
 namespace Deligoez\Phony\Test\Phony;
 
 use Deligoez\Phony\Fake\Fake;
-use RuntimeException;
 use Deligoez\Phony\Test\BaseTest;
+use RuntimeException;
 
 class PhonyTest extends BaseTest
 {

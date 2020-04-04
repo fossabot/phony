@@ -36,7 +36,7 @@ class Loader
 
     public function get(string $key, ?string $path, string $locale = null, bool $fallback = true)
     {
-        if ($fallback){
+        if ($fallback) {
             $locale = $locale ?? $this->defaultLocale;
         }
 
