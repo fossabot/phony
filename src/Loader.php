@@ -20,33 +20,20 @@ class Loader
         // TODO: Implement fallback mechanism
         // TODO: Implement caching mechanism
         //       - Introduce maximum cached items. Exp. 1 million -> After that clean the cache -> should be configurable
-        $locale = $locale ?? $this->defaultLocale;
+        if ($fallback){
+            $locale = $locale ?? $this->defaultLocale;
+        }
 
         [$group, $item] = explode('.', $key);
 
-        $line = $this->getLine($group, $item, $locale);
+        $line = $this->load($group, $item, $locale);
 
         if (isset($path)) {
-            $line = $this->getPath($line, $path);
+            // TODO: Implement nested paths
+            $line = $line[$path];
         }
 
         return $line ?? $key;
-    }
-
-    protected function isCached(string $group, string $item): bool
-    {
-        return isset($this->cache[$group][$item]);
-    }
-
-    protected function getPath($line, string $path)
-    {
-        // TODO: Implement nested paths
-        return $line[$path];
-    }
-
-    protected function getLine(string $group, string $item, string $locale)
-    {
-        return $this->load($group, $item, $locale);
     }
 
     public function load(string $group, string $item, string $locale)
@@ -65,5 +52,10 @@ class Loader
         }
 
         throw new RuntimeException("File does not exist at path {$path}");
+    }
+
+    protected function isCached(string $group, string $item): bool
+    {
+        return isset($this->cache[$group][$item]);
     }
 }
