@@ -2,8 +2,8 @@
 
 namespace Deligoez\Phony\Tests;
 
-use Deligoez\Phony\Phony;
 use Deligoez\Phony\Fakes\Fake;
+use Deligoez\Phony\Phony;
 use PHPUnit\Framework\TestCase;
 
 abstract class BaseTest extends TestCase

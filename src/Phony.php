@@ -62,13 +62,13 @@ class Phony
     public function __get($attribute)
     {
         if (isset($this->aliases[$attribute])) {
-            if (isset($this->instances[$attribute]))
-            {
+            if (isset($this->instances[$attribute])) {
                 return $this->instances[$attribute];
             }
 
             $fake = $this->aliases[$attribute];
             $this->instances[$attribute] = new $fake($this);
+
             return $this->instances[$attribute];
         }
 
