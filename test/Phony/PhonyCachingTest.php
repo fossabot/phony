@@ -38,4 +38,40 @@ class PhonyCachingTest extends BaseTest
             $this->🙃->getCacheUsage()
         );
     }
+
+    /** @test */
+    public function do_not_cache_if_it_will_be_exceed_with_the_number_of_new_items(): void
+    {
+        $this->🙃 = $this->🙃->setCacheSize(28);
+
+        $this->🙃->alphabet->uppercase_letter; // Size of 28
+        $this->🙃->alphabet->lowercase_letter; // Size of 28
+
+        $this->assertEquals(
+            28,
+            $this->🙃->getCacheUsage()
+        );
+    }
+
+    /** @test */
+    public function cache_size_can_be_dynamically_increase(): void
+    {
+        $this->🙃 = $this->🙃->setCacheSize(0);
+
+        $this->🙃->alphabet->uppercase_letter; // Size of 28
+
+        $this->assertEquals(
+            0,
+            $this->🙃->getCacheUsage()
+        );
+
+        $this->🙃 = $this->🙃->setCacheSize(28);
+
+        $this->🙃->alphabet->uppercase_letter; // Size of 28
+
+        $this->assertEquals(
+            28,
+            $this->🙃->getCacheUsage()
+        );
+    }
 }
