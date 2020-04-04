@@ -10,7 +10,11 @@
 
 ### This package is in active development and not production ready.
 
-This PHP package is port of the [Ruby](https://www.ruby-lang.org)'s [Faker](https://github.com/faker-ruby/faker) gem that generates fake data.
+*Phony* is a PHP package that can generate a wide range of fake data.
+
+*Phony* is heavily inspired by Perl's [Data::Faker](http://search.cpan.org/~jasonk/Data-Faker-0.07/), Ruby's [Faker](https://github.com/faker-ruby/faker), [ffaker](https://github.com/ffaker/ffaker) and PHP's [Faker](https://github.com/fzaninotto/Faker).
+ 
+*Phony* requires `PHP` >= `7.4`.
 
 ## Installation
 
