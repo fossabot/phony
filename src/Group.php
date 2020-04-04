@@ -2,7 +2,7 @@
 
 namespace Deligoez\Phony;
 
-class Alias
+class Group
 {
     public const default = [
         'address'     => \Deligoez\Phony\Fake\Standard\Address::class,

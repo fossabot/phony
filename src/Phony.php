@@ -35,7 +35,7 @@ class Phony
     public Loader $loader;
     public string $defaultLocale;
     private array $instances = [];
-    private array $aliases;
+    private array $groups;
 
     /**
      * Phony constructor.
@@ -46,7 +46,7 @@ class Phony
     {
         $this->loader = new Loader($defaultLocale);
         $this->defaultLocale = $defaultLocale;
-        $this->aliases = Alias::default;
+        $this->groups = Group::default;
     }
 
     // region Magic Setup
@@ -61,18 +61,18 @@ class Phony
      */
     public function __get($attribute)
     {
-        if (isset($this->aliases[$attribute])) {
+        if (isset($this->groups[$attribute])) {
             if (isset($this->instances[$attribute])) {
                 return $this->instances[$attribute];
             }
 
-            $fake = $this->aliases[$attribute];
+            $fake = $this->groups[$attribute];
             $this->instances[$attribute] = new $fake($this);
 
             return $this->instances[$attribute];
         }
 
-        throw new RuntimeException("The {$attribute} attribute is not defined!");
+        throw new RuntimeException("The {$attribute} fake is not found!");
     }
 
     /**
@@ -83,7 +83,7 @@ class Phony
      */
     public function __set($attribute, $value)
     {
-        throw new RuntimeException("Setting {$attribute} attribute is not allowed!");
+        throw new RuntimeException('Setting fakes is not allowed!');
     }
 
     /**
@@ -95,7 +95,7 @@ class Phony
      */
     public function __isset($attribute)
     {
-        return isset($this->aliases[$attribute]);
+        return isset($this->groups[$attribute]);
     }
 
     // endregion
