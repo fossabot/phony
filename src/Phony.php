@@ -2,7 +2,6 @@
 
 namespace Deligoez\Phony;
 
-use Deligoez\Phony\Fakes\Fakes;
 use Deligoez\Phony\Fakes\Standard\Address;
 use Deligoez\Phony\Fakes\Standard\Alphabet;
 use Deligoez\Phony\Fakes\Standard\Ancient;
@@ -35,18 +34,19 @@ class Phony
 {
     public Loader $loader;
     public string $defaultLocale;
-    private array $fakes = [];
+    private array $instances = [];
+    private array $aliases;
 
     /**
      * Phony constructor.
      *
-     * @param  string                       $defaultLocale
-     * @param  \Deligoez\Phony\Loader|null  $loader
+     * @param  string  $defaultLocale
      */
-    public function __construct(string $defaultLocale, Loader $loader = null)
+    public function __construct(string $defaultLocale)
     {
-        $this->loader = $loader ?? new Loader($defaultLocale);
+        $this->loader = new Loader($defaultLocale);
         $this->defaultLocale = $defaultLocale;
+        $this->aliases = Alias::default;
     }
 
     // region Magic Setup
@@ -61,16 +61,15 @@ class Phony
      */
     public function __get($attribute)
     {
-        if (isset(Fakes::default[$attribute])) {
-            if (isset($this->fakes[$attribute]))
+        if (isset($this->aliases[$attribute])) {
+            if (isset($this->instances[$attribute]))
             {
-                return $this->fakes[$attribute];
+                return $this->instances[$attribute];
             }
 
-            $fake = Fakes::default[$attribute];
-            $instance = new $fake($this);
-            $this->fakes[$attribute] = $instance;
-            return $instance;
+            $fake = $this->aliases[$attribute];
+            $this->instances[$attribute] = new $fake($this);
+            return $this->instances[$attribute];
         }
 
         throw new RuntimeException("The {$attribute} attribute is not defined!");
@@ -96,7 +95,7 @@ class Phony
      */
     public function __isset($attribute)
     {
-        return isset(Fakes::default[$attribute]);
+        return isset($this->aliases[$attribute]);
     }
 
     // endregion
