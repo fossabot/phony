@@ -1,6 +1,6 @@
 {
     "name": "deligoez/phony",
-    "description": "A PHP Package that generates phony data",
+    "description": "Phony is a PHP package that can generate a wide range of fake data",
     "keywords": [
         "package",
         "faker",
