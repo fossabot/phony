@@ -64,7 +64,7 @@ class AddressTest extends BaseTest
     public function street_address_with_secondary_address(): void
     {
         $this->assertMatchesRegularExpression(
-            '/\d+\s\w+\s\w+\s\w+\.?\s\d+/',
+            '/\d+\s[A-Za-z0-9\']+\s\w+\s\w+\.?\s\d+/',
             $this->🧪->street_address_with_secondary_address
         );
     }
