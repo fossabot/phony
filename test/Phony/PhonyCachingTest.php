@@ -2,8 +2,6 @@
 
 namespace Deligoez\Phony\Test\Phony;
 
-use ReflectionMethod;
-use Deligoez\Phony\Loader;
 use Deligoez\Phony\Test\BaseTest;
 
 class PhonyCachingTest extends BaseTest
