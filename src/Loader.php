@@ -6,13 +6,12 @@ use RuntimeException;
 
 class Loader
 {
-    protected string $locale;
-    protected string $fallback;
+    protected string $defaultLocale;
     protected array $cache = [];
 
-    public function __construct(string $locale)
+    public function __construct(string $defaultLocale)
     {
-        $this->locale = $locale;
+        $this->defaultLocale = $defaultLocale;
     }
 
     public function get(string $key, ?string $path, string $locale = null, bool $fallback = true)
@@ -21,7 +20,7 @@ class Loader
         // TODO: Implement fallback mechanism
         // TODO: Implement caching mechanism
         //       - Introduce maximum cached items. Exp. 1 million -> After that clean the cache -> should be configurable
-        $locale = $locale ?? $this->locale;
+        $locale = $locale ?? $this->defaultLocale;
 
         [$group, $item] = explode('.', $key);
 
@@ -60,10 +59,22 @@ class Loader
         $path = __DIR__."/Locales/{$locale}/{$group}/{$item}.php";
 
         if (file_exists($path)) {
-            $this->cache[$group][$item] = require $path;
-            return $this->cache[$group][$item];
+            $data = require $path;
+            $this->cache[$group][$item] = $data;
+            return $data;
         }
 
         throw new RuntimeException("File does not exist at path {$path}");
+    }
+
+    public static function loadFile(string $relativePath): array
+    {
+        $fullPath = __DIR__ . '/' .$relativePath;
+
+        if (file_exists($fullPath)) {
+            return require $fullPath;
+        }
+
+        throw new RuntimeException("File does not exist at path {$fullPath}");
     }
 }
