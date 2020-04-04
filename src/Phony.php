@@ -99,4 +99,26 @@ class Phony
     }
 
     // endregion
+
+    // region Caching
+
+    public function setCacheSize(int $cacheSize): Phony
+    {
+        $this->loader->setCacheSize($cacheSize);
+
+        return $this;
+    }
+
+    public function getCacheSize(): int
+    {
+        return $this->loader->getCacheSize();
+    }
+
+    public function getCacheUsage(): int
+    {
+        return $this->loader->getCacheUsage();
+    }
+
+    // endregion
+
 }

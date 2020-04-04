@@ -6,20 +6,36 @@ use RuntimeException;
 
 class Loader
 {
-    protected string $defaultLocale;
-    protected array $cache = [];
+    private string $defaultLocale;
+    private array $cache = [];
+    private int $cacheSize = 100_000;
 
     public function __construct(string $defaultLocale)
     {
         $this->defaultLocale = $defaultLocale;
     }
 
+    // region Getters & Setters
+
+    public function getCacheSize(): int
+    {
+        return $this->cacheSize;
+    }
+
+    public function setCacheSize(int $cacheSize): void
+    {
+        $this->cacheSize = $cacheSize;
+    }
+
+    public function getCacheUsage(): int
+    {
+        return count($this->cache, COUNT_RECURSIVE);
+    }
+
+    // endregion
+
     public function get(string $key, ?string $path, string $locale = null, bool $fallback = true)
     {
-        // TODO: Rename variable names
-        // TODO: Implement fallback mechanism
-        // TODO: Implement caching mechanism
-        //       - Introduce maximum cached items. Exp. 1 million -> After that clean the cache -> should be configurable
         if ($fallback){
             $locale = $locale ?? $this->defaultLocale;
         }
@@ -36,7 +52,7 @@ class Loader
         return $line ?? $key;
     }
 
-    public function load(string $group, string $item, string $locale)
+    private function load(string $group, string $item, string $locale)
     {
         if ($this->isCached($group, $item)) {
             return $this->cache[$group][$item];
@@ -46,7 +62,8 @@ class Loader
 
         if (file_exists($path)) {
             $data = require $path;
-            $this->cache[$group][$item] = $data;
+
+            $this->cache($data, $group, $item);
 
             return $data;
         }
@@ -54,8 +71,19 @@ class Loader
         throw new RuntimeException("File does not exist at path {$path}");
     }
 
-    protected function isCached(string $group, string $item): bool
+    private function isCached(string $group, string $item): bool
     {
         return isset($this->cache[$group][$item]);
+    }
+
+    private function cache($data, string $group, string $item): bool
+    {
+        if ((count($this->cache, COUNT_RECURSIVE) + count($data, COUNT_RECURSIVE)) < $this->cacheSize) {
+            $this->cache[$group][$item] = $data;
+
+            return true;
+        }
+
+        return false;
     }
 }
