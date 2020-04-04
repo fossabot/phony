@@ -51,8 +51,7 @@ class Loader
 
     public function load(string $group, string $item, string $locale)
     {
-        if ($this->isCached($group, $item))
-        {
+        if ($this->isCached($group, $item)) {
             return $this->cache[$group][$item];
         }
 
@@ -61,6 +60,7 @@ class Loader
         if (file_exists($path)) {
             $data = require $path;
             $this->cache[$group][$item] = $data;
+
             return $data;
         }
 
@@ -69,7 +69,7 @@ class Loader
 
     public static function loadFile(string $relativePath): array
     {
-        $fullPath = __DIR__ . '/' .$relativePath;
+        $fullPath = __DIR__.'/'.$relativePath;
 
         if (file_exists($fullPath)) {
             return require $fullPath;
