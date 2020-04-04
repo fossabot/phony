@@ -66,15 +66,4 @@ class Loader
 
         throw new RuntimeException("File does not exist at path {$path}");
     }
-
-    public static function loadFile(string $relativePath): array
-    {
-        $fullPath = __DIR__.'/'.$relativePath;
-
-        if (file_exists($fullPath)) {
-            return require $fullPath;
-        }
-
-        throw new RuntimeException("File does not exist at path {$fullPath}");
-    }
 }
