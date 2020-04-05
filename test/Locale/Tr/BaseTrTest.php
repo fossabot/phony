@@ -2,8 +2,8 @@
 
 namespace Deligoez\Phony\Test\Locale\Tr;
 
-use Deligoez\Phony\Phony;
 use Deligoez\Phony\Locale;
+use Deligoez\Phony\Phony;
 use Deligoez\Phony\Test\BaseTest;
 
 abstract class BaseTrTest extends BaseTest
