@@ -8,7 +8,7 @@ class Loader
 {
     private string $defaultLocale;
     private array $cache = [];
-    private int $cacheSize = 100_000;
+    private int $cacheSize = 100000;
 
     public function __construct(string $defaultLocale)
     {
