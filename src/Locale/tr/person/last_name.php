@@ -792,7 +792,7 @@ return [
     'Ballı',
     'Ataç',
     'Açık',
-    'Kılıçarslan',// TODO: Review
+    'Kılıçarslan', // TODO: Review
     'Ibis',
     'Yarar',
     'Kirac',
