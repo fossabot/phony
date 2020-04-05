@@ -3,6 +3,7 @@
 namespace Deligoez\Phony\Test;
 
 use Deligoez\Phony\Phony;
+use Deligoez\Phony\Locale;
 use PHPUnit\Framework\TestCase;
 
 abstract class BaseTest extends TestCase
@@ -14,6 +15,6 @@ abstract class BaseTest extends TestCase
     {
         parent::setUp();
 
-        $this->🙃 = new Phony('en');
+        $this->🙃 = new Phony(Locale::en);
     }
 }
