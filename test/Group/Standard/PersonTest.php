@@ -103,7 +103,7 @@ class PersonTest extends BaseTest
     {
         $this->assertEquals(
             3,
-            mb_strlen($this->🧪->initials(), 'utf8')
+            strlen($this->🧪->initials())
         );
     }
 
@@ -114,7 +114,7 @@ class PersonTest extends BaseTest
     {
         $this->assertEquals(
             $times = random_int(2, 10),
-            mb_strlen($this->🧪->initials($times), 'utf8')
+            strlen($this->🧪->initials($times))
         );
     }
 
