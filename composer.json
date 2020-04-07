@@ -29,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "PhonyPHP\\Phony\\": "src"
+            "Phony\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PhonyPHP\\Phony\\Test\\": "test"
+            "Phony\\Test\\": "test"
         }
     },
     "scripts": {

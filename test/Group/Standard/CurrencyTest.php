@@ -1,8 +1,8 @@
 <?php
 
-namespace PhonyPHP\Phony\Test\Group\Standard;
+namespace Phony\Test\Group\Standard;
 
-use PhonyPHP\Phony\Test\BaseTest;
+use Phony\Test\BaseTest;
 
 class CurrencyTest extends BaseTest
 {

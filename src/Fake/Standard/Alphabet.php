@@ -1,8 +1,8 @@
 <?php
 
-namespace PhonyPHP\Phony\Fake\Standard;
+namespace Phony\Fake\Standard;
 
-use PhonyPHP\Phony\Fake\Fake;
+use Phony\Fake\Fake;
 
 /**
  * Class Alphabet.

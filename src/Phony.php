@@ -1,16 +1,16 @@
 <?php
 
-namespace PhonyPHP\Phony;
+namespace Phony;
 
-use PhonyPHP\Phony\Fake\Standard\Address;
-use PhonyPHP\Phony\Fake\Standard\Alphabet;
-use PhonyPHP\Phony\Fake\Standard\Ancient;
-use PhonyPHP\Phony\Fake\Standard\Artist;
-use PhonyPHP\Phony\Fake\Standard\Coin;
-use PhonyPHP\Phony\Fake\Standard\Cosmere;
-use PhonyPHP\Phony\Fake\Standard\Currency;
-use PhonyPHP\Phony\Fake\Standard\Person;
-use PhonyPHP\Phony\Fake\Standard\SlackEmoji;
+use Phony\Fake\Standard\Address;
+use Phony\Fake\Standard\Alphabet;
+use Phony\Fake\Standard\Ancient;
+use Phony\Fake\Standard\Artist;
+use Phony\Fake\Standard\Coin;
+use Phony\Fake\Standard\Cosmere;
+use Phony\Fake\Standard\Currency;
+use Phony\Fake\Standard\Person;
+use Phony\Fake\Standard\SlackEmoji;
 use RuntimeException;
 
 /**

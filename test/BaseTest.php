@@ -1,9 +1,9 @@
 <?php
 
-namespace PhonyPHP\Phony\Test;
+namespace Phony\Test;
 
-use PhonyPHP\Phony\Locale;
-use PhonyPHP\Phony\Phony;
+use Phony\Locale;
+use Phony\Phony;
 use PHPUnit\Framework\TestCase;
 
 abstract class BaseTest extends TestCase

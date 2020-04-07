@@ -4,7 +4,7 @@
 ### $🙃->📫
 
 ```php
-use PhonyPHP\Phony\Phony;
+use Phony\Phony;
 
 
 $🙃 = new Phony('en');

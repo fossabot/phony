@@ -1,6 +1,6 @@
 <?php
 
-namespace PhonyPHP\Phony\Test\Locale\Tr;
+namespace Phony\Test\Locale\Tr;
 
 class CoinTrTest extends BaseTrTest
 {

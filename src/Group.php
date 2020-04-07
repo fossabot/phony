@@ -1,21 +1,21 @@
 <?php
 
-namespace PhonyPHP\Phony;
+namespace Phony;
 
 class Group
 {
     public const default = [
-        'address'     => \PhonyPHP\Phony\Fake\Standard\Address::class,
-        '📫'          => \PhonyPHP\Phony\Fake\Standard\Address::class,
-        'alphabet'    => \PhonyPHP\Phony\Fake\Standard\Alphabet::class,
-        '🔤'          => \PhonyPHP\Phony\Fake\Standard\Alphabet::class,
-        'ancient'     => \PhonyPHP\Phony\Fake\Standard\Ancient::class,
-        '📜'          => \PhonyPHP\Phony\Fake\Standard\Ancient::class,
-        'artist'      => \PhonyPHP\Phony\Fake\Standard\Artist::class,
-        'coin'        => \PhonyPHP\Phony\Fake\Standard\Coin::class,
-        'cosmere'     => \PhonyPHP\Phony\Fake\Standard\Cosmere::class,
-        'currency'    => \PhonyPHP\Phony\Fake\Standard\Currency::class,
-        'person'      => \PhonyPHP\Phony\Fake\Standard\Person::class,
-        'slack_emoji' => \PhonyPHP\Phony\Fake\Standard\SlackEmoji::class,
+        'address'     => \Phony\Fake\Standard\Address::class,
+        '📫'          => \Phony\Fake\Standard\Address::class,
+        'alphabet'    => \Phony\Fake\Standard\Alphabet::class,
+        '🔤'          => \Phony\Fake\Standard\Alphabet::class,
+        'ancient'     => \Phony\Fake\Standard\Ancient::class,
+        '📜'          => \Phony\Fake\Standard\Ancient::class,
+        'artist'      => \Phony\Fake\Standard\Artist::class,
+        'coin'        => \Phony\Fake\Standard\Coin::class,
+        'cosmere'     => \Phony\Fake\Standard\Cosmere::class,
+        'currency'    => \Phony\Fake\Standard\Currency::class,
+        'person'      => \Phony\Fake\Standard\Person::class,
+        'slack_emoji' => \Phony\Fake\Standard\SlackEmoji::class,
     ];
 }

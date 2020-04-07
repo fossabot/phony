@@ -29,7 +29,7 @@ composer require phony-php/phony
 ## Usage
 
 ``` php
-use PhonyPHP\Phony\Phony;
+use Phony\Phony;
 
 $🙃 = new Phony('en');
 

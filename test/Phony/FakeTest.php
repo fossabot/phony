@@ -1,9 +1,9 @@
 <?php
 
-namespace PhonyPHP\Phony\Test\Phony;
+namespace Phony\Test\Phony;
 
-use PhonyPHP\Phony\Fake\Fake;
-use PhonyPHP\Phony\Test\BaseTest;
+use Phony\Fake\Fake;
+use Phony\Test\BaseTest;
 use ReflectionMethod;
 use RuntimeException;
 

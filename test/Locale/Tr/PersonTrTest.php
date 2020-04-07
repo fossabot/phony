@@ -1,8 +1,8 @@
 <?php
 
-namespace PhonyPHP\Phony\Test\Standard;
+namespace Phony\Test\Standard;
 
-use PhonyPHP\Phony\Test\Locale\Tr\BaseTrTest;
+use Phony\Test\Locale\Tr\BaseTrTest;
 
 class PersonTrTest extends BaseTrTest
 {

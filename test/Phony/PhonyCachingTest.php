@@ -1,8 +1,8 @@
 <?php
 
-namespace PhonyPHP\Phony\Test\Phony;
+namespace Phony\Test\Phony;
 
-use PhonyPHP\Phony\Test\BaseTest;
+use Phony\Test\BaseTest;
 
 class PhonyCachingTest extends BaseTest
 {
