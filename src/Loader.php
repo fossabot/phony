@@ -1,6 +1,6 @@
 <?php
 
-namespace Deligoez\Phony;
+namespace PhonyPHP\Phony;
 
 use RuntimeException;
 

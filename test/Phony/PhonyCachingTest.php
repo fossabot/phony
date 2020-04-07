@@ -1,8 +1,8 @@
 <?php
 
-namespace Deligoez\Phony\Test\Phony;
+namespace PhonyPHP\Phony\Test\Phony;
 
-use Deligoez\Phony\Test\BaseTest;
+use PhonyPHP\Phony\Test\BaseTest;
 
 class PhonyCachingTest extends BaseTest
 {

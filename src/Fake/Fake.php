@@ -1,8 +1,8 @@
 <?php
 
-namespace Deligoez\Phony\Fake;
+namespace PhonyPHP\Phony\Fake;
 
-use Deligoez\Phony\Phony;
+use PhonyPHP\Phony\Phony;
 use RuntimeException;
 
 /**
@@ -19,7 +19,7 @@ class Fake
     /**
      * Fake constructor.
      *
-     * @param  \Deligoez\Phony\Phony  $phony
+     * @param  \PhonyPHP\Phony\Phony  $phony
      */
     public function __construct(Phony $phony)
     {

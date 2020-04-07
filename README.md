@@ -1,11 +1,11 @@
-[![Phony Logo](.github/asset/phony-logo.png)](https://github.com/deligoez/phony)
+[![Phony Logo](.github/asset/phony-logo.png)](https://github.com/phony-php/phony)
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/deligoez/phony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/deligoez/phony/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/deligoez/phony/badges/build.png?b=master)](https://scrutinizer-ci.com/g/deligoez/phony/build-status/master)
-[![Total Downloads](https://img.shields.io/packagist/dt/deligoez/phony.svg?style=flat-square)](https://packagist.org/packages/deligoez/phony)
-![Packagist](https://img.shields.io/packagist/l/deligoez/phony)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/phony-php/phony.svg?style=flat-square)](https://packagist.org/packages/phony-php/phony)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phony-php/phony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phony-php/phony/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/phony-php/phony/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phony-php/phony/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/phony-php/phony/badges/build.png?b=master)](https://scrutinizer-ci.com/g/phony-php/phony/build-status/master)
+[![Total Downloads](https://img.shields.io/packagist/dt/phony-php/phony.svg?style=flat-square)](https://packagist.org/packages/phony-php/phony)
+![Packagist](https://img.shields.io/packagist/l/phony-php/phony)
 [![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) 
 
 ### This package is in active development and not production ready.
@@ -21,13 +21,13 @@
 You can install the package via composer:
 
 ``` bash
-composer require deligoez/phony
+composer require phony-php/phony
 ```
 
 ## Usage
 
 ``` php
-use Deligoez\Phony\Phony;
+use PhonyPHP\Phony\Phony;
 
 $🙃 = new Phony('en');
 

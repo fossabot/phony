@@ -1,8 +1,8 @@
 <?php
 
-namespace Deligoez\Phony\Test\Group\Standard;
+namespace PhonyPHP\Phony\Test\Group\Standard;
 
-use Deligoez\Phony\Test\BaseTest;
+use PhonyPHP\Phony\Test\BaseTest;
 
 class AncientTest extends BaseTest
 {

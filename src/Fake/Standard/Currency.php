@@ -1,8 +1,8 @@
 <?php
 
-namespace Deligoez\Phony\Fake\Standard;
+namespace PhonyPHP\Phony\Fake\Standard;
 
-use Deligoez\Phony\Fake\Fake;
+use PhonyPHP\Phony\Fake\Fake;
 
 /**
  * Class Currency.

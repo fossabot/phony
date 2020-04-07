@@ -1,10 +1,10 @@
 <?php
 
-namespace Deligoez\Phony\Test\Locale\Tr;
+namespace PhonyPHP\Phony\Test\Locale\Tr;
 
-use Deligoez\Phony\Locale;
-use Deligoez\Phony\Phony;
-use Deligoez\Phony\Test\BaseTest;
+use PhonyPHP\Phony\Locale;
+use PhonyPHP\Phony\Phony;
+use PhonyPHP\Phony\Test\BaseTest;
 
 abstract class BaseTrTest extends BaseTest
 {

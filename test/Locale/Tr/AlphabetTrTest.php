@@ -1,8 +1,8 @@
 <?php
 
-namespace Deligoez\Phony\Test\Standard;
+namespace PhonyPHP\Phony\Test\Standard;
 
-use Deligoez\Phony\Test\Locale\Tr\BaseTrTest;
+use PhonyPHP\Phony\Test\Locale\Tr\BaseTrTest;
 
 class AlphabetTrTest extends BaseTrTest
 {

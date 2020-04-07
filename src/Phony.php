@@ -1,16 +1,16 @@
 <?php
 
-namespace Deligoez\Phony;
+namespace PhonyPHP\Phony;
 
-use Deligoez\Phony\Fake\Standard\Address;
-use Deligoez\Phony\Fake\Standard\Alphabet;
-use Deligoez\Phony\Fake\Standard\Ancient;
-use Deligoez\Phony\Fake\Standard\Artist;
-use Deligoez\Phony\Fake\Standard\Coin;
-use Deligoez\Phony\Fake\Standard\Cosmere;
-use Deligoez\Phony\Fake\Standard\Currency;
-use Deligoez\Phony\Fake\Standard\Person;
-use Deligoez\Phony\Fake\Standard\SlackEmoji;
+use PhonyPHP\Phony\Fake\Standard\Address;
+use PhonyPHP\Phony\Fake\Standard\Alphabet;
+use PhonyPHP\Phony\Fake\Standard\Ancient;
+use PhonyPHP\Phony\Fake\Standard\Artist;
+use PhonyPHP\Phony\Fake\Standard\Coin;
+use PhonyPHP\Phony\Fake\Standard\Cosmere;
+use PhonyPHP\Phony\Fake\Standard\Currency;
+use PhonyPHP\Phony\Fake\Standard\Person;
+use PhonyPHP\Phony\Fake\Standard\SlackEmoji;
 use RuntimeException;
 
 /**
