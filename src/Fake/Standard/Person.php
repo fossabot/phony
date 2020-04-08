@@ -24,13 +24,13 @@ class Person extends Fake
     protected array $attributes = [
         'name'              => ['person.name'],
         'name_with_middle'  => ['person.name_with_middle'],
-        'first_name'         => ['person.first_name'],
+        'first_name'        => ['person.first_name'],
         'middle_name'       => ['person.middle_name'],
-        'male_first_name'    => ['person.male_first_name'],
-        'female_first_name'  => ['person.female_first_name'],
+        'male_first_name'   => ['person.male_first_name'],
+        'female_first_name' => ['person.female_first_name'],
         'last_name'         => ['person.last_name'],
-        'prefix'             => ['person.prefix'],
-        'suffix'             => ['person.suffix'],
+        'prefix'            => ['person.prefix'],
+        'suffix'            => ['person.suffix'],
     ];
 
     /**
