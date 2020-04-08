@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Phony\Fake\Standard;
 
 use Phony\Fake\Fake;

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Phony\Fake\Locale\Tr;
 
 use Phony\Fake\Standard\Alphabet;
