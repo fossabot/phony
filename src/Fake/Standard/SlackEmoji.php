@@ -8,15 +8,15 @@ use Phony\Fake\Fake;
  * Class SlackEmoji.
  *
  *
- * @property string people
- * @property string nature
- * @property string food_and_drink
- * @property string celebration
- * @property string activity
- * @property string travel_and_place
- * @property string object_and_symbol
- * @property string custom
- * @property string emoji
+ * @property-read string people
+ * @property-read string nature
+ * @property-read string food_and_drink
+ * @property-read string celebration
+ * @property-read string activity
+ * @property-read string travel_and_place
+ * @property-read string object_and_symbol
+ * @property-read string custom
+ * @property-read string emoji
  */
 class SlackEmoji extends Fake
 {

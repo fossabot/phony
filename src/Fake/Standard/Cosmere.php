@@ -8,16 +8,16 @@ use Phony\Fake\Fake;
  * Class Cosmere.
  *
  *
- * @property string aon
- * @property string shard_world
- * @property string shard
- * @property string surge
- * @property string knight_radiant
- * @property string metal
- * @property string allomancer
- * @property string feruchemist
- * @property string herald
- * @property string spren
+ * @property-read string aon
+ * @property-read string shard_world
+ * @property-read string shard
+ * @property-read string surge
+ * @property-read string knight_radiant
+ * @property-read string metal
+ * @property-read string allomancer
+ * @property-read string feruchemist
+ * @property-read string herald
+ * @property-read string spren
  */
 class Cosmere extends Fake
 {

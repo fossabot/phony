@@ -8,7 +8,7 @@ use Phony\Fake\Fake;
  * Class Artist.
  *
  *
- * @property string name
+ * @property-read string name
  */
 class Artist extends Fake
 {

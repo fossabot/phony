@@ -8,8 +8,8 @@ use Phony\Fake\Fake;
  * Class Coin.
  *
  *
- * @property string flip
- * @property string name
+ * @property-read string flip
+ * @property-read string name
  */
 class Coin extends Fake
 {

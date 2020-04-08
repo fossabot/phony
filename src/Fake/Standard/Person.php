@@ -8,16 +8,16 @@ use Phony\Fake\Fake;
  * Class Person.
  *
  *
- * @property string name
- * @property string name_with_middle
- * @property string first_name
- * @property string middle_name
- * @property string male_first_name
- * @property string female_first_name
- * @property string last_name
- * @property string prefix
- * @property string suffix
- * @property string initials
+ * @property-read string name
+ * @property-read string name_with_middle
+ * @property-read string first_name
+ * @property-read string middle_name
+ * @property-read string male_first_name
+ * @property-read string female_first_name
+ * @property-read string last_name
+ * @property-read string prefix
+ * @property-read string suffix
+ * @property-read string initials
  */
 class Person extends Fake
 {

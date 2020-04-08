@@ -9,29 +9,29 @@ use Phony\Operation;
  * Class Address.
  *
  *
- * @property string city
- * @property string city_with_state
- * @property string street_name
- * @property string secondary_address
- * @property string street_address
- * @property string street_address_with_secondary_address
- * @property string building_number
- * @property string community
- * @property string mail_box
- * @property string zip_code
- * @property string zip
- * @property string postcode
- * @property string time_zone
- * @property string street_suffix
- * @property string city_suffix
- * @property string city_prefix
- * @property string state_abbreviation
- * @property string state
- * @property string country
- * @property string country_code
- * @property string country_code_long
- * @property string full_address
- * @property string default_country
+ * @property-read string city
+ * @property-read string city_with_state
+ * @property-read string street_name
+ * @property-read string secondary_address
+ * @property-read string street_address
+ * @property-read string street_address_with_secondary_address
+ * @property-read string building_number
+ * @property-read string community
+ * @property-read string mail_box
+ * @property-read string zip_code
+ * @property-read string zip
+ * @property-read string postcode
+ * @property-read string time_zone
+ * @property-read string street_suffix
+ * @property-read string city_suffix
+ * @property-read string city_prefix
+ * @property-read string state_abbreviation
+ * @property-read string state
+ * @property-read string country
+ * @property-read string country_code
+ * @property-read string country_code_long
+ * @property-read string full_address
+ * @property-read string default_country
  * @property float latitude
  * @property float longitude
  * @method zip(?string $stateAbbreviation = null): string

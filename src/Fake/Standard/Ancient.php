@@ -8,10 +8,10 @@ use Phony\Fake\Fake;
  * Class Ancient.
  *
  *
- * @property string god
- * @property string primordial
- * @property string titan
- * @property string hero
+ * @property-read string god
+ * @property-read string primordial
+ * @property-read string titan
+ * @property-read string hero
  */
 class Ancient extends Fake
 {

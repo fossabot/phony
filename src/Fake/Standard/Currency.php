@@ -8,9 +8,9 @@ use Phony\Fake\Fake;
  * Class Currency.
  *
  *
- * @property string name
- * @property string code
- * @property string symbol
+ * @property-read string name
+ * @property-read string code
+ * @property-read string symbol
  */
 class Currency extends Fake
 {

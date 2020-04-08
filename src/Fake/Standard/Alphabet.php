@@ -1,5 +1,6 @@
 <?php
 
+
 namespace Phony\Fake\Standard;
 
 use Phony\Fake\Fake;
@@ -8,9 +9,9 @@ use Phony\Fake\Fake;
  * Class Alphabet.
  *
  *
- * @property string uppercase_letter
- * @property string lowercase_letter
- * @property string letter
+ * @property-read string uppercase_letter
+ * @property-read string lowercase_letter
+ * @property-read string letter
  */
 class Alphabet extends Fake
 {
