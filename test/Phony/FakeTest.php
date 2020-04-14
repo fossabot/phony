@@ -39,6 +39,8 @@ class FakeTest extends BaseTest
         $this->hexify->setAccessible(true);
     }
 
+    // region Magic Checks
+
     /** @test */
     public function can_not_access_undefined_magic_attribute(): void
     {
@@ -74,6 +76,10 @@ class FakeTest extends BaseTest
 
         $this->🙃->alphabet->not_exist();
     }
+
+    // endregion
+
+    // region Retrieving
 
     /** @test */
     public function can_fetch_a_value(): void
@@ -127,6 +133,10 @@ class FakeTest extends BaseTest
             substr_count($value, '🙃')
         );
     }
+
+    // endregion
+
+    // region Operations
 
     /** @test */
     public function can_numerify_with_hash_sign(): void
@@ -259,4 +269,6 @@ class FakeTest extends BaseTest
             );
         }
     }
+
+    // endregion
 }
