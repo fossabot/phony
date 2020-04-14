@@ -42,9 +42,7 @@ class Fake
             $value = $this->fetch($this->attributes[$attribute][0]);
 
             if (isset($this->attributes[$attribute][1])) {
-                $functions = is_array($this->attributes[$attribute][1])
-                    ? $this->attributes[$attribute][1]
-                    : explode('|', $this->attributes[$attribute][1]);
+                $functions = explode('|', $this->attributes[$attribute][1]);
 
                 foreach ($functions as $fn) {
                     $value = $this->$fn($value);
