@@ -2,7 +2,6 @@
 
 namespace Phony\Test\Phony;
 
-use Phony\Loader;
 use Phony\Test\BaseTest;
 use RuntimeException;
 
