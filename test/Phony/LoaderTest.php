@@ -2,18 +2,15 @@
 
 namespace Phony\Test\Phony;
 
-use Phony\Loader;
-use Phony\Locale;
 use Phony\Phony;
-use Phony\Test\BaseTest;
-use RuntimeException;
+use PHPUnit\Framework\TestCase;
 
-class LoaderTest extends BaseTest
+class LoaderTest extends TestCase
 {
     /** @test */
     public function throws_exception_if_file_not_found(): void
     {
-        $this->expectException(RuntimeException::class);
+        $this->expectException(\RuntimeException::class);
 
         $🙃 = new Phony('invalid-locale');
 
