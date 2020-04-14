@@ -3,6 +3,8 @@
 namespace Phony\Test\Phony;
 
 use Phony\Loader;
+use Phony\Locale;
+use Phony\Phony;
 use Phony\Test\BaseTest;
 use RuntimeException;
 
@@ -13,6 +15,8 @@ class LoaderTest extends BaseTest
     {
         $this->expectException(RuntimeException::class);
 
-        $this->🙃->alphabet->invalidAttribute;
+        $🙃 = new Phony('invalid-locale');
+
+        $🙃->alphabet->uppercase_letter;
     }
 }
