@@ -83,10 +83,6 @@ class Fake
             return true;
         }
 
-        if (isset($this->functionAliases[$attribute])) {
-            return true;
-        }
-
         return false;
     }
 
