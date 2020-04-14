@@ -34,10 +34,12 @@ class PersonTrTest extends BaseTrTest
     /** @test */
     public function last_name(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/(\w+\.? ?){3,4}/',
-            $this->🧪->last_name
-        );
+        $this->assertTrue(
+            mb_ereg_match(
+                '(\w+\.? ?){3,4}',
+                $this->🧪->last_name
+            )
+    );
     }
 
     // endregion
