@@ -105,6 +105,8 @@ class Fake
 
     // endregion
 
+    // region Fetching
+
     /**
      * Fetches a value.
      *
@@ -164,6 +166,8 @@ class Fake
             ? implode($glue, $values)
             : $values;
     }
+
+    // endregion
 
     /**
      * Replaces all hash sign ('#') occurrences with a random number and
