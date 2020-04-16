@@ -195,6 +195,17 @@ class Fake
         return random_int(1, 9);
     }
 
+    /**
+     * Returns a random hex letter between 0 and f.
+     *
+     * @return string
+     * @throws \Exception
+     */
+    protected function randomHexLetter(): string
+    {
+        return dechex(random_int(0, 15));
+    }
+
     // endregion
 
     // region Numerifications
@@ -232,10 +243,6 @@ class Fake
      */
     protected function hexify($letterString = '####')
     {
-        $hexCharacters = [
-            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
-        ];
-
         if (is_array($letterString)) {
             foreach ($letterString as $index => $item) {
                 $letterString[$index] = $this->hexify($item);
@@ -244,7 +251,7 @@ class Fake
 
         return preg_replace_callback(
             '/#/',
-            fn () => $hexCharacters[random_int(0, 15)],
+            fn () => $this->randomHexLetter(),
             $letterString
         );
     }
