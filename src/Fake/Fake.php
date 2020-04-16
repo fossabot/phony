@@ -169,6 +169,8 @@ class Fake
 
     // endregion
 
+    // region Numerifications
+
     /**
      * Replaces all hash sign ('#') occurrences with a random number and
      * all percentage sign ('%') occurrences with a not null number.
@@ -271,4 +273,6 @@ class Fake
 
         return $string;
     }
+
+    // endregion
 }
