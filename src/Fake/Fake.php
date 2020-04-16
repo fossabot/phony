@@ -183,6 +183,18 @@ class Fake
         return random_int(0, 9);
     }
 
+    /**
+     * Returns a random number between 1 and 9.
+     *
+     * @return int
+     *
+     * @throws \Exception
+     */
+    protected function randomDigitNotNull(): int
+    {
+        return random_int(1, 9);
+    }
+
     // endregion
 
     // region Numerifications
@@ -204,7 +216,7 @@ class Fake
             }
         }
 
-        $numberString = preg_replace_callback('/%/', fn () => random_int(1, 9), $numberString);
+        $numberString = preg_replace_callback('/%/', fn () => $this->randomDigitNotNull(), $numberString);
         $numberString = preg_replace_callback('/#/', fn () => $this->randomDigit(), $numberString);
 
         return $numberString;
