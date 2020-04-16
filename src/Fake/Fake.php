@@ -225,6 +225,33 @@ class Fake
         return random_int(0, $max);
     }
 
+    /**
+     * @param  int|null  $max
+     * @param  int|null  $min
+     * @param  int|null  $nbMaxDecimals
+     *
+     * @return float
+     * @throws \Exception
+     */
+    public function randomFloat(int $max = null, int $min = 0, int $nbMaxDecimals = null): float
+    {
+        if ($nbMaxDecimals === null) {
+            $nbMaxDecimals = $this->randomDigit();
+        }
+
+        if ($max === null) {
+            $max = $this->randomNumber();
+        }
+
+        if ($min > $max) {
+            $tmp = $min;
+            $min = $max;
+            $max = $tmp;
+        }
+
+        return round(random_int($min, $max) + (random_int(0, PHP_INT_MAX) / PHP_INT_MAX), $nbMaxDecimals);
+    }
+
     // endregion
 
     // region Numerifications
