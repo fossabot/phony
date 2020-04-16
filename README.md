@@ -33,23 +33,23 @@ use Phony\Phony;
 
 $🙃 = new Phony('en');
 
-$🙃->address->city;             // => "Imogeneborough"
+$🙃->address->city;                  // => "Imogeneborough"
 
-$🙃->📫->city;                  // => "Imogeneborough"
+$🙃->📫->city;                       // => "Imogeneborough"
 
-$🙃->alphabet->uppercase_letter; // => "P"
+$🙃->alphabet->uppercase_letter;     // => "P"
 
-$🙃->🔤->uppercase_letter;       // => "P"
+$🙃->🔤->uppercase_letter;           // => "P"
 
-$🙃->ancient->god;              // => "Zeus"
+$🙃->ancient->god;                   // => "Zeus"
 
-$🙃->📜->god;                   // => "Zeus"
+$🙃->📜->god;                        // => "Zeus"
 
-$🙃->coin->flip;                // => "Heads"
+$🙃->coin->flip;                     // => "Heads"
 
-$🙃->currency->name;            // => "Swedish Krona"
+$🙃->currency->name;                 // => "Swedish Krona"
 
-$🙃->person->name;              // => "Tyshawn Johns Sr."
+$🙃->person->name;                   // => "Tyshawn Johns Sr."
 ```
 
 ## Fakes
