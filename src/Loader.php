@@ -2,8 +2,6 @@
 
 namespace Phony;
 
-use RuntimeException;
-
 class Loader
 {
     private string $defaultLocale;
@@ -68,7 +66,7 @@ class Loader
             return $data;
         }
 
-        throw new RuntimeException("File does not exist at path {$path}");
+        throw new \RuntimeException("File does not exist at path {$path}");
     }
 
     private function isCached(string $group, string $item): bool
