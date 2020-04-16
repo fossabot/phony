@@ -171,6 +171,18 @@ class Fake
 
     // region Random Numbers
 
+    /**
+     * Returns a random number between 0 and 9.
+     *
+     * @return int
+     *
+     * @throws \Exception
+     */
+    protected function randomDigit(): int
+    {
+        return random_int(0, 9);
+    }
+
     // endregion
 
     // region Numerifications
@@ -193,7 +205,7 @@ class Fake
         }
 
         $numberString = preg_replace_callback('/%/', fn () => random_int(1, 9), $numberString);
-        $numberString = preg_replace_callback('/#/', fn () => random_int(0, 9), $numberString);
+        $numberString = preg_replace_callback('/#/', fn () => $this->randomDigit(), $numberString);
 
         return $numberString;
     }
