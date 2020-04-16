@@ -206,6 +206,25 @@ class Fake
         return dechex(random_int(0, 15));
     }
 
+    /**
+     * Returns a random integer with 0 to $nbDigits digits.
+     *
+     * @param  int  $nbDigits
+     *
+     * @return int
+     * @throws \Exception
+     */
+    protected function randomNumber(int $nbDigits = null): int
+    {
+        if ($nbDigits === null) {
+            $nbDigits = $this->randomDigitNotNull();
+        }
+
+        $max = (10 ** $nbDigits) - 1;
+
+        return random_int(0, $max);
+    }
+
     // endregion
 
     // region Numerifications
