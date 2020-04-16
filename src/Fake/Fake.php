@@ -169,6 +169,10 @@ class Fake
 
     // endregion
 
+    // region Random Numbers
+
+    // endregion
+
     // region Numerifications
 
     /**
