@@ -3,7 +3,6 @@
 namespace Phony\Fake;
 
 use Phony\Phony;
-use RuntimeException;
 
 /**
  * Class Fake.
@@ -29,7 +28,7 @@ class Fake
     // region Magic Setup
 
     /**
-     * Get attributes by magic.
+     * Gets a magic attribute.
      *
      * @param $attribute
      *
@@ -56,22 +55,22 @@ class Fake
             return $this->{$this->functionAliases[$attribute]}();
         }
 
-        throw new RuntimeException("The {$attribute} attribute is not defined!");
+        throw new \RuntimeException("The {$attribute} attribute is not defined!");
     }
 
     /**
-     * Don't allow setting magic attributes.
+     * Setting a magic attribute is not allowed.
      *
      * @param $attribute
      * @param $value
      */
     public function __set($attribute, $value)
     {
-        throw new RuntimeException("Setting {$attribute} attribute is not allowed!");
+        throw new \RuntimeException("Setting {$attribute} attribute is not allowed!");
     }
 
     /**
-     * Check if a magic attribute exists.
+     * Checks if a magic attribute exists.
      *
      * @param $attribute
      *
@@ -87,7 +86,7 @@ class Fake
     }
 
     /**
-     * Get function by magic.
+     * Gets a magic function.
      *
      * @param $name
      * @param $arguments
@@ -100,7 +99,7 @@ class Fake
             return $this->{$this->functionAttributes[$name][0]}(...$this->functionAttributes[$name][1]);
         }
 
-        throw new RuntimeException("The {$name} function is not defined!");
+        throw new \RuntimeException("The {$name} function is not defined!");
     }
 
     // endregion
@@ -243,6 +242,9 @@ class Fake
     }
 
     /**
+     * Returns a random float number between $min, $max and
+     * with given number of maximum decimals.
+     *
      * @param  int|null  $max
      * @param  int|null  $min
      * @param  int|null  $nbMaxDecimals
@@ -273,13 +275,12 @@ class Fake
     // region Numerifications
 
     /**
-     * Replaces all hash sign ('#') occurrences with a random number and
-     * all percentage sign ('%') occurrences with a not null number.
+     * Replaces every hash sign ('#') with a random digit and percentage
+     * sign ('%') with a random digit that is not null.
      *
      * @param  array|string  $numberString
      *
      * @return array|string
-     * @throws \Exception
      */
     protected function numerify($numberString = '%%%###')
     {
@@ -296,12 +297,11 @@ class Fake
     }
 
     /**
-     * Replaces all question mark ('?') occurrences with a random hex character.
+     * Replaces every question mark ('?') with a random hex digit.
      *
      * @param  array|string  $letterString
      *
      * @return array|string
-     * @throws \Exception
      */
     protected function hexify($letterString = '####')
     {
@@ -319,12 +319,11 @@ class Fake
     }
 
     /**
-     * Replaces all question mark ('?') occurrences with a random letter.
+     * Replaces every question mark ('?') with a random letter.
      *
      * @param  array|string  $letterString
      *
      * @return array|string
-     * @throws \Exception
      */
     protected function letterify($letterString = '????')
     {
@@ -342,13 +341,12 @@ class Fake
     }
 
     /**
-     * Replaces hash signs ('#') and question marks ('?') with random numbers and letters.
-     * An asterisk ('*') is replaced with either a random number or a random letter.
+     * Replaces every hash ('#') and question sign ('?') with a random number and letter.
+     * An asterisk sign ('*') is replaced by a random number or a random letter.
      *
      * @param  array|string  $string
      *
      * @return array|string
-     * @throws \Exception
      */
     protected function bothify($string = '##??**')
     {
