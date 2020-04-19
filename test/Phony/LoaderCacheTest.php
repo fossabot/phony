@@ -9,9 +9,9 @@ class LoaderCacheTest extends BaseTest
     /** @test */
     public function can_get_cache_size(): void
     {
-        $this->assertIsInt(
-            $this->🙃->getCacheSize()
-        );
+        $value = $this->🙃->getCacheSize();
+
+        $this->assertIsInt($value);
     }
 
     /** @test */

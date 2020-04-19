@@ -7,7 +7,10 @@ use RuntimeException;
 
 class FakeMagicTest extends BaseTest
 {
-    /** @test */
+    /** @test
+     *
+     * @noinspection PhpUndefinedFieldInspection
+     */
     public function can_not_access_undefined_magic_attribute(): void
     {
         $this->expectException(RuntimeException::class);
@@ -15,10 +18,16 @@ class FakeMagicTest extends BaseTest
         $this->🙃->alphabet->not_exist;
     }
 
-    /** @test */
+    /** @test
+     *
+     * @noinspection UnknownInspectionInspection
+     * @noinspection Annotator
+     *
+     */
     public function can_not_set_a_magic_attribute(): void
     {
         $this->expectException(RuntimeException::class);
+
 
         $this->🙃->alphabet->uppercase_letter = 'can-not';
     }
@@ -35,7 +44,10 @@ class FakeMagicTest extends BaseTest
         );
     }
 
-    /** @test */
+    /** @test
+     *
+     * @noinspection PhpUndefinedMethodInspection
+     */
     public function can_not_access_undefined_magic_method(): void
     {
         $this->expectException(RuntimeException::class);
