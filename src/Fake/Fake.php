@@ -174,13 +174,18 @@ class Fake
     /**
      * Returns a random number between 0 and 9.
      *
-     * @return int
+     * @param  int  $start
+     * @param  int  $end
      *
-     * @throws \Exception
+     * @return int
      */
-    protected function randomDigit(): int
+    protected function randomDigit(int $start = 0, int $end = 9): int
     {
-        return random_int(0, 9);
+        try {
+            return random_int($start, $end);
+        } catch (\Exception $e) {
+            return mt_rand($start, $end);
+        }
     }
 
     /**
