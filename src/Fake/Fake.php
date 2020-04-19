@@ -193,22 +193,20 @@ class Fake
      *
      * @return int
      *
-     * @throws \Exception
      */
     protected function randomDigitNotNull(): int
     {
-        return random_int(1, 9);
+        return $this->randomDigit(1, 9);
     }
 
     /**
      * Returns a random hex letter between 0 and f.
      *
      * @return string
-     * @throws \Exception
      */
     protected function randomHexLetter(): string
     {
-        return dechex(random_int(0, 15));
+        return dechex($this->randomDigit(0, 15));
     }
 
     /**
@@ -217,7 +215,6 @@ class Fake
      * @param  int  $nbDigits
      *
      * @return int
-     * @throws \Exception
      */
     protected function randomNumber(int $nbDigits = null): int
     {
@@ -227,21 +224,22 @@ class Fake
 
         $max = (10 ** $nbDigits) - 1;
 
-        return random_int(0, $max);
+        return $this->randomDigit(0, $max);
     }
 
     /**
+     * Returns a random integer between $min and $max.
+     *
      * @param  int  $min
      * @param  int  $max
      *
      * @return int
-     * @throws \Exception
      */
     protected function numberBetween(int $min, int $max): int
     {
         return $min < $max
-            ? random_int($min, $max)
-            : random_int($max, $min);
+            ? $this->randomDigit($min, $max)
+            : $this->randomDigit($max, $min);
     }
 
     /**
@@ -250,7 +248,6 @@ class Fake
      * @param  int|null  $nbMaxDecimals
      *
      * @return float
-     * @throws \Exception
      */
     public function randomFloat(int $max = null, int $min = 0, int $nbMaxDecimals = null): float
     {
@@ -268,7 +265,7 @@ class Fake
             $max = $tmp;
         }
 
-        return round(random_int($min, $max) + (random_int(0, PHP_INT_MAX) / PHP_INT_MAX), $nbMaxDecimals);
+        return (float) round($this->randomDigit($min, $max) + ($this->randomDigit(0, PHP_INT_MAX) / PHP_INT_MAX), $nbMaxDecimals);
     }
 
     // endregion
