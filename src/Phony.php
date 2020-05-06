@@ -15,6 +15,7 @@ use RuntimeException;
  * @property-read \Phony\Fake\Standard\Ancient    ancient
  * @property-read \Phony\Fake\Standard\Ancient    📜
  * @property-read \Phony\Fake\Standard\Artist     artist
+ * @property-read \Phony\Fake\Standard\Boolean    boolean
  * @property-read \Phony\Fake\Standard\Coin       coin
  * @property-read \Phony\Fake\Standard\Cosmere    cosmere
  * @property-read \Phony\Fake\Standard\Currency   currency
@@ -32,7 +33,7 @@ class Phony
     /**
      * Phony constructor.
      *
-     * @param string $defaultLocale
+     * @param  string  $defaultLocale
      */
     public function __construct(string $defaultLocale)
     {
