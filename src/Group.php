@@ -15,6 +15,7 @@ class Group
         'coin'        => \Phony\Fake\Standard\Coin::class,
         'cosmere'     => \Phony\Fake\Standard\Cosmere::class,
         'currency'    => \Phony\Fake\Standard\Currency::class,
+        'number'      => \Phony\Fake\Standard\Number::class,
         'person'      => \Phony\Fake\Standard\Person::class,
         'slack_emoji' => \Phony\Fake\Standard\SlackEmoji::class,
     ];

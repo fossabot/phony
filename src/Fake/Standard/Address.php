@@ -187,7 +187,7 @@ class Address extends Fake
      */
     public function longitude(int $precision = 7, int $min = -180, int $max = 180): float
     {
-        return $this->randomFloat($max, $min, $precision);
+        return $this->phony->number->float($max, $min, $precision);
     }
 
     public function coordinates(

@@ -18,6 +18,7 @@ use RuntimeException;
  * @property-read \Phony\Fake\Standard\Coin       coin
  * @property-read \Phony\Fake\Standard\Cosmere    cosmere
  * @property-read \Phony\Fake\Standard\Currency   currency
+ * @property-read \Phony\Fake\Standard\Number     number
  * @property-read \Phony\Fake\Standard\Person     person
  * @property-read \Phony\Fake\Standard\SlackEmoji slack_emoji
  */

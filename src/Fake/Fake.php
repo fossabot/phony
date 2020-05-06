@@ -168,109 +168,6 @@ class Fake
 
     // endregion
 
-    // region Random Numbers
-
-    /**
-     * Returns a random number between 0 and 9.
-     *
-     * @param  int  $start
-     * @param  int  $end
-     *
-     * @return int
-     */
-    protected function randomDigit(int $start = 0, int $end = 9): int
-    {
-        try {
-            return random_int($start, $end);
-        } catch (\Exception $e) {
-            return mt_rand($start, $end);
-        }
-    }
-
-    /**
-     * Returns a random number between 1 and 9.
-     *
-     * @return int
-     */
-    protected function randomDigitNotNull(): int
-    {
-        return $this->randomDigit(1, 9);
-    }
-
-    /**
-     * Returns a random hex letter between 0 and f.
-     *
-     * @return string
-     */
-    protected function randomHexLetter(): string
-    {
-        return dechex($this->randomDigit(0, 15));
-    }
-
-    /**
-     * Returns a random integer with 0 to $nbDigits digits.
-     *
-     * @param  int  $nbDigits
-     *
-     * @return int
-     */
-    protected function randomNumber(int $nbDigits = null): int
-    {
-        if ($nbDigits === null) {
-            $nbDigits = $this->randomDigitNotNull();
-        }
-
-        $max = (10 ** $nbDigits) - 1;
-
-        return $this->randomDigit(0, $max);
-    }
-
-    /**
-     * Returns a random integer between $min and $max.
-     *
-     * @param  int  $min
-     * @param  int  $max
-     *
-     * @return int
-     */
-    protected function numberBetween(int $min, int $max): int
-    {
-        return $min < $max
-            ? $this->randomDigit($min, $max)
-            : $this->randomDigit($max, $min);
-    }
-
-    /**
-     * Returns a random float number between $min, $max and
-     * with given number of maximum decimals.
-     *
-     * @param  int|null  $max
-     * @param  int|null  $min
-     * @param  int|null  $nbMaxDecimals
-     *
-     * @return float
-     */
-    public function randomFloat(int $max = null, int $min = 0, int $nbMaxDecimals = null): float
-    {
-        if ($nbMaxDecimals === null) {
-            $nbMaxDecimals = $this->randomDigit();
-        }
-
-        if ($max === null) {
-            $max = $this->randomNumber();
-        }
-
-        if ($min > $max) {
-            $tmp = $min;
-            $min = $max;
-            $max = $tmp;
-        }
-
-        return (float) round($this->randomDigit($min, $max) + ($this->randomDigit(0, PHP_INT_MAX) / PHP_INT_MAX), $nbMaxDecimals);
-    }
-
-    // endregion
-
     // region Numerifications
 
     /**
@@ -289,8 +186,8 @@ class Fake
             }
         }
 
-        $numberString = preg_replace_callback('/%/', fn () => $this->randomDigitNotNull(), $numberString);
-        $numberString = preg_replace_callback('/#/', fn () => $this->randomDigit(), $numberString);
+        $numberString = preg_replace_callback('/%/', fn () => $this->phony->number->digitNonZero(), $numberString);
+        $numberString = preg_replace_callback('/#/', fn () => $this->phony->number->digit(), $numberString);
 
         return $numberString;
     }
@@ -312,7 +209,7 @@ class Fake
 
         return preg_replace_callback(
             '/#/',
-            fn () => $this->randomHexLetter(),
+            fn () => $this->phony->number->hexadecimal(),
             $letterString
         );
     }
