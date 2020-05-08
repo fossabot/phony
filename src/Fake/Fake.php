@@ -12,7 +12,7 @@ class Fake
 {
     protected Phony $phony;
     protected array $attributes;
-    protected array $functionAttributes;
+    protected array $methodsAsAttributes;
     protected array $functionAliases;
 
     /**
@@ -55,8 +55,8 @@ class Fake
             return $this->{$this->functionAliases[$attribute]}();
         }
 
-        if (isset($this->functionAttributes[$attribute])) {
-            return $this->{$attribute}(...$this->functionAttributes[$attribute]);
+        if (isset($this->methodsAsAttributes[$attribute])) {
+            return $this->{$attribute}(...$this->methodsAsAttributes[$attribute]);
         }
 
         throw new RuntimeException("The {$attribute} attribute is not defined!");

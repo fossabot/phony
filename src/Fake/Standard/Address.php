@@ -62,7 +62,7 @@ class Address extends Fake
         'default_country'                       => ['address.default_country'],
     ];
 
-    protected array $functionAttributes = [
+    protected array $methodsAsAttributes = [
         'zip_code' => [null],
     ];
 
