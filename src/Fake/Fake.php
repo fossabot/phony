@@ -3,6 +3,7 @@
 namespace Phony\Fake;
 
 use Phony\Phony;
+use RuntimeException;
 
 /**
  * Class Fake.
@@ -70,7 +71,7 @@ class Fake
      */
     public function __set($attribute, $value)
     {
-        throw new \RuntimeException("Setting {$attribute} attribute is not allowed!");
+        throw new RuntimeException("Setting {$attribute} attribute is not allowed!");
     }
 
     /**
@@ -99,11 +100,11 @@ class Fake
      */
     public function __call($name, $arguments)
     {
-        if (isset($this->functionAttributes[$name])) {
-            return $this->{$this->functionAttributes[$name][0]}(...$this->functionAttributes[$name][1]);
+        if (isset($this->functionAliases[$name])) {
+            return $this->{$this->functionAliases[$name]}(...$arguments);
         }
 
-        throw new \RuntimeException("The {$name} function is not defined!");
+        throw new RuntimeException("The {$name} function is not defined!");
     }
 
     // endregion

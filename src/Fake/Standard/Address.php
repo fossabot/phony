@@ -63,13 +63,10 @@ class Address extends Fake
     ];
 
     protected array $functionAttributes = [
-        'zip_code' => ['zip_code', [null]],
-        'zip'      => ['zip_code', [null]],
-        'postcode' => ['zip_code', [null]],
+        'zip_code' => [null],
     ];
 
     protected array $functionAliases = [
-        'zip_code' => 'zip_code',
         'zip'      => 'zip_code',
         'postcode' => 'zip_code',
     ];
