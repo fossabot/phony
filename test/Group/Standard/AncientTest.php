@@ -9,7 +9,7 @@ class AncientTest extends BaseTest
     // region Attributes
 
     /** @test */
-    public function god(): void
+    public function god_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -18,7 +18,7 @@ class AncientTest extends BaseTest
     }
 
     /** @test */
-    public function primordial(): void
+    public function primordial_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -27,7 +27,7 @@ class AncientTest extends BaseTest
     }
 
     /** @test */
-    public function titan(): void
+    public function titan_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -36,7 +36,7 @@ class AncientTest extends BaseTest
     }
 
     /** @test */
-    public function hero(): void
+    public function hero_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',

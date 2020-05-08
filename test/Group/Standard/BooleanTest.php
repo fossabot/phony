@@ -9,7 +9,7 @@ class BooleanTest extends BaseTest
     // region Attributes
 
     /** @test */
-    public function boolean(): void
+    public function boolean_attribute(): void
     {
         $value = $this->🙃->boolean->boolean;
 

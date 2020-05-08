@@ -9,7 +9,7 @@ class PersonTrTest extends BaseTrTest
     // region Attributes
 
     /** @test */
-    public function male_first_name(): void
+    public function male_first_name_attribute(): void
     {
         $this->assertIsString(
             $this->🙃->person->male_first_name
@@ -17,7 +17,7 @@ class PersonTrTest extends BaseTrTest
     }
 
     /** @test */
-    public function female_first_name(): void
+    public function female_first_name_attribute(): void
     {
         $this->assertIsString(
             $this->🙃->person->female_first_name
@@ -25,7 +25,7 @@ class PersonTrTest extends BaseTrTest
     }
 
     /** @test */
-    public function last_name(): void
+    public function last_name_attribute(): void
     {
         $this->assertTrue(
             mb_ereg_match(
@@ -37,10 +37,10 @@ class PersonTrTest extends BaseTrTest
 
     // endregion
 
-    // region Functions
+    // region Methods
 
     /** @test */
-    public function initials_with_default_length(): void
+    public function initials_method_with_default_length(): void
     {
         $this->assertEquals(
             6,
@@ -48,10 +48,8 @@ class PersonTrTest extends BaseTrTest
         );
     }
 
-    /** @test
-     * @throws \Exception
-     */
-    public function initials_with_given_length(): void
+    /** @test */
+    public function initials_method_with_given_length(): void
     {
         $times = random_int(2, 10);
 

@@ -9,7 +9,7 @@ class PersonTest extends BaseTest
     // region Attributes
 
     /** @test */
-    public function name(): void
+    public function name_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){2,3}/',
@@ -18,7 +18,7 @@ class PersonTest extends BaseTest
     }
 
     /** @test */
-    public function name_with_middle(): void
+    public function name_with_middle_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){3,4}/',
@@ -27,7 +27,7 @@ class PersonTest extends BaseTest
     }
 
     /** @test */
-    public function first_name(): void
+    public function first_name_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){3,4}/',
@@ -36,7 +36,7 @@ class PersonTest extends BaseTest
     }
 
     /** @test */
-    public function middle_name(): void
+    public function middle_name_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){3,4}/',
@@ -45,7 +45,7 @@ class PersonTest extends BaseTest
     }
 
     /** @test */
-    public function male_first_name(): void
+    public function male_first_name_attribute(): void
     {
         $this->assertIsString(
             $this->🙃->person->male_first_name
@@ -53,7 +53,7 @@ class PersonTest extends BaseTest
     }
 
     /** @test */
-    public function female_first_name(): void
+    public function female_first_name_attribute(): void
     {
         $this->assertIsString(
             $this->🙃->person->female_first_name
@@ -61,7 +61,7 @@ class PersonTest extends BaseTest
     }
 
     /** @test */
-    public function last_name(): void
+    public function last_name_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){3,4}/',
@@ -70,7 +70,7 @@ class PersonTest extends BaseTest
     }
 
     /** @test */
-    public function prefix(): void
+    public function prefix_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/[A-Z][a-z]+\.?/',
@@ -79,7 +79,7 @@ class PersonTest extends BaseTest
     }
 
     /** @test */
-    public function suffix(): void
+    public function suffix_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/[A-Z][a-z]*\.?/',
@@ -89,10 +89,10 @@ class PersonTest extends BaseTest
 
     // endregion
 
-    // region Functions
+    // region Methods
 
     /** @test */
-    public function initials_with_default_length(): void
+    public function initials_method_with_default_length(): void
     {
         $this->assertEquals(
             3,
@@ -100,10 +100,8 @@ class PersonTest extends BaseTest
         );
     }
 
-    /** @test
-     * @throws \Exception
-     */
-    public function initials_with_given_length(): void
+    /** @test */
+    public function initials_method_with_given_length(): void
     {
         $this->assertEquals(
             $times = random_int(2, 10),

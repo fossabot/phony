@@ -9,7 +9,7 @@ class AlphabetTest extends BaseTest
     // region Attributes
 
     /** @test */
-    public function uppercase_letter(): void
+    public function uppercase_letter_attribute(): void
     {
         $this->assertEquals(
             1,
@@ -18,7 +18,7 @@ class AlphabetTest extends BaseTest
     }
 
     /** @test */
-    public function lowercase_letter(): void
+    public function lowercase_letter_attribute(): void
     {
         $this->assertEquals(
             1,
@@ -27,7 +27,7 @@ class AlphabetTest extends BaseTest
     }
 
     /** @test */
-    public function letter(): void
+    public function letter_attribute(): void
     {
         $this->assertEquals(
             1,

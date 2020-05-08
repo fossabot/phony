@@ -9,7 +9,7 @@ class CoinTest extends BaseTest
     // region Attributes
 
     /** @test */
-    public function flip(): void
+    public function flip_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -18,7 +18,7 @@ class CoinTest extends BaseTest
     }
 
     /** @test */
-    public function name(): void
+    public function name_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',

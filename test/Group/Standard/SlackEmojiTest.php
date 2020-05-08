@@ -11,7 +11,7 @@ class SlackEmojiTest extends BaseTest
     // region Attributes
 
     /** @test */
-    public function people(): void
+    public function people_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             $this->regex,
@@ -20,7 +20,7 @@ class SlackEmojiTest extends BaseTest
     }
 
     /** @test */
-    public function nature(): void
+    public function nature_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             $this->regex,
@@ -29,7 +29,7 @@ class SlackEmojiTest extends BaseTest
     }
 
     /** @test */
-    public function food_and_drink(): void
+    public function food_and_drink_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             $this->regex,
@@ -38,7 +38,7 @@ class SlackEmojiTest extends BaseTest
     }
 
     /** @test */
-    public function celebration(): void
+    public function celebration_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             $this->regex,
@@ -47,7 +47,7 @@ class SlackEmojiTest extends BaseTest
     }
 
     /** @test */
-    public function activity(): void
+    public function activity_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             $this->regex,
@@ -56,7 +56,7 @@ class SlackEmojiTest extends BaseTest
     }
 
     /** @test */
-    public function travel_and_place(): void
+    public function travel_and_place_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             $this->regex,
@@ -65,7 +65,7 @@ class SlackEmojiTest extends BaseTest
     }
 
     /** @test */
-    public function object_and_symbol(): void
+    public function object_and_symbol_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             $this->regex,
@@ -74,7 +74,7 @@ class SlackEmojiTest extends BaseTest
     }
 
     /** @test */
-    public function custom(): void
+    public function custom_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             $this->regex,
@@ -83,7 +83,7 @@ class SlackEmojiTest extends BaseTest
     }
 
     /** @test */
-    public function emoji(): void
+    public function emoji_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             $this->regex,

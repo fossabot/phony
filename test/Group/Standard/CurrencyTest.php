@@ -9,7 +9,7 @@ class CurrencyTest extends BaseTest
     // region Attributes
 
     /** @test */
-    public function name(): void
+    public function name_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -18,7 +18,7 @@ class CurrencyTest extends BaseTest
     }
 
     /** @test */
-    public function code(): void
+    public function code_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/[A-Z]{3}/',
@@ -27,7 +27,7 @@ class CurrencyTest extends BaseTest
     }
 
     /** @test */
-    public function symbol(): void
+    public function symbol_attribute(): void
     {
         $this->assertIsString(
             $this->🙃->currency->symbol

@@ -9,7 +9,7 @@ class AddressTest extends BaseTest
     // region Attributes
 
     /** @test */
-    public function city(): void
+    public function city_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -18,7 +18,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function city_with_state(): void
+    public function city_with_state_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+, \w+/',
@@ -27,7 +27,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function street_name(): void
+    public function street_name_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+\s\w+/',
@@ -36,7 +36,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function secondary_address(): void
+    public function secondary_address_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+\.?\s\d+/',
@@ -45,7 +45,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function street_address(): void
+    public function street_address_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\d+\s\w+\s\w+/',
@@ -54,7 +54,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function street_address_with_secondary_address(): void
+    public function street_address_with_secondary_address_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\d+\s[A-Za-z0-9\']+\s\w+\s\w+\.?\s\d+/',
@@ -63,7 +63,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function building_number(): void
+    public function building_number_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\d+/',
@@ -72,7 +72,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function community(): void
+    public function community_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+\s\w+/',
@@ -81,7 +81,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function mail_box(): void
+    public function mail_box_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/[\w ]+\d+/',
@@ -90,7 +90,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function zip_code(): void
+    public function zip_code_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/^\d+-?\d*$/',
@@ -99,7 +99,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function zip(): void
+    public function zip_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/^\d+-?\d*$/',
@@ -108,7 +108,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function postcode(): void
+    public function postcode_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/^\d+-?\d*$/',
@@ -117,7 +117,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function time_zone(): void
+    public function time_zone_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+\/\w+/',
@@ -126,7 +126,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function street_suffix(): void
+    public function street_suffix_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -135,7 +135,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function city_suffix(): void
+    public function city_suffix_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -144,7 +144,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function city_prefix(): void
+    public function city_prefix_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -153,7 +153,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function state_abbreviation(): void
+    public function state_abbreviation_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/[A-Z]{2}/',
@@ -162,7 +162,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function state(): void
+    public function state_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -171,7 +171,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function country(): void
+    public function country_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -180,7 +180,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function country_code(): void
+    public function country_code_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/[A-Z]{2}/',
@@ -189,7 +189,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function country_code_long(): void
+    public function country_code_long_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/[A-Z]{3}/',
@@ -198,7 +198,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function full_address(): void
+    public function full_address_attribute(): void
     {
         $this->assertIsString(
             $this->🙃->address->full_address
@@ -206,7 +206,7 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function default_country(): void
+    public function default_country_attribute(): void
     {
         $this->assertIsString(
             $this->🙃->address->default_country
@@ -215,12 +215,9 @@ class AddressTest extends BaseTest
 
     // endregion
 
-    // region Functions
+    // region Methods
 
-    /** @test *
-     *
-     * @throws \Exception
-     */
+    /** @test */
     public function zip_code_method(): void
     {
         $this->assertMatchesRegularExpression(
@@ -229,11 +226,8 @@ class AddressTest extends BaseTest
         );
     }
 
-    /** @test
-     *
-     * @throws \Exception
-     */
-    public function zip_code_with_state_abbreviation(): void
+    /** @test */
+    public function zip_code_method_with_state_abbreviation(): void
     {
         $this->assertMatchesRegularExpression(
             '/^\d+-?\d*$/',
@@ -241,35 +235,8 @@ class AddressTest extends BaseTest
         );
     }
 
-    /** @test *
-     *
-     * @throws \Exception
-     */
-    public function zip_method(): void
-    {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->zip()
-        );
-    }
-
-    /** @test *
-     *
-     * @throws \Exception
-     */
-    public function postcode_method(): void
-    {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->postcode()
-        );
-    }
-
-    /** @test *
-     *
-     * @throws \Exception
-     */
-    public function country_by_code(): void
+    /** @test */
+    public function country_by_code_method(): void
     {
         $this->assertEquals(
             'Netherlands',
@@ -277,15 +244,34 @@ class AddressTest extends BaseTest
         );
     }
 
-    /** @test *
-     *
-     * @throws \Exception
-     */
-    public function country_by_name(): void
+    /** @test */
+    public function country_by_name_method(): void
     {
         $this->assertEquals(
             'US',
             $this->🙃->address->country_by_name('united_states')
+        );
+    }
+
+    // endregion
+
+    // region Method Aliases
+
+    /** @test */
+    public function zip_method_alias(): void
+    {
+        $this->assertMatchesRegularExpression(
+            '/^\d+-?\d*$/',
+            $this->🙃->address->zip()
+        );
+    }
+
+    /** @test */
+    public function postcode_method_alias(): void
+    {
+        $this->assertMatchesRegularExpression(
+            '/^\d+-?\d*$/',
+            $this->🙃->address->postcode()
         );
     }
 

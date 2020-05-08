@@ -9,7 +9,7 @@ class ArtistTest extends BaseTest
     // region Attributes
 
     /** @test */
-    public function name(): void
+    public function name_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',

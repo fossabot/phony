@@ -9,7 +9,7 @@ class CosmereTest extends BaseTest
     // region Attributes
 
     /** @test */
-    public function aon(): void
+    public function aon_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -18,7 +18,7 @@ class CosmereTest extends BaseTest
     }
 
     /** @test */
-    public function shard_world(): void
+    public function shard_world_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -27,7 +27,7 @@ class CosmereTest extends BaseTest
     }
 
     /** @test */
-    public function shard(): void
+    public function shard_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -36,7 +36,7 @@ class CosmereTest extends BaseTest
     }
 
     /** @test */
-    public function surge(): void
+    public function surge_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -45,7 +45,7 @@ class CosmereTest extends BaseTest
     }
 
     /** @test */
-    public function knight_radiant(): void
+    public function knight_radiant_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -54,7 +54,7 @@ class CosmereTest extends BaseTest
     }
 
     /** @test */
-    public function metal(): void
+    public function metal_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -63,7 +63,7 @@ class CosmereTest extends BaseTest
     }
 
     /** @test */
-    public function allomancer(): void
+    public function allomancer_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -72,7 +72,7 @@ class CosmereTest extends BaseTest
     }
 
     /** @test */
-    public function feruchemist(): void
+    public function feruchemist_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -81,7 +81,7 @@ class CosmereTest extends BaseTest
     }
 
     /** @test */
-    public function herald(): void
+    public function herald_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
@@ -90,7 +90,7 @@ class CosmereTest extends BaseTest
     }
 
     /** @test */
-    public function spren(): void
+    public function spren_attribute(): void
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
