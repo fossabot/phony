@@ -55,7 +55,11 @@ class Fake
             return $this->{$this->functionAliases[$attribute]}();
         }
 
-        throw new \RuntimeException("The {$attribute} attribute is not defined!");
+        if (isset($this->functionAttributes[$attribute])) {
+            return $this->{$attribute}(...$this->functionAttributes[$attribute]);
+        }
+
+        throw new RuntimeException("The {$attribute} attribute is not defined!");
     }
 
     /**
