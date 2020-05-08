@@ -10,7 +10,6 @@ use ReflectionMethod;
 abstract class BaseTest extends TestCase
 {
     protected Phony $🙃;
-    protected $🧪;
 
     protected function setUp(): void
     {

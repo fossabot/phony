@@ -6,13 +6,6 @@ use Phony\Test\Locale\Tr\BaseTrTest;
 
 class AlphabetTrTest extends BaseTrTest
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->🧪 = $this->🙃->alphabet;
-    }
-
     // region Attributes
 
     /** @test */
@@ -20,7 +13,7 @@ class AlphabetTrTest extends BaseTrTest
     {
         $this->assertEquals(
             1,
-            mb_strlen($this->🧪->uppercase_letter, 'utf8')
+            mb_strlen($this->🙃->alphabet->uppercase_letter, 'utf8')
         );
     }
 
@@ -29,7 +22,7 @@ class AlphabetTrTest extends BaseTrTest
     {
         $this->assertEquals(
             1,
-            mb_strlen($this->🧪->lowercase_letter, 'utf8')
+            mb_strlen($this->🙃->alphabet->lowercase_letter, 'utf8')
         );
     }
 
@@ -38,7 +31,7 @@ class AlphabetTrTest extends BaseTrTest
     {
         $this->assertEquals(
             1,
-            mb_strlen($this->🧪->letter, 'utf8')
+            mb_strlen($this->🙃->alphabet->letter, 'utf8')
         );
     }
 

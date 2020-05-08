@@ -6,13 +6,6 @@ use Phony\Test\BaseTest;
 
 class AncientTest extends BaseTest
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->🧪 = $this->🙃->ancient;
-    }
-
     // region Attributes
 
     /** @test */
@@ -20,7 +13,7 @@ class AncientTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->god
+            $this->🙃->ancient->god
         );
     }
 
@@ -29,7 +22,7 @@ class AncientTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->primordial
+            $this->🙃->ancient->primordial
         );
     }
 
@@ -38,7 +31,7 @@ class AncientTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->titan
+            $this->🙃->ancient->titan
         );
     }
 
@@ -47,7 +40,7 @@ class AncientTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->hero
+            $this->🙃->ancient->hero
         );
     }
 

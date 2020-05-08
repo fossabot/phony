@@ -6,13 +6,6 @@ use Phony\Test\BaseTest;
 
 class CurrencyTest extends BaseTest
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->🧪 = $this->🙃->currency;
-    }
-
     // region Attributes
 
     /** @test */
@@ -20,7 +13,7 @@ class CurrencyTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->name
+            $this->🙃->currency->name
         );
     }
 
@@ -29,7 +22,7 @@ class CurrencyTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/[A-Z]{3}/',
-            $this->🧪->code
+            $this->🙃->currency->code
         );
     }
 
@@ -37,7 +30,7 @@ class CurrencyTest extends BaseTest
     public function symbol(): void
     {
         $this->assertIsString(
-            $this->🧪->symbol
+            $this->🙃->currency->symbol
         );
     }
 

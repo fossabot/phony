@@ -6,13 +6,6 @@ use Phony\Test\BaseTest;
 
 class PersonTest extends BaseTest
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->🧪 = $this->🙃->person;
-    }
-
     // region Attributes
 
     /** @test */
@@ -20,7 +13,7 @@ class PersonTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){2,3}/',
-            $this->🧪->name
+            $this->🙃->person->name
         );
     }
 
@@ -29,7 +22,7 @@ class PersonTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){3,4}/',
-            $this->🧪->name_with_middle
+            $this->🙃->person->name_with_middle
         );
     }
 
@@ -38,7 +31,7 @@ class PersonTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){3,4}/',
-            $this->🧪->first_name
+            $this->🙃->person->first_name
         );
     }
 
@@ -47,7 +40,7 @@ class PersonTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){3,4}/',
-            $this->🧪->middle_name
+            $this->🙃->person->middle_name
         );
     }
 
@@ -55,7 +48,7 @@ class PersonTest extends BaseTest
     public function male_first_name(): void
     {
         $this->assertIsString(
-            $this->🧪->male_first_name
+            $this->🙃->person->male_first_name
         );
     }
 
@@ -63,7 +56,7 @@ class PersonTest extends BaseTest
     public function female_first_name(): void
     {
         $this->assertIsString(
-            $this->🧪->female_first_name
+            $this->🙃->person->female_first_name
         );
     }
 
@@ -72,7 +65,7 @@ class PersonTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/(\w+\.? ?){3,4}/',
-            $this->🧪->last_name
+            $this->🙃->person->last_name
         );
     }
 
@@ -81,7 +74,7 @@ class PersonTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/[A-Z][a-z]+\.?/',
-            $this->🧪->prefix
+            $this->🙃->person->prefix
         );
     }
 
@@ -90,7 +83,7 @@ class PersonTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/[A-Z][a-z]*\.?/',
-            $this->🧪->suffix
+            $this->🙃->person->suffix
         );
     }
 
@@ -103,7 +96,7 @@ class PersonTest extends BaseTest
     {
         $this->assertEquals(
             3,
-            strlen($this->🧪->initials())
+            strlen($this->🙃->person->initials())
         );
     }
 
@@ -114,7 +107,7 @@ class PersonTest extends BaseTest
     {
         $this->assertEquals(
             $times = random_int(2, 10),
-            strlen($this->🧪->initials($times))
+            strlen($this->🙃->person->initials($times))
         );
     }
 

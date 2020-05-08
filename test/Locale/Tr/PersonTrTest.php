@@ -6,20 +6,13 @@ use Phony\Test\Locale\Tr\BaseTrTest;
 
 class PersonTrTest extends BaseTrTest
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->🧪 = $this->🙃->person;
-    }
-
     // region Attributes
 
     /** @test */
     public function male_first_name(): void
     {
         $this->assertIsString(
-            $this->🧪->male_first_name
+            $this->🙃->person->male_first_name
         );
     }
 
@@ -27,7 +20,7 @@ class PersonTrTest extends BaseTrTest
     public function female_first_name(): void
     {
         $this->assertIsString(
-            $this->🧪->female_first_name
+            $this->🙃->person->female_first_name
         );
     }
 
@@ -37,7 +30,7 @@ class PersonTrTest extends BaseTrTest
         $this->assertTrue(
             mb_ereg_match(
                 '(\w+\.? ?){3,4}',
-                $this->🧪->last_name
+                $this->🙃->person->last_name
             )
     );
     }
@@ -51,7 +44,7 @@ class PersonTrTest extends BaseTrTest
     {
         $this->assertEquals(
             6,
-            mb_strlen($this->🧪->initials(), 'utf-8')
+            mb_strlen($this->🙃->person->initials(), 'utf-8')
         );
     }
 
@@ -64,7 +57,7 @@ class PersonTrTest extends BaseTrTest
 
         $this->assertEquals(
             $times * 2,
-            mb_strlen($this->🧪->initials($times), 'utf-8')
+            mb_strlen($this->🙃->person->initials($times), 'utf-8')
         );
     }
 

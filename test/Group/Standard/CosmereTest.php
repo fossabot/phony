@@ -6,13 +6,6 @@ use Phony\Test\BaseTest;
 
 class CosmereTest extends BaseTest
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->🧪 = $this->🙃->cosmere;
-    }
-
     // region Attributes
 
     /** @test */
@@ -20,7 +13,7 @@ class CosmereTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->aon
+            $this->🙃->cosmere->aon
         );
     }
 
@@ -29,7 +22,7 @@ class CosmereTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->shard_world
+            $this->🙃->cosmere->shard_world
         );
     }
 
@@ -38,7 +31,7 @@ class CosmereTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->shard
+            $this->🙃->cosmere->shard
         );
     }
 
@@ -47,7 +40,7 @@ class CosmereTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->surge
+            $this->🙃->cosmere->surge
         );
     }
 
@@ -56,7 +49,7 @@ class CosmereTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->knight_radiant
+            $this->🙃->cosmere->knight_radiant
         );
     }
 
@@ -65,7 +58,7 @@ class CosmereTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->metal
+            $this->🙃->cosmere->metal
         );
     }
 
@@ -74,7 +67,7 @@ class CosmereTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->allomancer
+            $this->🙃->cosmere->allomancer
         );
     }
 
@@ -83,7 +76,7 @@ class CosmereTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->feruchemist
+            $this->🙃->cosmere->feruchemist
         );
     }
 
@@ -92,7 +85,7 @@ class CosmereTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->herald
+            $this->🙃->cosmere->herald
         );
     }
 
@@ -101,7 +94,7 @@ class CosmereTest extends BaseTest
     {
         $this->assertMatchesRegularExpression(
             '/\w+/',
-            $this->🧪->spren
+            $this->🙃->cosmere->spren
         );
     }
 
