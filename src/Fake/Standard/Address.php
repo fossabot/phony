@@ -66,7 +66,7 @@ class Address extends Fake
         'zip_code' => [null],
     ];
 
-    protected array $functionAliases = [
+    protected array $methodAliases = [
         'zip'      => 'zip_code',
         'postcode' => 'zip_code',
     ];

@@ -13,7 +13,7 @@ class Fake
     protected Phony $phony;
     protected array $attributes;
     protected array $methodsAsAttributes;
-    protected array $functionAliases;
+    protected array $methodAliases;
 
     /**
      * Fake constructor.
@@ -51,8 +51,8 @@ class Fake
             return $value;
         }
 
-        if (isset($this->functionAliases[$attribute])) {
-            return $this->{$this->functionAliases[$attribute]}();
+        if (isset($this->methodAliases[$attribute])) {
+            return $this->{$this->methodAliases[$attribute]}();
         }
 
         if (isset($this->methodsAsAttributes[$attribute])) {
@@ -99,8 +99,8 @@ class Fake
      */
     public function __call($name, $arguments)
     {
-        if (isset($this->functionAliases[$name])) {
-            return $this->{$this->functionAliases[$name]}(...$arguments);
+        if (isset($this->methodAliases[$name])) {
+            return $this->{$this->methodAliases[$name]}(...$arguments);
         }
 
         throw new RuntimeException("The {$name} function is not defined!");
