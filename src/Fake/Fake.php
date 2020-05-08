@@ -13,7 +13,6 @@ class Fake
     protected Phony $phony;
     protected array $attributes;
     protected array $functionAttributes;
-    protected array $functions;
     protected array $functionAliases;
 
     /**
