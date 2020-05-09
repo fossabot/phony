@@ -33,6 +33,10 @@ class Person extends Fake
         'suffix'            => ['person.suffix'],
     ];
 
+    protected array $methodsAsAttributes = [
+        'initials' => [3],
+    ];
+
     /**
      * Produces a name initials.
      *

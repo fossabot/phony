@@ -110,4 +110,17 @@ class PersonTest extends BaseTest
     }
 
     // endregion
+
+    // region Methods as Attributes
+
+    /** @test */
+    public function initials_method_as_an_attribute(): void
+    {
+        $this->assertEquals(
+            3,
+            strlen($this->🙃->person->initials)
+        );
+    }
+
+    // endregion
 }
