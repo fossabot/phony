@@ -90,33 +90,6 @@ class AddressTest extends BaseTest
     }
 
     /** @test */
-    public function zip_code_attribute(): void
-    {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->zip_code
-        );
-    }
-
-    /** @test */
-    public function zip_attribute(): void
-    {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->zip
-        );
-    }
-
-    /** @test */
-    public function postcode_attribute(): void
-    {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->postcode
-        );
-    }
-
-    /** @test */
     public function time_zone_attribute(): void
     {
         $this->assertMatchesRegularExpression(
@@ -210,6 +183,41 @@ class AddressTest extends BaseTest
     {
         $this->assertIsString(
             $this->🙃->address->default_country
+        );
+    }
+
+    // endregion
+
+    // region Methods as Attributes
+
+    /** @test */
+    public function zip_code_method_as_attribute(): void
+    {
+        $this->assertMatchesRegularExpression(
+            '/^\d+-?\d*$/',
+            $this->🙃->address->zip_code
+        );
+    }
+
+    // endregion
+
+    // region Method Aliases as Attributes
+
+    /** @test */
+    public function zip_method_alias_as_attribute(): void
+    {
+        $this->assertMatchesRegularExpression(
+            '/^\d+-?\d*$/',
+            $this->🙃->address->zip
+        );
+    }
+
+    /** @test */
+    public function postcode_method_alias_as_attribute(): void
+    {
+        $this->assertMatchesRegularExpression(
+            '/^\d+-?\d*$/',
+            $this->🙃->address->postcode
         );
     }
 
