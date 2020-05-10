@@ -18,9 +18,6 @@ use Phony\Operation;
  * @property-read string building_number
  * @property-read string community
  * @property-read string mail_box
- * @property-read string zip_code
- * @property-read string zip
- * @property-read string postcode
  * @property-read string time_zone
  * @property-read string street_suffix
  * @property-read string city_suffix
@@ -32,8 +29,12 @@ use Phony\Operation;
  * @property-read string country_code_long
  * @property-read string full_address
  * @property-read string default_country
+ * @property-read string zip_code
+ * @property-read string zip
+ * @property-read string postcode
  * @property float latitude
  * @property float longitude
+ * @property array coordinate
  * @method zip(?string $stateAbbreviation = null): string
  * @method postcode(?string $stateAbbreviation = null): string
  */
