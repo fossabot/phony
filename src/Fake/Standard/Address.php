@@ -75,13 +75,12 @@ class Address extends Fake
     ];
 
     /**
-     * Produces a Zip Code.
+     * Fakes a random zip code.
      *
      * @param  string  $stateAbbreviation
      *
      * @return string
      *
-     * @throws \Exception
      *
      * @example 🙃::address()->zip_code() // => "58517"
      * @example 🙃::address()->zip_code() // => "23285-4905"
@@ -101,9 +100,7 @@ class Address extends Fake
     }
 
     /**
-     * Produces a country by ISO country code.
-     * See the [List of ISO 3166 country codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
-     * on Wikipedia for a full list.
+     * Fakes a random country by an ISO 3166 country code.
      *
      * @param  string  $code
      *
@@ -117,7 +114,7 @@ class Address extends Fake
     }
 
     /**
-     * Produces an ISO 3166 country code when given a country name.
+     * Fakes a random ISO 3166 country by country name.
      *
      * @param  string  $name
      *
@@ -144,7 +141,8 @@ class Address extends Fake
      * 6            0.000001    0.111 m
      * 7            0.0000001   1.11 cm
      * 8            0.00000001  1.11 mm
-     * Reference: https://en.wikipedia.org/wiki/Decimal_degrees#Precision
+     * Reference:
+     * https://en.wikipedia.org/wiki/Decimal_degrees#Precision
      *
      * @param  int  $precision
      * @param  int  $min
@@ -152,12 +150,11 @@ class Address extends Fake
      *
      * @return float
      *
-     * @throws \Exception
      * @example 🙃::address()->latitude() // => -58.17256227443719
      */
     public function latitude(int $precision = 7, int $min = -90, int $max = 90): float
     {
-        return $this->randomFloat($max, $min, $precision);
+        return $this->phony->number->floatBetween($max, $min, $precision);
     }
 
     /**
@@ -174,7 +171,8 @@ class Address extends Fake
      * 6            0.000001    0.111 m
      * 7            0.0000001   1.11 cm
      * 8            0.00000001  1.11 mm
-     * Reference: https://en.wikipedia.org/wiki/Decimal_degrees#Precision
+     * Reference:
+     * https://en.wikipedia.org/wiki/Decimal_degrees#Precision
      *
      * @param  int  $precision
      * @param  int  $min
@@ -182,15 +180,25 @@ class Address extends Fake
      *
      * @return float
      *
-     * @throws \Exception
      * @example 🙃::address()->longitude() // => -156.65548382095133
      */
     public function longitude(int $precision = 7, int $min = -180, int $max = 180): float
     {
-        return $this->phony->number->float($max, $min, $precision);
+        return $this->phony->number->floatBetween($max, $min, $precision);;
     }
 
-    public function coordinates(
+    /**
+     * Fakes a random coordinate array that contains latitude and longitude.
+     *
+     * @param  int  $precision
+     * @param  int  $minLatitude
+     * @param  int  $maxLatitude
+     * @param  int  $minLongitude
+     * @param  int  $maxLongitude
+     *
+     * @return array
+     */
+    public function coordinate(
         int $precision = 7,
         int $minLatitude = -90,
         int $maxLatitude = 90,
