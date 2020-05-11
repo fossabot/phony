@@ -26,4 +26,9 @@ class Alphabet extends Fake
     {
         return chr($this->phony->number->integerBetween(65, 90));
     }
+
+    public function ascii_lowercase_letter(): string
+    {
+        return chr($this->phony->number->integerBetween(97, 122));
+    }
 }
