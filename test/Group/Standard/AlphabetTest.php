@@ -35,5 +35,14 @@ class AlphabetTest extends BaseTest
         );
     }
 
+    /** @test */
+    public function punctuation_mark_attribute(): void
+    {
+        $this->assertEquals(
+            1,
+            mb_strlen($this->🙃->alphabet->punctuation_mark, 'utf8')
+        );
+    }
+
     // endregion
 }
