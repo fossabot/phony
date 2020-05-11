@@ -188,41 +188,6 @@ class AddressTest extends BaseTest
 
     // endregion
 
-    // region Methods as Attributes
-
-    /** @test */
-    public function zip_code_method_as_attribute(): void
-    {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->zip_code
-        );
-    }
-
-    // endregion
-
-    // region Method Aliases as Attributes
-
-    /** @test */
-    public function zip_method_alias_as_attribute(): void
-    {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->zip
-        );
-    }
-
-    /** @test */
-    public function postcode_method_alias_as_attribute(): void
-    {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->postcode
-        );
-    }
-
-    // endregion
-
     // region Methods
 
     /** @test */
@@ -261,6 +226,58 @@ class AddressTest extends BaseTest
         );
     }
 
+    /** @test */
+    public function latitude_method_returns_a_float_within_the_range(): void
+    {
+        $value = $this->🙃->address->latitude();
+
+        $this->assertIsFloat($value);
+        $this->assertGreaterThanOrEqual(-90, $value);
+        $this->assertLessThanOrEqual(90, $value);
+    }
+
+    /** @test */
+    public function longitude_method_returns_a_float_within_the_range(): void
+    {
+        $value = $this->🙃->address->longitude();
+
+        $this->assertIsFloat($value);
+        $this->assertGreaterThanOrEqual(-180, $value);
+        $this->assertLessThanOrEqual(180, $value);
+    }
+
+    /** @test */
+    public function coordinate_method_returns_an_array_with_latitude_and_longitude(): void
+    {
+        $value = $this->🙃->address->coordinate();
+
+        $this->assertIsArray($value);
+        $this->assertCount(2, $value);
+
+        // latitude()
+        $this->assertIsFloat($value[0]);
+        $this->assertGreaterThanOrEqual(-90, $value[0]);
+        $this->assertLessThanOrEqual(90, $value[0]);
+
+        // longitude()
+        $this->assertIsFloat($value[1]);
+        $this->assertGreaterThanOrEqual(-180, $value[1]);
+        $this->assertLessThanOrEqual(180, $value[1]);
+    }
+
+    // endregion
+
+    // region Methods as Attributes
+
+    /** @test */
+    public function zip_code_method_as_attribute(): void
+    {
+        $this->assertMatchesRegularExpression(
+            '/^\d+-?\d*$/',
+            $this->🙃->address->zip_code
+        );
+    }
+
     // endregion
 
     // region Method Aliases
@@ -280,6 +297,28 @@ class AddressTest extends BaseTest
         $this->assertMatchesRegularExpression(
             '/^\d+-?\d*$/',
             $this->🙃->address->postcode()
+        );
+    }
+
+    // endregion
+
+    // region Method Aliases as Attributes
+
+    /** @test */
+    public function zip_method_alias_as_attribute(): void
+    {
+        $this->assertMatchesRegularExpression(
+            '/^\d+-?\d*$/',
+            $this->🙃->address->zip
+        );
+    }
+
+    /** @test */
+    public function postcode_method_alias_as_attribute(): void
+    {
+        $this->assertMatchesRegularExpression(
+            '/^\d+-?\d*$/',
+            $this->🙃->address->postcode
         );
     }
 
