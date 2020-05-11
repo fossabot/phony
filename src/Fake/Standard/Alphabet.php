@@ -21,4 +21,9 @@ class Alphabet extends Fake
         'letter'           => ['alphabet.letter'],
         'punctuation_mark' => ['alphabet.punctuation_mark'],
     ];
+
+    public function ascii_uppercase_letter(): string
+    {
+        return chr($this->phony->number->integerBetween(65, 90));
+    }
 }

@@ -44,5 +44,13 @@ class AlphabetTest extends BaseTest
         );
     }
 
+    /** @test */
+    public function ascii_uppercase_letter_method(): void
+    {
+        $this->assertEquals(
+            1,
+            mb_strlen($this->🙃->alphabet->ascii_uppercase_letter(), 'utf8')
+        );
+    }
     // endregion
 }
