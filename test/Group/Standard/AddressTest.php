@@ -11,179 +11,164 @@ class AddressTest extends BaseTest
     /** @test */
     public function city_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->address->city
-        );
+        $value = $this->🙃->address->city;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function city_with_state_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+, \w+/',
-            $this->🙃->address->city_with_state
-        );
+        $value = $this->🙃->address->city_with_state;
+
+        $this->assertMatchesRegularExpression('/\w+, \w+/', $value);
     }
 
     /** @test */
     public function street_name_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+\s\w+/',
-            $this->🙃->address->street_name
-        );
+        $value = $this->🙃->address->street_name;
+
+        $this->assertMatchesRegularExpression('/\w+\s\w+/', $value);
     }
 
     /** @test */
     public function secondary_address_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+\.?\s\d+/',
-            $this->🙃->address->secondary_address
-        );
+        $value = $this->🙃->address->secondary_address;
+
+        $this->assertMatchesRegularExpression('/\w+\.?\s\d+/', $value);
     }
 
     /** @test */
     public function street_address_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\d+\s\w+\s\w+/',
-            $this->🙃->address->street_address
-        );
+        $value = $this->🙃->address->street_address;
+
+        $this->assertMatchesRegularExpression('/\d+\s\w+\s\w+/', $value);
     }
 
     /** @test */
     public function street_address_with_secondary_address_attribute(): void
     {
+        $value = $this->🙃->address->street_address_with_secondary_address;
+
         $this->assertMatchesRegularExpression(
             '/\d+\s[A-Za-z0-9\']+\s\w+\s\w+\.?\s\d+/',
-            $this->🙃->address->street_address_with_secondary_address
+            $value
         );
     }
 
     /** @test */
     public function building_number_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\d+/',
-            $this->🙃->address->building_number
-        );
+        $value = $this->🙃->address->building_number;
+
+        $this->assertMatchesRegularExpression('/\d+/', $value);
     }
 
     /** @test */
     public function community_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+\s\w+/',
-            $this->🙃->address->community
-        );
+        $value = $this->🙃->address->community;
+
+        $this->assertMatchesRegularExpression('/\w+\s\w+/', $value);
     }
 
     /** @test */
     public function mail_box_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/[\w ]+\d+/',
-            $this->🙃->address->mail_box
-        );
+        $value = $this->🙃->address->mail_box;
+
+        $this->assertMatchesRegularExpression('/[\w ]+\d+/', $value);
     }
 
     /** @test */
     public function time_zone_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+\/\w+/',
-            $this->🙃->address->time_zone
-        );
+        $value = $this->🙃->address->time_zone;
+
+        $this->assertMatchesRegularExpression('/\w+\/\w+/', $value);
     }
 
     /** @test */
     public function street_suffix_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->address->street_suffix
-        );
+        $value = $this->🙃->address->street_suffix;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function city_suffix_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->address->city_suffix
-        );
+        $value = $this->🙃->address->city_suffix;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function city_prefix_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->address->city_prefix
-        );
+        $value = $this->🙃->address->city_prefix;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function state_abbreviation_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/[A-Z]{2}/',
-            $this->🙃->address->state_abbreviation
-        );
+        $value = $this->🙃->address->state_abbreviation;
+
+        $this->assertMatchesRegularExpression('/[A-Z]{2}/', $value);
     }
 
     /** @test */
     public function state_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->address->state
-        );
+        $value = $this->🙃->address->state;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function country_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->address->country
-        );
+        $value = $this->🙃->address->country;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function country_code_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/[A-Z]{2}/',
-            $this->🙃->address->country_code
-        );
+        $value = $this->🙃->address->country_code;
+
+        $this->assertMatchesRegularExpression('/[A-Z]{2}/', $value);
     }
 
     /** @test */
     public function country_code_long_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/[A-Z]{3}/',
-            $this->🙃->address->country_code_long
-        );
+        $value = $this->🙃->address->country_code_long;
+
+        $this->assertMatchesRegularExpression('/[A-Z]{3}/', $value);
     }
 
     /** @test */
     public function full_address_attribute(): void
     {
-        $this->assertIsString(
-            $this->🙃->address->full_address
-        );
+        $value = $this->🙃->address->full_address;
+
+        $this->assertIsString($value);
     }
 
     /** @test */
     public function default_country_attribute(): void
     {
-        $this->assertIsString(
-            $this->🙃->address->default_country
-        );
+        $value = $this->🙃->address->default_country;
+
+        $this->assertIsString($value);
     }
 
     // endregion
@@ -193,37 +178,33 @@ class AddressTest extends BaseTest
     /** @test */
     public function zip_code_method(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->zip_code()
-        );
+        $value = $this->🙃->address->zip_code();
+
+        $this->assertMatchesRegularExpression('/^\d+-?\d*$/', $value);
     }
 
     /** @test */
     public function zip_code_method_with_state_abbreviation(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->zip_code('CO')
-        );
+        $value = $this->🙃->address->zip_code('CO');
+
+        $this->assertMatchesRegularExpression('/^\d+-?\d*$/', $value);
     }
 
     /** @test */
     public function country_by_code_method(): void
     {
-        $this->assertEquals(
-            'Netherlands',
-            $this->🙃->address->country_by_code('NL')
-        );
+        $value = $this->🙃->address->country_by_code('NL');
+
+        $this->assertEquals('Netherlands', $value);
     }
 
     /** @test */
     public function country_by_name_method(): void
     {
-        $this->assertEquals(
-            'US',
-            $this->🙃->address->country_by_name('united_states')
-        );
+        $value = $this->🙃->address->country_by_name('united_states');
+
+        $this->assertEquals('US', $value);
     }
 
     /** @test */
@@ -272,10 +253,9 @@ class AddressTest extends BaseTest
     /** @test */
     public function zip_code_method_as_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->zip_code
-        );
+        $value = $this->🙃->address->zip_code;
+
+        $this->assertMatchesRegularExpression('/^\d+-?\d*$/', $value);
     }
 
     // endregion
@@ -285,19 +265,17 @@ class AddressTest extends BaseTest
     /** @test */
     public function zip_method_alias(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->zip()
-        );
+        $value = $this->🙃->address->zip();
+
+        $this->assertMatchesRegularExpression('/^\d+-?\d*$/', $value);
     }
 
     /** @test */
     public function postcode_method_alias(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->postcode()
-        );
+        $value = $this->🙃->address->postcode();
+
+        $this->assertMatchesRegularExpression('/^\d+-?\d*$/', $value);
     }
 
     // endregion
@@ -307,19 +285,17 @@ class AddressTest extends BaseTest
     /** @test */
     public function zip_method_alias_as_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->zip
-        );
+        $value = $this->🙃->address->zip;
+
+        $this->assertMatchesRegularExpression('/^\d+-?\d*$/', $value);
     }
 
     /** @test */
     public function postcode_method_alias_as_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/^\d+-?\d*$/',
-            $this->🙃->address->postcode
-        );
+        $value = $this->🙃->address->postcode;
+
+        $this->assertMatchesRegularExpression('/^\d+-?\d*$/', $value);
     }
 
     // endregion

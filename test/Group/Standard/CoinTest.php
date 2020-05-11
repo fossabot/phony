@@ -11,19 +11,17 @@ class CoinTest extends BaseTest
     /** @test */
     public function flip_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->coin->flip
-        );
+        $value = $this->🙃->coin->flip;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function name_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->coin->name
-        );
+        $value = $this->🙃->coin->name;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     // endregion

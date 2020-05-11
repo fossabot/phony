@@ -9,9 +9,9 @@ class CoinTrTest extends BaseTrTest
     /** @test */
     public function flip_attribute(): void
     {
-        $this->assertIsString(
-            $this->🙃->coin->flip
-        );
+        $value = $this->🙃->coin->flip;
+
+        $this->assertIsString($value);
     }
 
     // endregion

@@ -11,27 +11,25 @@ class CurrencyTest extends BaseTest
     /** @test */
     public function name_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->currency->name
-        );
+        $value = $this->🙃->currency->name;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function code_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/[A-Z]{3}/',
-            $this->🙃->currency->code
-        );
+        $value = $this->🙃->currency->code;
+
+        $this->assertMatchesRegularExpression('/[A-Z]{3}/', $value);
     }
 
     /** @test */
     public function symbol_attribute(): void
     {
-        $this->assertIsString(
-            $this->🙃->currency->symbol
-        );
+        $value = $this->🙃->currency->symbol;
+
+        $this->assertIsString($value);
     }
 
     // endregion

@@ -11,91 +11,81 @@ class CosmereTest extends BaseTest
     /** @test */
     public function aon_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->cosmere->aon
-        );
+        $value = $this->🙃->cosmere->aon;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function shard_world_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->cosmere->shard_world
-        );
+        $value = $this->🙃->cosmere->shard_world;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function shard_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->cosmere->shard
-        );
+        $value = $this->🙃->cosmere->shard;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function surge_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->cosmere->surge
-        );
+        $value = $this->🙃->cosmere->surge;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function knight_radiant_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->cosmere->knight_radiant
-        );
+        $value = $this->🙃->cosmere->knight_radiant;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function metal_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->cosmere->metal
-        );
+        $value = $this->🙃->cosmere->metal;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function allomancer_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->cosmere->allomancer
-        );
+        $value = $this->🙃->cosmere->allomancer;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function feruchemist_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->cosmere->feruchemist
-        );
+        $value = $this->🙃->cosmere->feruchemist;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function herald_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->cosmere->herald
-        );
+        $value = $this->🙃->cosmere->herald;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function spren_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->cosmere->spren
-        );
+        $value = $this->🙃->cosmere->spren;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     // endregion

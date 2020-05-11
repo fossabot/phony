@@ -11,10 +11,9 @@ class ArtistTest extends BaseTest
     /** @test */
     public function name_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->artist->name
-        );
+        $value = $this->🙃->artist->name;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     // endregion

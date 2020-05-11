@@ -13,82 +13,73 @@ class SlackEmojiTest extends BaseTest
     /** @test */
     public function people_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            $this->regex,
-            $this->🙃->slack_emoji->people
-        );
+        $value = $this->🙃->slack_emoji->people;
+
+        $this->assertMatchesRegularExpression($this->regex, $value);
     }
 
     /** @test */
     public function nature_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            $this->regex,
-            $this->🙃->slack_emoji->nature
-        );
+        $value = $this->🙃->slack_emoji->nature;
+
+        $this->assertMatchesRegularExpression($this->regex, $value);
     }
 
     /** @test */
     public function food_and_drink_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            $this->regex,
-            $this->🙃->slack_emoji->food_and_drink
-        );
+        $value = $this->🙃->slack_emoji->food_and_drink;
+
+        $this->assertMatchesRegularExpression($this->regex, $value);
     }
 
     /** @test */
     public function celebration_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            $this->regex,
-            $this->🙃->slack_emoji->celebration
-        );
+        $value = $this->🙃->slack_emoji->celebration;
+
+        $this->assertMatchesRegularExpression($this->regex, $value);
     }
 
     /** @test */
     public function activity_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            $this->regex,
-            $this->🙃->slack_emoji->activity
-        );
+        $value = $this->🙃->slack_emoji->activity;
+
+        $this->assertMatchesRegularExpression($this->regex, $value);
     }
 
     /** @test */
     public function travel_and_place_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            $this->regex,
-            $this->🙃->slack_emoji->travel_and_place
-        );
+        $value = $this->🙃->slack_emoji->travel_and_place;
+
+        $this->assertMatchesRegularExpression($this->regex, $value);
     }
 
     /** @test */
     public function object_and_symbol_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            $this->regex,
-            $this->🙃->slack_emoji->object_and_symbol
-        );
+        $value = $this->🙃->slack_emoji->object_and_symbol;
+
+        $this->assertMatchesRegularExpression($this->regex, $value);
     }
 
     /** @test */
     public function custom_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            $this->regex,
-            $this->🙃->slack_emoji->custom
-        );
+        $value = $this->🙃->slack_emoji->custom;
+
+        $this->assertMatchesRegularExpression($this->regex, $value);
     }
 
     /** @test */
     public function emoji_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            $this->regex,
-            $this->🙃->slack_emoji->emoji
-        );
+        $value = $this->🙃->slack_emoji->emoji;
+
+        $this->assertMatchesRegularExpression($this->regex, $value);
     }
 
     // endregion

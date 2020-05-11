@@ -11,37 +11,33 @@ class AncientTest extends BaseTest
     /** @test */
     public function god_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->ancient->god
-        );
+        $value = $this->🙃->ancient->god;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function primordial_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->ancient->primordial
-        );
+        $value = $this->🙃->ancient->primordial;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function titan_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->ancient->titan
-        );
+        $value = $this->🙃->ancient->titan;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     /** @test */
     public function hero_attribute(): void
     {
-        $this->assertMatchesRegularExpression(
-            '/\w+/',
-            $this->🙃->ancient->hero
-        );
+        $value = $this->🙃->ancient->hero;
+
+        $this->assertMatchesRegularExpression('/\w+/', $value);
     }
 
     // endregion

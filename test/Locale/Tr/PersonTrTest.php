@@ -11,28 +11,25 @@ class PersonTrTest extends BaseTrTest
     /** @test */
     public function male_first_name_attribute(): void
     {
-        $this->assertIsString(
-            $this->🙃->person->male_first_name
-        );
+        $value = $this->🙃->person->male_first_name;
+
+        $this->assertIsString($value);
     }
 
     /** @test */
     public function female_first_name_attribute(): void
     {
-        $this->assertIsString(
-            $this->🙃->person->female_first_name
-        );
+        $value = $this->🙃->person->female_first_name;
+
+        $this->assertIsString($value);
     }
 
     /** @test */
     public function last_name_attribute(): void
     {
-        $this->assertTrue(
-            mb_ereg_match(
-                '(\w+\.? ?){3,4}',
-                $this->🙃->person->last_name
-            )
-    );
+        $value = $this->🙃->person->last_name;
+
+        $this->assertTrue(mb_ereg_match('(\w+\.? ?){3,4}', $value));
     }
 
     // endregion
@@ -42,21 +39,18 @@ class PersonTrTest extends BaseTrTest
     /** @test */
     public function initials_method_with_default_length(): void
     {
-        $this->assertEquals(
-            6,
-            mb_strlen($this->🙃->person->initials(), 'utf-8')
-        );
+        $value = $this->🙃->person->initials();
+
+        $this->assertEquals(6, mb_strlen($value, 'utf-8'));
     }
 
     /** @test */
     public function initials_method_with_given_length(): void
     {
         $times = random_int(2, 10);
+        $value = $this->🙃->person->initials($times);
 
-        $this->assertEquals(
-            $times * 2,
-            mb_strlen($this->🙃->person->initials($times), 'utf-8')
-        );
+        $this->assertEquals($times * 2, mb_strlen($value, 'utf-8'));
     }
 
     // endregion

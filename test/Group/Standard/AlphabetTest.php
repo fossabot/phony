@@ -11,37 +11,33 @@ class AlphabetTest extends BaseTest
     /** @test */
     public function uppercase_letter_attribute(): void
     {
-        $this->assertEquals(
-            1,
-            mb_strlen($this->🙃->alphabet->uppercase_letter, 'utf8')
-        );
+        $value = $this->🙃->alphabet->uppercase_letter;
+
+        $this->assertEquals(1, mb_strlen($value, 'utf8'));
     }
 
     /** @test */
     public function lowercase_letter_attribute(): void
     {
-        $this->assertEquals(
-            1,
-            mb_strlen($this->🙃->alphabet->lowercase_letter, 'utf8')
-        );
+        $value = $this->🙃->alphabet->lowercase_letter;
+
+        $this->assertEquals(1, mb_strlen($value, 'utf8'));
     }
 
     /** @test */
     public function letter_attribute(): void
     {
-        $this->assertEquals(
-            1,
-            mb_strlen($this->🙃->alphabet->letter, 'utf8')
-        );
+       $value = $this->🙃->alphabet->letter;
+
+        $this->assertEquals(1, mb_strlen($value, 'utf8'));
     }
 
     /** @test */
     public function punctuation_mark_attribute(): void
     {
-        $this->assertEquals(
-            1,
-            mb_strlen($this->🙃->alphabet->punctuation_mark, 'utf8')
-        );
+        $value = $this->🙃->alphabet->punctuation_mark;
+
+        $this->assertEquals(1, mb_strlen($value, 'utf8'));
     }
 
     // endregion
@@ -51,28 +47,25 @@ class AlphabetTest extends BaseTest
     /** @test */
     public function ascii_uppercase_letter_method(): void
     {
-        $this->assertEquals(
-            1,
-            mb_strlen($this->🙃->alphabet->ascii_uppercase_letter(), 'utf8')
-        );
+        $value = $this->🙃->alphabet->ascii_uppercase_letter();
+
+        $this->assertEquals(1, mb_strlen($value, 'utf8'));
     }
 
     /** @test */
     public function ascii_lowercase_letter_method(): void
     {
-        $this->assertEquals(
-            1,
-            mb_strlen($this->🙃->alphabet->ascii_lowercase_letter(), 'utf8')
-        );
+       $value = $this->🙃->alphabet->ascii_lowercase_letter();
+
+        $this->assertEquals(1, mb_strlen($value, 'utf8'));
     }
 
     /** @test */
     public function ascii_letter_method(): void
     {
-        $this->assertEquals(
-            1,
-            mb_strlen($this->🙃->alphabet->ascii_letter(), 'utf8')
-        );
+        $value = $this->🙃->alphabet->ascii_letter();
+
+        $this->assertEquals(1, mb_strlen($value, 'utf8'));
     }
 
     // endregion
@@ -82,28 +75,25 @@ class AlphabetTest extends BaseTest
     /** @test */
     public function ascii_uppercase_letter_method_as_attribute(): void
     {
-        $this->assertEquals(
-            1,
-            mb_strlen($this->🙃->alphabet->ascii_uppercase_letter, 'utf8')
-        );
+        $value = $this->🙃->alphabet->ascii_uppercase_letter;
+
+        $this->assertEquals(1, mb_strlen($value, 'utf8'));
     }
 
     /** @test */
     public function ascii_lowercase_letter_method_as_attribute(): void
     {
-        $this->assertEquals(
-            1,
-            mb_strlen($this->🙃->alphabet->ascii_lowercase_letter, 'utf8')
-        );
+        $value = $this->🙃->alphabet->ascii_lowercase_letter;
+
+        $this->assertEquals(1, mb_strlen($value, 'utf8'));
     }
 
     /** @test */
     public function ascii_letter_method_as_attribute(): void
     {
-        $this->assertEquals(
-            1,
-            mb_strlen($this->🙃->alphabet->ascii_letter, 'utf8')
-        );
+        $value = $this->🙃->alphabet->ascii_letter;
+
+        $this->assertEquals(1, mb_strlen($value, 'utf8'));
     }
 
     // endregion
