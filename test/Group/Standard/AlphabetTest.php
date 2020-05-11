@@ -44,6 +44,10 @@ class AlphabetTest extends BaseTest
         );
     }
 
+    // endregion
+
+    // region Methods
+
     /** @test */
     public function ascii_uppercase_letter_method(): void
     {
@@ -61,5 +65,15 @@ class AlphabetTest extends BaseTest
             mb_strlen($this->🙃->alphabet->ascii_lowercase_letter(), 'utf8')
         );
     }
+
+    /** @test */
+    public function ascii_letter_method(): void
+    {
+        $this->assertEquals(
+            1,
+            mb_strlen($this->🙃->alphabet->ascii_letter(), 'utf8')
+        );
+    }
+
     // endregion
 }

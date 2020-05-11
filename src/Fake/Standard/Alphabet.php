@@ -31,4 +31,11 @@ class Alphabet extends Fake
     {
         return chr($this->phony->number->integerBetween(97, 122));
     }
+
+    public function ascii_letter(): string
+    {
+        return $this->phony->boolean->boolean
+            ? $this->ascii_uppercase_letter()
+            : $this->ascii_lowercase_letter();
+    }
 }
