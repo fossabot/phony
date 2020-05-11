@@ -12,6 +12,9 @@ use Phony\Fake\Fake;
  * @property-read string lowercase_letter
  * @property-read string letter
  * @property-read string punctuation_mark
+ * @property-read string ascii_uppercase_letter
+ * @property-read string ascii_lowercase_letter
+ * @property-read string ascii_letter
  */
 class Alphabet extends Fake
 {
@@ -20,6 +23,12 @@ class Alphabet extends Fake
         'lowercase_letter' => ['alphabet.lowercase_letter'],
         'letter'           => ['alphabet.letter'],
         'punctuation_mark' => ['alphabet.punctuation_mark'],
+    ];
+
+    protected array $methodsAsAttributes = [
+        'ascii_uppercase_letter' => [],
+        'ascii_lowercase_letter' => [],
+        'ascii_letter'           => [],
     ];
 
     public function ascii_uppercase_letter(): string
