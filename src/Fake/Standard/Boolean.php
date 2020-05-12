@@ -13,7 +13,7 @@ use Phony\Fake\Fake;
 class Boolean extends Fake
 {
     protected array $methodsAsAttributes = [
-        'boolean' => [50.0],
+        'boolean' => [],
     ];
 
     /**
