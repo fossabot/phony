@@ -258,6 +258,45 @@ class AddressTest extends BaseTest
         $this->assertMatchesRegularExpression('/^\d+-?\d*$/', $value);
     }
 
+    /** @test */
+    public function latitude_method_as_attribute(): void
+    {
+        $value = $this->🙃->address->latitude;
+
+        $this->assertIsFloat($value);
+        $this->assertGreaterThanOrEqual(-90, $value);
+        $this->assertLessThanOrEqual(90, $value);
+    }
+
+    /** @test */
+    public function longitude_method_as_attribute(): void
+    {
+        $value = $this->🙃->address->longitude;
+
+        $this->assertIsFloat($value);
+        $this->assertGreaterThanOrEqual(-180, $value);
+        $this->assertLessThanOrEqual(180, $value);
+    }
+
+    /** @test */
+    public function coordinate_method_as_attribute(): void
+    {
+        $value = $this->🙃->address->coordinate;
+
+        $this->assertIsArray($value);
+        $this->assertCount(2, $value);
+
+        // latitude()
+        $this->assertIsFloat($value[0]);
+        $this->assertGreaterThanOrEqual(-90, $value[0]);
+        $this->assertLessThanOrEqual(90, $value[0]);
+
+        // longitude()
+        $this->assertIsFloat($value[1]);
+        $this->assertGreaterThanOrEqual(-180, $value[1]);
+        $this->assertLessThanOrEqual(180, $value[1]);
+    }
+
     // endregion
 
     // region Method Aliases

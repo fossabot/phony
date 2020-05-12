@@ -64,9 +64,10 @@ class Address extends Fake
     ];
 
     protected array $methodsAsAttributes = [
-        'zip_code'    => [],
-        'latitude'    => [],
-        'coordinates' => [],
+        'zip_code'   => [],
+        'latitude'   => [],
+        'longitude'  => [],
+        'coordinate' => [],
     ];
 
     protected array $methodAliases = [
