@@ -49,12 +49,12 @@ class Number extends Fake
             return 1;
         }
 
-        if ($digit === $base - 1 & $except === $base - 1) {
+        if ($digit === $base - 1 && $except === $base - 1) {
             return $base - 2;
         }
 
         if ($digit === $except) {
-            return $this->boolean() ? $digit++ : $digit--;
+            return $this->phony->boolean->boolean ? $digit++ : $digit--;
         }
 
         return $digit;
