@@ -10,32 +10,11 @@ use Phony\Fake\Fake;
  */
 class Number extends Fake
 {
-    // [x] randomInteger
-    // [x] randomIntegerBetween
-    // [x] randomDigit
-    // [x] randomDigitNotNull
-    // [x] randomDigitBetween
-    // [x] randomFloat
-    // [x] randomFloatBetween
-    // [x] randomBoolean
-    // [x] randomAsciiLetter
     // TODO: Move to Array
     // randomElement
     // randomElements
     // randomKey
     // randomKeys
-
-    // TODO: digitWithin()
-    // TODO: integerWithin() -> Boundaries are not included
-    // TODO: integerBetween() -> Boundaries are included
-
-    // TODO: integerLeadingZero($digits) -> Basinda 0 olan
-    // TODO: digitNonZero
-    // TODO: hexadecimal($digits)
-    // TODO: normal($mean, $standard_deviation)
-
-    // TODO: positive($from, $to) // Integer or Float
-    // TODO: negative($from, $to) // Integer or Float
 
     // digit()
     // digitExcept
@@ -43,7 +22,7 @@ class Number extends Fake
     // digitNormal
 
     /**
-     * Returns a random digit for the given base.
+     * Fakes a random digit for the given base.
      *
      * @param  int  $base
      *
@@ -55,7 +34,7 @@ class Number extends Fake
     }
 
     /**
-     * Returns a random digit for the given base except `$except`.
+     * Fakes a random digit for the given base except `$except`.
      *
      * @param  int  $except
      * @param  int  $base
@@ -82,7 +61,7 @@ class Number extends Fake
     }
 
     /**
-     * Returns a random digit for the given base but not 0.
+     * Fakes a random digit for the given base but not 0.
      *
      * @param  int  $base
      *
@@ -93,15 +72,15 @@ class Number extends Fake
         return $this->digitExcept(0, $base);
     }
 
-    // integer
-    // integerExcept
-    // integerNonZero
-    // integerNormal
-    // integerBetween
-    // integerWithin
-    // integerPositive
-    // integerNegative
-    // integerLeadingZero
+    // integer()
+    // integerExcept()
+    // integerNonZero()
+    // integerNormal($mean, $standard_deviation)
+    // integerBetween()
+    // integerWithin() // Boundaries are not included
+    // integerPositive()
+    // integerNegative()
+    // integerLeadingZero()
 
     /**
      * Returns a random integer between $min and $max.
@@ -196,8 +175,6 @@ class Number extends Fake
 
         return $this->floatBetween($min, $max, $rightDigits);
     }
-
-    // TODO: Move to Alphabet
 
     /**
      * Returns a random hex letter between 0 and f.
