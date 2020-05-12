@@ -34,7 +34,7 @@ class Person extends Fake
     ];
 
     protected array $methodsAsAttributes = [
-        'initials' => [3],
+        'initials' => [],
     ];
 
     /**
