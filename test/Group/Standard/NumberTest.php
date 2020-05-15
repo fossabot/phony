@@ -33,6 +33,39 @@ class NumberTest extends BaseTest
     }
 
     /** @test */
+    public function integerWithin_method_returns_an_integer(): void
+    {
+        $value = $this->🙃->number->integerWithin();
+
+        $this->assertIsInt($value);
+    }
+
+    /** @test */
+    public function integerWithin_method_returns_an_integer_that_the_boundaries_not_included(): void
+    {
+        $value = $this->🙃->number->integerWithin(1, 100);
+
+        $this->assertGreaterThanOrEqual(2, $value);
+        $this->assertLessThanOrEqual(99, $value);
+    }
+
+    /** @test */
+    public function integerWithin_method_returns_error_if_min_greater_than_max(): void
+    {
+        $this->expectException(Error::class);
+
+        $this->🙃->number->integerWithin(2, 1);
+    }
+
+    /** @test */
+    public function integerWithin_method_returns_error_if_min_and_max_are_same(): void
+    {
+        $this->expectException(Error::class);
+
+        $this->🙃->number->integerWithin(1, 1);
+    }
+
+    /** @test */
     public function digit_method_returns_an_integer(): void
     {
         $value = $this->🙃->number->digit();
