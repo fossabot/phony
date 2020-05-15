@@ -32,6 +32,7 @@ class NumberTest extends BaseTest
         $this->🙃->number->integerBetween(2, 1);
     }
 
+
     /** @test */
     public function integerWithin_method_returns_an_integer(): void
     {
@@ -64,6 +65,73 @@ class NumberTest extends BaseTest
 
         $this->🙃->number->integerWithin(1, 1);
     }
+
+
+    /** @test */
+    public function integerPositive_method_returns_an_integer(): void
+    {
+        $value = $this->🙃->number->integerPositive();
+
+        $this->assertIsInt($value);
+    }
+
+    /** @test */
+    public function integerPositive_method_returns_a_positive_integer(): void
+    {
+        $value = $this->🙃->number->integerPositive();
+
+        $this->assertGreaterThanOrEqual(1, $value);
+    }
+
+    /** @test */
+    public function integerPositive_method_returns_error_if_min_is_not_positive(): void
+    {
+        $this->expectException(Error::class);
+
+        $this->🙃->number->integerPositive(-1);
+    }
+
+    /** @test */
+    public function integerPositive_method_returns_error_if_min_is_zero(): void
+    {
+        $this->expectException(Error::class);
+
+        $this->🙃->number->integerPositive(0);
+    }
+
+
+    /** @test */
+    public function integerNegative_method_returns_an_integer(): void
+    {
+        $value = $this->🙃->number->integerNegative();
+
+        $this->assertIsInt($value);
+    }
+
+    /** @test */
+    public function integerNegative_method_returns_a_negative_integer(): void
+    {
+        $value = $this->🙃->number->integerNegative();
+
+        $this->assertLessThanOrEqual(-1, $value);
+    }
+
+    /** @test */
+    public function integerNegative_method_returns_error_if_max_is_not_negative(): void
+    {
+        $this->expectException(Error::class);
+
+        $this->🙃->number->integerNegative(1);
+    }
+
+    /** @test */
+    public function integerNegative_method_returns_error_if_max_is_zero(): void
+    {
+        $this->expectException(Error::class);
+
+        $this->🙃->number->integerNegative(0);
+    }
+
 
     /** @test */
     public function digit_method_returns_an_integer(): void
