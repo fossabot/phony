@@ -2,10 +2,36 @@
 
 namespace Phony\Test\Group\Standard;
 
+use Error;
 use Phony\Test\BaseTest;
 
 class NumberTest extends BaseTest
 {
+    /** @test */
+    public function integerBetween_method_returns_an_integer(): void
+    {
+        $value = $this->🙃->number->integerBetween();
+
+        $this->assertIsInt($value);
+    }
+
+    /** @test */
+    public function integerBetween_method_returns_an_integer_between_min_and_max(): void
+    {
+        $value = $this->🙃->number->integerBetween(1, 100);
+
+        $this->assertGreaterThanOrEqual(1, $value);
+        $this->assertLessThanOrEqual(100, $value);
+    }
+
+    /** @test */
+    public function integerBetween_method_returns_error_if_min_greater_than_max(): void
+    {
+        $this->expectException(Error::class);
+
+        $this->🙃->number->integerBetween(2, 1);
+    }
+
     /** @test */
     public function digit_method_returns_an_integer(): void
     {
