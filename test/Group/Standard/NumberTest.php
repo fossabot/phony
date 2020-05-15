@@ -134,6 +134,43 @@ class NumberTest extends BaseTest
 
 
     /** @test */
+    public function integerDigit_method_returns_an_integer(): void
+    {
+        $value = $this->🙃->number->integerDigit();
+
+        $this->assertIsInt($value);
+    }
+
+    /** @test */
+    public function integerDigit_method_returns_an_integer_with_the_given_number_of_digits(): void
+    {
+        $digits = random_int(1, 15);
+        $value = $this->🙃->number->integerDigit($digits);
+
+        $this->assertLessThanOrEqual($digits, strlen((string) abs($value)));
+    }
+
+    /** @test */
+    public function integerDigit_method_returns_an_integer_with_exactly_the_given_number_of_digits(): void
+    {
+        $digits = random_int(1, 15);
+        $value = $this->🙃->number->integerDigit($digits, true);
+
+        $this->assertEquals($digits, strlen((string) abs($value)));
+    }
+
+    /** @test */
+    public function integerDigit_method_returns_an_positive_or_negative_integers(): void
+    {
+        $value = $this->🙃->number->integerDigit(1, true, true);
+        $this->assertGreaterThan(0, $value);
+
+        $value = $this->🙃->number->integerDigit(1, true, false);
+        $this->assertLessThan(0, $value);
+    }
+
+
+    /** @test */
     public function digit_method_returns_an_integer(): void
     {
         $value = $this->🙃->number->digit();
