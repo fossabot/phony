@@ -245,6 +245,14 @@ class Number extends Fake
         return $this->floatBetween($min, $max, $rightDigits);
     }
 
+    /**
+     * Fakes a random float in a standard deviation.
+     *
+     * @param  float  $mean
+     * @param  float  $standardDeviation
+     *
+     * @return float
+     */
     public function floatNormal(float $mean = 50.0, float $standardDeviation = 3.0): float
     {
         $theta = 2 * M_PI * $this->floatBetween();

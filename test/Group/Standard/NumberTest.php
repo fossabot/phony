@@ -401,4 +401,36 @@ class NumberTest extends BaseTest
 
         $this->assertEquals($precision + 3, strlen($value));
     }
+
+
+    /** @test */
+    public function floatNormal_method_returns_a_float(): void
+    {
+        $value = $this->🙃->number->floatNormal();
+
+        $this->assertIsFloat($value);
+    }
+
+    /** @test */
+    public function floatNormal_method_calculates_floats_with_standard_deviation(): void
+    {
+        $n = 10000;
+
+        $values = [];
+        foreach (range(1, 10000) as $k => $i) {
+            $values[] = $this->🙃->number->floatNormal(150.0, 100.0);
+        }
+
+        $mean = array_sum($values) / (float) $n;
+
+        $variance = array_reduce($values, function ($variance, $item) use ($mean) {
+                return $variance += ($item - $mean) ** 2;
+            }, 0) / (float) ($n - 1);
+
+        $std_dev = sqrt($variance);
+
+        $this->assertEqualsWithDelta(150, $mean, 5);
+        $this->assertEqualsWithDelta(100, $std_dev, 3);
+    }
+
 }
