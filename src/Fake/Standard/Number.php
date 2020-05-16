@@ -10,16 +10,134 @@ use Phony\Fake\Fake;
  */
 class Number extends Fake
 {
-    // TODO: Move to Array
-    // randomElement
-    // randomElements
-    // randomKey
-    // randomKeys
+    /**
+     * Fakes a random integer between $min and $max.
+     *
+     * @param  int  $min
+     * @param  int  $max
+     *
+     * @return int
+     */
+    public function integerBetween(int $min = -10_000, int $max = +10_000): int
+    {
+        try {
+            return random_int($min, $max);
+        } catch (Exception $e) {
+            return mt_rand($min, $max);
+        }
+    }
 
-    // digit()
-    // digitExcept
-    // digitNonZero
-    // digitNormal
+    /**
+     * Fakes a random integer between $min and $max without boundaries.
+     *
+     * @param  int  $min
+     * @param  int  $max
+     *
+     * @return int
+     */
+    public function integerWithin(int $min = -10_000, int $max = +10_000): int
+    {
+        return $this->integerBetween($min + 1, $max - 1);
+    }
+
+    /**
+     * Fakes a random positive integer between 1 and $max.
+     *
+     * @param  int  $max
+     *
+     * @return int
+     */
+    public function integerPositive(int $max = 10_000): int
+    {
+        return $this->integerBetween(1, $max);
+    }
+
+    /**
+     * Fakes a random negative integer between $min and -1.
+     *
+     * @param  int  $min
+     *
+     * @return int
+     */
+    public function integerNegative(int $min = -10_000): int
+    {
+        return $this->integerBetween($min, -1);
+    }
+
+    /**
+     * Fakes a random integer with number of $digits.
+     *
+     * @param  int|null  $digits  Defaults to a random digit not null
+     * @param  bool      $strict  Whether the returned number should have exactly $nbDigits
+     * @param  bool      $isPositive
+     *
+     * @return int
+     */
+    public function integerDigit(int $digits = null, bool $strict = false, bool $isPositive = null): int
+    {
+        if ($digits === null) {
+            $digits = $this->digitNonZero();
+        }
+
+        $max = (10 ** $digits) - 1;
+
+        $min = $strict
+            ? 10 ** ($digits - 1)
+            : 0;
+
+        $isPositive = $isPositive ? 1 : -1;
+
+        return $isPositive * $this->integerBetween($min, $max);
+    }
+
+    /**
+     * Fakes a random integer with leading zeros.
+     *
+     * @param  int  $digits
+     *
+     * @return string
+     */
+    public function integerLeadingZero(int $digits = 10): string
+    {
+        $value = (string) $this->integerDigit(null, false, true);
+
+        return str_pad($value, $digits, '0', STR_PAD_LEFT);
+    }
+
+    /**
+     * Fakes a random integer in a standard deviation.
+     *
+     * @param  int  $mean
+     * @param  int  $standardDeviation
+     *
+     * @return int
+     */
+    public function integerNormal(int $mean = 10_000, int $standardDeviation = 1_000): int
+    {
+        return (int) $this->floatNormal($mean, $standardDeviation);
+    }
+
+    /**
+     * Fakes a random integer except the given integer or array.
+     *
+     * @param  int|array  $except
+     * @param  int        $min
+     * @param  int        $max
+     *
+     * @return int
+     */
+    public function integerExcept($except = 666, int $min = -10_000, int $max = +10_000): int
+    {
+        if (is_int($except)) {
+            $except = [$except];
+        }
+
+        do {
+            $value =  $this->integerBetween($min, $max);
+        } while (in_array($value, $except, true));
+
+        return $value;
+    }
 
     /**
      * Fakes a random digit for the given base.
@@ -33,6 +151,7 @@ class Number extends Fake
         return $this->integerBetween(0, $base - 1);
     }
 
+    // TODO: Call integerExcept()
     /**
      * Fakes a random digit for the given base except `$except`.
      *
@@ -72,56 +191,6 @@ class Number extends Fake
         return $this->digitExcept(0, $base);
     }
 
-    // integer()
-    // integerExcept()
-    // integerNonZero()
-    // integerNormal($mean, $standard_deviation)
-    // integerBetween()
-    // integerWithin() // Boundaries are not included
-    // integerPositive()
-    // integerNegative()
-    // integerLeadingZero()
-
-    /**
-     * Returns a random integer between $min and $max.
-     *
-     * @param  int  $min
-     * @param  int  $max
-     *
-     * @return int
-     */
-    public function integerBetween(int $min, int $max): int
-    {
-        try {
-            return random_int($min, $max);
-        } catch (Exception $e) {
-            return mt_rand($min, $max);
-        }
-    }
-
-    /**
-     * Returns a random integer with 0 to $nbDigits digits.
-     *
-     * @param  int|null  $digits  Defaults to a random digit not null
-     * @param  bool      $strict  Whether the returned number should have exactly $nbDigits
-     *
-     * @return int
-     */
-    public function integer(int $digits = null, bool $strict = false): int
-    {
-        if ($digits === null) {
-            $digits = $this->digitNonZero();
-        }
-
-        $max = (10 ** $digits) - 1;
-
-        $min = $strict
-            ? 10 ** ($digits - 1)
-            : 0;
-
-        return $this->integerBetween($min, $max);
-    }
-
     // float
     // floatExcept
     // floatNonZero
@@ -142,7 +211,7 @@ class Number extends Fake
      *
      * @return float
      */
-    public function floatBetween(float $min, float $max, int $precision): float
+    public function floatBetween(float $min = 0, float $max = 1, int $precision = 14): float
     {
         return (float) round(lcg_value() * ($max - $min) + $min, $precision);
     }
@@ -174,6 +243,15 @@ class Number extends Fake
             : 0;
 
         return $this->floatBetween($min, $max, $rightDigits);
+    }
+
+    public function floatNormal(float $mean = 50.0, float $standardDeviation = 3.0): float
+    {
+        $theta = 2 * M_PI * $this->floatBetween();
+        $rho = sqrt(-2 * log(1 - $this->floatBetween()));
+        $scale = $standardDeviation * $rho;
+
+        return $mean + $scale * cos($theta);
     }
 
     /**
