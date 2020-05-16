@@ -134,6 +134,37 @@ class NumberTest extends BaseTest
 
 
     /** @test */
+    public function integerNormal_method_returns_an_integer(): void
+    {
+        $value = $this->🙃->number->integerNormal();
+
+        $this->assertIsInt($value);
+    }
+
+    /** @test */
+    public function integerNormal_method_calculates_integers_with_standard_deviation(): void
+    {
+        $n = 10000;
+
+        $values = [];
+        foreach (range(1, 10000) as $k => $i) {
+            $values[] = $this->🙃->number->integerNormal(150, 100);
+        }
+
+        $mean = array_sum($values) / (float) $n;
+
+        $variance = array_reduce($values, function ($variance, $item) use ($mean) {
+                return $variance += ($item - $mean) ** 2;
+            }, 0) / (float) ($n - 1);
+
+        $std_dev = sqrt($variance);
+
+        $this->assertEqualsWithDelta(150, $mean, 5);
+        $this->assertEqualsWithDelta(100, $std_dev, 3);
+    }
+
+
+    /** @test */
     public function integerDigit_method_returns_an_integer(): void
     {
         $value = $this->🙃->number->integerDigit();
