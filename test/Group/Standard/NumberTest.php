@@ -298,6 +298,14 @@ class NumberTest extends BaseTest
 
 
     /** @test */
+    public function digitNonZero_method_returns_an_integer(): void
+    {
+        $value = $this->🙃->number->digitNonZero();
+
+        $this->assertIsInt($value);
+    }
+
+    /** @test */
     public function digitNonZero_method_returns_a_digit_that_is_not_zero(): void
     {
         $value = $this->🙃->number->digitNonZero(2);

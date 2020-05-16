@@ -152,7 +152,7 @@ class Number extends Fake
     }
 
     /**
-     * Fakes a random digit for the given base except `$except`.
+     * Fakes a random digit for the given base except the given digit.
      *
      * @param  int  $except
      * @param  int  $base
