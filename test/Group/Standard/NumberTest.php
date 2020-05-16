@@ -373,7 +373,7 @@ class NumberTest extends BaseTest
         $precision = random_int(0, 14);
         $value = $this->🙃->number->floatPositive(1, $precision);
 
-        $this->assertEquals($precision + 2, strlen($value));
+        $this->assertLessThanOrEqual($precision + 2, strlen($value));
     }
 
 
@@ -399,7 +399,7 @@ class NumberTest extends BaseTest
         $precision = random_int(0, 14);
         $value = $this->🙃->number->floatNegative(-1, $precision);
 
-        $this->assertEquals($precision + 3, strlen($value));
+        $this->assertLessThanOrEqual($precision + 3, strlen($value));
     }
 
 
