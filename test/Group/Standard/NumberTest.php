@@ -339,7 +339,7 @@ class NumberTest extends BaseTest
         $precision = random_int(0, 14);
         $value = $this->🙃->number->floatBetween(0.0, 1.0, $precision);
 
-        $this->assertEquals($precision + 2, strlen($value));
+        $this->assertLessThanOrEqual($precision + 2, strlen($value));
     }
 
 
