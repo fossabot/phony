@@ -341,4 +341,64 @@ class NumberTest extends BaseTest
 
         $this->assertEquals($precision + 2, strlen($value));
     }
+
+
+    /** @test */
+    public function floatPositive_method_returns_a_float(): void
+    {
+        $value = $this->🙃->number->floatPositive();
+
+        $this->assertIsFloat($value);
+    }
+
+    /** @test */
+    public function floatPositive_method_returns_a_positive_float(): void
+    {
+        $value = $this->🙃->number->floatPositive();
+
+        $this->assertGreaterThanOrEqual(0, $value);
+    }
+
+    /** @test */
+    public function floatPositive_method_returns_zero_if_max_is_zero(): void
+    {
+        $value = $this->🙃->number->floatPositive(0);
+
+        $this->assertEquals(0, $value);
+    }
+
+    /** @test */
+    public function floatPositive_method_returns_a_float_with_given_precision(): void
+    {
+        $precision = random_int(0, 14);
+        $value = $this->🙃->number->floatPositive(1, $precision);
+
+        $this->assertEquals($precision + 2, strlen($value));
+    }
+
+
+    /** @test */
+    public function floatNegative_method_returns_a_float(): void
+    {
+        $value = $this->🙃->number->floatNegative();
+
+        $this->assertIsFloat($value);
+    }
+
+    /** @test */
+    public function floatNegative_method_returns_a_negative_float(): void
+    {
+        $value = $this->🙃->number->floatNegative();
+
+        $this->assertLessThan(0, $value);
+    }
+
+    /** @test */
+    public function floatNegative_method_returns_a_float_with_given_precision(): void
+    {
+        $precision = random_int(0, 14);
+        $value = $this->🙃->number->floatNegative(-1, $precision);
+
+        $this->assertEquals($precision + 3, strlen($value));
+    }
 }

@@ -191,6 +191,32 @@ class Number extends Fake
     }
 
     /**
+     * Fakes a random positive float between 1 and $max.
+     *
+     * @param  int  $max
+     * @param  int  $precision
+     *
+     * @return float
+     */
+    public function floatPositive(int $max = 10_000, int $precision = 14): float
+    {
+        return $this->floatBetween(0, $max, $precision);
+    }
+
+    /**
+     * Fakes a random negative float between $min and -1.
+     *
+     * @param  int  $min
+     * @param  int  $precision
+     *
+     * @return float
+     */
+    public function floatNegative(int $min = -10_000, int $precision = 14): float
+    {
+        return $this->floatBetween($min, 0, $precision);
+    }
+
+    /**
      * Returns a random float number between $min, $max and
      * with given number of maximum decimals.
      *
