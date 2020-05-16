@@ -165,6 +165,23 @@ class NumberTest extends BaseTest
 
 
     /** @test */
+    public function integerLeadingZero_method_returns_a_string(): void
+    {
+        $value = $this->🙃->number->integerLeadingZero();
+
+        $this->assertIsString($value);
+    }
+
+    /** @test */
+    public function integerLeadingZero_method_returns_a_string_leading_with_zeros(): void
+    {
+        $value = $this->🙃->number->integerLeadingZero(10);
+
+        $this->assertMatchesRegularExpression('/^^(0{0,10}[0-9]{0,10}){1}$/', $value);
+    }
+
+
+    /** @test */
     public function integerDigit_method_returns_an_integer(): void
     {
         $value = $this->🙃->number->integerDigit();
