@@ -219,6 +219,31 @@ class NumberTest extends BaseTest
 
 
     /** @test */
+    public function integerExcept_method_returns_an_integer(): void
+    {
+        $value = $this->🙃->number->integerExcept();
+
+        $this->assertIsInt($value);
+    }
+
+    /** @test */
+    public function integerExcept_method_returns_an_integer_except_the_given_integer(): void
+    {
+        $value = $this->🙃->number->integerExcept(2, 1, 2);
+
+        $this->assertEquals(1, $value);
+    }
+
+    /** @test */
+    public function integerExcept_method_returns_an_integer_except_the_given_array_of_integers(): void
+    {
+        $value = $this->🙃->number->integerExcept([1,2,3,4], 1, 5);
+
+        $this->assertEquals(5, $value);
+    }
+
+
+    /** @test */
     public function digit_method_returns_an_integer(): void
     {
         $value = $this->🙃->number->digit();
