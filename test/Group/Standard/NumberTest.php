@@ -314,4 +314,31 @@ class NumberTest extends BaseTest
         $value = $this->🙃->number->digitNonZero();
         $this->assertNotEquals(0, $value);
     }
+
+
+    /** @test */
+    public function floatBetween_method_returns_a_float(): void
+    {
+        $value = $this->🙃->number->floatBetween();
+
+        $this->assertIsFloat($value);
+    }
+
+    /** @test */
+    public function floatBetween_method_returns_a_float_between_min_and_max(): void
+    {
+        $value = $this->🙃->number->floatBetween(0.0, 1.0);
+
+        $this->assertGreaterThanOrEqual(0, $value);
+        $this->assertLessThanOrEqual(1, $value);
+    }
+
+    /** @test */
+    public function floatBetween_method_returns_a_float_with_given_precision(): void
+    {
+        $precision = random_int(0, 14);
+        $value = $this->🙃->number->floatBetween(0.0, 1.0, $precision);
+
+        $this->assertEquals($precision + 2, strlen($value));
+    }
 }

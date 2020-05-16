@@ -176,22 +176,11 @@ class Number extends Fake
         return $this->digitExcept(0, $base);
     }
 
-    // float
-    // floatExcept
-    // floatNonZero
-    // floatNormal
-    // floatBetween
-    // floatWithin
-    // floatPositive
-    // floatNegative
-    // floatLeadingZero
-
     /**
-     * Returns a random float between $min and $max.
+     * Fakes a random float between $min and $max.
      *
      * @param  float  $min
      * @param  float  $max
-     *
      * @param  int    $precision
      *
      * @return float
@@ -240,7 +229,7 @@ class Number extends Fake
     }
 
     /**
-     * Returns a random hex letter between 0 and f.
+     * Fakes a random hex letter between 0 and f.
      *
      * @return string
      */
