@@ -276,7 +276,15 @@ class NumberTest extends BaseTest
     }
 
     /** @test */
-    public function digitNot_method_returns_a_digit_except_given_digit(): void
+    public function digitExcept_method_returns_an_integer(): void
+    {
+        $value = $this->🙃->number->digitExcept();
+
+        $this->assertIsInt($value);
+    }
+
+    /** @test */
+    public function digitExcept_method_returns_a_digit_except_given_digit(): void
     {
         $value = $this->🙃->number->digitExcept(1, 2);
         $this->assertNotEquals(1, $value);
@@ -287,6 +295,7 @@ class NumberTest extends BaseTest
         $value = $this->🙃->number->digitExcept(1, 2);
         $this->assertNotEquals(1, $value);
     }
+
 
     /** @test */
     public function digitNonZero_method_returns_a_digit_that_is_not_zero(): void

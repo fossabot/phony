@@ -151,7 +151,6 @@ class Number extends Fake
         return $this->integerBetween(0, $base - 1);
     }
 
-    // TODO: Call integerExcept()
     /**
      * Fakes a random digit for the given base except `$except`.
      *
@@ -160,23 +159,9 @@ class Number extends Fake
      *
      * @return int
      */
-    public function digitExcept(int $except, int $base = 10): int
+    public function digitExcept(int $except = 0, int $base = 10): int
     {
-        $digit = $this->digit($base);
-
-        if ($digit === 0 && $except === 0) {
-            return 1;
-        }
-
-        if ($digit === $base - 1 && $except === $base - 1) {
-            return $base - 2;
-        }
-
-        if ($digit === $except) {
-            return $this->phony->boolean->boolean ? $digit++ : $digit--;
-        }
-
-        return $digit;
+        return $this->integerExcept($except, 0, $base - 1);
     }
 
     /**
