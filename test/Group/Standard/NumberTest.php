@@ -457,6 +457,18 @@ class NumberTest extends BaseTest
 
     // endregion
 
+    // region float()
+
+    /** @test */
+    public function float_method_returns_a_float(): void
+    {
+        $value = $this->🙃->number->float();
+
+        $this->assertIsFloat($value);
+    }
+
+    // endregion
+
     // region floatNormal()
 
     /** @test */
