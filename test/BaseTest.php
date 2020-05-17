@@ -20,9 +20,14 @@ abstract class BaseTest extends TestCase
 
     protected function callPrivateFakeMethod($name, ...$args)
     {
-        $method = new ReflectionMethod($this->🙃->alphabet, $name);
+        return $this->callPrivateMethod($this->🙃->alphabet, $name, ...$args);
+    }
+
+    protected function callPrivateMethod($instance, $name, ...$args)
+    {
+        $method = new ReflectionMethod($instance, $name);
         $method->setAccessible(true);
 
-        return $method->invokeArgs($this->🙃->alphabet, $args);
+        return $method->invokeArgs($instance, $args);
     }
 }
