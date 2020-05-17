@@ -3,7 +3,6 @@
 namespace Phony\Test\Group\Standard;
 
 use Error;
-use OverflowException;
 use Phony\Test\BaseTest;
 use RangeException;
 
@@ -147,41 +146,41 @@ class NumberTest extends BaseTest
 
     // endregion
 
-    // region integerDigit()
+    // region integer()
 
     /** @test */
-    public function integerDigit_method_returns_an_integer(): void
+    public function integer_method_returns_an_integer(): void
     {
-        $value = $this->🙃->number->integerDigit();
+        $value = $this->🙃->number->integer();
 
         $this->assertIsInt($value);
     }
 
     /** @test */
-    public function integerDigit_method_returns_an_integer_with_the_given_number_of_digits(): void
+    public function integer_method_returns_an_integer_with_the_given_number_of_digits(): void
     {
         $digits = random_int(1, 15);
-        $value = $this->🙃->number->integerDigit($digits);
+        $value = $this->🙃->number->integer($digits);
 
         $this->assertLessThanOrEqual($digits, strlen((string) abs($value)));
     }
 
     /** @test */
-    public function integerDigit_method_returns_an_integer_with_exactly_the_given_number_of_digits(): void
+    public function integer_method_returns_an_integer_with_exactly_the_given_number_of_digits(): void
     {
         $digits = random_int(1, 15);
-        $value = $this->🙃->number->integerDigit($digits, true);
+        $value = $this->🙃->number->integer($digits, true);
 
         $this->assertEquals($digits, strlen((string) abs($value)));
     }
 
     /** @test */
-    public function integerDigit_method_returns_an_positive_or_negative_integers(): void
+    public function integer_method_returns_an_positive_or_negative_integers(): void
     {
-        $value = $this->🙃->number->integerDigit(1, true, true);
+        $value = $this->🙃->number->integer(1, true, true);
         $this->assertGreaterThan(0, $value);
 
-        $value = $this->🙃->number->integerDigit(1, true, false);
+        $value = $this->🙃->number->integer(1, true, false);
         $this->assertLessThan(0, $value);
     }
 
@@ -492,7 +491,7 @@ class NumberTest extends BaseTest
 
     // endregion
 
-    
+
     // region possibleIntegersCount()
 
     /**

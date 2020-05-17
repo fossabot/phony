@@ -74,7 +74,7 @@ class Number extends Fake
      *
      * @return int
      */
-    public function integerDigit(int $digits = null, bool $strict = false, bool $isPositive = null): int
+    public function integer(int $digits = null, bool $strict = false, bool $isPositive = null): int
     {
         if ($digits === null) {
             $digits = $this->digitNonZero();
@@ -104,7 +104,7 @@ class Number extends Fake
      */
     public function integerLeadingZero(int $digits = 10): string
     {
-        $value = (string) $this->integerDigit(null, false, true);
+        $value = (string) $this->integer(null, false, true);
 
         return str_pad($value, $digits, '0', STR_PAD_LEFT);
     }
