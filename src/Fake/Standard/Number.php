@@ -85,6 +85,10 @@ class Number extends Fake
             ? 10 ** ($digits - 1)
             : 0;
 
+        if (!isset($isPositive)) {
+            $isPositive = $this->phony->boolean->boolean;
+        }
+
         $isPositive = $isPositive ? 1 : -1;
 
         return $isPositive * $this->integerBetween($min, $max);
