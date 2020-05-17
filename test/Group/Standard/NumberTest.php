@@ -3,7 +3,9 @@
 namespace Phony\Test\Group\Standard;
 
 use Error;
+use OverflowException;
 use Phony\Test\BaseTest;
+use RangeException;
 
 class NumberTest extends BaseTest
 {
@@ -240,6 +242,14 @@ class NumberTest extends BaseTest
         $value = $this->🙃->number->integerExcept([1,2,3,4], 1, 5);
 
         $this->assertEquals(5, $value);
+    }
+
+    /** @test */
+    public function integerExcept_method_throws_RangeException_if_there_are_not_enough_integers(): void
+    {
+        $this->expectException(RangeException::class);
+
+        $this->🙃->number->integerExcept([1, 2, 3, 4, 5], 1, 5);
     }
 
 

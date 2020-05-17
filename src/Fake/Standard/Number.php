@@ -4,6 +4,7 @@ namespace Phony\Fake\Standard;
 
 use Exception;
 use Phony\Fake\Fake;
+use RangeException;
 
 /**
  * Class Number.
@@ -123,6 +124,10 @@ class Number extends Fake
 
     private function possibleIntegersCount(int $min, int $max): int
     {
+        if ($min > $max) {
+            [$min, $max] = [$max, $min];
+        }
+
         return $max - $min + 1;
     }
 
@@ -139,6 +144,12 @@ class Number extends Fake
     {
         if (is_int($except)) {
             $except = [$except];
+        }
+
+        if (count($except) >= $this->possibleIntegersCount($min, $max)) {
+            throw new RangeException(sprintf(
+                "There are not enough integers for this range. Between %s to %s, except %s",
+                $min, $max, implode(', ', $except)));
         }
 
         do {
@@ -235,7 +246,7 @@ class Number extends Fake
      *
      * @return float
      */
-    public function float(int $leftDigits = null, int $rightDigits = null, bool $strict = false): float
+    public function floatDigit(int $leftDigits = null, int $rightDigits = null, bool $strict = false): float
     {
         if ($leftDigits === null) {
             $leftDigits = $this->digitNonZero();
