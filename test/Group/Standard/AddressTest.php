@@ -45,7 +45,7 @@ class AddressTest extends BaseTest
     {
         $value = $this->🙃->address->street_address;
 
-        $this->assertMatchesRegularExpression('/\d+\s\w+\s\w+/', $value);
+        $this->assertMatchesRegularExpression("/^\d+\s[A-Za-z']+\s[A-Za-z']+/", $value);
     }
 
     /** @test */
@@ -54,7 +54,7 @@ class AddressTest extends BaseTest
         $value = $this->🙃->address->street_address_with_secondary_address;
 
         $this->assertMatchesRegularExpression(
-            '/\d+\s[A-Za-z0-9\']+\s\w+\s\w+\.?\s\d+/',
+            "/\d+\s[A-Za-z0-9\']+\s\w+\s\w+\.?\s\d+/",
             $value
         );
     }
