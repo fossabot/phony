@@ -237,7 +237,7 @@ class Number extends Fake
      *
      * @return float
      */
-    public function floatDigit(int $leftDigits = null, int $rightDigits = null, bool $strict = false): float
+    public function float(int $leftDigits = null, int $rightDigits = null, bool $strict = false): float
     {
         if ($leftDigits === null) {
             $leftDigits = $this->digitNonZero();
