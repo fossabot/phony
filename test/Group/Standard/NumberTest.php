@@ -9,6 +9,8 @@ use RangeException;
 
 class NumberTest extends BaseTest
 {
+    // region integerBetween()
+
     /** @test */
     public function integerBetween_method_returns_an_integer(): void
     {
@@ -34,6 +36,9 @@ class NumberTest extends BaseTest
         $this->🙃->number->integerBetween(2, 1);
     }
 
+    // endregion
+
+    // region integerWithin()
 
     /** @test */
     public function integerWithin_method_returns_an_integer(): void
@@ -68,6 +73,9 @@ class NumberTest extends BaseTest
         $this->🙃->number->integerWithin(1, 1);
     }
 
+    // endregion
+
+    // region integerPositive()
 
     /** @test */
     public function integerPositive_method_returns_an_integer(): void
@@ -101,6 +109,9 @@ class NumberTest extends BaseTest
         $this->🙃->number->integerPositive(0);
     }
 
+    // endregion
+
+    // region integerNegative()
 
     /** @test */
     public function integerNegative_method_returns_an_integer(): void
@@ -134,54 +145,9 @@ class NumberTest extends BaseTest
         $this->🙃->number->integerNegative(0);
     }
 
+    // endregion
 
-    /** @test */
-    public function integerNormal_method_returns_an_integer(): void
-    {
-        $value = $this->🙃->number->integerNormal();
-
-        $this->assertIsInt($value);
-    }
-
-    /** @test */
-    public function integerNormal_method_calculates_integers_with_standard_deviation(): void
-    {
-        $n = 10000;
-
-        $values = [];
-        foreach (range(1, 10000) as $k => $i) {
-            $values[] = $this->🙃->number->integerNormal(150, 100);
-        }
-
-        $mean = array_sum($values) / (float) $n;
-
-        $variance = array_reduce($values, function ($variance, $item) use ($mean) {
-                return $variance += ($item - $mean) ** 2;
-            }, 0) / (float) ($n - 1);
-
-        $std_dev = sqrt($variance);
-
-        $this->assertEqualsWithDelta(150, $mean, 5);
-        $this->assertEqualsWithDelta(100, $std_dev, 3);
-    }
-
-
-    /** @test */
-    public function integerLeadingZero_method_returns_a_string(): void
-    {
-        $value = $this->🙃->number->integerLeadingZero();
-
-        $this->assertIsString($value);
-    }
-
-    /** @test */
-    public function integerLeadingZero_method_returns_a_string_leading_with_zeros(): void
-    {
-        $value = $this->🙃->number->integerLeadingZero(10);
-
-        $this->assertMatchesRegularExpression('/^^(0{0,10}[0-9]{0,10}){1}$/', $value);
-    }
-
+    // region integerDigit()
 
     /** @test */
     public function integerDigit_method_returns_an_integer(): void
@@ -219,6 +185,63 @@ class NumberTest extends BaseTest
         $this->assertLessThan(0, $value);
     }
 
+    // endregion
+
+    // region integerLeadingZero()
+
+    /** @test */
+    public function integerLeadingZero_method_returns_a_string(): void
+    {
+        $value = $this->🙃->number->integerLeadingZero();
+
+        $this->assertIsString($value);
+    }
+
+    /** @test */
+    public function integerLeadingZero_method_returns_a_string_leading_with_zeros(): void
+    {
+        $value = $this->🙃->number->integerLeadingZero(10);
+
+        $this->assertMatchesRegularExpression('/^^(0{0,10}[0-9]{0,10}){1}$/', $value);
+    }
+
+    // endregion
+
+    // region integerNormal()
+
+    /** @test */
+    public function integerNormal_method_returns_an_integer(): void
+    {
+        $value = $this->🙃->number->integerNormal();
+
+        $this->assertIsInt($value);
+    }
+
+    /** @test */
+    public function integerNormal_method_calculates_integers_with_standard_deviation(): void
+    {
+        $n = 10000;
+
+        $values = [];
+        foreach (range(1, 10000) as $k => $i) {
+            $values[] = $this->🙃->number->integerNormal(150, 100);
+        }
+
+        $mean = array_sum($values) / (float) $n;
+
+        $variance = array_reduce($values, function ($variance, $item) use ($mean) {
+                return $variance += ($item - $mean) ** 2;
+            }, 0) / (float) ($n - 1);
+
+        $std_dev = sqrt($variance);
+
+        $this->assertEqualsWithDelta(150, $mean, 5);
+        $this->assertEqualsWithDelta(100, $std_dev, 3);
+    }
+
+    // endregion
+
+    // region integerExcept()
 
     /** @test */
     public function integerExcept_method_returns_an_integer(): void
@@ -252,6 +275,10 @@ class NumberTest extends BaseTest
         $this->🙃->number->integerExcept([1, 2, 3, 4, 5], 1, 5);
     }
 
+    // endregion
+
+
+    // region digit()
 
     /** @test */
     public function digit_method_returns_an_integer(): void
@@ -285,6 +312,10 @@ class NumberTest extends BaseTest
         $this->assertLessThan($base, $value);
     }
 
+    // endregion
+
+    // region digitExcept()
+
     /** @test */
     public function digitExcept_method_returns_an_integer(): void
     {
@@ -306,6 +337,9 @@ class NumberTest extends BaseTest
         $this->assertNotEquals(1, $value);
     }
 
+    // endregion
+
+    // region digitNonZero()
 
     /** @test */
     public function digitNonZero_method_returns_an_integer(): void
@@ -325,6 +359,10 @@ class NumberTest extends BaseTest
         $this->assertNotEquals(0, $value);
     }
 
+    // endregion
+
+
+    // region floatBetween()
 
     /** @test */
     public function floatBetween_method_returns_a_float(): void
@@ -352,6 +390,9 @@ class NumberTest extends BaseTest
         $this->assertLessThanOrEqual($precision + 2, strlen($value));
     }
 
+    // endregion
+
+    // region floatPositive()
 
     /** @test */
     public function floatPositive_method_returns_a_float(): void
@@ -386,6 +427,9 @@ class NumberTest extends BaseTest
         $this->assertLessThanOrEqual($precision + 2, strlen($value));
     }
 
+    // endregion
+
+    // region floatNegative()
 
     /** @test */
     public function floatNegative_method_returns_a_float(): void
@@ -412,6 +456,9 @@ class NumberTest extends BaseTest
         $this->assertLessThanOrEqual($precision + 3, strlen($value));
     }
 
+    // endregion
+
+    // region floatNormal()
 
     /** @test */
     public function floatNormal_method_returns_a_float(): void
@@ -443,6 +490,10 @@ class NumberTest extends BaseTest
         $this->assertEqualsWithDelta(100, $std_dev, 3);
     }
 
+    // endregion
+
+    
+    // region possibleIntegersCount()
 
     /**
      * @test
@@ -472,4 +523,6 @@ class NumberTest extends BaseTest
             [1, 1, 1],
         ];
     }
+
+    // endregion
 }

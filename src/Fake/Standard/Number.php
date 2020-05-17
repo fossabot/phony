@@ -122,15 +122,6 @@ class Number extends Fake
         return (int) $this->floatNormal($mean, $standardDeviation);
     }
 
-    private function possibleIntegersCount(int $min, int $max): int
-    {
-        if ($min > $max) {
-            [$min, $max] = [$max, $min];
-        }
-
-        return $max - $min + 1;
-    }
-
     /**
      * Fakes a random integer except the given integer or array.
      *
@@ -290,5 +281,14 @@ class Number extends Fake
     public function hexadecimal(): string
     {
         return dechex($this->digit(16));
+    }
+
+    private function possibleIntegersCount(int $min, int $max): int
+    {
+        if ($min > $max) {
+            [$min, $max] = [$max, $min];
+        }
+
+        return $max - $min + 1;
     }
 }
