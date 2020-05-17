@@ -283,6 +283,14 @@ class Number extends Fake
         return dechex($this->digit(16));
     }
 
+    /**
+     * Calculates possible integers between $min and $max.
+     *
+     * @param  int  $min
+     * @param  int  $max
+     *
+     * @return int
+     */
     private function possibleIntegersCount(int $min, int $max): int
     {
         if ($min > $max) {
