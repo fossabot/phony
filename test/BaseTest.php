@@ -18,7 +18,7 @@ abstract class BaseTest extends TestCase
         $this->🙃 = new Phony(Locale::en);
     }
 
-    protected function callFakeMethod($name, ...$args)
+    protected function callPrivateFakeMethod($name, ...$args)
     {
         $method = new ReflectionMethod($this->🙃->alphabet, $name);
         $method->setAccessible(true);

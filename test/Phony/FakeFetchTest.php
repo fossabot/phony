@@ -9,7 +9,7 @@ class FakeFetchTest extends BaseTest
     /** @test */
     public function can_fetch_a_value(): void
     {
-        $value = $this->callFakeMethod('fetch', 'alphabet.uppercase_letter');
+        $value = $this->callPrivateFakeMethod('fetch', 'alphabet.uppercase_letter');
 
         $this->assertNotNull($value);
     }
@@ -18,7 +18,7 @@ class FakeFetchTest extends BaseTest
     public function can_fetch_many_values(): void
     {
         $times = random_int(2, 10);
-        $value = $this->callFakeMethod('fetchMany', $times, false, '', static function () {
+        $value = $this->callPrivateFakeMethod('fetchMany', $times, false, '', static function () {
             return 'value';
         });
 
@@ -29,7 +29,7 @@ class FakeFetchTest extends BaseTest
     public function can_fetch_many_values_as_a_string(): void
     {
         $times = random_int(2, 10);
-        $value = $this->callFakeMethod('fetchMany', $times, true, ' ', static function () {
+        $value = $this->callPrivateFakeMethod('fetchMany', $times, true, ' ', static function () {
             return 'value';
         });
 
@@ -43,7 +43,7 @@ class FakeFetchTest extends BaseTest
     public function can_fetch_many_values_as_glued_string(): void
     {
         $times = random_int(2, 10);
-        $value = $this->callFakeMethod('fetchMany', $times, true, '🙃', static function () {
+        $value = $this->callPrivateFakeMethod('fetchMany', $times, true, '🙃', static function () {
             return 'value';
         });
 
