@@ -117,6 +117,11 @@ class Number extends Fake
         return (int) $this->floatNormal($mean, $standardDeviation);
     }
 
+    private function possibleIntegersCount(int $min, int $max): int
+    {
+        return $max - $min + 1;
+    }
+
     /**
      * Fakes a random integer except the given integer or array.
      *

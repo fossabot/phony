@@ -433,4 +433,33 @@ class NumberTest extends BaseTest
         $this->assertEqualsWithDelta(100, $std_dev, 3);
     }
 
+
+    /**
+     * @test
+     *
+     * @dataProvider possibleIntegersCountProvider
+     *
+     * @param  int  $min
+     * @param  int  $max
+     * @param  int  $expected
+     */
+    public function possibleIntegersCount_method(int $min, int $max, int $expected): void
+    {
+        $possibilities = $this->callPrivateMethod($this->🙃->number,'possibleIntegersCount',$min, $max);
+
+        $this->assertEquals($expected, $possibilities);
+    }
+
+    public function possibleIntegersCountProvider(): array
+    {
+        return [
+            [1, 5, 5],
+            [0, 5, 6],
+            [-5, 5, 11],
+            [-5, 0, 6],
+            [-10, -5, 6],
+            [0, 0, 1],
+            [1, 1, 1],
+        ];
+    }
 }
