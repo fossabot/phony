@@ -239,7 +239,7 @@ class NumberTest extends BaseTest
     /** @test */
     public function integerExcept_method_returns_an_integer_except_the_given_array_of_integers(): void
     {
-        $value = $this->🙃->number->integerExcept([1,2,3,4], 1, 5);
+        $value = $this->🙃->number->integerExcept([1, 2, 3, 4], 1, 5);
 
         $this->assertEquals(5, $value);
     }
@@ -455,7 +455,7 @@ class NumberTest extends BaseTest
      */
     public function possibleIntegersCount_method(int $min, int $max, int $expected): void
     {
-        $possibilities = $this->callPrivateMethod($this->🙃->number,'possibleIntegersCount',$min, $max);
+        $possibilities = $this->callPrivateMethod($this->🙃->number, 'possibleIntegersCount', $min, $max);
 
         $this->assertEquals($expected, $possibilities);
     }

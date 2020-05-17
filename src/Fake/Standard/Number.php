@@ -153,7 +153,7 @@ class Number extends Fake
         }
 
         do {
-            $value =  $this->integerBetween($min, $max);
+            $value = $this->integerBetween($min, $max);
         } while (in_array($value, $except, true));
 
         return $value;
