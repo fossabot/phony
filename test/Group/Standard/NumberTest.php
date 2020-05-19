@@ -465,6 +465,24 @@ class NumberTest extends BaseTest
         $this->assertIsFloat($value);
     }
 
+    /** @test */
+    public function float_method_left_digit_can_be_strictly_set(): void
+    {
+        $leftDigits = random_int(1, 10);
+        $value = $this->🙃->number->float($leftDigits, 0, true);
+
+        $this->assertEquals($leftDigits, strlen($value));
+    }
+
+    /** @test */
+    public function float_method_right_digit_can_be_strictly_set(): void
+    {
+        $rightDigits = random_int(1, 14);
+        $value = $this->🙃->number->float(1, $rightDigits, true);
+
+        $this->assertLessThanOrEqual($rightDigits + 2, strlen($value));
+    }
+
     // endregion
 
     // region floatNormal()
@@ -517,6 +535,14 @@ class NumberTest extends BaseTest
         $possibilities = $this->callPrivateMethod($this->🙃->number, 'possibleIntegersCount', $min, $max);
 
         $this->assertEquals($expected, $possibilities);
+    }
+
+    /** @test */
+    public function possibleIntegersCount_method_swaps_min_and_max_if_necessary(): void
+    {
+        $possibilities = $this->callPrivateMethod($this->🙃->number, 'possibleIntegersCount', 5, 1);
+
+        $this->assertEquals(5, $possibilities);
     }
 
     public function possibleIntegersCountProvider(): array
