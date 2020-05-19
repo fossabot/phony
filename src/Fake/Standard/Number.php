@@ -19,7 +19,7 @@ class Number extends Fake
      *
      * @return int
      */
-    public function integerBetween(int $min = -10_000, int $max = +10_000): int
+    public function integerBetween(int $min = -10000, int $max = +10000): int
     {
         try {
             return random_int($min, $max);
@@ -36,7 +36,7 @@ class Number extends Fake
      *
      * @return int
      */
-    public function integerWithin(int $min = -10_000, int $max = +10_000): int
+    public function integerWithin(int $min = -10000, int $max = +10000): int
     {
         return $this->integerBetween($min + 1, $max - 1);
     }
@@ -48,7 +48,7 @@ class Number extends Fake
      *
      * @return int
      */
-    public function integerPositive(int $max = 10_000): int
+    public function integerPositive(int $max = 10000): int
     {
         return $this->integerBetween(1, $max);
     }
@@ -60,7 +60,7 @@ class Number extends Fake
      *
      * @return int
      */
-    public function integerNegative(int $min = -10_000): int
+    public function integerNegative(int $min = -10000): int
     {
         return $this->integerBetween($min, -1);
     }
@@ -117,7 +117,7 @@ class Number extends Fake
      *
      * @return int
      */
-    public function integerNormal(int $mean = 10_000, int $standardDeviation = 1_000): int
+    public function integerNormal(int $mean = 10000, int $standardDeviation = 1_000): int
     {
         return (int) $this->floatNormal($mean, $standardDeviation);
     }
@@ -131,7 +131,7 @@ class Number extends Fake
      *
      * @return int
      */
-    public function integerExcept($except = 666, int $min = -10_000, int $max = +10_000): int
+    public function integerExcept($except = 666, int $min = -10000, int $max = +10000): int
     {
         if (is_int($except)) {
             $except = [$except];
@@ -209,7 +209,7 @@ class Number extends Fake
      *
      * @return float
      */
-    public function floatPositive(int $max = 10_000, int $precision = 14): float
+    public function floatPositive(int $max = 10000, int $precision = 14): float
     {
         return $this->floatBetween(0, $max, $precision);
     }
@@ -222,7 +222,7 @@ class Number extends Fake
      *
      * @return float
      */
-    public function floatNegative(int $min = -10_000, int $precision = 14): float
+    public function floatNegative(int $min = -10000, int $precision = 14): float
     {
         return $this->floatBetween($min, 0, $precision);
     }
