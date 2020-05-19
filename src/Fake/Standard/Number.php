@@ -2,9 +2,7 @@
 
 namespace Phony\Fake\Standard;
 
-use Exception;
 use Phony\Fake\Fake;
-use RangeException;
 
 /**
  * Class Number.
@@ -21,11 +19,7 @@ class Number extends Fake
      */
     public function integerBetween(int $min = -10000, int $max = +10000): int
     {
-        try {
-            return random_int($min, $max);
-        } catch (Exception $e) {
-            return mt_rand($min, $max);
-        }
+        return random_int($min, $max);
     }
 
     /**
@@ -117,7 +111,7 @@ class Number extends Fake
      *
      * @return int
      */
-    public function integerNormal(int $mean = 10000, int $standardDeviation = 1_000): int
+    public function integerNormal(int $mean = 10000, int $standardDeviation = 1000): int
     {
         return (int) $this->floatNormal($mean, $standardDeviation);
     }
@@ -138,7 +132,7 @@ class Number extends Fake
         }
 
         if (count($except) >= $this->possibleIntegersCount($min, $max)) {
-            throw new RangeException(sprintf(
+            throw new \RangeException(sprintf(
                 'There are not enough integers for this range. Between %s to %s, except %s',
                 $min, $max, implode(', ', $except)));
         }
