@@ -1,6 +1,6 @@
 <?php
 
-namespace Phony;
+namespace Phonyland;
 
 use RuntimeException;
 
@@ -8,20 +8,20 @@ use RuntimeException;
  * Class Phony.
  *
  *
- * @property-read \Phony\Fake\Standard\Address    address
- * @property-read \Phony\Fake\Standard\Address    📫
- * @property-read \Phony\Fake\Standard\Alphabet   alphabet
- * @property-read \Phony\Fake\Standard\Alphabet   🔤
- * @property-read \Phony\Fake\Standard\Ancient    ancient
- * @property-read \Phony\Fake\Standard\Ancient    📜
- * @property-read \Phony\Fake\Standard\Artist     artist
- * @property-read \Phony\Fake\Standard\Boolean    boolean
- * @property-read \Phony\Fake\Standard\Coin       coin
- * @property-read \Phony\Fake\Standard\Cosmere    cosmere
- * @property-read \Phony\Fake\Standard\Currency   currency
- * @property-read \Phony\Fake\Standard\Number     number
- * @property-read \Phony\Fake\Standard\Person     person
- * @property-read \Phony\Fake\Standard\SlackEmoji slack_emoji
+ * @property-read \Phonyland\Fake\Standard\Address    address
+ * @property-read \Phonyland\Fake\Standard\Address    📫
+ * @property-read \Phonyland\Fake\Standard\Alphabet   alphabet
+ * @property-read \Phonyland\Fake\Standard\Alphabet   🔤
+ * @property-read \Phonyland\Fake\Standard\Ancient    ancient
+ * @property-read \Phonyland\Fake\Standard\Ancient    📜
+ * @property-read \Phonyland\Fake\Standard\Artist     artist
+ * @property-read \Phonyland\Fake\Standard\Boolean    boolean
+ * @property-read \Phonyland\Fake\Standard\Coin       coin
+ * @property-read \Phonyland\Fake\Standard\Cosmere    cosmere
+ * @property-read \Phonyland\Fake\Standard\Currency   currency
+ * @property-read \Phonyland\Fake\Standard\Number     number
+ * @property-read \Phonyland\Fake\Standard\Person     person
+ * @property-read \Phonyland\Fake\Standard\SlackEmoji slack_emoji
  */
 class Phony
 {

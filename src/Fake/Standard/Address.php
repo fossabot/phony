@@ -1,9 +1,9 @@
 <?php
 
-namespace Phony\Fake\Standard;
+namespace Phonyland\Fake\Standard;
 
-use Phony\Fake\Fake;
-use Phony\Operation;
+use Phonyland\Fake\Fake;
+use Phonyland\Operation;
 
 /**
  * Class Address.

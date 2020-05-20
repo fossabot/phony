@@ -1,8 +1,8 @@
 <?php
 
-namespace Phony\Fake\Standard;
+namespace Phonyland\Fake\Standard;
 
-use Phony\Fake\Fake;
+use Phonyland\Fake\Fake;
 
 /**
  * Class SlackEmoji.

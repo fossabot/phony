@@ -1,9 +1,9 @@
 <?php
 
-namespace Phony\Test\Phony;
+namespace Phonyland\Test\Phony;
 
-use Phony\Fake\Fake;
-use Phony\Test\BaseTest;
+use Phonyland\Fake\Fake;
+use Phonyland\Test\BaseTest;
 
 class PhonyTest extends BaseTest
 {

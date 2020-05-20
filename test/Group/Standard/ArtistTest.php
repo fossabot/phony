@@ -1,8 +1,8 @@
 <?php
 
-namespace Phony\Test\Group\Standard;
+namespace Phonyland\Test\Group\Standard;
 
-use Phony\Test\BaseTest;
+use Phonyland\Test\BaseTest;
 
 class ArtistTest extends BaseTest
 {

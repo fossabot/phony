@@ -1,9 +1,9 @@
 <?php
 
-namespace Phony\Test;
+namespace Phonyland\Test;
 
-use Phony\Locale;
-use Phony\Phony;
+use Phonyland\Locale;
+use Phonyland\Phony;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Phony\Fake;
+namespace Phonyland\Fake;
 
-use Phony\Phony;
+use Phonyland\Phony;
 use RuntimeException;
 
 /**
@@ -18,7 +18,7 @@ class Fake
     /**
      * Fake constructor.
      *
-     * @param  \Phony\Phony  $phony
+     * @param  \Phonyland\Phony  $phony
      */
     public function __construct(Phony $phony)
     {

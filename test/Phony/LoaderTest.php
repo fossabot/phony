@@ -1,8 +1,8 @@
 <?php
 
-namespace Phony\Test\Phony;
+namespace Phonyland\Test\Phony;
 
-use Phony\Phony;
+use Phonyland\Phony;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 

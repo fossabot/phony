@@ -1,8 +1,8 @@
 <?php
 
-namespace Phony\Fake\Locale\Tr;
+namespace Phonyland\Fake\Locale\Tr;
 
-use Phony\Fake\Standard\Alphabet;
+use Phonyland\Fake\Standard\Alphabet;
 
 /**
  * Class AlphabetTr.

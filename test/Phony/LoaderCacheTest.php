@@ -1,8 +1,8 @@
 <?php
 
-namespace Phony\Test\Phony;
+namespace Phonyland\Test\Phony;
 
-use Phony\Test\BaseTest;
+use Phonyland\Test\BaseTest;
 
 class LoaderCacheTest extends BaseTest
 {

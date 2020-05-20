@@ -1,23 +1,23 @@
 <?php
 
-namespace Phony;
+namespace Phonyland;
 
 class Group
 {
     public const default = [
-        'address'     => \Phony\Fake\Standard\Address::class,
-        '📫'          => \Phony\Fake\Standard\Address::class,
-        'alphabet'    => \Phony\Fake\Standard\Alphabet::class,
-        '🔤'          => \Phony\Fake\Standard\Alphabet::class,
-        'ancient'     => \Phony\Fake\Standard\Ancient::class,
-        '📜'          => \Phony\Fake\Standard\Ancient::class,
-        'artist'      => \Phony\Fake\Standard\Artist::class,
-        'boolean'     => \Phony\Fake\Standard\Boolean::class,
-        'coin'        => \Phony\Fake\Standard\Coin::class,
-        'cosmere'     => \Phony\Fake\Standard\Cosmere::class,
-        'currency'    => \Phony\Fake\Standard\Currency::class,
-        'number'      => \Phony\Fake\Standard\Number::class,
-        'person'      => \Phony\Fake\Standard\Person::class,
-        'slack_emoji' => \Phony\Fake\Standard\SlackEmoji::class,
+        'address'     => \Phonyland\Fake\Standard\Address::class,
+        '📫'          => \Phonyland\Fake\Standard\Address::class,
+        'alphabet'    => \Phonyland\Fake\Standard\Alphabet::class,
+        '🔤'          => \Phonyland\Fake\Standard\Alphabet::class,
+        'ancient'     => \Phonyland\Fake\Standard\Ancient::class,
+        '📜'          => \Phonyland\Fake\Standard\Ancient::class,
+        'artist'      => \Phonyland\Fake\Standard\Artist::class,
+        'boolean'     => \Phonyland\Fake\Standard\Boolean::class,
+        'coin'        => \Phonyland\Fake\Standard\Coin::class,
+        'cosmere'     => \Phonyland\Fake\Standard\Cosmere::class,
+        'currency'    => \Phonyland\Fake\Standard\Currency::class,
+        'number'      => \Phonyland\Fake\Standard\Number::class,
+        'person'      => \Phonyland\Fake\Standard\Person::class,
+        'slack_emoji' => \Phonyland\Fake\Standard\SlackEmoji::class,
     ];
 }

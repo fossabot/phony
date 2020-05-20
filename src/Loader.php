@@ -1,6 +1,6 @@
 <?php
 
-namespace Phony;
+namespace Phonyland;
 
 use RuntimeException;
 

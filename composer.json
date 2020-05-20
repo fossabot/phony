@@ -1,13 +1,13 @@
 {
-    "name": "phonyphp/phony",
+    "name": "phonyland/phony",
     "description": "Phony is a PHP package that can generate a wide range of fake data",
     "keywords": ["package", "faker", "phony"],
-    "homepage": "https://github.com/phonyphp/phony",
+    "homepage": "https://github.com/phonyland/phony",
     "license": "MIT",
     "type": "library",
     "support": {
-        "issues": "https://github.com/phonyphp/phony/issues",
-        "source": "https://github.com/phonyphp/phony"
+        "issues": "https://github.com/phonyland/phony/issues",
+        "source": "https://github.com/phonyland/phony"
     },
     "authors": [
         {
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Phony\\": "src"
+            "Phonyland\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Phony\\Test\\": "test"
+            "Phonyland\\Test\\": "test"
         }
     },
     "scripts": {

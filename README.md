@@ -1,11 +1,11 @@
-[![Phony Logo](.github/asset/phony-logo.png)](https://github.com/phonyphp/phony)
+[![Phony Logo](.github/asset/phony-logo.png)](https://github.com/phonyland/phony)
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/phonyphp/phony.svg?style=flat-square)](https://packagist.org/packages/phonyphp/phony)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phonyphp/phony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phonyphp/phony/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/phonyphp/phony/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phonyphp/phony/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/phonyphp/phony/badges/build.png?b=master)](https://scrutinizer-ci.com/g/phonyphp/phony/build-status/master)
-[![Total Downloads](https://img.shields.io/packagist/dt/phonyphp/phony.svg?style=flat-square)](https://packagist.org/packages/phonyphp/phony)
-![Packagist](https://img.shields.io/packagist/l/phonyphp/phony)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/phonyland/phony.svg?style=flat-square)](https://packagist.org/packages/phonyland/phony)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phonyland/phony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phonyland/phony/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/phonyland/phony/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phonyland/phony/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/phonyland/phony/badges/build.png?b=master)](https://scrutinizer-ci.com/g/phonyland/phony/build-status/master)
+[![Total Downloads](https://img.shields.io/packagist/dt/phonyland/phony.svg?style=flat-square)](https://packagist.org/packages/phonyland/phony)
+![Packagist](https://img.shields.io/packagist/l/phonyland/phony)
 [![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) 
 
 ### This package is in active development and not production ready.
@@ -22,14 +22,16 @@
 
 You can install the package via composer:
 
-```sh
-composer require phonyphp/phony
+```console
+composer require phonyland/phony
 ```
 
 ## Usage
 
-``` php
-use Phony\Phony;
+```php
+<?php
+
+use Phonyland\Phony;
 
 $🙃 = new Phony('en');
 
@@ -68,7 +70,7 @@ $🙃->person->name;                   // => "Tyshawn Johns Sr."
 
 ### Testing
 
-```sh
+```console
 composer test
 ```
 

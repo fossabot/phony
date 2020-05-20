@@ -1,6 +1,6 @@
 <?php
 
-namespace Phony;
+namespace Phonyland;
 
 class Operation
 {

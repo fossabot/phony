@@ -1,7 +1,7 @@
 # $🙃->coin
 
 ```php
-use Phony\Phony;
+use Phonyland\Phony;
 
 
 $🙃 = new Phony('en');

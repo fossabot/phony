@@ -1,9 +1,9 @@
 <?php
 
-namespace Phony\Test\Group\Standard;
+namespace Phonyland\Test\Group\Standard;
 
 use Error;
-use Phony\Test\BaseTest;
+use Phonyland\Test\BaseTest;
 use RangeException;
 
 class NumberTest extends BaseTest
