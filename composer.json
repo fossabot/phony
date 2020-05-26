@@ -21,7 +21,11 @@
     },
     "require-dev": {
         "ext-mbstring": "*",
-        "phpunit/phpunit": "^9.0"
+        "pestphp/pest": "^0.1.2",
+        "phpunit/phpunit": "^9.0",
+        "rector/rector": "^0.7.26",
+        "symfony/var-dumper": "^5.0",
+        "vimeo/psalm": "^3.11"
     },
     "autoload": {
         "psr-4": {
@@ -30,11 +34,14 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Phonyland\\Test\\": "test"
+            "Phonyland\\Tests\\": "tests"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
-        "test": "vendor/bin/phpunit --configuration phpunit.xml.dist --colors=always"
+        "test": "vendor/bin/pest --colors=always",
+        "coverage": "vendor/bin/pest --configuration phpunit.xml --colors=always --coverage --coverage-clover 'reports/clover.xml'"
     },
     "config": {
         "sort-packages": true

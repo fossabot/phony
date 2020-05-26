@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/phonyland/phony.svg?style=flat-square)](https://packagist.org/packages/phonyland/phony)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phonyland/phony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phonyland/phony/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/phonyland/phony/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phonyland/phony/?branch=master)
+[![codecov](https://codecov.io/gh/phonyland/phony/branch/master/graph/badge.svg)](https://codecov.io/gh/phonyland/phony)
 [![Build Status](https://scrutinizer-ci.com/g/phonyland/phony/badges/build.png?b=master)](https://scrutinizer-ci.com/g/phonyland/phony/build-status/master)
 [![Total Downloads](https://img.shields.io/packagist/dt/phonyland/phony.svg?style=flat-square)](https://packagist.org/packages/phonyland/phony)
 ![Packagist](https://img.shields.io/packagist/l/phonyland/phony)

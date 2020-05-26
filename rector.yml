@@ -1,0 +1,17 @@
+# rector.yaml
+parameters:
+  paths:
+    - 'src'
+    - 'tests'
+  sets:
+    - 'action-injection-to-constructor-injection'
+    - 'array-str-functions-to-static-call'
+    - 'celebrity'
+    - 'doctrine'
+    - 'phpstan'
+    - 'phpunit-code-quality'
+    - 'solid'
+    - 'early-return'
+    - 'doctrine-code-quality'
+    - 'code-quality'
+    - 'php74'

@@ -7,3 +7,4 @@ coverage
 .phpunit.result.cache
 test/PlaygroundTest.php
 .DS_STORE
+reports/*
