@@ -1,6 +1,6 @@
 {
     "name": "phonyland/phony",
-    "description": "Phony is a PHP package that can generate a wide range of fake data",
+    "description": "Phony is a PHP package that generate massive amount of realistic fake data in multiple locales",
     "keywords": ["package", "faker", "phony"],
     "homepage": "https://github.com/phonyland/phony",
     "license": "MIT",
@@ -22,10 +22,7 @@
     "require-dev": {
         "ext-mbstring": "*",
         "pestphp/pest": "^0.1.2",
-        "phpunit/phpunit": "^9.0",
-        "rector/rector": "^0.7.26",
-        "symfony/var-dumper": "^5.0",
-        "vimeo/psalm": "^3.11"
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
         "psr-4": {
