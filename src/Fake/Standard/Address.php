@@ -41,26 +41,26 @@ use Phonyland\Operation;
 class Address extends Fake
 {
     protected array $attributes = [
-        'city'                                  => ['address.city'],
-        'city_with_state'                       => ['address.city_with_state'],
-        'street_name'                           => ['address.street_name'],
-        'secondary_address'                     => ['address.secondary_address', Operation::numerify],
-        'street_address'                        => ['address.street_address', Operation::numerify],
-        'street_address_with_secondary_address' => ['address.street_address_with_secondary_address', Operation::bothify],
-        'building_number'                       => ['address.building_number', Operation::bothify],
-        'community'                             => ['address.community'],
-        'mail_box'                              => ['address.mail_box', Operation::bothify],
-        'time_zone'                             => ['address.time_zone'],
-        'street_suffix'                         => ['address.street_suffix'],
-        'city_suffix'                           => ['address.city_suffix'],
-        'city_prefix'                           => ['address.city_prefix'],
-        'state_abbreviation'                    => ['address.state_abbreviation'],
-        'state'                                 => ['address.state'],
-        'country'                               => ['address.country'],
-        'country_code'                          => ['address.country_code'],
-        'country_code_long'                     => ['address.country_code_long'],
-        'full_address'                          => ['address.full_address', Operation::numerify],
-        'default_country'                       => ['address.default_country'],
+        'city'                                  => ['standard.address.city'],
+        'city_with_state'                       => ['standard.address.city_with_state'],
+        'street_name'                           => ['standard.address.street_name'],
+        'secondary_address'                     => ['standard.address.secondary_address', Operation::numerify],
+        'street_address'                        => ['standard.address.street_address', Operation::numerify],
+        'street_address_with_secondary_address' => ['standard.address.street_address_with_secondary_address', Operation::bothify],
+        'building_number'                       => ['standard.address.building_number', Operation::bothify],
+        'community'                             => ['standard.address.community'],
+        'mail_box'                              => ['standard.address.mail_box', Operation::bothify],
+        'time_zone'                             => ['standard.address.time_zone'],
+        'street_suffix'                         => ['standard.address.street_suffix'],
+        'city_suffix'                           => ['standard.address.city_suffix'],
+        'city_prefix'                           => ['standard.address.city_prefix'],
+        'state_abbreviation'                    => ['standard.address.state_abbreviation'],
+        'state'                                 => ['standard.address.state'],
+        'country'                               => ['standard.address.country'],
+        'country_code'                          => ['standard.address.country_code'],
+        'country_code_long'                     => ['standard.address.country_code_long'],
+        'full_address'                          => ['standard.address.full_address', Operation::numerify],
+        'default_country'                       => ['standard.address.default_country'],
     ];
 
     protected array $methodsAsAttributes = [
@@ -91,12 +91,12 @@ class Address extends Fake
     {
         if (empty($stateAbbreviation)) {
             return $this->bothify(
-                $this->fetch('address.postcode')
+                $this->fetch('standard.address.postcode')
             );
         }
 
         return $this->bothify(
-            $this->fetch('address.postcode_by_state', $stateAbbreviation)
+            $this->fetch('standard.address.postcode_by_state', $stateAbbreviation)
         );
     }
 
@@ -111,7 +111,7 @@ class Address extends Fake
      */
     public function country_by_code(string $code): string
     {
-        return $this->fetch('address.country_by_code', $code);
+        return $this->fetch('standard.address.country_by_code', $code);
     }
 
     /**
@@ -125,7 +125,7 @@ class Address extends Fake
      */
     public function country_by_name(string $name): string
     {
-        return $this->fetch('address.country_by_name', $name);
+        return $this->fetch('standard.address.country_by_name', $name);
     }
 
     /**

@@ -21,14 +21,14 @@ use Phonyland\Fake\Fake;
 class SlackEmoji extends Fake
 {
     protected array $attributes = [
-        'people'            => ['slack_emoji.people'],
-        'nature'            => ['slack_emoji.nature'],
-        'food_and_drink'    => ['slack_emoji.food_and_drink'],
-        'celebration'       => ['slack_emoji.celebration'],
-        'activity'          => ['slack_emoji.activity'],
-        'travel_and_place'  => ['slack_emoji.travel_and_place'],
-        'object_and_symbol' => ['slack_emoji.object_and_symbol'],
-        'custom'            => ['slack_emoji.custom'],
-        'emoji'             => ['slack_emoji.emoji'],
+        'people'            => ['standard.slack_emoji.people'],
+        'nature'            => ['standard.slack_emoji.nature'],
+        'food_and_drink'    => ['standard.slack_emoji.food_and_drink'],
+        'celebration'       => ['standard.slack_emoji.celebration'],
+        'activity'          => ['standard.slack_emoji.activity'],
+        'travel_and_place'  => ['standard.slack_emoji.travel_and_place'],
+        'object_and_symbol' => ['standard.slack_emoji.object_and_symbol'],
+        'custom'            => ['standard.slack_emoji.custom'],
+        'emoji'             => ['standard.slack_emoji.emoji'],
     ];
 }

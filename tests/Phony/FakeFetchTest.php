@@ -1,7 +1,7 @@
 <?php
 
 it('can fetch a value', function () {
-    $value = callPrivateFakeMethod('fetch', 'alphabet.uppercase_letter');
+    $value = callPrivateFakeMethod('fetch', 'standard.alphabet.uppercase_letter');
 
     $this->assertNotNull($value);
 });

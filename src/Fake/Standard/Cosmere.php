@@ -22,15 +22,15 @@ use Phonyland\Fake\Fake;
 class Cosmere extends Fake
 {
     protected array $attributes = [
-        'aon'            => ['cosmere.aon'],
-        'shard_world'    => ['cosmere.shard_world'],
-        'shard'          => ['cosmere.shard'],
-        'surge'          => ['cosmere.surge'],
-        'knight_radiant' => ['cosmere.knight_radiant'],
-        'metal'          => ['cosmere.metal'],
-        'allomancer'     => ['cosmere.allomancer'],
-        'feruchemist'    => ['cosmere.feruchemist'],
-        'herald'         => ['cosmere.herald'],
-        'spren'          => ['cosmere.spren'],
+        'aon'            => ['standard.cosmere.aon'],
+        'shard_world'    => ['standard.cosmere.shard_world'],
+        'shard'          => ['standard.cosmere.shard'],
+        'surge'          => ['standard.cosmere.surge'],
+        'knight_radiant' => ['standard.cosmere.knight_radiant'],
+        'metal'          => ['standard.cosmere.metal'],
+        'allomancer'     => ['standard.cosmere.allomancer'],
+        'feruchemist'    => ['standard.cosmere.feruchemist'],
+        'herald'         => ['standard.cosmere.herald'],
+        'spren'          => ['standard.cosmere.spren'],
     ];
 }

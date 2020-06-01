@@ -28,13 +28,13 @@ it('does not cache if size exceed', function () {
 });
 
 it('does not cache if it will be exceed with the number of new items', function () {
-    $🙃 = 🙃()->setCacheSize(28);
+    $🙃 = 🙃()->setCacheSize(29);
 
-    $🙃->alphabet->uppercase_letter; // Size of 28
-    $🙃->alphabet->lowercase_letter; // Size of 28
+    $🙃->alphabet->uppercase_letter; // Size of 29
+    $🙃->alphabet->lowercase_letter; // Size of 29
 
     $this->assertEquals(
-        28,
+        29,
         $🙃->getCacheUsage()
     );
 });
@@ -42,19 +42,19 @@ it('does not cache if it will be exceed with the number of new items', function 
 test('cache size can be dynamically increase', function () {
     $🙃 = 🙃()->setCacheSize(0);
 
-    $🙃->alphabet->uppercase_letter; // Size of 28
+    $🙃->alphabet->uppercase_letter; // Size of 29
 
     $this->assertEquals(
         0,
         $🙃->getCacheUsage()
     );
 
-    $🙃 = 🙃()->setCacheSize(28);
+    $🙃 = 🙃()->setCacheSize(29);
 
-    $🙃->alphabet->uppercase_letter; // Size of 28
+    $🙃->alphabet->uppercase_letter; // Size of 29
 
     $this->assertEquals(
-        28,
+        29,
         $🙃->getCacheUsage()
     );
 });

@@ -19,10 +19,10 @@ use Phonyland\Fake\Fake;
 class Alphabet extends Fake
 {
     protected array $attributes = [
-        'uppercase_letter' => ['alphabet.uppercase_letter'],
-        'lowercase_letter' => ['alphabet.lowercase_letter'],
-        'letter'           => ['alphabet.letter'],
-        'punctuation_mark' => ['alphabet.punctuation_mark'],
+        'uppercase_letter' => ['standard.alphabet.uppercase_letter'],
+        'lowercase_letter' => ['standard.alphabet.lowercase_letter'],
+        'letter'           => ['standard.alphabet.letter'],
+        'punctuation_mark' => ['standard.alphabet.punctuation_mark'],
     ];
 
     protected array $methodsAsAttributes = [

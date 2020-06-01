@@ -13,6 +13,6 @@ use Phonyland\Fake\Fake;
 class Artist extends Fake
 {
     protected array $attributes = [
-        'name' => ['artist.name'],
+        'name' => ['standard.artist.name'],
     ];
 }

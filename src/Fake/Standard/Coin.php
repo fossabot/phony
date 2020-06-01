@@ -14,7 +14,7 @@ use Phonyland\Fake\Fake;
 class Coin extends Fake
 {
     protected array $attributes = [
-        'flip' => ['coin.flip'],
-        'name' => ['coin.name'],
+        'flip' => ['standard.coin.flip'],
+        'name' => ['standard.coin.name'],
     ];
 }

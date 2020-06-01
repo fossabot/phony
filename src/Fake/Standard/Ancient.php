@@ -16,9 +16,9 @@ use Phonyland\Fake\Fake;
 class Ancient extends Fake
 {
     protected array $attributes = [
-        'god'        => ['ancient.god'],
-        'primordial' => ['ancient.primordial'],
-        'titan'      => ['ancient.titan'],
-        'hero'       => ['ancient.hero'],
+        'god'        => ['standard.ancient.god'],
+        'primordial' => ['standard.ancient.primordial'],
+        'titan'      => ['standard.ancient.titan'],
+        'hero'       => ['standard.ancient.hero'],
     ];
 }

@@ -121,6 +121,7 @@ class Fake
      */
     protected function fetch(string $key, string $path = null): string
     {
+        // TODO: Try to remove $path -> see if it brokes something --> this is the path inside file
         $template = $this->phony->loader->get($key, $path, $this->phony->defaultLocale);
 
         // Pick one if it's an array
@@ -235,7 +236,7 @@ class Fake
 
         return preg_replace_callback(
             '/\?/',
-            fn () => $this->fetch('alphabet.letter'),
+            fn () => $this->fetch('standard.alphabet.letter'),
             $letterString
         );
     }

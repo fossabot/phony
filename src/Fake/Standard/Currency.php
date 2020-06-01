@@ -15,8 +15,8 @@ use Phonyland\Fake\Fake;
 class Currency extends Fake
 {
     protected array $attributes = [
-        'name'   => ['currency.name'],
-        'code'   => ['currency.code'],
-        'symbol' => ['currency.symbol'],
+        'name'   => ['standard.currency.name'],
+        'code'   => ['standard.currency.code'],
+        'symbol' => ['standard.currency.symbol'],
     ];
 }

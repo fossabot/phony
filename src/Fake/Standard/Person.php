@@ -22,15 +22,15 @@ use Phonyland\Fake\Fake;
 class Person extends Fake
 {
     protected array $attributes = [
-        'name'              => ['person.name'],
-        'name_with_middle'  => ['person.name_with_middle'],
-        'first_name'        => ['person.first_name'],
-        'middle_name'       => ['person.middle_name'],
-        'male_first_name'   => ['person.male_first_name'],
-        'female_first_name' => ['person.female_first_name'],
-        'last_name'         => ['person.last_name'],
-        'prefix'            => ['person.prefix'],
-        'suffix'            => ['person.suffix'],
+        'name'              => ['standard.person.name'],
+        'name_with_middle'  => ['standard.person.name_with_middle'],
+        'first_name'        => ['standard.person.first_name'],
+        'middle_name'       => ['standard.person.middle_name'],
+        'male_first_name'   => ['standard.person.male_first_name'],
+        'female_first_name' => ['standard.person.female_first_name'],
+        'last_name'         => ['standard.person.last_name'],
+        'prefix'            => ['standard.person.prefix'],
+        'suffix'            => ['standard.person.suffix'],
     ];
 
     protected array $methodsAsAttributes = [
@@ -54,7 +54,7 @@ class Person extends Fake
             true,
             '',
             function () {
-                return $this->fetch('person.initials');
+                return $this->fetch('standard.person.initials');
             }
         );
     }

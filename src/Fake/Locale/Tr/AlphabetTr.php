@@ -15,8 +15,8 @@ use Phonyland\Fake\Standard\Alphabet;
 class AlphabetTr extends Alphabet
 {
     protected array $attributes = [
-        'büyük_harf' => ['alphabet.uppercase_letter'],
-        'küçük_harf' => ['alphabet.lowercase_letter'],
-        'harf'       => ['alphabet.letter'],
+        'büyük_harf' => ['standard.alphabet.uppercase_letter'],
+        'küçük_harf' => ['standard.alphabet.lowercase_letter'],
+        'harf'       => ['standard.alphabet.letter'],
     ];
 }
