@@ -39,7 +39,7 @@ class Phony
     {
         $this->loader = new Loader($defaultLocale);
         $this->defaultLocale = $defaultLocale;
-        $this->groups = Group::default;
+        $this->groups = Group::Default;
     }
 
     // region Magic Setup

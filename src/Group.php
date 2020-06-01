@@ -4,7 +4,7 @@ namespace Phonyland;
 
 class Group
 {
-    public const default = [
+    public const Default = [
         'address'     => \Phonyland\Fake\Standard\Address::class,
         '📫'          => \Phonyland\Fake\Standard\Address::class,
         'alphabet'    => \Phonyland\Fake\Standard\Alphabet::class,
