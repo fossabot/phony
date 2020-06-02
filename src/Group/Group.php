@@ -1,7 +1,8 @@
 <?php
 
-namespace Phonyland;
+namespace Phonyland\Group;
 
+use Phonyland\Phony;
 use RuntimeException;
 
 abstract class Group
@@ -11,8 +12,8 @@ abstract class Group
     protected array $fakeInstances = [];
 
     public const All = [
-        'standard'             => \Phonyland\Group\Standard::class,
-        'programming_language' => \Phonyland\Group\ProgrammingLanguage::class,
+        'standard'             => Standard::class,
+        'programming_language' => ProgrammingLanguage::class,
     ];
 
     /**

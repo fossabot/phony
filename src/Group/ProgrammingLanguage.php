@@ -2,8 +2,6 @@
 
 namespace Phonyland\Group;
 
-use Phonyland\Group;
-
 /**
  * Class ProgrammingLanguage.
  *

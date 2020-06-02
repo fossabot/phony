@@ -2,6 +2,7 @@
 
 namespace Phonyland;
 
+use Phonyland\Group\Group;
 use Phonyland\Group\Standard;
 use RuntimeException;
 
