@@ -4,7 +4,12 @@ namespace Phonyland;
 
 class Group
 {
-    public const Default = [
+    public const All = [
+        'standard'             => self::Standard,
+        'programming_language' => self::ProgrammingLanguage,
+    ];
+
+    public const Standard = [
         'address'     => \Phonyland\Fake\Standard\Address::class,
         '📫'          => \Phonyland\Fake\Standard\Address::class,
         'alphabet'    => \Phonyland\Fake\Standard\Alphabet::class,
@@ -19,5 +24,9 @@ class Group
         'number'      => \Phonyland\Fake\Standard\Number::class,
         'person'      => \Phonyland\Fake\Standard\Person::class,
         'slack_emoji' => \Phonyland\Fake\Standard\SlackEmoji::class,
+    ];
+
+    public const ProgrammingLanguage = [
+        'php' => \Phonyland\Fake\ProgrammingLanguage\Php::class,
     ];
 }
