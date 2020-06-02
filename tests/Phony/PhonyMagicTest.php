@@ -1,5 +1,11 @@
 <?php
 
+test('it can access through magic attribute', function () {
+    $value = 🙃()->alphabet;
+
+    assertTrue(!empty($value));
+});
+
 it('can not access undefined magic attribute', function () {
     🙃()->not_exist;
 })->throws(RuntimeException::class);
