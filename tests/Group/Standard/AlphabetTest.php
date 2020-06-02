@@ -15,7 +15,7 @@ test('lowercase_letter attribute', function () {
 });
 
 test('letter attribute', function () {
-    foreach (range(1, 5) as $index) {
+    foreach (range(1, 10) as $index) {
         $value = 🙃()->alphabet->letter;
         $this->assertEquals(1, mb_strlen($value, 'utf8'));
     }
