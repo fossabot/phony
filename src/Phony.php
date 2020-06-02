@@ -9,20 +9,23 @@ use RuntimeException;
  * Class Phony.
  *
  *
- * @property-read \Phonyland\Fake\Standard\Address    address
- * @property-read \Phonyland\Fake\Standard\Address    📫
- * @property-read \Phonyland\Fake\Standard\Alphabet   alphabet
- * @property-read \Phonyland\Fake\Standard\Alphabet   🔤
- * @property-read \Phonyland\Fake\Standard\Ancient    ancient
- * @property-read \Phonyland\Fake\Standard\Ancient    📜
- * @property-read \Phonyland\Fake\Standard\Artist     artist
- * @property-read \Phonyland\Fake\Standard\Boolean    boolean
- * @property-read \Phonyland\Fake\Standard\Coin       coin
- * @property-read \Phonyland\Fake\Standard\Cosmere    cosmere
- * @property-read \Phonyland\Fake\Standard\Currency   currency
- * @property-read \Phonyland\Fake\Standard\Number     number
- * @property-read \Phonyland\Fake\Standard\Person     person
- * @property-read \Phonyland\Fake\Standard\SlackEmoji slack_emoji
+ * @property-read \Phonyland\Fake\Standard\Address     address
+ * @property-read \Phonyland\Fake\Standard\Address     📫
+ * @property-read \Phonyland\Fake\Standard\Alphabet    alphabet
+ * @property-read \Phonyland\Fake\Standard\Alphabet    🔤
+ * @property-read \Phonyland\Fake\Standard\Ancient     ancient
+ * @property-read \Phonyland\Fake\Standard\Ancient     📜
+ * @property-read \Phonyland\Fake\Standard\Artist      artist
+ * @property-read \Phonyland\Fake\Standard\Boolean     boolean
+ * @property-read \Phonyland\Fake\Standard\Coin        coin
+ * @property-read \Phonyland\Fake\Standard\Cosmere     cosmere
+ * @property-read \Phonyland\Fake\Standard\Currency    currency
+ * @property-read \Phonyland\Fake\Standard\Number      number
+ * @property-read \Phonyland\Fake\Standard\Person      person
+ * @property-read \Phonyland\Fake\Standard\SlackEmoji  slack_emoji
+ *
+ * @property-read \Phonyland\Group\Standard            standard
+ * @property-read \Phonyland\Group\ProgrammingLanguage programming_language
  */
 class Phony
 {
