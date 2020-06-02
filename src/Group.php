@@ -2,31 +2,65 @@
 
 namespace Phonyland;
 
-class Group
+use RuntimeException;
+
+abstract class Group
 {
+    protected Phony $phony;
+    public array $fakes;
+    protected array $fakeInstances = [];
+
     public const All = [
-        'standard'             => self::Standard,
-        'programming_language' => self::ProgrammingLanguage,
+        'standard'             => \Phonyland\Group\Standard::class,
+        'programming_language' => \Phonyland\Group\ProgrammingLanguage::class,
     ];
 
-    public const Standard = [
-        'address'     => \Phonyland\Fake\Standard\Address::class,
-        '📫'          => \Phonyland\Fake\Standard\Address::class,
-        'alphabet'    => \Phonyland\Fake\Standard\Alphabet::class,
-        '🔤'          => \Phonyland\Fake\Standard\Alphabet::class,
-        'ancient'     => \Phonyland\Fake\Standard\Ancient::class,
-        '📜'          => \Phonyland\Fake\Standard\Ancient::class,
-        'artist'      => \Phonyland\Fake\Standard\Artist::class,
-        'boolean'     => \Phonyland\Fake\Standard\Boolean::class,
-        'coin'        => \Phonyland\Fake\Standard\Coin::class,
-        'cosmere'     => \Phonyland\Fake\Standard\Cosmere::class,
-        'currency'    => \Phonyland\Fake\Standard\Currency::class,
-        'number'      => \Phonyland\Fake\Standard\Number::class,
-        'person'      => \Phonyland\Fake\Standard\Person::class,
-        'slack_emoji' => \Phonyland\Fake\Standard\SlackEmoji::class,
-    ];
+    /**
+     * Group constructor.
+     *
+     * @param  \Phonyland\Phony  $phony
+     */
+    public function __construct(Phony $phony)
+    {
+        $this->phony = $phony;
+    }
 
-    public const ProgrammingLanguage = [
-        'php' => \Phonyland\Fake\ProgrammingLanguage\Php::class,
-    ];
+    public function __get($attribute)
+    {
+        // Check if it's a valid fake
+        if (isset($this->fakes[$attribute])) {
+            // Check if it's already instantiated
+            if (isset($this->fakeInstances[$attribute])) {
+                return $this->fakeInstances[$attribute];
+            }
+
+            $fakeClassName = $this->fakes[$attribute];
+            $this->fakeInstances[$attribute] = new $fakeClassName($this->phony);
+
+            return $this->fakeInstances[$attribute];
+        }
+    }
+
+    /**
+     * Don't allow setting magic attributes.
+     *
+     * @param $attribute
+     * @param $value
+     */
+    public function __set($attribute, $value)
+    {
+        throw new RuntimeException('Setting group is not allowed!');
+    }
+
+    /**
+     * Check if a magic attribute exists.
+     *
+     * @param $attribute
+     *
+     * @return bool
+     */
+    public function __isset($attribute)
+    {
+        return isset($this->fakes[$attribute]);
+    }
 }

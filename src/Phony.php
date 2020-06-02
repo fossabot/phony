@@ -2,6 +2,7 @@
 
 namespace Phonyland;
 
+use Phonyland\Group\Standard;
 use RuntimeException;
 
 /**
@@ -27,8 +28,8 @@ class Phony
 {
     public Loader $loader;
     public string $defaultLocale;
-    private array $instances = [];
     private array $groups;
+    private array $groupInstances = [];
 
     /**
      * Phony constructor.
@@ -37,9 +38,10 @@ class Phony
      */
     public function __construct(string $defaultLocale)
     {
-        $this->loader = new Loader($defaultLocale);
         $this->defaultLocale = $defaultLocale;
-        $this->groups = Group::Default;
+        $this->loader = new Loader($defaultLocale);
+        $this->groups = Group::All;
+        $this->groupInstances['standard'] = new Standard($this);
     }
 
     // region Magic Setup
@@ -54,18 +56,23 @@ class Phony
      */
     public function __get($attribute)
     {
-        if (isset($this->groups[$attribute])) {
-            if (isset($this->instances[$attribute])) {
-                return $this->instances[$attribute];
-            }
-
-            $fake = $this->groups[$attribute];
-            $this->instances[$attribute] = new $fake($this);
-
-            return $this->instances[$attribute];
+        // If it's a fake in the standard group
+        if (isset($this->groupInstances['standard']->fakes[$attribute])) {
+            return $this->groupInstances['standard']->$attribute;
         }
 
-        throw new RuntimeException("The {$attribute} fake is not found!");
+        // If it's a group
+        if (isset($this->groups[$attribute])) {
+            if (isset($this->groupInstances[$attribute])) {
+                return $this->groupInstances[$attribute];
+            }
+
+            $groupClassName = $this->groups[$attribute];
+
+            return new $groupClassName($this);
+        }
+
+        throw new RuntimeException("The {$attribute} group or standard fake is not found!");
     }
 
     /**
@@ -76,7 +83,7 @@ class Phony
      */
     public function __set($attribute, $value)
     {
-        throw new RuntimeException('Setting fakes is not allowed!');
+        throw new RuntimeException('Setting group or fake is not allowed!');
     }
 
     /**
@@ -88,7 +95,10 @@ class Phony
      */
     public function __isset($attribute)
     {
-        return isset($this->groups[$attribute]);
+        // If it's a fake in the standard group or a group
+        return
+            isset($this->groupInstances['standard']->fakes[$attribute]) ||
+            isset($this->groups[$attribute]);
     }
 
     // endregion
