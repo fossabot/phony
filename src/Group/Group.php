@@ -2,6 +2,7 @@
 
 namespace Phonyland\Group;
 
+use Phonyland\Fake\Fake;
 use Phonyland\Phony;
 use RuntimeException;
 
@@ -35,11 +36,19 @@ abstract class Group
                 return $this->fakeInstances[$attribute];
             }
 
-            $fakeClassName = $this->fakes[$attribute];
-            $this->fakeInstances[$attribute] = new $fakeClassName($this->phony);
-
-            return $this->fakeInstances[$attribute];
+            return $this->createFakeInstance($attribute);
         }
+
+        // TODO: Handle if it's not in $fakes -> TDD
+    }
+
+    private function createFakeInstance(string $fake): Fake
+    {
+        $fakeClassName = $this->fakes[$fake];
+        // TODO: Check if there is a localized fake class
+        $this->fakeInstances[$fake] = new $fakeClassName($this->phony);
+
+        return $this->fakeInstances[$fake];
     }
 
     /**
