@@ -6,7 +6,7 @@ use Phonyland\Fake\Fake;
 use Phonyland\Phony;
 use RuntimeException;
 
-abstract class Group
+class Group
 {
     protected Phony $phony;
     public array $fakes;
