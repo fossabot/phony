@@ -8,7 +8,7 @@ use RuntimeException;
 /**
  * Class Fake.
  */
-class Fake
+abstract class Fake
 {
     protected Phony $phony;
     protected array $attributes;
