@@ -40,7 +40,7 @@
     "scripts": {
         "pest": "vendor/bin/pest",
         "test": "vendor/bin/pest --colors=always --testdox --no-interaction --verbose",
-        "coverage": "vendor/bin/pest --configuration phpunit.xml --colors=always --testdox --no-interaction --verbose --coverage --coverage-clover 'reports/clover.xml'"
+        "coverage": "vendor/bin/pest --configuration phpunit.xml --colors=always --testdox --no-interaction --verbose --coverage --coverage-clover 'reports/clover.xml' --log-junit 'reports/test.xml'"
     },
     "config": {
         "sort-packages": true
