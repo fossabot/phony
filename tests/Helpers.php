@@ -7,6 +7,10 @@ function 🙃(string $locale = 'en'): Phony
     return new Phony($locale);
 }
 
+function regex(): \SRL\Builder
+{
+    return \SRL\SRL::unicode();
+}
 function callPrivateFakeMethod($name, ...$args)
 {
     return callPrivateMethod(🙃()->alphabet, $name, ...$args);
