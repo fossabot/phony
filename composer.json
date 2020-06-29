@@ -1,6 +1,6 @@
 {
     "name": "phonyland/phony",
-    "description": "Phony is a PHP package that generate massive amount of realistic fake data in multiple locales",
+    "description": "Generate massive amount of realistic fake data in multiple locales",
     "keywords": ["package", "faker", "phony"],
     "homepage": "https://github.com/phonyland/phony",
     "license": "MIT",
