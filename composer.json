@@ -38,8 +38,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "test": "vendor/bin/pest --colors=always",
-        "coverage": "vendor/bin/pest --configuration phpunit.xml --colors=always --coverage --coverage-clover 'reports/clover.xml'"
+        "pest": "vendor/bin/pest",
+        "test": "vendor/bin/pest --colors=always --testdox --no-interaction --verbose",
+        "coverage": "vendor/bin/pest --configuration phpunit.xml --colors=always --testdox --no-interaction --verbose --coverage --coverage-clover 'reports/clover.xml'"
     },
     "config": {
         "sort-packages": true
