@@ -2,67 +2,154 @@
 
 // region Attributes
 
+use SRL\Builder;
+
 test('city attribute', function () {
     $value = 🙃()->address->city;
 
-    $this->assertMatchesRegularExpression('/\w+/', $value);
+    $rules = regex()
+        ->startsWith()
+        ->anyOf(fn(Builder $query) => $query->anyCharacter()->oneOf("'"))->onceOrMore()
+        ->whitespace()->neverOrMore()
+        ->anyOf(fn(Builder $query) => $query->anyCharacter()->oneOf("'"))->onceOrMore()
+        ->mustEnd();
+
+    assertRulesMatching($rules, $value);
 });
 
 test('city_with_state attribute', function () {
     $value = 🙃()->address->city_with_state;
 
-    $this->assertMatchesRegularExpression('/\w+, \w+/', $value);
+    $rules = regex()
+        ->startsWith()
+        ->anyOf(function (SRL\Builder $query) {
+            $query->anyOf(function (SRL\Builder $query) {
+                $query->anyCharacter()
+                      ->oneOf("'");
+            })->oneOf(" ");
+        })->onceOrMore()
+        ->literally(', ')
+        ->anyOf(function (SRL\Builder $query) {
+            $query->anyOf(function (SRL\Builder $query) {
+                $query->anyCharacter()
+                      ->oneOf("'");
+            })->oneOf(" ");
+        })->onceOrMore()
+          ->mustEnd();
+
+    assertRulesMatching($rules, $value);
 });
 
 test('street_name attribute', function () {
     $value = 🙃()->address->street_name;
 
-    $this->assertMatchesRegularExpression('/\w+\s\w+/', $value);
+    $rules = regex()
+        ->startsWith()
+        ->anyOf(fn(Builder $query) => $query->anyCharacter()->oneOf("'"))->onceOrMore()
+        ->whitespace()
+        ->anyCharacter()->onceOrMore()
+        ->mustEnd();
+
+    assertRulesMatching($rules, $value);
 });
 
 test('secondary_address attribute', function () {
     $value = 🙃()->address->secondary_address;
 
-    $this->assertMatchesRegularExpression('/\w+\.?\s\d+/', $value);
+    $rules = regex()
+        ->startsWith()
+        ->anyOf(fn(Builder $query) => $query->anyCharacter()->oneOf("'"))->onceOrMore()
+        ->literally('.')->neverOrMore()
+        ->whitespace()
+        ->digit()->onceOrMore()
+        ->mustEnd();
+
+    assertRulesMatching($rules, $value);
 });
 
 test('street_address attribute', function () {
     $value = 🙃()->address->street_address;
 
-    $this->assertMatchesRegularExpression("/^\d+\s[A-Za-z']+\s[A-Za-z']+/", $value);
+    $rules = regex()
+        ->startsWith()
+        ->digit()->onceOrMore()
+        ->whitespace()
+        ->anyOf(fn(Builder $query) => $query->anyCharacter()->oneOf("'"))->onceOrMore()
+        ->whitespace()
+        ->anyCharacter()->onceOrMore()
+        ->mustEnd();
+
+    assertRulesMatching($rules, $value);
 });
 
 test('street_address_with_secondary_address attribute', function () {
     $value = 🙃()->address->street_address_with_secondary_address;
 
-    $this->assertMatchesRegularExpression(
-        "/\d+\s[A-Za-z0-9\']+\s\w+\s\w+\.?\s\d+/",
-        $value
-    );
+    $rules = regex()
+        ->startsWith()
+        ->digit()->onceOrMore()
+        ->whitespace()
+        ->anyOf(fn(Builder $query) => $query->anyCharacter()->oneOf("'"))->onceOrMore()
+        ->whitespace()
+        ->anyCharacter()->onceOrMore()
+        ->whitespace()
+        ->anyOf(fn(Builder $query) => $query->anyCharacter()->oneOf("'"))->onceOrMore()
+        ->literally('.')->neverOrMore()
+        ->whitespace()
+        ->digit()->onceOrMore()
+        ->mustEnd();
+
+    assertRulesMatching($rules, $value);
 });
 
 test('building_number attribute', function () {
     $value = 🙃()->address->building_number;
 
-    $this->assertMatchesRegularExpression('/\d+/', $value);
+    $rules = regex()
+        ->startsWith()
+        ->digit()->onceOrMore()
+        ->mustEnd();
+
+    assertRulesMatching($rules, $value);
 });
 
 test('community attribute', function () {
     $value = 🙃()->address->community;
 
-    $this->assertMatchesRegularExpression('/\w+\s\w+/', $value);
+    $rules = regex()
+        ->startsWith()
+        ->anyCharacter()->onceOrMore()
+        ->whitespace()
+        ->anyCharacter()->onceOrMore()
+        ->mustEnd();
+
+    assertRulesMatching($rules, $value);
 });
 
 test('mail_box attribute', function () {
     $value = 🙃()->address->mail_box;
 
-    $this->assertMatchesRegularExpression('/[\w ]+\d+/', $value);
+    $rules = regex()
+        ->startsWith()
+        ->literally('PO Box ')
+        ->digit()->onceOrMore()
+        ->mustEnd();
+
+    assertRulesMatching($rules, $value);
 });
 
 test('time_zone attribute', function () {
     $value = 🙃()->address->time_zone;
 
-    $this->assertMatchesRegularExpression('/\w+\/\w+/', $value);
+    $rules = regex()
+        ->startsWith()
+        ->anyCharacter()->onceOrMore()
+        ->literally('/')
+        ->anyCharacter()->onceOrMore()
+        ->anyOf(fn(Builder $query) => $query->literally('/')->anyCharacter())->neverOrMore()
+        ->mustEnd();
+
+    assertRulesMatching($rules, $value);
 });
 
 test('street_suffix attribute', function () {
