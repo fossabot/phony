@@ -11,6 +11,12 @@ function regex(): \SRL\Builder
 {
     return \SRL\SRL::unicode();
 }
+
+function assertRulesMatching(\SRL\Builder $rules, string $value)
+{
+    assertTrue($rules->isMatching($value));
+}
+
 function callPrivateFakeMethod($name, ...$args)
 {
     return callPrivateMethod(🙃()->alphabet, $name, ...$args);
