@@ -1,6 +1,7 @@
 <div align="center">
 
 [![Phony Logo](.github/asset/phony-logo.png)](https://github.com/phonyland/phony)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fphonyland%2Fphony.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fphonyland%2Fphony?ref=badge_shield)
 </div>
 
 <div align="center">
@@ -121,3 +122,6 @@ If you discover any security related issues, please email phony@deligoz.me inste
 ## 📄 License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fphonyland%2Fphony.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fphonyland%2Fphony?ref=badge_large)
